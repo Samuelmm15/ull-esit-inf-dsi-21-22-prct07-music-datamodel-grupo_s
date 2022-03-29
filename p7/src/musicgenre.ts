@@ -1,25 +1,35 @@
+/* eslint-disable linebreak-style */
+import {Group} from './groups';
+import {Artist} from './artist';
+import {Song} from './song';
+import {Album} from './album';
+
+/**
+ * This class represents the structure of the
+ * music genre objects
+ */
 export class MusicGenre {
-  constructor(private name : string, private groups : string, private artists : string,
-    private albums : string, private songs : string) {
+  constructor(private name : string, private groups : Group, private artists : Artist,
+    private albums : Album, private songs : Song) {
   }
 
   getName() : string {
     return this.name;
   }
 
-  getGroups() : string {
+  getGroups() : Group {
     return this.groups;
   }
 
-  getArtists() : string {
+  getArtists() : Artist {
     return this.artists;
   }
 
-  getAlbums() : string {
+  getAlbums() : Album {
     return this.albums;
   }
 
-  getSongs() : string {
+  getSongs() : Song {
     return this.songs;
   }
 }

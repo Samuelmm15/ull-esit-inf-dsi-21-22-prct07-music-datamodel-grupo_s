@@ -1,12 +1,19 @@
+/* eslint-disable linebreak-style */
+import {Artist} from './artist';
+import {MusicGenre} from './musicgenre';
+/**
+ * This class represents the structure of the
+ * song objects
+ */
 export class Song {
-  constructor(private name : string, private author : string, private songDuration : number,
-  private genre : string, private single : string, private reproductionsNumber : number) {}
+  constructor(private name : string, private author : Artist, private songDuration : number,
+  private genre : MusicGenre, private single : string, private reproductionsNumber : number) {}
 
   getName() : string {
     return this.name;
   }
 
-  getAuthor() : string {
+  getAuthor() : Artist {
     return this.author;
   }
 
@@ -14,12 +21,12 @@ export class Song {
     return this.songDuration;
   }
 
-  getGenre() : string {
-    return this.single;
+  getGenre() : MusicGenre {
+    return this.genre;
   }
 
   getSingle() : string {
-    return this.genre;
+    return this.single;
   }
 
   getReproductionsNumber() : number {

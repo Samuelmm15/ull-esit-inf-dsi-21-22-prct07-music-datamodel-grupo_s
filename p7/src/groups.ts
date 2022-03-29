@@ -1,21 +1,29 @@
+/* eslint-disable linebreak-style */
+import {Artist} from './artist';
+import {MusicGenre} from './musicgenre';
+import {Album} from './album';
+/**
+ * This is the class that represents
+ * the structure of the Group objects
+ */
 export class Group {
-  constructor(private name: string, private artists: string,
-    private yearCreation: number, private genre: string,
-    private albums: string, private monthlyListener: number) {
+  constructor(private name: string, private artists: Artist,
+    private yearCreation: number, private genre: MusicGenre,
+    private albums: Album, private monthlyListener: number) {
   }
   getName(): string {
     return this.name;
   }
-  getArtists(): string {
+  getArtists(): Artist {
     return this.artists;
   }
   getYearCreation(): number {
     return this.yearCreation;
   }
-  getGenre(): string {
+  getGenre(): MusicGenre {
     return this.genre;
   }
-  getAlbums(): string {
+  getAlbums(): Album {
     return this.albums;
   }
   getMonthlyListener(): number {
