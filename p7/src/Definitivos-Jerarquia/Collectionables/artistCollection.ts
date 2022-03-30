@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
 import {BasicStreamableCollection} from './basicstreamablecollection';
-import {Artist} from './artist';
+import {Artist} from '../Principal-Clases/artist';
 
 export class ArtistsCollection extends BasicStreamableCollection<Artist> {
   constructor(protected artists: Artist[]) {
