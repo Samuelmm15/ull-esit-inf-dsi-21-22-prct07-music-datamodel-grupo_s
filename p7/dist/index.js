@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const artist_1 = require("../src/Definitivos-Jerarquia/Principal-Clases/artist");
-const groups_1 = require("../src/Definitivos-Jerarquia/Principal-Clases/groups");
-const musicGenre_1 = require("../src/Definitivos-Jerarquia/Principal-Clases/musicGenre");
-const song_1 = require("../src/Definitivos-Jerarquia/Principal-Clases/song");
-const album_1 = require("../src/Definitivos-Jerarquia/Principal-Clases/album");
-const artistCollection_1 = require("../src/Definitivos-Jerarquia/Collectionables/artistCollection");
+const artist_1 = require("./Definitivos-Jerarquia/Principal-Clases/artist");
+const groups_1 = require("./Definitivos-Jerarquia/Principal-Clases/groups");
+const musicGenre_1 = require("./Definitivos-Jerarquia/Principal-Clases/musicGenre");
+const song_1 = require("./Definitivos-Jerarquia/Principal-Clases/song");
+const album_1 = require("./Definitivos-Jerarquia/Principal-Clases/album");
+const artistCollection_1 = require("./Definitivos-Jerarquia/Collectionables/artistCollection");
 const BadBunny = new artist_1.Artist('BadBunny', 'Iluminati', 'Reggae', 'Touralmundo', '2', 12);
 const Bruno = new artist_1.Artist('Bruno', 'Iluminati', 'Reggae', 'Touralmundo', '2', 12);
 const Iluminati = new groups_1.Group('Iluminati', BadBunny, 2016, 'Reggae', 'Touralmundo', 12);

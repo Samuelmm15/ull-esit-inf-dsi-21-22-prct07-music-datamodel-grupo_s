@@ -11,12 +11,8 @@ class ArtistsCollection extends basicstreamablecollection_1.BasicStreamableColle
     getName(author) {
         let success = ``;
         for (let i = 0; i < this.artists.length; i++) {
-            if (this.artists[i].getName() == author) {
+            if (this.artists[i].getName() === author) {
                 success = this.artists[i].getName();
-            }
-            else {
-                success = `No existe`;
-                return success;
             }
         }
         return success;

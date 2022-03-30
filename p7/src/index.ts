@@ -1,9 +1,9 @@
-import {Artist} from '../src/Definitivos-Jerarquia/Principal-Clases/artist';
-import {Group} from '../src/Definitivos-Jerarquia/Principal-Clases/groups';
-import {MusicGenre} from '../src/Definitivos-Jerarquia/Principal-Clases/musicGenre';
-import {Song} from '../src/Definitivos-Jerarquia/Principal-Clases/song';
-import {Album} from '../src/Definitivos-Jerarquia/Principal-Clases/album';
-import {ArtistsCollection} from '../src/Definitivos-Jerarquia/Collectionables/artistCollection';
+import {Artist} from './Definitivos-Jerarquia/Principal-Clases/artist';
+import {Group} from './Definitivos-Jerarquia/Principal-Clases/groups';
+import {MusicGenre} from './Definitivos-Jerarquia/Principal-Clases/musicGenre';
+import {Song} from './Definitivos-Jerarquia/Principal-Clases/song';
+import {Album} from './Definitivos-Jerarquia/Principal-Clases/album';
+import {ArtistsCollection} from './Definitivos-Jerarquia/Collectionables/artistCollection';
 
 const BadBunny = new Artist('BadBunny', 'Iluminati', 'Reggae', 'Touralmundo', '2', 12);
 const Bruno = new Artist('Bruno', 'Iluminati', 'Reggae', 'Touralmundo', '2', 12);
