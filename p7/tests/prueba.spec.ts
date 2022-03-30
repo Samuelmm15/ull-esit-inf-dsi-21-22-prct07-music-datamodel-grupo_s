@@ -1,4 +1,4 @@
-import "mocha";
+/* import "mocha";
 import {expect} from "chai";
 import {ArtistsCollection} from "../src/colecartist";
 import {Artist} from "../src/artist"
@@ -25,3 +25,4 @@ describe("ArtistsCollection", () => {
     expect
   });
 });
+*/
