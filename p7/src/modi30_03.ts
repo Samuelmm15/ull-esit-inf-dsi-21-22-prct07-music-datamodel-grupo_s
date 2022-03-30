@@ -22,6 +22,14 @@ export class RandomNumber {
   public getRandomNumber(): number {
     return Math.random();
   }
+  /**
+   * @param n numero mas pequeño
+   * @param m numero mas grande
+   * @returns un número aleatorio entre min (incluido) y max (excluido)
+   */
+  getRandomArbitrary(n: number, m: number): number {
+    return Math.random() * (m - n) + n;
+  }
 }
 /**
   * Genera un conjunto de números aleatorios
