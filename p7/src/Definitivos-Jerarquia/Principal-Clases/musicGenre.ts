@@ -7,27 +7,27 @@ import {Artist} from './artist';
  * music genre objects
  */
 export class MusicGenre {
-  constructor(private name : string, private groups : Group, private artists : Artist,
-    private albums : string, private songs : string) {
+  constructor(private name: string, private groups: Group, private artists: Artist,
+    private albums: string, private songs: string) {
   }
 
-  getName() : string {
+  getName(): string {
     return this.name;
   }
 
-  getGroups() : Group {
+  getGroups(): Group {
     return this.groups;
   }
 
-  getArtists() : Artist {
+  getArtists(): Artist {
     return this.artists;
   }
 
-  getAlbums() : string {
+  getAlbums(): string {
     return this.albums;
   }
 
-  getSongs() : string {
+  getSongs(): string {
     return this.songs;
   }
 }

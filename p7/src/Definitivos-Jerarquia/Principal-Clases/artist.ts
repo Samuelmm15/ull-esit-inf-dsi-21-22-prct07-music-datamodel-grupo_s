@@ -4,31 +4,31 @@
  * artist objects
  */
 export class Artist {
-  constructor(private name : string, private group : string, private genre : string,
-    private album : string, private publishedSongs : string, private monthlyListeners : number) {
+  constructor(private name: string, private group: string, private genre: string,
+    private album: string, private publishedSongs: string, private monthlyListeners: number) {
   }
 
-  getName() : string {
+  getName(): string {
     return this.name;
   }
 
-  getGroup() : string {
+  getGroup(): string {
     return this.group;
   }
 
-  getGenre() : string {
+  getGenre(): string {
     return this.genre;
   }
 
-  getAlbum() : string {
+  getAlbum(): string {
     return this.album;
   }
 
-  getPublishedSongs() : string {
+  getPublishedSongs(): string {
     return this.publishedSongs;
   }
 
-  getMonthlyListeners() : number {
+  getMonthlyListeners(): number {
     return this.monthlyListeners;
   }
 }
