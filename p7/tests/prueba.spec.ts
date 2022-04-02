@@ -36,7 +36,6 @@ describe("ARTIST TEST", () => {
     expect(BadBunny.getAlbum()).to.equal('Touralmundo');
     expect(BadBunny.getPublishedSongs()).to.equal('2');
     expect(BadBunny.getMonthlyListeners()).to.equal(12);
-    expect()
   });
 });
 describe("GROUP TEST", () => {
