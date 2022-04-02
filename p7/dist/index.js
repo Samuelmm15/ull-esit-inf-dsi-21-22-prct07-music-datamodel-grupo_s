@@ -21,7 +21,7 @@ const collection = new songCollection_1.SongCollection([Netflix, Chambea]);
 const pruebagenerocol = new genreCollection_1.GenreCollection([Trap, Reggae]);
 console.log(artistCollection.getName('BadBunny'));
 console.log(artistCollection.getGroup('Iluminati'));
-console.log(artistCollection.getGenre('Trap'));
+console.log(artistCollection.getGenre('Reggae'));
 console.log(artistCollection.getAlbum('Touralmundo'));
 console.log(artistCollection.getPublishedSongs('BadBunny'));
 console.log(artistCollection.getMonthlyListeners('BadBunny'));
