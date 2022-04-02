@@ -47,4 +47,17 @@ export class GenreCollection extends BasicStreamableCollection<MusicGenre> {
     }
     return success;
   }
+  private removeArtist(index: number): MusicGenre[] {
+    this.genres.splice(index, 1);
+    return this.genres;
+  }
+  public getRemoveIndex(genreName: string): MusicGenre[] {
+    let i = 0;
+    for (i = 0; i < this.genres.length; i++) {
+      if (this.genres[i].getName() === genreName) {
+        break;
+      }
+    }
+    return this.removeArtist(i);
+  }
 }

@@ -31,5 +31,18 @@ class SongCollection extends basicstreamablecollection_1.BasicStreamableCollecti
         }
         return success;
     }
+    removeSong(index) {
+        this.songs.splice(index, 1);
+        return this.songs;
+    }
+    getRemoveIndex(songName) {
+        let i = 0;
+        for (i = 0; i < this.songs.length; i++) {
+            if (this.songs[i].getName() === songName) {
+                break;
+            }
+        }
+        return this.removeSong(i);
+    }
 }
 exports.SongCollection = SongCollection;

@@ -14,11 +14,12 @@ const Iluminati = new groups_1.Group('Iluminati', BadBunny, 2016, 'Reggae', 'Tou
 const Trap = new musicGenre_1.MusicGenre('Trap', Iluminati, BadBunny, 'Touralmundo', 'Chambea');
 const Reggae = new musicGenre_1.MusicGenre('Reggae', Iluminati, BadBunny, 'Touralmundo', 'Chambea');
 const Chambea = new song_1.Song('Chambea', BadBunny, 5, Trap, '2', 2016015);
+// eslint-disable-next-line no-unused-vars
 const Touralmundo = new album_1.Album('Touralmundo', Iluminati, BadBunny, 2016, Trap, Chambea);
 const artistCollection = new artistCollection_1.ArtistsCollection([Bruno, BadBunny]);
 const Netflix = new song_1.Song('Netflix', Bruno, 5, Trap, '2', 2016015);
-const collection = new songCollection_1.SongCollection([Netflix, Chambea]);
-const pruebagenerocol = new genreCollection_1.GenreCollection([Trap, Reggae]);
+const songCollection = new songCollection_1.SongCollection([Netflix, Chambea]);
+const genreCollection = new genreCollection_1.GenreCollection([Trap, Reggae]);
 console.log(artistCollection.getName('BadBunny'));
 console.log(artistCollection.getGroup('Iluminati'));
 console.log(artistCollection.getGenre('Reggae'));
@@ -30,10 +31,12 @@ const DonDiablo = new artist_1.Artist('Don Diablo', 'Don Diablo', 'House Music',
 artistCollection.addArtist(DonDiablo);
 console.log(artistCollection);
 console.log();
-console.log(collection.getSongAuthor(BadBunny));
+console.log(songCollection.getSongAuthor(BadBunny));
 console.log();
-console.log();
-console.log(pruebagenerocol.getGenre('Trap'));
+console.log(genreCollection.getGenre('Trap'));
 console.log();
 console.log();
 console.log(artistCollection.getArtist('BadBunny'));
+console.log(artistCollection.getRemoveIndex('BadBunny'));
+console.log(songCollection.getRemoveIndex('Netflix'));
+console.log(genreCollection.getRemoveIndex('Netflix'));

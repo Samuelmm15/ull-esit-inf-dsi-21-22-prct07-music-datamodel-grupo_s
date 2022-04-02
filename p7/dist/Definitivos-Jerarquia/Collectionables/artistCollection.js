@@ -91,5 +91,18 @@ class ArtistsCollection extends basicstreamablecollection_1.BasicStreamableColle
         }
         return success;
     }
+    removeArtist(index) {
+        this.artists.splice(index, 1);
+        return this.artists;
+    }
+    getRemoveIndex(songName) {
+        let i = 0;
+        for (i = 0; i < this.artists.length; i++) {
+            if (this.artists[i].getName() === songName) {
+                break;
+            }
+        }
+        return this.removeArtist(i);
+    }
 }
 exports.ArtistsCollection = ArtistsCollection;

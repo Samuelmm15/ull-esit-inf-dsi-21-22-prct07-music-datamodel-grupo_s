@@ -30,13 +30,17 @@ export class SongCollection extends BasicStreamableCollection<Song> {
     }
     return success;
   }
-  public removeSong(index: number) {
+  private removeSong(index: number): Song[] {
     this.songs.splice(index, 1);
     return this.songs;
   }
-  public getRemoveIndex(songName: string) {
-    this.songs.forEach((song) => {
-      
-    });
+  public getRemoveIndex(songName: string): Song[] {
+    let i = 0;
+    for (i = 0; i < this.songs.length; i++) {
+      if (this.songs[i].getName() === songName) {
+        break;
+      }
+    }
+    return this.removeSong(i);
   }
 }

@@ -35,11 +35,11 @@ console.log(artistCollection);
 console.log();
 console.log(songCollection.getSongAuthor(BadBunny));
 console.log();
-console.log(pruebagenerocol.getGenre('Trap'));
+console.log(genreCollection.getGenre('Trap'));
 
 console.log();
 console.log();
 console.log(artistCollection.getArtist('BadBunny'));
 console.log(artistCollection.getRemoveIndex('BadBunny'));
 console.log(songCollection.getRemoveIndex('Netflix'));
-console.log(songCollection.getRemoveIndex('Netflix'));
+console.log(genreCollection.getRemoveIndex('Netflix'));
