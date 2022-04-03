@@ -1,4 +1,4 @@
-abstract class GeneralSort<T> {
+export abstract class GeneralSort<T> {
   constructor() {
   }
   abstract greaterSort(): T;

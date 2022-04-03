@@ -43,4 +43,7 @@ export class SongCollection extends BasicStreamableCollection<Song> {
     }
     return this.removeSong(i);
   }
+  public getColectionlength(): number {
+    return this.songs.length;
+  }
 }
