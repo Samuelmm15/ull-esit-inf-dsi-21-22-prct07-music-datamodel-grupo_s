@@ -11,6 +11,14 @@ class SongCollection extends basicstreamablecollection_1.BasicStreamableCollecti
     addSong(song) {
         this.songs.push(song);
     }
+    getSong(songName) {
+        for (let i = 0; i < this.songs.length; i++) {
+            if (this.songs[i].getName() === songName) {
+                return this.songs[i];
+            }
+        }
+        return `No existe la canción que intenta buscar`;
+    }
     getSongAuthor(author) {
         for (let i = 0; i < this.songs.length; i++) {
             if (this.songs[i].getAuthor() === author) {
@@ -31,6 +39,14 @@ class SongCollection extends basicstreamablecollection_1.BasicStreamableCollecti
         }
         return success;
     }
+    getReproductionsNumber(reproductionsNumber) {
+        for (let i = 0; i < this.songs.length; i++) {
+            if (this.songs[i].getReproductionsNumber() === reproductionsNumber) {
+                return this.songs[i];
+            }
+        }
+        return `No existe la canción que intenta buscar`;
+    }
     removeSong(index) {
         this.songs.splice(index, 1);
         return this.songs;
@@ -43,6 +59,12 @@ class SongCollection extends basicstreamablecollection_1.BasicStreamableCollecti
             }
         }
         return this.removeSong(i);
+    }
+    getColectionlength() {
+        return this.songs.length;
+    }
+    getnObject(position) {
+        return this.songs[position];
     }
 }
 exports.SongCollection = SongCollection;

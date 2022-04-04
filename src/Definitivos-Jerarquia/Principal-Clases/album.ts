@@ -9,7 +9,7 @@ import {Song} from './song';
  */
 export class Album {
   constructor(private name: string, private group: Group, private artist: Artist,
-    private yearPublication: number, private genre: MusicGenre, private songs: Song) {
+    private yearPublication: number, private genre: MusicGenre, private songs: Song[]) {
   }
   getName(): string {
     return this.name;
@@ -26,7 +26,8 @@ export class Album {
   getGenre(): MusicGenre {
     return this.genre;
   }
-  getSongs(): Song {
-    return this.songs;
+  getSongs(song: Song): Song[] {
+    // return this.songs;
+    return this.songs.filter((s) => s.getName() === song.getName());
   }
 }

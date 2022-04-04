@@ -29,8 +29,9 @@ class Album {
     getGenre() {
         return this.genre;
     }
-    getSongs() {
-        return this.songs;
+    getSongs(song) {
+        // return this.songs;
+        return this.songs.filter((s) => s.getName() === song.getName());
     }
 }
 exports.Album = Album;

@@ -15,8 +15,9 @@ class Playlists {
     getName() {
         return this.name;
     }
-    getSongs() {
-        return this.songs;
+    getSongs(song) {
+        // return this.songs;
+        return this.songs.filter((s) => s.getName() === song.getName());
     }
     // Podríamos hacer una interfaz para esto
     getDuration() {

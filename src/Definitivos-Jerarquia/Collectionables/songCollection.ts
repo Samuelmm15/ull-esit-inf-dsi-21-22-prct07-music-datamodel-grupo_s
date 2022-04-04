@@ -10,6 +10,14 @@ export class SongCollection extends BasicStreamableCollection<Song> {
   public addSong(song: Song) {
     this.songs.push(song);
   }
+  public getSong(songName: string): Song | string {
+    for (let i = 0; i < this.songs.length; i++) {
+      if (this.songs[i].getName() === songName) {
+        return this.songs[i];
+      }
+    }
+    return `No existe la canción que intenta buscar`;
+  }
   public getSongAuthor(author: Artist): Artist | string {
     for (let i = 0; i < this.songs.length; i++) {
       if (this.songs[i].getAuthor() === author) {
@@ -30,6 +38,14 @@ export class SongCollection extends BasicStreamableCollection<Song> {
     }
     return success;
   }
+  public getReproductionsNumber(reproductionsNumber: number): Song | string {
+    for (let i = 0; i < this.songs.length; i++) {
+      if (this.songs[i].getReproductionsNumber() === reproductionsNumber) {
+        return this.songs[i];
+      }
+    }
+    return `No existe la canción que intenta buscar`;
+  }
   private removeSong(index: number): Song[] {
     this.songs.splice(index, 1);
     return this.songs;
@@ -45,5 +61,8 @@ export class SongCollection extends BasicStreamableCollection<Song> {
   }
   public getColectionlength(): number {
     return this.songs.length;
+  }
+  public getnObject(position: number): Song {
+    return this.songs[position];
   }
 }
