@@ -135,11 +135,11 @@ function displayTodoList(): void {
   collection.getTodoItems(showCompleted).forEach((item) => item.printDetails());
 }
     enum Commands {
-        Add = "Add New Task",
-        Complete = "Complete Task",
-        Toggle = "Show/Hide Completed",
-        Purge = "Remove Completed Tasks",
-        Quit = "Quit"
+      Add = "Add New Task",
+      Complete = "Complete Task",
+      Toggle = "Show/Hide Completed",
+      Purge = "Remove Completed Tasks",
+      Quit = "Quit"
     }
 function promptAdd(): void {
   console.clear();

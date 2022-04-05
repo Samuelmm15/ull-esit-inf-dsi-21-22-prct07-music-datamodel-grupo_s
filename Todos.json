@@ -9,6 +9,11 @@
       "complete": false,
       "id": 4,
       "task": "filip"
+    },
+    {
+      "complete": false,
+      "id": 1,
+      "task": "samuel"
     }
   ]
 }
