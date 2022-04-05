@@ -121,10 +121,13 @@ artistNameSort.lowerSort();*/
 /** ********** NO BORREN ESTO ************/
 import {TodoItem} from "./PruebasInquirer/todoItem";
 import {TodoCollection} from "./PruebasInquirer/todoCollection";
+import {JsonTodoCollection} from "./PruebasInquirer/jsonTodoCollection";
 const todos: TodoItem[] = [
   new TodoItem(1, "Buy Flowers"), new TodoItem(2, "Get Shoes"),
-  new TodoItem(3, "Collect Tickets"), new TodoItem(4, "Call Joe", true)];
-const collection: TodoCollection = new TodoCollection("Adam", todos);
+  new TodoItem(3, "Collect Tickets"), new TodoItem(4, "Call Joe",
+      true)];
+const collection: TodoCollection = new JsonTodoCollection("Adam", todos);
+// const collection: TodoCollection = new TodoCollection("Adam", todos);
 let showCompleted = true;
 function displayTodoList(): void {
   console.log(`${collection.userName}'s Todo List ` +

@@ -118,17 +118,14 @@ yearAlbum.lowerSort();
 const artistNameSort = new ArtistNameSort([Bruno, BadBunny]);
 artistNameSort.lowerSort();*/
 /** ********** NO BORREN ESTO ************/
-npm;
-install;
-lowdb;
-.0;
 const todoItem_1 = require("./PruebasInquirer/todoItem");
-const todoCollection_1 = require("./PruebasInquirer/todoCollection");
+const jsonTodoCollection_1 = require("./PruebasInquirer/jsonTodoCollection");
 const todos = [
     new todoItem_1.TodoItem(1, "Buy Flowers"), new todoItem_1.TodoItem(2, "Get Shoes"),
     new todoItem_1.TodoItem(3, "Collect Tickets"), new todoItem_1.TodoItem(4, "Call Joe", true)
 ];
-const collection = new todoCollection_1.TodoCollection("Adam", todos);
+const collection = new jsonTodoCollection_1.JsonTodoCollection("Adam", todos);
+// const collection: TodoCollection = new TodoCollection("Adam", todos);
 let showCompleted = true;
 function displayTodoList() {
     console.log(`${collection.userName}'s Todo List ` +
