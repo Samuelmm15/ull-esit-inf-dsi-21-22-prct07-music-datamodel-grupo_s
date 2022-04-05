@@ -118,6 +118,10 @@ yearAlbum.lowerSort();
 const artistNameSort = new ArtistNameSort([Bruno, BadBunny]);
 artistNameSort.lowerSort();*/
 /** ********** NO BORREN ESTO ************/
+npm;
+install;
+lowdb;
+.0;
 const todoItem_1 = require("./PruebasInquirer/todoItem");
 const todoCollection_1 = require("./PruebasInquirer/todoCollection");
 const todos = [

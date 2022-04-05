@@ -12,7 +12,6 @@ export class JsonTodoCollection extends TodoCollection {
 
   constructor(public userName: string, todoItems: TodoItem[] = []) {
     super(userName, []);
-    this.database = lowdb();
     this.database = lowdb(new FileSync("Todos.json"));
     if (this.database.has("tasks").value()) {
       const dbItems = this.database.get("tasks").value();
