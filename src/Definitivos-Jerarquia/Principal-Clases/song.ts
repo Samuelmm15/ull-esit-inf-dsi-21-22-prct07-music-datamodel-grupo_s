@@ -6,8 +6,8 @@ import {MusicGenre} from './musicGenre';
  * song objects
  */
 export class Song {
-  constructor(private name : string, private author : Artist, private songDuration : number,
-  private genre : MusicGenre, private single : string, private reproductionsNumber : number) {}
+  constructor(private name : string, private author : Artist, private songDuration : string,
+  private genre : MusicGenre, private single : boolean, private reproductionsNumber : number) {}
 
   getName() : string {
     return this.name;
@@ -17,15 +17,23 @@ export class Song {
     return this.author;
   }
 
-  getSongDuration() : number {
+  getSongDuration(): string {
     return this.songDuration;
+  }
+
+  durationFormat(): number {
+    const prueba: string[] = this.getSongDuration().split(':');
+    const minutes2Seconds: number = parseInt(prueba[0]) * 60;
+    const result: number = minutes2Seconds + parseInt(prueba[1]);
+
+    return result;
   }
 
   getGenre() : MusicGenre {
     return this.genre;
   }
 
-  getSingle() : string {
+  getSingle() : boolean {
     return this.single;
   }
 

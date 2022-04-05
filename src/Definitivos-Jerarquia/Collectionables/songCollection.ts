@@ -46,6 +46,14 @@ export class SongCollection extends BasicStreamableCollection<Song> {
     }
     return `No existe la canción que intenta buscar`;
   }
+  public getDuration(duration: number): Song | string {
+    for (let i = 0; i < this.songs.length; i++) {
+      if (this.songs[i].durationFormat() === duration) {
+        return this.songs[i];
+      }
+    }
+    return `No existe la canción que intenta buscar`;
+  }
   private removeSong(index: number): Song[] {
     this.songs.splice(index, 1);
     return this.songs;

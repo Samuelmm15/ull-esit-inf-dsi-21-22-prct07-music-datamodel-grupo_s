@@ -60,4 +60,10 @@ export class GenreCollection extends BasicStreamableCollection<MusicGenre> {
     }
     return this.removeArtist(i);
   }
+  public getColectionlength(): number {
+    return this.genres.length;
+  }
+  public getnObject(position: number): MusicGenre {
+    return this.genres[position];
+  }
 }

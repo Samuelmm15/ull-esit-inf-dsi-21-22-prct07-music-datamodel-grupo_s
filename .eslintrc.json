@@ -18,6 +18,7 @@
         "quotes": "off",
         "max-len": "off",
         "valid-jsdoc": "off",
-        "require-jsdoc": "off"
+        "require-jsdoc": "off",
+        "no-irregular-whitespace": "off"
     }
 }

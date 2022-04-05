@@ -2,9 +2,7 @@
 import {GeneralSort} from './abstractSort';
 import {Playlists} from '../Principal-Clases/playlist';
 
-// FALTA DEVOLVER DE MANERA CORRECTA LOS OBJETOS DE TIPO PLAYLIST
-
-export class PlaylistSort extends GeneralSort<Playlists> {
+export class PlaylistNameSort extends GeneralSort<Playlists> {
   constructor(protected playlist: Playlists[]) {
     super();
   }
@@ -15,6 +13,13 @@ export class PlaylistSort extends GeneralSort<Playlists> {
     }
     auxiliary.sort();
     let result: Playlists[] = [];
+    for (let i = 0; i < auxiliary.length; i++) {
+      for (let j = 0; j < this.playlist.length; j++) {
+        if (this.playlist[j].getName() === auxiliary[i]) {
+          result.push(this.playlist[j]);
+        }
+      }
+    }
     return result;
   }
   lowerSort(): Playlists[] {
@@ -24,6 +29,13 @@ export class PlaylistSort extends GeneralSort<Playlists> {
     }
     auxiliary.reverse().sort();
     let result: Playlists[] = [];
+    for (let i = 0; i < auxiliary.length; i++) {
+      for (let j = 0; j < this.playlist.length; j++) {
+        if (this.playlist[j].getName() === auxiliary[i]) {
+          result.push(this.playlist[j]);
+        }
+      }
+    }
     return result;
   }
 }

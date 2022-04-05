@@ -60,5 +60,11 @@ class GenreCollection extends basicstreamablecollection_1.BasicStreamableCollect
         }
         return this.removeArtist(i);
     }
+    getColectionlength() {
+        return this.genres.length;
+    }
+    getnObject(position) {
+        return this.genres[position];
+    }
 }
 exports.GenreCollection = GenreCollection;

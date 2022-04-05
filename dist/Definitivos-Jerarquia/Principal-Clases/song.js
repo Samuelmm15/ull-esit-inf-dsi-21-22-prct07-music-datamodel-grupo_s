@@ -23,6 +23,12 @@ class Song {
     getSongDuration() {
         return this.songDuration;
     }
+    durationFormat() {
+        const prueba = this.getSongDuration().split(':');
+        const minutes2Seconds = parseInt(prueba[0]) * 60;
+        const result = minutes2Seconds + parseInt(prueba[1]);
+        return result;
+    }
     getGenre() {
         return this.genre;
     }

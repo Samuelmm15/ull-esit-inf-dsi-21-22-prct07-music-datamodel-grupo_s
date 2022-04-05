@@ -1,10 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PlaylistSort = void 0;
+exports.PlaylistNameSort = void 0;
 /* eslint-disable prefer-const */
 const abstractSort_1 = require("./abstractSort");
-// FALTA DEVOLVER DE MANERA CORRECTA LOS OBJETOS DE TIPO PLAYLIST
-class PlaylistSort extends abstractSort_1.GeneralSort {
+class PlaylistNameSort extends abstractSort_1.GeneralSort {
     constructor(playlist) {
         super();
         this.playlist = playlist;
@@ -16,6 +15,13 @@ class PlaylistSort extends abstractSort_1.GeneralSort {
         }
         auxiliary.sort();
         let result = [];
+        for (let i = 0; i < auxiliary.length; i++) {
+            for (let j = 0; j < this.playlist.length; j++) {
+                if (this.playlist[j].getName() === auxiliary[i]) {
+                    result.push(this.playlist[j]);
+                }
+            }
+        }
         return result;
     }
     lowerSort() {
@@ -25,7 +31,14 @@ class PlaylistSort extends abstractSort_1.GeneralSort {
         }
         auxiliary.reverse().sort();
         let result = [];
+        for (let i = 0; i < auxiliary.length; i++) {
+            for (let j = 0; j < this.playlist.length; j++) {
+                if (this.playlist[j].getName() === auxiliary[i]) {
+                    result.push(this.playlist[j]);
+                }
+            }
+        }
         return result;
     }
 }
-exports.PlaylistSort = PlaylistSort;
+exports.PlaylistNameSort = PlaylistNameSort;

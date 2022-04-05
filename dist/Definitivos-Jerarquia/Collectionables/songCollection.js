@@ -47,6 +47,14 @@ class SongCollection extends basicstreamablecollection_1.BasicStreamableCollecti
         }
         return `No existe la canción que intenta buscar`;
     }
+    getDuration(duration) {
+        for (let i = 0; i < this.songs.length; i++) {
+            if (this.songs[i].durationFormat() === duration) {
+                return this.songs[i];
+            }
+        }
+        return `No existe la canción que intenta buscar`;
+    }
     removeSong(index) {
         this.songs.splice(index, 1);
         return this.songs;
