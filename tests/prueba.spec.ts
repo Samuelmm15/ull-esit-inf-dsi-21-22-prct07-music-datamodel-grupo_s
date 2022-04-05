@@ -19,7 +19,7 @@ const Reggae = new MusicGenre('Reggae', Iluminati, BadBunny, 'Touralmundo', 'Cha
 const Chambea = new Song('Chambea', BadBunny, 5, Trap, '2', 2016015);
 
 // eslint-disable-next-line no-unused-vars
-const Touralmundo = new Album('Touralmundo', Iluminati, BadBunny, 2016, Trap, Chambea);
+const Touralmundo = new Album('Touralmundo', Iluminati, BadBunny, 2016, Trap, [Chambea]);
 
 // const lista = new ArtistsCollection([BadBunny]);
 describe("ARTISTCOLLECTION TEST", () => {
