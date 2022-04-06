@@ -1,32 +1,32 @@
-import {TodoItem} from "./todoItem";
+import {Artist} from "../Definitivos-Jerarquia/Principal-Clases/artist";
 type ItemCounts = {
-      total: number,
-      incomplete: number
+  total: number,
+  incomplete: number
   }
-export class TodoCollection {
+export class ArtistCollectionInquire {
   private nextId: number = 1;
-  protected itemMap = new Map<number, TodoItem>();
-  constructor(public userName: string, todoItems: TodoItem[] = []) {
-    todoItems.forEach((item) => this.itemMap.set(item.id, item));
+  protected itemMap = new Map<number, Artist>();
+  constructor(public userName: string, Artists: Artist[] = []) {
+    Artists.forEach((item) => this.itemMap.set(item.id, item));
   }
   addTodo(task: string): number {
     while (this.getTodoById(this.nextId)) {
       this.nextId++;
     }
-    this.itemMap.set(this.nextId, new TodoItem(this.nextId, task));
+    this.itemMap.set(this.nextId, new Artist(this.nextId, task));
     return this.nextId;
   }
-  getTodoById(id: number): TodoItem | undefined {
+  getTodoById(id: number): Artist | undefined {
     return this.itemMap.get(id);
   }
-  getTodoItems(includeComplete: boolean): TodoItem[] {
+  getArtists(includeComplete: boolean): Artist[] {
     return [...this.itemMap.values()]
         .filter((item) => includeComplete || !item.complete);
   }
   markComplete(id: number, complete: boolean) {
-    const todoItem = this.getTodoById(id);
-    if (todoItem) {
-      todoItem.complete = complete;
+    const Artist = this.getTodoById(id);
+    if (Artist) {
+      Artist.complete = complete;
     }
   }
   removeComplete() {
@@ -39,7 +39,7 @@ export class TodoCollection {
   getItemCounts(): ItemCounts {
     return {
       total: this.itemMap.size,
-      incomplete: this.getTodoItems(false).length,
+      incomplete: this.getArtists(false).length,
     };
   }
 }

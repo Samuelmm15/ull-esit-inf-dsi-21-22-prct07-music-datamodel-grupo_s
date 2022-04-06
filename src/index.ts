@@ -41,109 +41,33 @@ const songCollectionOBJ = new SongCollection([Netflix, ThisFeeling, Chambea, ALV
 const albumOBJ = new Album('ALV', Iluminati, BadBunny, 2001, Trap, [ALV, Chambea]);
 const albumOBJ1 = new Album('ErPepe', Iluminati, BadBunny, 2001, Trap, [ALV, Chambea]);
 const albumSortOBJ = new AlbumSort([albumOBJ, albumOBJ1]);
-// console.log(albumSortOBJ.greaterSort());
-// console.log(albumSortOBJ.lowerSort());
-
-// console.log(Chambea.durationFormat());
-
-// GENRE COLLECTION
-// const genreSortOBJ = new GenreSort(genreCollectionOBJ);
-// console.log(genreSortOBJ.greaterSort());
-// console.log(genreSortOBJ.lowerSort());
-
-const durationSortObj = new SongDurationSort(songCollectionOBJ);
-console.log(durationSortObj.greaterSort());
-
-// console.log(albumOBJ);
-
-// console.log();
-// console.log('----------------------------');
-// // console.log(songCollectionOBJ);
-// // console.log(songCollectionOBJ.getColectionlength());
-// // console.log(songCollectionOBJ.getnObject(2));
-// console.log('----------------------------');
-// console.log();
-
-// console.log(artistCollection.getName('BadBunny'));
-// console.log(artistCollection.getGroup('Iluminati'));
-// console.log(artistCollection.getGenre('Reggae'));
-// console.log(artistCollection.getAlbum('Touralmundo'));
-// console.log(artistCollection.getPublishedSongs('BadBunny'));
-// console.log(artistCollection.getMonthlyListeners('BadBunny'));
-
-// console.log(artistCollection);
-// const DonDiablo = new Artist('Don Diablo', 'Don Diablo', 'House Music', 'Future', '100', 1000000);
-// artistCollection.addArtist(DonDiablo);
-// console.log(artistCollection);
-
-// console.log();
-// console.log(songCollection.getSongAuthor(BadBunny));
-// console.log();
-// console.log(genreCollection.getGenre('Trap'));
-
-// console.log();
-// console.log();
-// console.log(artistCollection.getArtist('BadBunny'));
-
-// console.log('Prueba eliminar datos');
-// console.log('Artista');
-// console.log(artistCollection.getRemoveIndex('BadBunny'));
-// console.log('Canción');
-// console.log(songCollectionOBJ.getRemoveIndex('Netflix'));
-// console.log('+ Canciones --------------');
-// console.log(songCollectionOBJ.addSong(Netflix));
-// console.log(songCollection.addSong(Chambea));
-
-// console.log('Genero');
-// console.log(genreCollection.getRemoveIndex('Trap'));
-
-// Pruebas de la ordenación
-// const greaterTitleSortOBJ = new TitleSongSort(songCollectionOBJ);
-// console.log();
-// console.log();
-// greaterTitleSortOBJ.greaterSort();
-// greaterTitleSortOBJ.lowerSort();
-
-// const greaterReproduction = new ReproductionNumberSort(songCollectionOBJ);
-// greaterReproduction.lowerSort();
-// greaterReproduction.greaterSort();
-// greaterTitleSortObject.greaterSort();
-// const singleFilterOBJ = new SingleFilter(songCollectionOBJ);
-// console.log(singleFilterOBJ.filter());
-
-/* const yearAlbum = new AlbumYearSort([albumOBJ, albumOBJ1]);
-yearAlbum.lowerSort();
-
-const artistNameSort = new ArtistNameSort([Bruno, BadBunny]);
-artistNameSort.lowerSort();*/
 
 
 /** ********** NO BORREN ESTO ************/
-import {TodoItem} from "./PruebasInquirer/todoItem";
+import {ArtistItem} from "./PruebasInquirer/ArtistItem";
 import {TodoCollection} from "./PruebasInquirer/todoCollection";
 import {JsonTodoCollection} from "./PruebasInquirer/jsonTodoCollection";
-const todos: TodoItem[] = [
-  new TodoItem(1, "Buy Flowers"), new TodoItem(2, "Get Shoes"),
-  new TodoItem(3, "Collect Tickets"), new TodoItem(4, "Call Joe",
-      true)];
-const collection: TodoCollection = new JsonTodoCollection("Adam", todos);
+const todos: ArtistItem[] = [
+  new ArtistItem(1, "Bad Bunny"), new ArtistItem(1, "Bad Bunny", true),
+  new ArtistItem(2, "Don Diablo"), new ArtistItem(2, "Don Diablo", true)];
+const collection: TodoCollection = new JsonTodoCollection("Bad Bunny", todos);
 // const collection: TodoCollection = new TodoCollection("Adam", todos);
 let showCompleted = true;
 function displayTodoList(): void {
-  console.log(`${collection.userName}'s Todo List ` +
-            `(${ collection.getItemCounts().incomplete } items to do)`);
-  collection.getTodoItems(showCompleted).forEach((item) => item.printDetails());
+  console.log(`${collection.userName}'s Artist List ` +
+    `(${ collection.getItemCounts().incomplete } Artist List empty)`);
+  collection.getArtistItems(showCompleted).forEach((item) => item.printDetails());
 }
     enum Commands {
-      Add = "Add New Task",
-      Complete = "Complete Task",
+      Add = "Add New Artist",
+      Complete = "Artist Add Completed",
       Toggle = "Show/Hide Completed",
-      Purge = "Remove Completed Tasks",
+      Purge = "Remove Completed additions",
       Quit = "Quit"
     }
 function promptAdd(): void {
   console.clear();
-  inquirer.prompt({type: "input", name: "add", message: "Enter task:"})
+  inquirer.prompt({type: "input", name: "add", message: "Enter Artist:"})
       .then((answers) => {
         if (answers["add"] !== "") {
           collection.addTodo(answers["add"]);
@@ -154,12 +78,12 @@ function promptAdd(): void {
 function promptComplete(): void {
   console.clear();
   inquirer.prompt({type: "checkbox", name: "complete",
-    message: "Mark Tasks Complete",
-    choices: collection.getTodoItems(showCompleted).map((item) =>
+    message: "Mark the artist you would delete",
+    choices: collection.getArtistItems(showCompleted).map((item) =>
       ({name: item.task, value: item.id, checked: item.complete})),
   }).then((answers) => {
     const completedTasks = answers["complete"] as number[];
-    collection.getTodoItems(true).forEach((item) =>
+    collection.getArtistItems(true).forEach((item) =>
       collection.markComplete(item.id,
           completedTasks.find((id) => id === item.id) != undefined));
     promptUser();

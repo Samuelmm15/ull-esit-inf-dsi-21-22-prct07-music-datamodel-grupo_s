@@ -1,32 +1,32 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TodoCollection = void 0;
-const todoItem_1 = require("./todoItem");
-class TodoCollection {
-    constructor(userName, todoItems = []) {
+exports.ArtistCollectionInquire = void 0;
+const artist_1 = require("../Definitivos-Jerarquia/Principal-Clases/artist");
+class ArtistCollectionInquire {
+    constructor(userName, Artists = []) {
         this.userName = userName;
         this.nextId = 1;
         this.itemMap = new Map();
-        todoItems.forEach((item) => this.itemMap.set(item.id, item));
+        Artists.forEach((item) => this.itemMap.set(item.id, item));
     }
     addTodo(task) {
         while (this.getTodoById(this.nextId)) {
             this.nextId++;
         }
-        this.itemMap.set(this.nextId, new todoItem_1.TodoItem(this.nextId, task));
+        this.itemMap.set(this.nextId, new artist_1.Artist(this.nextId, task));
         return this.nextId;
     }
     getTodoById(id) {
         return this.itemMap.get(id);
     }
-    getTodoItems(includeComplete) {
+    getArtists(includeComplete) {
         return [...this.itemMap.values()]
             .filter((item) => includeComplete || !item.complete);
     }
     markComplete(id, complete) {
-        const todoItem = this.getTodoById(id);
-        if (todoItem) {
-            todoItem.complete = complete;
+        const Artist = this.getTodoById(id);
+        if (Artist) {
+            Artist.complete = complete;
         }
     }
     removeComplete() {
@@ -39,8 +39,8 @@ class TodoCollection {
     getItemCounts() {
         return {
             total: this.itemMap.size,
-            incomplete: this.getTodoItems(false).length,
+            incomplete: this.getArtists(false).length,
         };
     }
 }
-exports.TodoCollection = TodoCollection;
+exports.ArtistCollectionInquire = ArtistCollectionInquire;

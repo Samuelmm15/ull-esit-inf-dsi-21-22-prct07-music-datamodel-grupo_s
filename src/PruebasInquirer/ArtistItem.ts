@@ -1,4 +1,4 @@
-export class TodoItem {
+export class ArtistItem {
   public id: number;
   public task: string;
   public complete: boolean = false;
