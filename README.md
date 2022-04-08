@@ -11,8 +11,8 @@ Group: S \
 Course: Desarrollo de Sistemas Informáticos
 
 ## Tareas Previas
-[] Aceptar la asignación de GitHub Classroom asociada a esta práctica.
-[] 
+[X] Aceptar la asignación de GitHub Classroom asociada a esta práctica.
+[X] 
 
 ## Introducción
 En esta práctica, la primera grupal de la asignatura, tendrá que llevar a cabo un diseño orientado a objetos del modelo de datos de un sistema de información que permita almacenar una biblioteca de música. Esta biblioteca de música debe guardar una serie de canciones, géneros musicales, albums, grupos y artistas donde cada elemento tiene sus atributos correspondientes; toda está información se tendrá que guardar en una playlist. En las playlists existentes en la biblioteca los usuarios van a poder visualizar toda la información asociada a una playlist, como lo son el nombre de la playlist, los géneros incluidos y la duración de dicha playlist en horas, minutos y segundos. En la playlist también se debería navegar por está para ver las canciones que se incluyen en está siguiendo una serie de criterios para ordenar la información y por último un usuario debería poder crear alguna playlist y borrar su propia playlist.
