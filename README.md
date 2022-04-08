@@ -22,10 +22,16 @@ En esta práctica, la primera grupal de la asignatura, tendrá que llevar a cabo
 
 ## Codificación
 
-### Jerarquía de Clases y de directorios
+### Jerarquía de Clases 
 
-### Sistema de ordenación
+#### Clases Principales
 
-### Inquirer
+#### Colecciones
 
-### Lowdb
+#### Funciones de ordenación
+
+### Clase Gestor
+
+## Inquirer
+
+## Lowdb
