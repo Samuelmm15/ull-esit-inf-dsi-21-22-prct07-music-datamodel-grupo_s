@@ -147,6 +147,40 @@ Las funciones de ordenación las encontramos en el directorio ```SortFunctions``
  ┃ ┗ 📜titleSongSort.ts
 ```
 
+En este directorio se encuentran todas las ordenaciones y filtros que se deben añadir a la funcionalidad del sistema que van a utilizar los usuarios para navegar las playlists existentes o la lista de canciones. 
+
+En está implementación tenemos una clase abstracta llamada ```GeneralSort``` donde se definen las funciones de ordenación asecendente y descendente que deben de tener el resto de clases derivadas. En está clase se definen dos métodos, el método ```greaterSort``` que ordena de forma descendente y del método ```lowerSort``` que ordena de forma ascendente.
+
+Las ordenaciones que se deben utilizar para mostrar las diferentes listas de artistas, canciones, albums y playlists siguen los siguientes criterios:
+
+  - Alfabéticamente por título de la canción, ascendente y descendente.
+    - Esto se realiza en la clase ```TitleSongSort```
+  - Alfabéticamente por nombre del álbum, ascendente y descendente.
+    - Esto se realiza en la clase ```AlbumSort```
+  - Alfabéticamente por nombre de la playlist, ascendente y descendente.
+    - Esto se realiza en la clase ```PlaylistNameSort```
+  - Por año de lanzamiento del álbum, ascendente y descendente.
+    - Esto se realiza en la clase ```AlbumYearSort```
+  - Por número de reproducciones totales, ascendente y descendente.
+    - Esto se realiza en la clase ```ReproductionNumberSort```
+  - Filtrar para mostrar únicamente los singles lanzados.
+    - Esto se realiza en la clase ```SingleFilter```
+
+Las ordenaciones que se deben utilizar para navegar por las diferentes playlists siguen los siguientes criterios:
+
+  - Alfabéticamente por título de la canción, ascendente y descendente.
+    - Esto se realiza en la clase ```TitleSongSort```
+  - Alfabéticamente por nombre del grupo/artista, ascendente y descendente.
+    - Esto se realiza en la clase ```GroupNameSort``` y en la clase ```ArtistNameSort```
+  - Por año de lanzamiento, ascendente y descendente.
+    - Esto se realiza en la clase ```AlbumYearSort```
+  - Por duración de la canción, ascendente y descendente.
+    - Esto se realiza en la clase ```SongDurationSort```
+  - Por género musical, ascendente y descendente.
+    - Esto se realiza en la clase ```GenreSort```
+  - Por número de reproducciones totales, ascendente y descendente.
+    - Esto se realiza en la clase ```TReproductionNumberSort```
+
 ## Clase Gestor
 
 ## Inquirer
