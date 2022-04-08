@@ -24,46 +24,80 @@ En esta práctica, la primera grupal de la asignatura, tendrá que llevar a cabo
 
 En está primera parte se comentará todo lo relacionada con la implementación que se ha elegido para realizar la biblioteca de música que se pretende conseguir.
 
+Antes de empezar podemos observar todo el contenido del directorio ```src``` donde se encuentra todo nuestro código. Podemos ver 3 directorios principales, por un lado tenemos el directorio ```DefinitiveHierarchy``` donde se encuentran las clases base del proyecto, por otro lado el directorio ````GestorClass``` donde se encuentra la clase gestor y por último el directorio ```InquirerFiles``` donde se encuentra todo lo relacionado con Inquirer.
+
 ```
 📦src
  ┣ 📂DefinitiveHierarchy
  ┃ ┣ 📂Collectionables
- ┃ ┃ ┣ 📜artistCollection.ts
- ┃ ┃ ┣ 📜basicstreamablecollection.ts
- ┃ ┃ ┣ 📜genreCollection.ts
- ┃ ┃ ┣ 📜pruebasoncol.ts
- ┃ ┃ ┣ 📜songCollection.ts
- ┃ ┃ ┗ 📜streamable.ts
  ┃ ┣ 📂PrincipalClases
- ┃ ┃ ┣ 📜album.ts
- ┃ ┃ ┣ 📜artist.ts
- ┃ ┃ ┣ 📜groups.ts
- ┃ ┃ ┣ 📜musicGenre.ts
- ┃ ┃ ┣ 📜playlist.ts
- ┃ ┃ ┗ 📜song.ts
  ┃ ┗ 📂SortFunctions
- ┃ ┃ ┣ 📜abstractSort.ts
- ┃ ┃ ┣ 📜albumSort.ts
- ┃ ┃ ┣ 📜albumYearSort.ts
- ┃ ┃ ┣ 📜artistNameSort.ts
- ┃ ┃ ┣ 📜durationSongSort.ts
- ┃ ┃ ┣ 📜genreSort.ts
- ┃ ┃ ┣ 📜groupNameSort.ts
- ┃ ┃ ┣ 📜playlistSort.ts
- ┃ ┃ ┣ 📜reproductionNumberSort.ts
- ┃ ┃ ┣ 📜singleFilter.ts
- ┃ ┃ ┗ 📜titleSongSort.ts
  ┣ 📂GestorClass
  ┣ 📂InquirerFiles
 ```
 
 ### Jerarquía de Clases 
 
+En el directorio de ```DefinitiveHierarchy``` se encuentran las clases base, donde nos encontramos con las clases principales, las colecciones y las clases que definen las distintas ordenaciones.
+
 #### Clases Principales
+
+Las clases Principales las encontramos en el directorio ```PrincipalClases``` y son las siguientes:
+
+```
+📦DefinitiveHierarchy
+ ┣ 📂Collectionables
+ ┣ 📂PrincipalClases
+ ┃ ┣ 📜album.ts
+ ┃ ┣ 📜artist.ts
+ ┃ ┣ 📜groups.ts
+ ┃ ┣ 📜musicGenre.ts
+ ┃ ┣ 📜playlist.ts
+ ┃ ┗ 📜song.ts
+ ┗ 📂SortFunctions
+```
+
+Las principales son ```album.ts```, ```artist.ts```, ```groups.ts```, ```musicGenre.ts```, ```playlist.ts``` y ```song.ts```. La clase base dentro de este directorio es ```Artist```, ya que todas las demás clases van a utilizar objectos de tipo ```Artist```
+
 
 #### Colecciones
 
+Las colecciones las encontramos en el directorio ```Collectionables``` y son las siguientes:
+
+```
+📦DefinitiveHierarchy
+ ┣ 📂Collectionables
+ ┃ ┣ 📜artistCollection.ts
+ ┃ ┣ 📜basicstreamablecollection.ts
+ ┃ ┣ 📜genreCollection.ts
+ ┃ ┣ 📜pruebasoncol.ts
+ ┃ ┣ 📜songCollection.ts
+ ┃ ┗ 📜streamable.ts
+ ┣ 📂PrincipalClases
+ ┗ 📂SortFunctions
+```
+
 #### Funciones de ordenación
+
+Las funciones de ordenación las encontramos en el directorio ```SortFunctions``` y son las siguientes:
+
+```
+📦DefinitiveHierarchy
+ ┣ 📂Collectionables
+ ┣ 📂PrincipalClases
+ ┗ 📂SortFunctions
+ ┃ ┣ 📜abstractSort.ts
+ ┃ ┣ 📜albumSort.ts
+ ┃ ┣ 📜albumYearSort.ts
+ ┃ ┣ 📜artistNameSort.ts
+ ┃ ┣ 📜durationSongSort.ts
+ ┃ ┣ 📜genreSort.ts
+ ┃ ┣ 📜groupNameSort.ts
+ ┃ ┣ 📜playlistSort.ts
+ ┃ ┣ 📜reproductionNumberSort.ts
+ ┃ ┣ 📜singleFilter.ts
+ ┃ ┗ 📜titleSongSort.ts
+```
 
 ## Clase Gestor
 
