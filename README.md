@@ -24,6 +24,8 @@ En esta práctica, la primera grupal de la asignatura, tendrá que llevar a cabo
 
 ### Jerarquía de Clases y de directorios
 
+### Sistema de ordenación
+
 ### Inquirer
 
 ### Lowdb
