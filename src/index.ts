@@ -1,3 +1,4 @@
+/* eslint-disable no-trailing-spaces */
 /* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
 import {Group} from './DefinitiveHierarchy/PrincipalClases/groups';
@@ -43,6 +44,9 @@ import {ArtistsCollection} from "./DefinitiveHierarchy/Collectionables/artistCol
 import {TitleSongSort} from './DefinitiveHierarchy/SortFunctions/titleSongSort';
 import {JsonTodoCollection} from "./InquirerFiles/jsonTodoCollection";
 import {exit} from 'process';
+import { setMaxListeners } from 'events';
+import { monitorEventLoopDelay } from 'perf_hooks';
+import { resolve } from 'path';
 
 // Artist objects
 const BadBunny = new Artist('BadBunny', 'Iluminati', 'Reggae', 'Touralmundo', '2', 12);
@@ -96,7 +100,15 @@ function promptAdd(): void {
         monthlyListeners = answers["monthlyListeners"];
       });
   collectionArtists.addArtist(new Artist(ArtistName, groupName, genre, album, publishedSongs, monthlyListeners));
-  promptUser();
+  
+  inquirer.prompt({type: "input", name: "Continue", message: "¿ You want to return to the main screen ? (y/N): "})
+      .then((answers) => {
+        if (answers["Continue"] === "y") {
+          promptUser();
+        } else {
+          exit();
+        }
+      });
 }
 function promptDefault(): void {
   console.clear();
@@ -104,12 +116,9 @@ function promptDefault(): void {
   for (let i = 0; i < collectionArtists.getArtistsCollectionLength(); i++) {
     console.log(collectionArtists.getArtistList(i));
   }
-  inquirer.prompt({type: "input", name: "Continue", message: "¿ Desea volver a la pantalla principal ? (S/N): "})
+  inquirer.prompt({type: "input", name: "Continue", message: "¿ You want to return to the main screen ? (y/N): "})
       .then((answers) => {
-        /* while (answers["Continue"] !== 'S' && answers["Continue"] !== 'N') {
-          inquirer.prompt({type: "input", name: "Continue", message: "¿ Desea volver a la pantalla principal ? (S/N): "});
-        }*/
-        if (answers["Continue"] === "S") {
+        if (answers["Continue"] === "y") {
           promptUser();
         } else {
           exit();
@@ -117,6 +126,7 @@ function promptDefault(): void {
       });
 }
 function promptUser(): void {
+  setMaxListeners(100);
   console.clear();
   displayTodoList();
   inquirer.prompt({

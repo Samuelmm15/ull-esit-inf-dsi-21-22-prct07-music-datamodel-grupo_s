@@ -46,6 +46,7 @@ const artist_1 = require("./DefinitiveHierarchy/PrincipalClases/artist");
 const artistCollection_1 = require("./DefinitiveHierarchy/Collectionables/artistCollection");
 const jsonTodoCollection_1 = require("./InquirerFiles/jsonTodoCollection");
 const process_1 = require("process");
+const events_1 = require("events");
 // Artist objects
 const BadBunny = new artist_1.Artist('BadBunny', 'Iluminati', 'Reggae', 'Touralmundo', '2', 12);
 const Bruno = new artist_1.Artist('Bruno', 'Arberto', 'Reggae', 'Touralmundo', '2', 12);
@@ -97,7 +98,15 @@ function promptAdd() {
         monthlyListeners = answers["monthlyListeners"];
     });
     collectionArtists.addArtist(new artist_1.Artist(ArtistName, groupName, genre, album, publishedSongs, monthlyListeners));
-    promptUser();
+    inquirer.prompt({ type: "input", name: "Continue", message: "¿ You want to return to the main screen ? (y/N): " })
+        .then((answers) => {
+        if (answers["Continue"] === "y") {
+            promptUser();
+        }
+        else {
+            (0, process_1.exit)();
+        }
+    });
 }
 function promptDefault() {
     console.clear();
@@ -105,12 +114,9 @@ function promptDefault() {
     for (let i = 0; i < collectionArtists.getArtistsCollectionLength(); i++) {
         console.log(collectionArtists.getArtistList(i));
     }
-    inquirer.prompt({ type: "input", name: "Continue", message: "¿ Desea volver a la pantalla principal ? (S/N): " })
+    inquirer.prompt({ type: "input", name: "Continue", message: "¿ You want to return to the main screen ? (y/N): " })
         .then((answers) => {
-        /* while (answers["Continue"] !== 'S' && answers["Continue"] !== 'N') {
-          inquirer.prompt({type: "input", name: "Continue", message: "¿ Desea volver a la pantalla principal ? (S/N): "});
-        }*/
-        if (answers["Continue"] === "S") {
+        if (answers["Continue"] === "y") {
             promptUser();
         }
         else {
@@ -119,6 +125,7 @@ function promptDefault() {
     });
 }
 function promptUser() {
+    (0, events_1.setMaxListeners)(100);
     console.clear();
     displayTodoList();
     inquirer.prompt({
