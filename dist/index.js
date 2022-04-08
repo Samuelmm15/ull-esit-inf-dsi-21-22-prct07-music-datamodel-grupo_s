@@ -23,80 +23,99 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-/* eslint-disable no-unused-vars */
-/* eslint-disable camelcase */
-const artist_1 = require("./Definitivos-Jerarquia/Principal-Clases/artist");
-const groups_1 = require("./Definitivos-Jerarquia/Principal-Clases/groups");
-const musicGenre_1 = require("./Definitivos-Jerarquia/Principal-Clases/musicGenre");
-const song_1 = require("./Definitivos-Jerarquia/Principal-Clases/song");
-const album_1 = require("./Definitivos-Jerarquia/Principal-Clases/album");
-const artistCollection_1 = require("./Definitivos-Jerarquia/Collectionables/artistCollection");
-const songCollection_1 = require("./Definitivos-Jerarquia/Collectionables/songCollection");
-const genreCollection_1 = require("./Definitivos-Jerarquia/Collectionables/genreCollection");
-const albumSort_1 = require("./Definitivos-Jerarquia/SortFunctions/albumSort");
 const inquirer = __importStar(require("inquirer"));
 // import {SongDurationSort} from './Definitivos-Jerarquia/SortFunctions/durationSongSort';
+// const Iluminati = new Group('Iluminati', BadBunny, 2016, 'Reggae', 'Touralmundo', 12);
+// const Trap = new MusicGenre('Trap', Iluminati, BadBunny, 'Touralmundo', 'Chambea');
+// const Reggae = new MusicGenre('Reggae', Iluminati, BadBunny, 'Touralmundo', 'Chambea');
+// // eslint-disable-next-line no-unused-vars
+// // const Touralmundo = new Album('Touralmundo', Iluminati, BadBunny, 2016, Trap, Chambea);
+// const genreCollectionOBJ = new GenreCollection([Trap, Reggae]);
+// // SONG COLLECTION
+// const Chambea = new Song('Chambea', BadBunny, '5:30', Trap, true, 2016015);
+// const Netflix = new Song('Netflix', Bruno, '5:10', Trap, false, 2016010);
+// const ThisFeeling = new Song('This Feeling', Bruno, '5:20', Trap, true, 2016015);
+// const ALV = new Song('ALV', Bruno, '5:40', Trap, true, 2016015);
+// const songCollectionOBJ = new SongCollection([Netflix, ThisFeeling, Chambea, ALV]);
+// // ALBUM COLLECTION
+// const albumOBJ = new Album('ALV', Iluminati, BadBunny, 2001, Trap, [ALV, Chambea]);
+// const albumOBJ1 = new Album('ErPepe', Iluminati, BadBunny, 2001, Trap, [ALV, Chambea]);
+// const albumSortOBJ = new AlbumSort([albumOBJ, albumOBJ1]);
+/** ********** NO BORREN ESTO ************/
+const artist_1 = require("./DefinitiveHierarchy/PrincipalClases/artist");
+const artistCollection_1 = require("./DefinitiveHierarchy/Collectionables/artistCollection");
+const jsonTodoCollection_1 = require("./InquirerFiles/jsonTodoCollection");
+const process_1 = require("process");
+// Artist objects
 const BadBunny = new artist_1.Artist('BadBunny', 'Iluminati', 'Reggae', 'Touralmundo', '2', 12);
 const Bruno = new artist_1.Artist('Bruno', 'Arberto', 'Reggae', 'Touralmundo', '2', 12);
-const Iluminati = new groups_1.Group('Iluminati', BadBunny, 2016, 'Reggae', 'Touralmundo', 12);
-const Trap = new musicGenre_1.MusicGenre('Trap', Iluminati, BadBunny, 'Touralmundo', 'Chambea');
-const Reggae = new musicGenre_1.MusicGenre('Reggae', Iluminati, BadBunny, 'Touralmundo', 'Chambea');
-// eslint-disable-next-line no-unused-vars
-// const Touralmundo = new Album('Touralmundo', Iluminati, BadBunny, 2016, Trap, Chambea);
 const artistCollectionOBJ = new artistCollection_1.ArtistsCollection([Bruno, BadBunny]);
-const genreCollectionOBJ = new genreCollection_1.GenreCollection([Trap, Reggae]);
-// // SONG COLLECTION
-const Chambea = new song_1.Song('Chambea', BadBunny, '5:30', Trap, true, 2016015);
-const Netflix = new song_1.Song('Netflix', Bruno, '5:10', Trap, false, 2016010);
-const ThisFeeling = new song_1.Song('This Feeling', Bruno, '5:20', Trap, true, 2016015);
-const ALV = new song_1.Song('ALV', Bruno, '5:40', Trap, true, 2016015);
-const songCollectionOBJ = new songCollection_1.SongCollection([Netflix, ThisFeeling, Chambea, ALV]);
-// ALBUM COLLECTION
-const albumOBJ = new album_1.Album('ALV', Iluminati, BadBunny, 2001, Trap, [ALV, Chambea]);
-const albumOBJ1 = new album_1.Album('ErPepe', Iluminati, BadBunny, 2001, Trap, [ALV, Chambea]);
-const albumSortOBJ = new albumSort_1.AlbumSort([albumOBJ, albumOBJ1]);
-/** ********** NO BORREN ESTO ************/
-const ArtistItem_1 = require("./PruebasInquirer/ArtistItem");
-const jsonTodoCollection_1 = require("./PruebasInquirer/jsonTodoCollection");
-const todos = [
-    new ArtistItem_1.ArtistItem(1, "Bad Bunny"), new ArtistItem_1.ArtistItem(1, "Bad Bunny", true),
-    new ArtistItem_1.ArtistItem(2, "Don Diablo"), new ArtistItem_1.ArtistItem(2, "Don Diablo", true)
-];
-const collection = new jsonTodoCollection_1.JsonTodoCollection("Bad Bunny", todos);
-// const collection: TodoCollection = new TodoCollection("Adam", todos);
-let showCompleted = true;
+const collectionArtists = new jsonTodoCollection_1.JsonTodoCollection([Bruno, BadBunny]);
 function displayTodoList() {
-    console.log(`${collection.userName}'s Artist List ` +
-        `(${collection.getItemCounts().incomplete} Artist List empty)`);
-    collection.getArtistItems(showCompleted).forEach((item) => item.printDetails());
+    console.log(`ARTIST COLLECTION`);
+    for (let i = 0; i < collectionArtists.getArtistsCollectionLength(); i++) {
+        console.log(collectionArtists.getArtistList(i));
+    }
 }
 var Commands;
 (function (Commands) {
     Commands["Add"] = "Add New Artist";
-    Commands["Complete"] = "Artist Add Completed";
-    Commands["Toggle"] = "Show/Hide Completed";
-    Commands["Purge"] = "Remove Completed additions";
+    Commands["Toggle"] = "Artist Added Default";
+    Commands["Purge"] = "Remove New Added Artists";
     Commands["Quit"] = "Quit";
 })(Commands || (Commands = {}));
 function promptAdd() {
     console.clear();
-    inquirer.prompt({ type: "input", name: "add", message: "Enter Artist:" })
+    let ArtistName = ``;
+    let groupName = ``;
+    let genre = ``;
+    let album = ``;
+    let publishedSongs = ``;
+    let monthlyListeners = 0;
+    inquirer.prompt({ type: "input", name: "ArtistName", message: "Enter Artist Name:" })
         .then((answers) => {
-        if (answers["add"] !== "") {
-            collection.addTodo(answers["add"]);
-        }
-        promptUser();
+        ArtistName = answers["ArtistName"];
     });
+    inquirer.prompt({ type: "input", name: "GroupName", message: "Enter Group Name:" })
+        .then((answers) => {
+        groupName = answers["GroupName"];
+    });
+    inquirer.prompt({ type: "input", name: "Genre", message: "Enter The Genre:" })
+        .then((answers) => {
+        genre = answers["Genre"];
+    });
+    inquirer.prompt({ type: "input", name: "Album", message: "Enter Album Name:" })
+        .then((answers) => {
+        album = answers["Album"];
+    });
+    inquirer.prompt({ type: "input", name: "PublishedSongs", message: "Enter the number of published songs:" })
+        .then((answers) => {
+        publishedSongs = answers["PublishedSongs"];
+    });
+    inquirer.prompt({ type: "input", name: "monthlyListeners", message: "Enter the number of listeners:" })
+        .then((answers) => {
+        monthlyListeners = answers["monthlyListeners"];
+    });
+    collectionArtists.addArtist(new artist_1.Artist(ArtistName, groupName, genre, album, publishedSongs, monthlyListeners));
+    promptUser();
 }
-function promptComplete() {
+function promptDefault() {
     console.clear();
-    inquirer.prompt({ type: "checkbox", name: "complete",
-        message: "Mark the artist you would delete",
-        choices: collection.getArtistItems(showCompleted).map((item) => ({ name: item.task, value: item.id, checked: item.complete })),
-    }).then((answers) => {
-        const completedTasks = answers["complete"];
-        collection.getArtistItems(true).forEach((item) => collection.markComplete(item.id, completedTasks.find((id) => id === item.id) != undefined));
-        promptUser();
+    console.log(`ARTIST DEFAULT COLLECTION`);
+    for (let i = 0; i < collectionArtists.getArtistsCollectionLength(); i++) {
+        console.log(collectionArtists.getArtistList(i));
+    }
+    inquirer.prompt({ type: "input", name: "Continue", message: "¿ Desea volver a la pantalla principal ? (S/N): " })
+        .then((answers) => {
+        /* while (answers["Continue"] !== 'S' && answers["Continue"] !== 'N') {
+          inquirer.prompt({type: "input", name: "Continue", message: "¿ Desea volver a la pantalla principal ? (S/N): "});
+        }*/
+        if (answers["Continue"] === "S") {
+            promptUser();
+        }
+        else {
+            (0, process_1.exit)();
+        }
     });
 }
 function promptUser() {
@@ -110,23 +129,18 @@ function promptUser() {
     }).then((answers) => {
         switch (answers["command"]) {
             case Commands.Toggle:
-                showCompleted = !showCompleted;
-                promptUser();
+                promptDefault();
                 break;
             case Commands.Add:
                 promptAdd();
                 break;
-            case Commands.Complete:
-                if (collection.getItemCounts().incomplete > 0) {
-                    promptComplete();
-                }
-                else {
-                    promptUser();
-                }
-                break;
             case Commands.Purge:
-                collection.removeComplete();
                 promptUser();
+                break;
+            case Commands.Quit:
+                console.clear();
+                console.log(`<< Program Exit >>`);
+                (0, process_1.exit)();
                 break;
         }
     });

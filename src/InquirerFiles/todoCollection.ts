@@ -1,4 +1,3 @@
-"use strict";
 // import {Artist} from "../Definitivos-Jerarquia/Principal-Clases/artist";
 // type ItemCounts = {
 //   total: number,

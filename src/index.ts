@@ -1,93 +1,120 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
-import {Artist} from './Definitivos-Jerarquia/Principal-Clases/artist';
-import {Group} from './Definitivos-Jerarquia/Principal-Clases/groups';
-import {MusicGenre} from './Definitivos-Jerarquia/Principal-Clases/musicGenre';
-import {Song} from './Definitivos-Jerarquia/Principal-Clases/song';
-import {Album} from './Definitivos-Jerarquia/Principal-Clases/album';
-import {ArtistsCollection} from './Definitivos-Jerarquia/Collectionables/artistCollection';
-import {SongCollection} from './Definitivos-Jerarquia/Collectionables/songCollection';
-import {GenreCollection} from './Definitivos-Jerarquia/Collectionables/genreCollection';
-import {TitleSongSort} from './Definitivos-Jerarquia/SortFunctions/titleSongSort';
-import {AlbumSort} from './Definitivos-Jerarquia/SortFunctions/albumSort';
-import {ReproductionNumberSort} from './Definitivos-Jerarquia/SortFunctions/reproductionNumberSort';
-import {SingleFilter} from './Definitivos-Jerarquia/SortFunctions/singleFilter';
-import {AlbumYearSort} from './Definitivos-Jerarquia/SortFunctions/albumYearSort';
-import {ArtistNameSort} from './Definitivos-Jerarquia/SortFunctions/artistNameSort';
-import {GroupNameSort} from './Definitivos-Jerarquia/SortFunctions/groupNameSort';
-import {GenreSort} from './Definitivos-Jerarquia/SortFunctions/genreSort';
-import {SongDurationSort} from './Definitivos-Jerarquia/SortFunctions/durationSongSort';
+import {Group} from './DefinitiveHierarchy/PrincipalClases/groups';
+import {MusicGenre} from './DefinitiveHierarchy/PrincipalClases/musicGenre';
+import {Song} from './DefinitiveHierarchy/PrincipalClases/song';
+import {Album} from './DefinitiveHierarchy/PrincipalClases/album';
+import {SongCollection} from './DefinitiveHierarchy/Collectionables/songCollection';
+import {GenreCollection} from './DefinitiveHierarchy/Collectionables/genreCollection';
+import {AlbumSort} from './DefinitiveHierarchy/SortFunctions/albumSort';
+import {ReproductionNumberSort} from './DefinitiveHierarchy/SortFunctions/reproductionNumberSort';
+import {SingleFilter} from './DefinitiveHierarchy/SortFunctions/singleFilter';
+import {AlbumYearSort} from './DefinitiveHierarchy/SortFunctions/albumYearSort';
+import {ArtistNameSort} from './DefinitiveHierarchy/SortFunctions/artistNameSort';
+import {GroupNameSort} from './DefinitiveHierarchy/SortFunctions/groupNameSort';
+import {GenreSort} from './DefinitiveHierarchy/SortFunctions/genreSort';
+import {SongDurationSort} from './DefinitiveHierarchy/SortFunctions/durationSongSort';
 import * as inquirer from 'inquirer';
 // import {SongDurationSort} from './Definitivos-Jerarquia/SortFunctions/durationSongSort';
 
-const BadBunny = new Artist('BadBunny', 'Iluminati', 'Reggae', 'Touralmundo', '2', 12);
-const Bruno = new Artist('Bruno', 'Arberto', 'Reggae', 'Touralmundo', '2', 12);
-const Iluminati = new Group('Iluminati', BadBunny, 2016, 'Reggae', 'Touralmundo', 12);
-const Trap = new MusicGenre('Trap', Iluminati, BadBunny, 'Touralmundo', 'Chambea');
-const Reggae = new MusicGenre('Reggae', Iluminati, BadBunny, 'Touralmundo', 'Chambea');
-// eslint-disable-next-line no-unused-vars
-// const Touralmundo = new Album('Touralmundo', Iluminati, BadBunny, 2016, Trap, Chambea);
-const artistCollectionOBJ = new ArtistsCollection([Bruno, BadBunny]);
-const genreCollectionOBJ = new GenreCollection([Trap, Reggae]);
+// const Iluminati = new Group('Iluminati', BadBunny, 2016, 'Reggae', 'Touralmundo', 12);
+// const Trap = new MusicGenre('Trap', Iluminati, BadBunny, 'Touralmundo', 'Chambea');
+// const Reggae = new MusicGenre('Reggae', Iluminati, BadBunny, 'Touralmundo', 'Chambea');
+// // eslint-disable-next-line no-unused-vars
+// // const Touralmundo = new Album('Touralmundo', Iluminati, BadBunny, 2016, Trap, Chambea);
+// const genreCollectionOBJ = new GenreCollection([Trap, Reggae]);
 
 // // SONG COLLECTION
-const Chambea = new Song('Chambea', BadBunny, '5:30', Trap, true, 2016015);
-const Netflix = new Song('Netflix', Bruno, '5:10', Trap, false, 2016010);
-const ThisFeeling = new Song('This Feeling', Bruno, '5:20', Trap, true, 2016015);
-const ALV = new Song('ALV', Bruno, '5:40', Trap, true, 2016015);
-const songCollectionOBJ = new SongCollection([Netflix, ThisFeeling, Chambea, ALV]);
+// const Chambea = new Song('Chambea', BadBunny, '5:30', Trap, true, 2016015);
+// const Netflix = new Song('Netflix', Bruno, '5:10', Trap, false, 2016010);
+// const ThisFeeling = new Song('This Feeling', Bruno, '5:20', Trap, true, 2016015);
+// const ALV = new Song('ALV', Bruno, '5:40', Trap, true, 2016015);
+// const songCollectionOBJ = new SongCollection([Netflix, ThisFeeling, Chambea, ALV]);
 
-// ALBUM COLLECTION
-const albumOBJ = new Album('ALV', Iluminati, BadBunny, 2001, Trap, [ALV, Chambea]);
-const albumOBJ1 = new Album('ErPepe', Iluminati, BadBunny, 2001, Trap, [ALV, Chambea]);
-const albumSortOBJ = new AlbumSort([albumOBJ, albumOBJ1]);
+// // ALBUM COLLECTION
+// const albumOBJ = new Album('ALV', Iluminati, BadBunny, 2001, Trap, [ALV, Chambea]);
+// const albumOBJ1 = new Album('ErPepe', Iluminati, BadBunny, 2001, Trap, [ALV, Chambea]);
+// const albumSortOBJ = new AlbumSort([albumOBJ, albumOBJ1]);
 
 
 /** ********** NO BORREN ESTO ************/
-import {ArtistItem} from "./PruebasInquirer/ArtistItem";
-import {TodoCollection} from "./PruebasInquirer/todoCollection";
-import {JsonTodoCollection} from "./PruebasInquirer/jsonTodoCollection";
-const todos: ArtistItem[] = [
-  new ArtistItem(1, "Bad Bunny"), new ArtistItem(1, "Bad Bunny", true),
-  new ArtistItem(2, "Don Diablo"), new ArtistItem(2, "Don Diablo", true)];
-const collection: TodoCollection = new JsonTodoCollection("Bad Bunny", todos);
-// const collection: TodoCollection = new TodoCollection("Adam", todos);
-let showCompleted = true;
+import {Artist} from "./DefinitiveHierarchy/PrincipalClases/artist";
+import {ArtistsCollection} from "./DefinitiveHierarchy/Collectionables/artistCollection";
+import {TitleSongSort} from './DefinitiveHierarchy/SortFunctions/titleSongSort';
+import {JsonTodoCollection} from "./InquirerFiles/jsonTodoCollection";
+import {exit} from 'process';
+
+// Artist objects
+const BadBunny = new Artist('BadBunny', 'Iluminati', 'Reggae', 'Touralmundo', '2', 12);
+const Bruno = new Artist('Bruno', 'Arberto', 'Reggae', 'Touralmundo', '2', 12);
+const artistCollectionOBJ = new ArtistsCollection([Bruno, BadBunny]);
+
+const collectionArtists: ArtistsCollection = new JsonTodoCollection([Bruno, BadBunny]);
+
 function displayTodoList(): void {
-  console.log(`${collection.userName}'s Artist List ` +
-    `(${ collection.getItemCounts().incomplete } Artist List empty)`);
-  collection.getArtistItems(showCompleted).forEach((item) => item.printDetails());
+  console.log(`ARTIST COLLECTION`);
+  for (let i = 0; i < collectionArtists.getArtistsCollectionLength(); i++) {
+    console.log(collectionArtists.getArtistList(i));
+  }
 }
     enum Commands {
       Add = "Add New Artist",
-      Complete = "Artist Add Completed",
-      Toggle = "Show/Hide Completed",
-      Purge = "Remove Completed additions",
+      Toggle = "Artist Added Default",
+      Purge = "Remove New Added Artists",
       Quit = "Quit"
     }
 function promptAdd(): void {
   console.clear();
-  inquirer.prompt({type: "input", name: "add", message: "Enter Artist:"})
+  let ArtistName: string = ``;
+  let groupName: string = ``;
+  let genre: string = ``;
+  let album: string = ``;
+  let publishedSongs: string = ``;
+  let monthlyListeners: number = 0;
+  inquirer.prompt({type: "input", name: "ArtistName", message: "Enter Artist Name:"})
       .then((answers) => {
-        if (answers["add"] !== "") {
-          collection.addTodo(answers["add"]);
-        }
-        promptUser();
+        ArtistName = answers["ArtistName"];
       });
+  inquirer.prompt({type: "input", name: "GroupName", message: "Enter Group Name:"})
+      .then((answers) => {
+        groupName = answers["GroupName"];
+      });
+  inquirer.prompt({type: "input", name: "Genre", message: "Enter The Genre:"})
+      .then((answers) => {
+        genre = answers["Genre"];
+      });
+  inquirer.prompt({type: "input", name: "Album", message: "Enter Album Name:"})
+      .then((answers) => {
+        album = answers["Album"];
+      });
+  inquirer.prompt({type: "input", name: "PublishedSongs", message: "Enter the number of published songs:"})
+      .then((answers) => {
+        publishedSongs = answers["PublishedSongs"];
+      });
+  inquirer.prompt({type: "input", name: "monthlyListeners", message: "Enter the number of listeners:"})
+      .then((answers) => {
+        monthlyListeners = answers["monthlyListeners"];
+      });
+  collectionArtists.addArtist(new Artist(ArtistName, groupName, genre, album, publishedSongs, monthlyListeners));
+  promptUser();
 }
-function promptComplete(): void {
+function promptDefault(): void {
   console.clear();
-  inquirer.prompt({type: "checkbox", name: "complete",
-    message: "Mark the artist you would delete",
-    choices: collection.getArtistItems(showCompleted).map((item) =>
-      ({name: item.task, value: item.id, checked: item.complete})),
-  }).then((answers) => {
-    const completedTasks = answers["complete"] as number[];
-    collection.getArtistItems(true).forEach((item) =>
-      collection.markComplete(item.id,
-          completedTasks.find((id) => id === item.id) != undefined));
-    promptUser();
-  });
+  console.log(`ARTIST DEFAULT COLLECTION`);
+  for (let i = 0; i < collectionArtists.getArtistsCollectionLength(); i++) {
+    console.log(collectionArtists.getArtistList(i));
+  }
+  inquirer.prompt({type: "input", name: "Continue", message: "¿ Desea volver a la pantalla principal ? (S/N): "})
+      .then((answers) => {
+        /* while (answers["Continue"] !== 'S' && answers["Continue"] !== 'N') {
+          inquirer.prompt({type: "input", name: "Continue", message: "¿ Desea volver a la pantalla principal ? (S/N): "});
+        }*/
+        if (answers["Continue"] === "S") {
+          promptUser();
+        } else {
+          exit();
+        }
+      });
 }
 function promptUser(): void {
   console.clear();
@@ -100,22 +127,18 @@ function promptUser(): void {
   }).then((answers) => {
     switch (answers["command"]) {
       case Commands.Toggle:
-        showCompleted = !showCompleted;
-        promptUser();
+        promptDefault();
         break;
       case Commands.Add:
         promptAdd();
         break;
-      case Commands.Complete:
-        if (collection.getItemCounts().incomplete > 0) {
-          promptComplete();
-        } else {
-          promptUser();
-        }
-        break;
       case Commands.Purge:
-        collection.removeComplete();
         promptUser();
+        break;
+      case Commands.Quit:
+        console.clear();
+        console.log(`<< Program Exit >>`);
+        exit();
         break;
     }
   });

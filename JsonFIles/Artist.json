@@ -1,0 +1,20 @@
+{
+  "Artist": [
+    {
+      "name": "Bruno",
+      "group": "Arberto",
+      "genre": "Reggae",
+      "album": "Touralmundo",
+      "publishedSongs": "2",
+      "monthlyListeners": 12
+    },
+    {
+      "name": "BadBunny",
+      "group": "Iluminati",
+      "genre": "Reggae",
+      "album": "Touralmundo",
+      "publishedSongs": "2",
+      "monthlyListeners": 12
+    }
+  ]
+}
