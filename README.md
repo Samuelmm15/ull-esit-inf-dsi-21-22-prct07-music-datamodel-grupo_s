@@ -22,6 +22,41 @@ En esta práctica, la primera grupal de la asignatura, tendrá que llevar a cabo
 
 ## Codificación
 
+En está primera parte se comentará todo lo relacionada con la implementación que se ha elegido para realizar la biblioteca de música que se pretende conseguir.
+
+```
+📦src
+ ┣ 📂DefinitiveHierarchy
+ ┃ ┣ 📂Collectionables
+ ┃ ┃ ┣ 📜artistCollection.ts
+ ┃ ┃ ┣ 📜basicstreamablecollection.ts
+ ┃ ┃ ┣ 📜genreCollection.ts
+ ┃ ┃ ┣ 📜pruebasoncol.ts
+ ┃ ┃ ┣ 📜songCollection.ts
+ ┃ ┃ ┗ 📜streamable.ts
+ ┃ ┣ 📂PrincipalClases
+ ┃ ┃ ┣ 📜album.ts
+ ┃ ┃ ┣ 📜artist.ts
+ ┃ ┃ ┣ 📜groups.ts
+ ┃ ┃ ┣ 📜musicGenre.ts
+ ┃ ┃ ┣ 📜playlist.ts
+ ┃ ┃ ┗ 📜song.ts
+ ┃ ┗ 📂SortFunctions
+ ┃ ┃ ┣ 📜abstractSort.ts
+ ┃ ┃ ┣ 📜albumSort.ts
+ ┃ ┃ ┣ 📜albumYearSort.ts
+ ┃ ┃ ┣ 📜artistNameSort.ts
+ ┃ ┃ ┣ 📜durationSongSort.ts
+ ┃ ┃ ┣ 📜genreSort.ts
+ ┃ ┃ ┣ 📜groupNameSort.ts
+ ┃ ┃ ┣ 📜playlistSort.ts
+ ┃ ┃ ┣ 📜reproductionNumberSort.ts
+ ┃ ┃ ┣ 📜singleFilter.ts
+ ┃ ┃ ┗ 📜titleSongSort.ts
+ ┣ 📂GestorClass
+ ┣ 📂InquirerFiles
+```
+
 ### Jerarquía de Clases 
 
 #### Clases Principales
@@ -30,7 +65,7 @@ En esta práctica, la primera grupal de la asignatura, tendrá que llevar a cabo
 
 #### Funciones de ordenación
 
-### Clase Gestor
+## Clase Gestor
 
 ## Inquirer
 
