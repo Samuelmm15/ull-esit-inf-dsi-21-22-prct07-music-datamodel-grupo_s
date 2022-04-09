@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
@@ -67,8 +68,7 @@ function displayTodoList(): void {
     }
 function promptAdd(): void {
   console.clear();
-  let flag = false;
-  let ArtistName: string = ``;
+  let artistName: string = ``;
   let groupName: string = ``;
   let genre: string = ``;
   let album: string = ``;
@@ -84,21 +84,23 @@ function promptAdd(): void {
     {type: "input", name: "PublishedSongs", message: "Enter the number of published songs:"},
     {type: "input", name: "monthlyListeners", message: "Enter the number of listeners:"}])
       .then((answers) => {
-        ArtistName = `Luca`;
+        artistName = answers.ArtistName;
         groupName = answers.GroupName;
         genre = answers.Genre;
         album = answers.Album;
         publishedSongs = answers.PublishedSongs;
         monthlyListeners = answers.monthlyListeners;
-        flag = true;
+        artistCollectionOBJ.addArtist(new Artist(artistName, groupName, genre, album, publishedSongs, monthlyListeners))
+        collectionArtists.restart(artistCollectionOBJ);
+        inquirer.prompt({type: "input", name: "Continue", message: "Do you want to return to the main screen ? (y/N): "})
+            .then((answers) => {
+              if (answers["Continue"] === "y") {
+                promptUser();
+              } else {
+                exit();
+              }
+            });
       });
-  // FALTA QUE FUNCIONE ESTA PARTE, NO LO HACE BIEN
-  if (flag !== false) {
-    console.log(`Entra`);
-    artistCollectionOBJ.addArtist(new Artist(ArtistName, groupName, genre, album, publishedSongs, monthlyListeners))
-    collectionArtists.restart(artistCollectionOBJ);
-    promptUser(); 
-  }
 }
 function promptDefault(): void {
   console.clear();
@@ -106,13 +108,31 @@ function promptDefault(): void {
   for (let i = 0; i < artistCollectionOBJ.getArtistsCollectionLength(); i++) {
     console.log(artistCollectionOBJ.getArtistList(i));
   }
-  inquirer.prompt({type: "input", name: "Continue", message: "¿ You want to return to the main screen ? (y/N): "})
+  inquirer.prompt({type: "input", name: "Continue", message: "Do you want to return to the main screen ? (y/N): "})
       .then((answers) => {
         if (answers["Continue"] === "y") {
           promptUser();
         } else {
           exit();
         }
+      });
+}
+function promptDelete(): void {
+  console.clear();
+  let artistName: string = ``;
+  inquirer.prompt({type: "input", name: "Delete", message: "Enter the name of the artist you wish to delete: "})
+      .then((answer) => {
+        artistName = answer.Delete;
+        artistCollectionOBJ.getRemoveArtist(artistName);
+        collectionArtists.restart(artistCollectionOBJ);
+        inquirer.prompt({type: "input", name: "Continue", message: "Do you want to return to the main screen ? (y/N): "})
+            .then((answers) => {
+              if (answers["Continue"] === "y") {
+                promptUser();
+              } else {
+                exit();
+              }
+            });
       });
 }
 function promptUser(): void {
@@ -133,7 +153,7 @@ function promptUser(): void {
         promptAdd();
         break;
       case Commands.Purge:
-        promptUser();
+        promptDelete();
         break;
       case Commands.Quit:
         console.clear();

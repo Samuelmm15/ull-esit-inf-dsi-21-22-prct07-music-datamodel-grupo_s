@@ -95,10 +95,10 @@ class ArtistsCollection extends basicstreamablecollection_1.BasicStreamableColle
         this.artists.splice(index, 1);
         return this.artists;
     }
-    getRemoveIndex(songName) {
+    getRemoveArtist(artistName) {
         let i = 0;
         for (i = 0; i < this.artists.length; i++) {
-            if (this.artists[i].getName() === songName) {
+            if (this.artists[i].getName() === artistName) {
                 break;
             }
         }

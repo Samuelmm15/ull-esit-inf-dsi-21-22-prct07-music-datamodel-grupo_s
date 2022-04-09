@@ -93,10 +93,10 @@ export class ArtistsCollection extends BasicStreamableCollection<Artist> {
     this.artists.splice(index, 1);
     return this.artists;
   }
-  public getRemoveIndex(songName: string): Artist[] {
+  public getRemoveArtist(artistName: string): Artist[] {
     let i = 0;
     for (i = 0; i < this.artists.length; i++) {
-      if (this.artists[i].getName() === songName) {
+      if (this.artists[i].getName() === artistName) {
         break;
       }
     }
