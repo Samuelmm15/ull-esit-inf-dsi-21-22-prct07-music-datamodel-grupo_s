@@ -17,7 +17,7 @@ export class JsonTodoCollection extends ArtistsCollection {
     this.database.set("Artist", ArtistItems).write();
   }
 
-  Restart(ArtistItems: ArtistsCollection): void {
+  restart(ArtistItems: ArtistsCollection): void {
     this.database.set("Artist", ArtistItems).write();
   }
 }

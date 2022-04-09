@@ -51,11 +51,11 @@ const events_1 = require("events");
 const BadBunny = new artist_1.Artist('BadBunny', 'Iluminati', 'Reggae', 'Touralmundo', '2', 12);
 const Bruno = new artist_1.Artist('Bruno', 'Arberto', 'Reggae', 'Touralmundo', '2', 12);
 const artistCollectionOBJ = new artistCollection_1.ArtistsCollection([Bruno, BadBunny]);
-const collectionArtists = new jsonTodoCollection_1.JsonTodoCollection([Bruno, BadBunny]);
+let collectionArtists = new jsonTodoCollection_1.JsonTodoCollection([Bruno, BadBunny]);
 function displayTodoList() {
     console.log(`ARTIST COLLECTION`);
-    for (let i = 0; i < collectionArtists.getArtistsCollectionLength(); i++) {
-        console.log(collectionArtists.getArtistList(i));
+    for (let i = 0; i < artistCollectionOBJ.getArtistsCollectionLength(); i++) {
+        console.log(artistCollectionOBJ.getArtistList(i));
     }
 }
 var Commands;
@@ -67,52 +67,44 @@ var Commands;
 })(Commands || (Commands = {}));
 function promptAdd() {
     console.clear();
+    let flag = false;
     let ArtistName = ``;
     let groupName = ``;
     let genre = ``;
     let album = ``;
     let publishedSongs = ``;
     let monthlyListeners = 0;
-    inquirer.prompt({ type: "input", name: "ArtistName", message: "Enter Artist Name:" })
+    /** DE ESTA MANERA ES COMO SE AÑADEN VARIOS ELEMENTOS CON PROMPT
+     * Mirar esta página: https://typescript.hotexamples.com/es/examples/inquirer/-/prompt/typescript-prompt-function-examples.html
+    */
+    inquirer.prompt([{ type: "input", name: "ArtistName", message: "Enter Artist Name:" },
+        { type: "input", name: "GroupName", message: "Enter Group Name:" },
+        { type: "input", name: "Genre", message: "Enter The Genre:" },
+        { type: "input", name: "Album", message: "Enter Album Name:" },
+        { type: "input", name: "PublishedSongs", message: "Enter the number of published songs:" },
+        { type: "input", name: "monthlyListeners", message: "Enter the number of listeners:" }])
         .then((answers) => {
-        ArtistName = answers["ArtistName"];
+        ArtistName = `Luca`;
+        groupName = answers.GroupName;
+        genre = answers.Genre;
+        album = answers.Album;
+        publishedSongs = answers.PublishedSongs;
+        monthlyListeners = answers.monthlyListeners;
+        flag = true;
     });
-    inquirer.prompt({ type: "input", name: "GroupName", message: "Enter Group Name:" })
-        .then((answers) => {
-        groupName = answers["GroupName"];
-    });
-    inquirer.prompt({ type: "input", name: "Genre", message: "Enter The Genre:" })
-        .then((answers) => {
-        genre = answers["Genre"];
-    });
-    inquirer.prompt({ type: "input", name: "Album", message: "Enter Album Name:" })
-        .then((answers) => {
-        album = answers["Album"];
-    });
-    inquirer.prompt({ type: "input", name: "PublishedSongs", message: "Enter the number of published songs:" })
-        .then((answers) => {
-        publishedSongs = answers["PublishedSongs"];
-    });
-    inquirer.prompt({ type: "input", name: "monthlyListeners", message: "Enter the number of listeners:" })
-        .then((answers) => {
-        monthlyListeners = answers["monthlyListeners"];
-    });
-    collectionArtists.addArtist(new artist_1.Artist(ArtistName, groupName, genre, album, publishedSongs, monthlyListeners));
-    inquirer.prompt({ type: "input", name: "Continue", message: "¿ You want to return to the main screen ? (y/N): " })
-        .then((answers) => {
-        if (answers["Continue"] === "y") {
-            promptUser();
-        }
-        else {
-            (0, process_1.exit)();
-        }
-    });
+    // FALTA QUE FUNCIONE ESTA PARTE, NO LO HACE BIEN
+    if (flag !== false) {
+        console.log(`Entra`);
+        artistCollectionOBJ.addArtist(new artist_1.Artist(ArtistName, groupName, genre, album, publishedSongs, monthlyListeners));
+        collectionArtists.restart(artistCollectionOBJ);
+        promptUser();
+    }
 }
 function promptDefault() {
     console.clear();
     console.log(`ARTIST DEFAULT COLLECTION`);
-    for (let i = 0; i < collectionArtists.getArtistsCollectionLength(); i++) {
-        console.log(collectionArtists.getArtistList(i));
+    for (let i = 0; i < artistCollectionOBJ.getArtistsCollectionLength(); i++) {
+        console.log(artistCollectionOBJ.getArtistList(i));
     }
     inquirer.prompt({ type: "input", name: "Continue", message: "¿ You want to return to the main screen ? (y/N): " })
         .then((answers) => {

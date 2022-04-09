@@ -13,7 +13,7 @@ class JsonTodoCollection extends artistCollection_1.ArtistsCollection {
         this.database = (0, lowdb_1.default)(new FileSync_1.default("JsonFiles/Artist.json"));
         this.database.set("Artist", ArtistItems).write();
     }
-    Restart(ArtistItems) {
+    restart(ArtistItems) {
         this.database.set("Artist", ArtistItems).write();
     }
 }
