@@ -17,26 +17,32 @@ import {GroupNameSort} from './DefinitiveHierarchy/SortFunctions/groupNameSort';
 import {GenreSort} from './DefinitiveHierarchy/SortFunctions/genreSort';
 import {SongDurationSort} from './DefinitiveHierarchy/SortFunctions/durationSongSort';
 import * as inquirer from 'inquirer';
-// import {SongDurationSort} from './Definitivos-Jerarquia/SortFunctions/durationSongSort';
 
-// const Iluminati = new Group('Iluminati', BadBunny, 2016, 'Reggae', 'Touralmundo', 12);
-// const Trap = new MusicGenre('Trap', Iluminati, BadBunny, 'Touralmundo', 'Chambea');
-// const Reggae = new MusicGenre('Reggae', Iluminati, BadBunny, 'Touralmundo', 'Chambea');
-// // eslint-disable-next-line no-unused-vars
-// // const Touralmundo = new Album('Touralmundo', Iluminati, BadBunny, 2016, Trap, Chambea);
-// const genreCollectionOBJ = new GenreCollection([Trap, Reggae]);
+// ARTISTS 10
+const BadBunny = new Artist('BadBunny', 'BadBunny', 'Urban Latino', 'Amorfoda', '127', 47666987);
+const Bruno = new Artist('Bruno Mars', 'Bruno Mars', 'Pop', '24K Magic', '101', 52517377);
+const Michael = new Artist('Michael Jackson', 'Michael Jackson', 'Pop', 'Beat It', '263', 28171657);
+const Ozuna = new Artist('Ozuna', 'Ozuna', 'Urban Latino', 'Odisea', '158', 35236397);
+const Eminem = new Artist('Eminem', 'Eminem', 'Rap', 'Kamikaze', '100', 52908969);
+const Elvis = new Artist('Elvis Crespo', 'Grupo Mania', 'Merengue', 'Suavemente', '71', 3559552);
+const DonDiablo = new Artist('Don Diablo', 'Don Diablo', 'Electro House', 'Bad', '97', 7118670);
+const RickAstley = new Artist('Rick Astley', 'Rick Astley', 'Disco', 'Together Forever', '110', 5754965);
+const MartinGarrix = new Artist('Martin Garrix', 'Martin Garrix', 'EDM', 'Summer Days', '73', 22404740);
+const Avicii = new Artist('Avicii', 'Avicii', 'Dance', 'True', '98', 28729564);
 
-// // SONG COLLECTION
-// const Chambea = new Song('Chambea', BadBunny, '5:30', Trap, true, 2016015);
-// const Netflix = new Song('Netflix', Bruno, '5:10', Trap, false, 2016010);
-// const ThisFeeling = new Song('This Feeling', Bruno, '5:20', Trap, true, 2016015);
-// const ALV = new Song('ALV', Bruno, '5:40', Trap, true, 2016015);
-// const songCollectionOBJ = new SongCollection([Netflix, ThisFeeling, Chambea, ALV]);
+// GROUP 5
 
-// // ALBUM COLLECTION
-// const albumOBJ = new Album('ALV', Iluminati, BadBunny, 2001, Trap, [ALV, Chambea]);
-// const albumOBJ1 = new Album('ErPepe', Iluminati, BadBunny, 2001, Trap, [ALV, Chambea]);
-// const albumSortOBJ = new AlbumSort([albumOBJ, albumOBJ1]);
+
+// MUSIC GENRE 10
+
+
+// SONGS 50
+
+
+// ALBUM 5-10
+
+
+// PLAYLIST 3
 
 
 /** ********** NO BORREN ESTO ************/
@@ -48,8 +54,6 @@ import {exit} from 'process';
 import {setMaxListeners} from 'events';
 
 // Artist objects
-const BadBunny = new Artist('BadBunny', 'Iluminati', 'Reggae', 'Touralmundo', '2', 12);
-const Bruno = new Artist('Bruno', 'Arberto', 'Reggae', 'Touralmundo', '2', 12);
 const artistCollectionOBJ = new ArtistsCollection([Bruno, BadBunny]);
 
 let collectionArtists: JsonTodoCollection = new JsonTodoCollection([Bruno, BadBunny]);

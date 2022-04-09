@@ -24,23 +24,22 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const inquirer = __importStar(require("inquirer"));
-// import {SongDurationSort} from './Definitivos-Jerarquia/SortFunctions/durationSongSort';
-// const Iluminati = new Group('Iluminati', BadBunny, 2016, 'Reggae', 'Touralmundo', 12);
-// const Trap = new MusicGenre('Trap', Iluminati, BadBunny, 'Touralmundo', 'Chambea');
-// const Reggae = new MusicGenre('Reggae', Iluminati, BadBunny, 'Touralmundo', 'Chambea');
-// // eslint-disable-next-line no-unused-vars
-// // const Touralmundo = new Album('Touralmundo', Iluminati, BadBunny, 2016, Trap, Chambea);
-// const genreCollectionOBJ = new GenreCollection([Trap, Reggae]);
-// // SONG COLLECTION
-// const Chambea = new Song('Chambea', BadBunny, '5:30', Trap, true, 2016015);
-// const Netflix = new Song('Netflix', Bruno, '5:10', Trap, false, 2016010);
-// const ThisFeeling = new Song('This Feeling', Bruno, '5:20', Trap, true, 2016015);
-// const ALV = new Song('ALV', Bruno, '5:40', Trap, true, 2016015);
-// const songCollectionOBJ = new SongCollection([Netflix, ThisFeeling, Chambea, ALV]);
-// // ALBUM COLLECTION
-// const albumOBJ = new Album('ALV', Iluminati, BadBunny, 2001, Trap, [ALV, Chambea]);
-// const albumOBJ1 = new Album('ErPepe', Iluminati, BadBunny, 2001, Trap, [ALV, Chambea]);
-// const albumSortOBJ = new AlbumSort([albumOBJ, albumOBJ1]);
+// ARTISTS 10
+const BadBunny = new artist_1.Artist('BadBunny', 'BadBunny', 'Urban Latino', 'Amorfoda', '127', 47666987);
+const Bruno = new artist_1.Artist('Bruno Mars', 'Bruno Mars', 'Pop', '24K Magic', '101', 52517377);
+const Michael = new artist_1.Artist('Michael Jackson', 'Michael Jackson', 'Pop', 'Beat It', '263', 28171657);
+const Ozuna = new artist_1.Artist('Ozuna', 'Ozuna', 'Urban Latino', 'Odisea', '158', 35236397);
+const Eminem = new artist_1.Artist('Eminem', 'Eminem', 'Rap', 'Kamikaze', '100', 52908969);
+const Elvis = new artist_1.Artist('Elvis Crespo', 'Grupo Mania', 'Merengue', 'Suavemente', '71', 3559552);
+const DonDiablo = new artist_1.Artist('Don Diablo', 'Don Diablo', 'Electro House', 'Bad', '97', 7118670);
+const RickAstley = new artist_1.Artist('Rick Astley', 'Rick Astley', 'Disco', 'Together Forever', '110', 5754965);
+const MartinGarrix = new artist_1.Artist('Martin Garrix', 'Martin Garrix', 'EDM', 'Summer Days', '73', 22404740);
+const Avicii = new artist_1.Artist('Avicii', 'Avicii', 'Dance', 'True', '98', 28729564);
+// GROUP 5
+// MUSIC GENRE 10
+// SONGS 50
+// ALBUM 5-10
+// PLAYLIST 3
 /** ********** NO BORREN ESTO ************/
 const artist_1 = require("./DefinitiveHierarchy/PrincipalClases/artist");
 const artistCollection_1 = require("./DefinitiveHierarchy/Collectionables/artistCollection");
@@ -48,8 +47,6 @@ const jsonTodoCollection_1 = require("./InquirerFiles/jsonTodoCollection");
 const process_1 = require("process");
 const events_1 = require("events");
 // Artist objects
-const BadBunny = new artist_1.Artist('BadBunny', 'Iluminati', 'Reggae', 'Touralmundo', '2', 12);
-const Bruno = new artist_1.Artist('Bruno', 'Arberto', 'Reggae', 'Touralmundo', '2', 12);
 const artistCollectionOBJ = new artistCollection_1.ArtistsCollection([Bruno, BadBunny]);
 let collectionArtists = new jsonTodoCollection_1.JsonTodoCollection([Bruno, BadBunny]);
 function displayTodoList() {
