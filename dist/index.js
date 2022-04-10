@@ -23,19 +23,25 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+/* eslint-disable prefer-const */
+/* eslint-disable no-trailing-spaces */
+/* eslint-disable no-unused-vars */
+/* eslint-disable camelcase */
+const groups_1 = require("./DefinitiveHierarchy/PrincipalClases/groups");
 const inquirer = __importStar(require("inquirer"));
 // ARTISTS 10
 const BadBunny = new artist_1.Artist('BadBunny', 'BadBunny', 'Urban Latino', 'Amorfoda', '127', 47666987);
 const Bruno = new artist_1.Artist('Bruno Mars', 'Bruno Mars', 'Pop', '24K Magic', '101', 52517377);
-const Michael = new artist_1.Artist('Michael Jackson', 'Michael Jackson', 'Pop', 'Beat It', '263', 28171657);
-const Ozuna = new artist_1.Artist('Ozuna', 'Ozuna', 'Urban Latino', 'Odisea', '158', 35236397);
-const Eminem = new artist_1.Artist('Eminem', 'Eminem', 'Rap', 'Kamikaze', '100', 52908969);
-const Elvis = new artist_1.Artist('Elvis Crespo', 'Grupo Mania', 'Merengue', 'Suavemente', '71', 3559552);
-const DonDiablo = new artist_1.Artist('Don Diablo', 'Don Diablo', 'Electro House', 'Bad', '97', 7118670);
-const RickAstley = new artist_1.Artist('Rick Astley', 'Rick Astley', 'Disco', 'Together Forever', '110', 5754965);
-const MartinGarrix = new artist_1.Artist('Martin Garrix', 'Martin Garrix', 'EDM', 'Summer Days', '73', 22404740);
-const Avicii = new artist_1.Artist('Avicii', 'Avicii', 'Dance', 'True', '98', 28729564);
+// const Michael = new Artist('Michael Jackson', 'Michael Jackson', 'Pop', 'Beat It', '263', 28171657);
+// const Ozuna = new Artist('Ozuna', 'Ozuna', 'Urban Latino', 'Odisea', '158', 35236397);
+// const Eminem = new Artist('Eminem', 'Eminem', 'Rap', 'Kamikaze', '100', 52908969);
+// const Elvis = new Artist('Elvis Crespo', 'Grupo Mania', 'Merengue', 'Suavemente', '71', 3559552);
+// const DonDiablo = new Artist('Don Diablo', 'Don Diablo', 'Electro House', 'Bad', '97', 7118670);
+// const RickAstley = new Artist('Rick Astley', 'Rick Astley', 'Disco', 'Together Forever', '110', 5754965);
+// const MartinGarrix = new Artist('Martin Garrix', 'Martin Garrix', 'EDM', 'Summer Days', '73', 22404740);
+// const Avicii = new Artist('Avicii', 'Avicii', 'Dance', 'True', '98', 28729564);
 // GROUP 5
+const ACDC = new groups_1.Group('ACDC', BadBunny, 500, 'Rock', 'ACDC', 1205161);
 // MUSIC GENRE 10
 // SONGS 50
 // ALBUM 5-10

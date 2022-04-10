@@ -21,17 +21,17 @@ import * as inquirer from 'inquirer';
 // ARTISTS 10
 const BadBunny = new Artist('BadBunny', 'BadBunny', 'Urban Latino', 'Amorfoda', '127', 47666987);
 const Bruno = new Artist('Bruno Mars', 'Bruno Mars', 'Pop', '24K Magic', '101', 52517377);
-const Michael = new Artist('Michael Jackson', 'Michael Jackson', 'Pop', 'Beat It', '263', 28171657);
-const Ozuna = new Artist('Ozuna', 'Ozuna', 'Urban Latino', 'Odisea', '158', 35236397);
-const Eminem = new Artist('Eminem', 'Eminem', 'Rap', 'Kamikaze', '100', 52908969);
-const Elvis = new Artist('Elvis Crespo', 'Grupo Mania', 'Merengue', 'Suavemente', '71', 3559552);
-const DonDiablo = new Artist('Don Diablo', 'Don Diablo', 'Electro House', 'Bad', '97', 7118670);
-const RickAstley = new Artist('Rick Astley', 'Rick Astley', 'Disco', 'Together Forever', '110', 5754965);
-const MartinGarrix = new Artist('Martin Garrix', 'Martin Garrix', 'EDM', 'Summer Days', '73', 22404740);
-const Avicii = new Artist('Avicii', 'Avicii', 'Dance', 'True', '98', 28729564);
+// const Michael = new Artist('Michael Jackson', 'Michael Jackson', 'Pop', 'Beat It', '263', 28171657);
+// const Ozuna = new Artist('Ozuna', 'Ozuna', 'Urban Latino', 'Odisea', '158', 35236397);
+// const Eminem = new Artist('Eminem', 'Eminem', 'Rap', 'Kamikaze', '100', 52908969);
+// const Elvis = new Artist('Elvis Crespo', 'Grupo Mania', 'Merengue', 'Suavemente', '71', 3559552);
+// const DonDiablo = new Artist('Don Diablo', 'Don Diablo', 'Electro House', 'Bad', '97', 7118670);
+// const RickAstley = new Artist('Rick Astley', 'Rick Astley', 'Disco', 'Together Forever', '110', 5754965);
+// const MartinGarrix = new Artist('Martin Garrix', 'Martin Garrix', 'EDM', 'Summer Days', '73', 22404740);
+// const Avicii = new Artist('Avicii', 'Avicii', 'Dance', 'True', '98', 28729564);
 
 // GROUP 5
-
+const ACDC = new Group('ACDC', BadBunny, 500, 'Rock', 'ACDC', 1205161);
 
 // MUSIC GENRE 10
 
@@ -94,7 +94,7 @@ function promptAdd(): void {
         album = answers.Album;
         publishedSongs = answers.PublishedSongs;
         monthlyListeners = answers.monthlyListeners;
-        artistCollectionOBJ.addArtist(new Artist(artistName, groupName, genre, album, publishedSongs, monthlyListeners))
+        artistCollectionOBJ.addArtist(new Artist(artistName, groupName, genre, album, publishedSongs, monthlyListeners));
         collectionArtists.restart(artistCollectionOBJ);
         inquirer.prompt({type: "input", name: "Continue", message: "Do you want to return to the main screen ? (y/N): "})
             .then((answers) => {
