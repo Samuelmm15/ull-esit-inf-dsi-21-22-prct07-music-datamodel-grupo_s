@@ -74,21 +74,6 @@
       "genre": "Pop",
       "albums": "BackStreet Boys",
       "monthlyListener": 13533750
-    },
-    {
-      "name": "Los Pepes",
-      "artists": {
-        "name": "Elvis Crespo",
-        "group": "Grupo Mania",
-        "genre": "Merengue",
-        "album": "Suavemente",
-        "publishedSongs": "71",
-        "monthlyListeners": 3559552
-      },
-      "yearCreation": "2021",
-      "genre": "Rock",
-      "albums": "Los pepes",
-      "monthlyListener": "1000"
     }
   ]
 }
