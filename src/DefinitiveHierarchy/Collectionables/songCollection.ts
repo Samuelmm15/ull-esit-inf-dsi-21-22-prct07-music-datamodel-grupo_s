@@ -18,14 +18,14 @@ export class SongCollection extends BasicStreamableCollection<Song> {
     }
     return `No existe la canción que intenta buscar`;
   }
-  public getSongAuthor(author: Artist): Artist | string {
-    for (let i = 0; i < this.songs.length; i++) {
-      if (this.songs[i].getAuthor() === author) {
-        return this.songs[i].getAuthor();
-      }
-    }
-    return `No existe el autor que intenta buscar`;
-  }
+  // public getSongAuthor(author: Artist): Artist[] | string {
+  //   for (let i = 0; i < this.songs.length; i++) {
+  //     if (this.songs[i].getAuthor() === author) {
+  //       return this.songs[i].getAuthor();
+  //     }
+  //   }
+  //   return `No existe el autor que intenta buscar`;
+  // }
   public getName(author: string): string {
     let success: string = ``;
     for (let i = 0; i < this.songs.length; i++) {

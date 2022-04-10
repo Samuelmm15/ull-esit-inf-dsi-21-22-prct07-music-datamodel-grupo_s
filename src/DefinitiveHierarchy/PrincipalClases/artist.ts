@@ -14,7 +14,7 @@ export class Artist {
    * @param monthlyListeners Monthly Listeners of the artist
    */
   constructor(private name: string, private group: string, private genre: string[],
-    private album: string[], private publishedSongs: string, private monthlyListeners: number) {
+    private album: string[], private publishedSongs: number, private monthlyListeners: number) {
   }
 
   /**
@@ -53,7 +53,7 @@ export class Artist {
    * Gets the name of the published songs
    * @return Name of the published songs
    */
-  getPublishedSongs(): string {
+  getPublishedSongs(): number {
     return this.publishedSongs;
   }
 

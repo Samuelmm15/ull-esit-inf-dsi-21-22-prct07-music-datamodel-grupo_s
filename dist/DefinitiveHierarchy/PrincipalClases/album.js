@@ -9,19 +9,19 @@ class Album {
     /**
      * Creates an album object
      * @param name Album name
-     * @param group Group name
      * @param artist Artist name
      * @param yearPublication Album publication year
      * @param genre Album music genre
      * @param songs Album songs
+     * @param group Group name
      */
-    constructor(name, group, artist, yearPublication, genre, songs) {
+    constructor(name, artist, yearPublication, genre, songs, group) {
         this.name = name;
-        this.group = group;
         this.artist = artist;
         this.yearPublication = yearPublication;
         this.genre = genre;
         this.songs = songs;
+        this.group = group;
     }
     /**
      * Gets the album name

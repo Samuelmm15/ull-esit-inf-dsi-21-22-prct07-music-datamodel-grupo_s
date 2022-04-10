@@ -6,14 +6,14 @@ import {MusicGenre} from './musicGenre';
  * song objects
  */
 export class Song {
-  constructor(private name : string, private author : Artist, private songDuration : string,
-  private genre : MusicGenre, private single : boolean, private reproductionsNumber : number) {}
+  constructor(private name : string, private author : Artist[], private songDuration : string,
+  private genre : MusicGenre[], private single : boolean, private reproductionsNumber : number) {}
 
   getName() : string {
     return this.name;
   }
 
-  getAuthor() : Artist {
+  getAuthor() : Artist[] {
     return this.author;
   }
 
@@ -29,7 +29,7 @@ export class Song {
     return result;
   }
 
-  getGenre() : MusicGenre {
+  getGenre() : MusicGenre[] {
     return this.genre;
   }
 

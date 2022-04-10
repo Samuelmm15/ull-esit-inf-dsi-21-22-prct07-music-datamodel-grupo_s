@@ -3,82 +3,196 @@
     {
       "name": "Bruno Mars",
       "group": "Bruno Mars",
-      "genre": "Pop",
-      "album": "24K Magic",
-      "publishedSongs": "101",
+      "genre": [
+        "Pop"
+      ],
+      "album": [
+        "24K Magic"
+      ],
+      "publishedSongs": 101,
       "monthlyListeners": 52517377
     },
     {
-      "name": "BadBunny",
-      "group": "BadBunny",
-      "genre": "Urban Latino",
-      "album": "Amorfoda",
-      "publishedSongs": "127",
+      "name": "Bad Bunny",
+      "group": "Bad Bunny",
+      "genre": [
+        "Urban Latino"
+      ],
+      "album": [
+        "Amorfoda"
+      ],
+      "publishedSongs": 127,
       "monthlyListeners": 47666987
     },
     {
       "name": "Michael Jackson",
       "group": "Michael Jackson",
-      "genre": "Pop",
-      "album": "Beat It",
-      "publishedSongs": "263",
-      "monthlyListeners": 28171657
+      "genre": [
+        "Pop",
+        "Rock"
+      ],
+      "album": [
+        "Beat it"
+      ],
+      "publishedSongs": 263,
+      "monthlyListeners": 28223624
     },
     {
       "name": "Ozuna",
       "group": "Ozuna",
-      "genre": "Urban Latino",
-      "album": "Odisea",
-      "publishedSongs": "158",
+      "genre": [
+        "Urban Latino"
+      ],
+      "album": [
+        "Odisea"
+      ],
+      "publishedSongs": 158,
       "monthlyListeners": 35236397
     },
     {
       "name": "Eminem",
       "group": "Eminem",
-      "genre": "Rap",
-      "album": "Kamikaze",
-      "publishedSongs": "100",
+      "genre": [
+        "Rap"
+      ],
+      "album": [
+        "Kamikaze"
+      ],
+      "publishedSongs": 100,
       "monthlyListeners": 52908969
     },
     {
       "name": "Elvis Crespo",
       "group": "Grupo Mania",
-      "genre": "Merengue",
-      "album": "Suavemente",
-      "publishedSongs": "71",
+      "genre": [
+        "Merengue"
+      ],
+      "album": [
+        "Suavemente"
+      ],
+      "publishedSongs": 71,
       "monthlyListeners": 3559552
     },
     {
       "name": "Don Diablo",
       "group": "Don Diablo",
-      "genre": "Electro House",
-      "album": "Bad",
-      "publishedSongs": "97",
+      "genre": [
+        "Electro House"
+      ],
+      "album": [
+        "Bad"
+      ],
+      "publishedSongs": 97,
       "monthlyListeners": 7118670
     },
     {
       "name": "Rick Astley",
       "group": "Rick Astley",
-      "genre": "Disco",
-      "album": "Together Forever",
-      "publishedSongs": "110",
+      "genre": [
+        "Disco"
+      ],
+      "album": [
+        "Together Forever"
+      ],
+      "publishedSongs": 110,
       "monthlyListeners": 5754965
     },
     {
       "name": "Martin Garrix",
       "group": "Martin Garrix",
-      "genre": "EDM",
-      "album": "Summer Days",
-      "publishedSongs": "73",
+      "genre": [
+        "EDM"
+      ],
+      "album": [
+        "Summer Days"
+      ],
+      "publishedSongs": 73,
       "monthlyListeners": 22404740
     },
     {
       "name": "Avicii",
       "group": "Avicii",
-      "genre": "Dance",
-      "album": "True",
-      "publishedSongs": "98",
+      "genre": [
+        "Dance"
+      ],
+      "album": [
+        "True"
+      ],
+      "publishedSongs": 98,
       "monthlyListeners": 28729564
+    },
+    {
+      "name": "Steve Harris",
+      "group": "Iron Maiden",
+      "genre": [
+        "Heavy Metal"
+      ],
+      "album": [
+        "Senjutsu"
+      ],
+      "publishedSongs": 204,
+      "monthlyListeners": 6591966
+    },
+    {
+      "name": "Freddie Mercury",
+      "group": "Queen",
+      "genre": [
+        "Rock"
+      ],
+      "album": [
+        "Queen"
+      ],
+      "publishedSongs": 188,
+      "monthlyListeners": 37276204
+    },
+    {
+      "name": "Estelle Horner",
+      "group": "Spice Girls",
+      "genre": [
+        "Pop"
+      ],
+      "album": [
+        "Spice"
+      ],
+      "publishedSongs": 57,
+      "monthlyListeners": 8614262
+    },
+    {
+      "name": "Adam Levine",
+      "group": "Maroon 5",
+      "genre": [
+        "Pop",
+        "Rock"
+      ],
+      "album": [
+        "Song About Jane"
+      ],
+      "publishedSongs": 18,
+      "monthlyListeners": 48803865
+    },
+    {
+      "name": "Nick Carter",
+      "group": "BackStreet Boys",
+      "genre": [
+        "Pop"
+      ],
+      "album": [
+        "BackStreet Boys"
+      ],
+      "publishedSongs": 183,
+      "monthlyListeners": 13533750
+    },
+    {
+      "name": "J Balvin",
+      "group": "J Balvin",
+      "genre": [
+        "Urban Latino"
+      ],
+      "album": [
+        "Oasis"
+      ],
+      "publishedSongs": 216,
+      "monthlyListeners": 55853005
     }
   ]
 }

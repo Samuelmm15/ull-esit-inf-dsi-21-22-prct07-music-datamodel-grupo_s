@@ -11,14 +11,14 @@ export class Album {
   /**
    * Creates an album object
    * @param name Album name
-   * @param group Group name
    * @param artist Artist name
    * @param yearPublication Album publication year
    * @param genre Album music genre
    * @param songs Album songs
+   * @param group Group name
    */
-  constructor(private name: string, private group: Group, private artist: Artist,
-    private yearPublication: number, private genre: MusicGenre, private songs: Song[]) {
+  constructor(private name: string, private artist: Artist[],
+    private yearPublication: number, private genre: MusicGenre[], private songs: Song[], private group?: Group) {
   }
   /**
    * Gets the album name
@@ -31,14 +31,14 @@ export class Album {
    * Gets a group object
    * @return Group object
    */
-  getGroup(): Group {
+  getGroup(): Group | undefined {
     return this.group;
   }
   /**
    * Gets an artist object
    * @return Artist Object
    */
-  getArtist(): Artist {
+  getArtist(): Artist[] {
     return this.artist;
   }
   /**
@@ -52,7 +52,7 @@ export class Album {
    * Gets a music genre object
    * @return Music genre Object
    */
-  getGenre(): MusicGenre {
+  getGenre(): MusicGenre[] {
     return this.genre;
   }
   /**

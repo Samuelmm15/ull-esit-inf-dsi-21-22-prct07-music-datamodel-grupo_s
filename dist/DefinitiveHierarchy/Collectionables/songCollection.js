@@ -19,14 +19,14 @@ class SongCollection extends basicstreamablecollection_1.BasicStreamableCollecti
         }
         return `No existe la canción que intenta buscar`;
     }
-    getSongAuthor(author) {
-        for (let i = 0; i < this.songs.length; i++) {
-            if (this.songs[i].getAuthor() === author) {
-                return this.songs[i].getAuthor();
-            }
-        }
-        return `No existe el autor que intenta buscar`;
-    }
+    // public getSongAuthor(author: Artist): Artist[] | string {
+    //   for (let i = 0; i < this.songs.length; i++) {
+    //     if (this.songs[i].getAuthor() === author) {
+    //       return this.songs[i].getAuthor();
+    //     }
+    //   }
+    //   return `No existe el autor que intenta buscar`;
+    // }
     getName(author) {
         let success = ``;
         for (let i = 0; i < this.songs.length; i++) {

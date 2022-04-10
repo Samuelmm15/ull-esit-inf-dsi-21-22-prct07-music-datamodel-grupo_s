@@ -15,8 +15,8 @@ export class MusicGenre {
    * @param albums Albums that belongs to a specific music genre
    * @param songs Songs that belongs to a specific music genre
    */
-  constructor(private name: string, private groups: Group, private artists: Artist,
-    private albums: string, private songs: string) {
+  constructor(private name: string, private groups: Group[], private artists: Artist[],
+    private albums: string[], private songs: string[]) {
   }
 
   /**
@@ -31,7 +31,7 @@ export class MusicGenre {
    * Gets a group object
    * @return Group object
    */
-  getGroups(): Group {
+  getGroups(): Group[] {
     return this.groups;
   }
 
@@ -39,7 +39,7 @@ export class MusicGenre {
    * Gets an artist object
    * @return Artist object
    */
-  getArtists(): Artist {
+  getArtists(): Artist[] {
     return this.artists;
   }
 
@@ -47,7 +47,7 @@ export class MusicGenre {
    * Gets albums name
    * @return Albums name
    */
-  getAlbums(): string {
+  getAlbums(): string[] {
     return this.albums;
   }
 
@@ -55,7 +55,7 @@ export class MusicGenre {
    * Gets songs of an specific music genre
    * @return Songs name
    */
-  getSongs(): string {
+  getSongs(): string[] {
     return this.songs;
   }
 }
