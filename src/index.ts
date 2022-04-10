@@ -5,7 +5,7 @@
 import {Artist} from "./DefinitiveHierarchy/PrincipalClases/artist";
 import {ArtistsCollection} from "./DefinitiveHierarchy/Collectionables/artistCollection";
 import {TitleSongSort} from './DefinitiveHierarchy/SortFunctions/titleSongSort';
-import {JsonTodoCollection} from "./InquirerFiles/jsonTodoCollection";
+import {JsonTodoCollection} from "./LowdbFiles/jsonTodoCollection";
 import {exit} from 'process';
 import {setMaxListeners} from 'events';
 import {Group} from './DefinitiveHierarchy/PrincipalClases/groups';
@@ -23,9 +23,9 @@ import {GroupNameSort} from './DefinitiveHierarchy/SortFunctions/groupNameSort';
 import {GenreSort} from './DefinitiveHierarchy/SortFunctions/genreSort';
 import {SongDurationSort} from './DefinitiveHierarchy/SortFunctions/durationSongSort';
 import * as inquirer from 'inquirer';
-import {JsonGroupCollection} from "./InquirerFiles/jsonGroupCollection";
-import {JsonGenreCollection} from "./InquirerFiles/jsonGenreCollection";
-import {JsonSongCollection} from "./InquirerFiles/jsonSongCollection";
+import {JsonGroupCollection} from "./LowdbFiles/jsonGroupCollection";
+import {JsonGenreCollection} from "./LowdbFiles/jsonGenreCollection";
+import {JsonSongCollection} from "./LowdbFiles/jsonSongCollection";
 
 // ARTISTS 10 
 // ESTO ESTÁ CORRECTO
