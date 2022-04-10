@@ -34,29 +34,37 @@ const process_1 = require("process");
 const events_1 = require("events");
 const groups_1 = require("./DefinitiveHierarchy/PrincipalClases/groups");
 const musicGenre_1 = require("./DefinitiveHierarchy/PrincipalClases/musicGenre");
+const song_1 = require("./DefinitiveHierarchy/PrincipalClases/song");
 const genreCollection_1 = require("./DefinitiveHierarchy/Collectionables/genreCollection");
 const inquirer = __importStar(require("inquirer"));
 const jsonGroupCollection_1 = require("./InquirerFiles/jsonGroupCollection");
 const jsonGenreCollection_1 = require("./InquirerFiles/jsonGenreCollection");
-// ARTISTS 10
-const BadBunny = new artist_1.Artist('BadBunny', 'BadBunny', 'Urban Latino', 'Amorfoda', '127', 47666987);
-const Bruno = new artist_1.Artist('Bruno Mars', 'Bruno Mars', 'Pop', '24K Magic', '101', 52517377);
-const Michael = new artist_1.Artist('Michael Jackson', 'Michael Jackson', 'Pop', 'Beat It', '263', 28171657);
-const Ozuna = new artist_1.Artist('Ozuna', 'Ozuna', 'Urban Latino', 'Odisea', '158', 35236397);
-const Eminem = new artist_1.Artist('Eminem', 'Eminem', 'Rap', 'Kamikaze', '100', 52908969);
-const Elvis = new artist_1.Artist('Elvis Crespo', 'Grupo Mania', 'Merengue', 'Suavemente', '71', 3559552);
-const DonDiablo = new artist_1.Artist('Don Diablo', 'Don Diablo', 'Electro House', 'Bad', '97', 7118670);
-const RickAstley = new artist_1.Artist('Rick Astley', 'Rick Astley', 'Disco', 'Together Forever', '110', 5754965);
-const MartinGarrix = new artist_1.Artist('Martin Garrix', 'Martin Garrix', 'EDM', 'Summer Days', '73', 22404740);
-const Avicii = new artist_1.Artist('Avicii', 'Avicii', 'Dance', 'True', '98', 28729564);
+// ARTISTS 10 
+// ESTO ESTÁ CORRECTO
+const BadBunny = new artist_1.Artist('BadBunny', 'BadBunny', ['Urban Latino'], ['Amorfoda'], '127', 47666987);
+const Bruno = new artist_1.Artist('Bruno Mars', 'Bruno Mars', ['Pop'], ['24K Magic'], '101', 52517377);
+const Michael = new artist_1.Artist('Michael Jackson', 'Michael Jackson', ['Pop'], ['Beat It'], '263', 28171657);
+const Ozuna = new artist_1.Artist('Ozuna', 'Ozuna', ['Urban Latino'], ['Odisea'], '158', 35236397);
+const Eminem = new artist_1.Artist('Eminem', 'Eminem', ['Rap'], ['Kamikaze'], '100', 52908969);
+const Elvis = new artist_1.Artist('Elvis Crespo', 'Grupo Mania', ['Merengue'], ['Suavemente'], '71', 3559552);
+const DonDiablo = new artist_1.Artist('Don Diablo', 'Don Diablo', ['Electro House'], ['Bad'], '97', 7118670);
+const RickAstley = new artist_1.Artist('Rick Astley', 'Rick Astley', ['Disco'], ['Together Forever'], '110', 5754965);
+const MartinGarrix = new artist_1.Artist('Martin Garrix', 'Martin Garrix', ['EDM'], ['Summer Days'], '73', 22404740);
+const Avicii = new artist_1.Artist('Avicii', 'Avicii', ['Dance'], ['True'], '98', 28729564);
+const SteveHarris = new artist_1.Artist('Steve Harris', 'Iron Maiden', ['Heavy Metal'], ['Senjutsu'], '204', 6591966);
+const FreddieMercury = new artist_1.Artist('Freddie Mercury', 'Queen', ['Rock'], ['Queen'], '188', 37276204);
+const EstelleHorner = new artist_1.Artist('Estelle Horner', 'Spice Girls', ['Pop'], ['Spice'], '57', 8614262);
+const AdamLevine = new artist_1.Artist('Adam Levine', 'Maroon 5', ['Pop', 'Rock'], ['Song About Jane'], '', 48803865);
+const ;
 const artistCollectionOBJ = new artistCollection_1.ArtistsCollection([Bruno, BadBunny, Michael, Ozuna, Eminem, Elvis, DonDiablo, RickAstley, MartinGarrix, Avicii]);
 let collectionArtists = new jsonTodoCollection_1.JsonTodoCollection([Bruno, BadBunny, Michael, Ozuna, Eminem, Elvis, DonDiablo, RickAstley, MartinGarrix, Avicii]);
 // GROUP 5
-const IronMaiden = new groups_1.Group('Iron Maiden', Elvis, 1975, 'Heavy Metal', 'Senjutsu', 6591966); // FALTA PONER LOS CANTANTES DE MANERA CORRECTA
-const Queen = new groups_1.Group('Queen', Elvis, 1970, 'Rock', 'Queen', 37276204);
-const SpiceGirls = new groups_1.Group('Spice Girls', Elvis, 1994, 'Pop', 'Spice', 8614262);
-const Maroon5 = new groups_1.Group('Maroon 5', Elvis, 2001, 'Pop', 'Song About  Jane', 48803865);
-const BackStreetBoys = new groups_1.Group('Back Street Boys', Elvis, 1993, 'Pop', 'BackStreet Boys', 13533750);
+// FALTA PONER LOS CANTANTES DE MANERA CORRECTA
+const IronMaiden = new groups_1.Group('Iron Maiden', [SteveHarris], 1975, 'Heavy Metal', 'Senjutsu', 6591966);
+const Queen = new groups_1.Group('Queen', [FreddieMercury], 1970, 'Rock', 'Queen', 37276204);
+const SpiceGirls = new groups_1.Group('Spice Girls', [EstelleHorner], 1994, 'Pop', 'Spice', 8614262);
+const Maroon5 = new groups_1.Group('Maroon 5', [AdamLevine], 2001, 'Pop', 'Song About Jane', 48803865);
+const BackStreetBoys = new groups_1.Group('Back Street Boys', [Elvis], 1993, 'Pop', 'BackStreet Boys', 13533750);
 const GroupCollectionOBJ = [IronMaiden, Queen, SpiceGirls, Maroon5, BackStreetBoys];
 let collectionGroups = new jsonGroupCollection_1.JsonGroupCollection([IronMaiden, Queen, SpiceGirls, Maroon5, BackStreetBoys]);
 // MUSIC GENRE 10
@@ -73,6 +81,19 @@ const Classic = new musicGenre_1.MusicGenre('Classic', IronMaiden, BadBunny, '',
 const GenresCollectionObj = new genreCollection_1.GenreCollection([Rock, Pop, Merengue, ElectroHouse, Disco, Rap, UrbanLatino, EDM, Dance, Classic]);
 let collectionGenre = new jsonGenreCollection_1.JsonGenreCollection([Rock, Pop, Merengue, ElectroHouse, Disco, Rap, UrbanLatino, EDM, Dance, Classic]);
 // SONGS 50
+/** ********** BAD BUNNY SONGS ***************/
+const BadBunny120 = new song_1.Song('120', BadBunny, '2:31', UrbanLatino, false, 96933446);
+/** ********** BRUNO SONGS ***************/
+/** ********** MICHALE JACKSON SONGS ***************/
+/** ********** OZUNA SONGS ***************/
+/** ********** EMINEM SONGS ***************/
+/** ********** ELVIS CRESPO SONGS ***************/
+/** ********** DON DIABLO SONGS ***************/
+/** ********** RICK ASTLEY SONGS ***************/
+/** ********** MARTIN GARRIX SONGS ***************/
+/** ********** AVICII SONGS ***************/
+/** ********** STEVE HARRIS SONGS ***************/
+/** ********** FREDDIE MERCURY SONGS ***************/
 // ALBUM 5-10
 // PLAYLIST 3
 /** ********** NO BORREN ESTO ************/

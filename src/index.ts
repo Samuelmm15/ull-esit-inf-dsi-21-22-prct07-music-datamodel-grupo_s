@@ -26,28 +26,35 @@ import * as inquirer from 'inquirer';
 import {JsonGroupCollection} from "./InquirerFiles/jsonGroupCollection";
 import {JsonGenreCollection} from "./InquirerFiles/jsonGenreCollection";
 
-// ARTISTS 10
-const BadBunny = new Artist('BadBunny', 'BadBunny', 'Urban Latino', 'Amorfoda', '127', 47666987);
-const Bruno = new Artist('Bruno Mars', 'Bruno Mars', 'Pop', '24K Magic', '101', 52517377);
-const Michael = new Artist('Michael Jackson', 'Michael Jackson', 'Pop', 'Beat It', '263', 28171657);
-const Ozuna = new Artist('Ozuna', 'Ozuna', 'Urban Latino', 'Odisea', '158', 35236397);
-const Eminem = new Artist('Eminem', 'Eminem', 'Rap', 'Kamikaze', '100', 52908969);
-const Elvis = new Artist('Elvis Crespo', 'Grupo Mania', 'Merengue', 'Suavemente', '71', 3559552);
-const DonDiablo = new Artist('Don Diablo', 'Don Diablo', 'Electro House', 'Bad', '97', 7118670);
-const RickAstley = new Artist('Rick Astley', 'Rick Astley', 'Disco', 'Together Forever', '110', 5754965);
-const MartinGarrix = new Artist('Martin Garrix', 'Martin Garrix', 'EDM', 'Summer Days', '73', 22404740);
-const Avicii = new Artist('Avicii', 'Avicii', 'Dance', 'True', '98', 28729564);
+// ARTISTS 10 
+// ESTO ESTÁ CORRECTO
+const BadBunny = new Artist('BadBunny', 'BadBunny', ['Urban Latino'], ['Amorfoda'], '127', 47666987);
+const Bruno = new Artist('Bruno Mars', 'Bruno Mars', ['Pop'], ['24K Magic'], '101', 52517377);
+const Michael = new Artist('Michael Jackson', 'Michael Jackson', ['Pop'], ['Beat It'], '263', 28171657);
+const Ozuna = new Artist('Ozuna', 'Ozuna', ['Urban Latino'], ['Odisea'], '158', 35236397);
+const Eminem = new Artist('Eminem', 'Eminem', ['Rap'], ['Kamikaze'], '100', 52908969);
+const Elvis = new Artist('Elvis Crespo', 'Grupo Mania', ['Merengue'], ['Suavemente'], '71', 3559552);
+const DonDiablo = new Artist('Don Diablo', 'Don Diablo', ['Electro House'], ['Bad'], '97', 7118670);
+const RickAstley = new Artist('Rick Astley', 'Rick Astley', ['Disco'], ['Together Forever'], '110', 5754965);
+const MartinGarrix = new Artist('Martin Garrix', 'Martin Garrix', ['EDM'], ['Summer Days'], '73', 22404740);
+const Avicii = new Artist('Avicii', 'Avicii', ['Dance'], ['True'], '98', 28729564);
+const SteveHarris = new Artist('Steve Harris', 'Iron Maiden', ['Heavy Metal'], ['Senjutsu'], '204', 6591966);
+const FreddieMercury = new Artist('Freddie Mercury', 'Queen', ['Rock'], ['Queen'], '188', 37276204);
+const EstelleHorner = new Artist('Estelle Horner', 'Spice Girls', ['Pop'], ['Spice'], '57', 8614262);
+const AdamLevine = new Artist('Adam Levine', 'Maroon 5', ['Pop', 'Rock'], ['Song About Jane'], '', 48803865)
+const 
 
 const artistCollectionOBJ = new ArtistsCollection([Bruno, BadBunny, Michael, Ozuna, Eminem, Elvis, DonDiablo, RickAstley, MartinGarrix, Avicii]);
 
 let collectionArtists: JsonTodoCollection = new JsonTodoCollection([Bruno, BadBunny, Michael, Ozuna, Eminem, Elvis, DonDiablo, RickAstley, MartinGarrix, Avicii]);
 
 // GROUP 5
-const IronMaiden = new Group('Iron Maiden', Elvis, 1975, 'Heavy Metal', 'Senjutsu', 6591966); // FALTA PONER LOS CANTANTES DE MANERA CORRECTA
-const Queen = new Group('Queen', Elvis, 1970, 'Rock', 'Queen', 37276204);
-const SpiceGirls = new Group('Spice Girls', Elvis, 1994, 'Pop', 'Spice', 8614262);
-const Maroon5 = new Group('Maroon 5', Elvis, 2001, 'Pop', 'Song About  Jane', 48803865);
-const BackStreetBoys = new Group('Back Street Boys', Elvis, 1993, 'Pop', 'BackStreet Boys', 13533750);
+// FALTA PONER LOS CANTANTES DE MANERA CORRECTA
+const IronMaiden = new Group('Iron Maiden', [SteveHarris], 1975, 'Heavy Metal', 'Senjutsu', 6591966);
+const Queen = new Group('Queen', [FreddieMercury], 1970, 'Rock', 'Queen', 37276204);
+const SpiceGirls = new Group('Spice Girls', [EstelleHorner], 1994, 'Pop', 'Spice', 8614262);
+const Maroon5 = new Group('Maroon 5', [AdamLevine], 2001, 'Pop', 'Song About Jane', 48803865);
+const BackStreetBoys = new Group('Back Street Boys', [Elvis], 1993, 'Pop', 'BackStreet Boys', 13533750);
 
 const GroupCollectionOBJ: Group[] = [IronMaiden, Queen, SpiceGirls, Maroon5, BackStreetBoys];
 
@@ -70,7 +77,30 @@ const GenresCollectionObj = new GenreCollection([Rock, Pop, Merengue, ElectroHou
 let collectionGenre: JsonGenreCollection = new JsonGenreCollection([Rock, Pop, Merengue, ElectroHouse, Disco, Rap, UrbanLatino, EDM, Dance, Classic]);
 
 // SONGS 50
+/** ********** BAD BUNNY SONGS ***************/
+const BadBunny120 = new Song('120', BadBunny, '2:31', UrbanLatino, false, 96933446);
 
+/** ********** BRUNO SONGS ***************/
+
+/** ********** MICHALE JACKSON SONGS ***************/
+
+/** ********** OZUNA SONGS ***************/
+
+/** ********** EMINEM SONGS ***************/
+
+/** ********** ELVIS CRESPO SONGS ***************/
+
+/** ********** DON DIABLO SONGS ***************/
+
+/** ********** RICK ASTLEY SONGS ***************/
+
+/** ********** MARTIN GARRIX SONGS ***************/
+
+/** ********** AVICII SONGS ***************/
+
+/** ********** STEVE HARRIS SONGS ***************/
+
+/** ********** FREDDIE MERCURY SONGS ***************/
 
 // ALBUM 5-10
 

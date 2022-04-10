@@ -13,7 +13,7 @@ export class Group {
    * @param albums Albums name of the group
    * @param monthlyListener Monthly Listeners of the group
    */
-  constructor(private name: string, private artists: Artist,
+  constructor(private name: string, private artists: Artist[],
     private yearCreation: number, private genre: string,
     private albums: string, private monthlyListener: number) {
   }
@@ -29,7 +29,7 @@ export class Group {
    * Gets artist objects that belongs to the group
    * @return Artist objects
    */
-  getArtists(): Artist {
+  getArtists(): Artist[] {
     return this.artists;
   }
   /**
