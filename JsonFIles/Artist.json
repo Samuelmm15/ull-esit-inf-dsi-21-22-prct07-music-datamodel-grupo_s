@@ -1,20 +1,84 @@
 {
   "Artist": [
     {
-      "name": "Bruno",
-      "group": "Arberto",
-      "genre": "Reggae",
-      "album": "Touralmundo",
-      "publishedSongs": "2",
-      "monthlyListeners": 12
+      "name": "Bruno Mars",
+      "group": "Bruno Mars",
+      "genre": "Pop",
+      "album": "24K Magic",
+      "publishedSongs": "101",
+      "monthlyListeners": 52517377
     },
     {
       "name": "BadBunny",
-      "group": "Iluminati",
-      "genre": "Reggae",
-      "album": "Touralmundo",
-      "publishedSongs": "2",
-      "monthlyListeners": 12
+      "group": "BadBunny",
+      "genre": "Urban Latino",
+      "album": "Amorfoda",
+      "publishedSongs": "127",
+      "monthlyListeners": 47666987
+    },
+    {
+      "name": "Michael Jackson",
+      "group": "Michael Jackson",
+      "genre": "Pop",
+      "album": "Beat It",
+      "publishedSongs": "263",
+      "monthlyListeners": 28171657
+    },
+    {
+      "name": "Ozuna",
+      "group": "Ozuna",
+      "genre": "Urban Latino",
+      "album": "Odisea",
+      "publishedSongs": "158",
+      "monthlyListeners": 35236397
+    },
+    {
+      "name": "Eminem",
+      "group": "Eminem",
+      "genre": "Rap",
+      "album": "Kamikaze",
+      "publishedSongs": "100",
+      "monthlyListeners": 52908969
+    },
+    {
+      "name": "Elvis Crespo",
+      "group": "Grupo Mania",
+      "genre": "Merengue",
+      "album": "Suavemente",
+      "publishedSongs": "71",
+      "monthlyListeners": 3559552
+    },
+    {
+      "name": "Don Diablo",
+      "group": "Don Diablo",
+      "genre": "Electro House",
+      "album": "Bad",
+      "publishedSongs": "97",
+      "monthlyListeners": 7118670
+    },
+    {
+      "name": "Rick Astley",
+      "group": "Rick Astley",
+      "genre": "Disco",
+      "album": "Together Forever",
+      "publishedSongs": "110",
+      "monthlyListeners": 5754965
+    },
+    {
+      "name": "Martin Garrix",
+      "group": "Martin Garrix",
+      "genre": "EDM",
+      "album": "Summer Days",
+      "publishedSongs": "73",
+      "monthlyListeners": 22404740
+    },
+    {
+      "name": "Avicii",
+      "group": "Avicii",
+      "genre": "Dance",
+      "album": "True",
+      "publishedSongs": "98",
+      "monthlyListeners": 28729564
     }
   ]
 }

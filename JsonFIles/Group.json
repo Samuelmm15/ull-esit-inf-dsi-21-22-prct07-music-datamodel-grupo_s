@@ -1,0 +1,94 @@
+{
+  "Group": [
+    {
+      "name": "Iron Maiden",
+      "artists": {
+        "name": "Elvis Crespo",
+        "group": "Grupo Mania",
+        "genre": "Merengue",
+        "album": "Suavemente",
+        "publishedSongs": "71",
+        "monthlyListeners": 3559552
+      },
+      "yearCreation": 1975,
+      "genre": "Heavy Metal",
+      "albums": "Senjutsu",
+      "monthlyListener": 6591966
+    },
+    {
+      "name": "Queen",
+      "artists": {
+        "name": "Elvis Crespo",
+        "group": "Grupo Mania",
+        "genre": "Merengue",
+        "album": "Suavemente",
+        "publishedSongs": "71",
+        "monthlyListeners": 3559552
+      },
+      "yearCreation": 1970,
+      "genre": "Rock",
+      "albums": "Queen",
+      "monthlyListener": 37276204
+    },
+    {
+      "name": "Spice Girls",
+      "artists": {
+        "name": "Elvis Crespo",
+        "group": "Grupo Mania",
+        "genre": "Merengue",
+        "album": "Suavemente",
+        "publishedSongs": "71",
+        "monthlyListeners": 3559552
+      },
+      "yearCreation": 1994,
+      "genre": "Pop",
+      "albums": "Spice",
+      "monthlyListener": 8614262
+    },
+    {
+      "name": "Maroon 5",
+      "artists": {
+        "name": "Elvis Crespo",
+        "group": "Grupo Mania",
+        "genre": "Merengue",
+        "album": "Suavemente",
+        "publishedSongs": "71",
+        "monthlyListeners": 3559552
+      },
+      "yearCreation": 2001,
+      "genre": "Pop",
+      "albums": "Song About  Jane",
+      "monthlyListener": 48803865
+    },
+    {
+      "name": "Back Street Boys",
+      "artists": {
+        "name": "Elvis Crespo",
+        "group": "Grupo Mania",
+        "genre": "Merengue",
+        "album": "Suavemente",
+        "publishedSongs": "71",
+        "monthlyListeners": 3559552
+      },
+      "yearCreation": 1993,
+      "genre": "Pop",
+      "albums": "BackStreet Boys",
+      "monthlyListener": 13533750
+    },
+    {
+      "name": "Los Pepes",
+      "artists": {
+        "name": "Elvis Crespo",
+        "group": "Grupo Mania",
+        "genre": "Merengue",
+        "album": "Suavemente",
+        "publishedSongs": "71",
+        "monthlyListeners": 3559552
+      },
+      "yearCreation": "2021",
+      "genre": "Rock",
+      "albums": "Los pepes",
+      "monthlyListener": "1000"
+    }
+  ]
+}
