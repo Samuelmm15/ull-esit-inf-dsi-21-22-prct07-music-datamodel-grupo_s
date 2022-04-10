@@ -1,5 +1,5 @@
-import {Group} from './DefinitiveHierarchy/PrincipalClases/groups';
-import {Artist} from './DefinitiveHierarchy/PrincipalClases/artist';
+import {Group} from '../DefinitiveHierarchy/PrincipalClases/groups';
+import {Artist} from '../DefinitiveHierarchy/PrincipalClases/artist';
 import lowdb from 'lowdb';
 import FileSync from 'lowdb/adapters/FileSync';
 
