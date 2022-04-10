@@ -27,8 +27,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
+const artist_1 = require("./DefinitiveHierarchy/PrincipalClases/artist");
+const artistCollection_1 = require("./DefinitiveHierarchy/Collectionables/artistCollection");
+const jsonTodoCollection_1 = require("./InquirerFiles/jsonTodoCollection");
+const process_1 = require("process");
+const events_1 = require("events");
 const groups_1 = require("./DefinitiveHierarchy/PrincipalClases/groups");
+const musicGenre_1 = require("./DefinitiveHierarchy/PrincipalClases/musicGenre");
+const genreCollection_1 = require("./DefinitiveHierarchy/Collectionables/genreCollection");
 const inquirer = __importStar(require("inquirer"));
+const jsonGroupCollection_1 = require("./InquirerFiles/jsonGroupCollection");
+const jsonGenreCollection_1 = require("./InquirerFiles/jsonGenreCollection");
 // ARTISTS 10
 const BadBunny = new artist_1.Artist('BadBunny', 'BadBunny', 'Urban Latino', 'Amorfoda', '127', 47666987);
 const Bruno = new artist_1.Artist('Bruno Mars', 'Bruno Mars', 'Pop', '24K Magic', '101', 52517377);
@@ -40,18 +49,33 @@ const Bruno = new artist_1.Artist('Bruno Mars', 'Bruno Mars', 'Pop', '24K Magic'
 // const RickAstley = new Artist('Rick Astley', 'Rick Astley', 'Disco', 'Together Forever', '110', 5754965);
 // const MartinGarrix = new Artist('Martin Garrix', 'Martin Garrix', 'EDM', 'Summer Days', '73', 22404740);
 // const Avicii = new Artist('Avicii', 'Avicii', 'Dance', 'True', '98', 28729564);
+const artistCollectionOBJ = new artistCollection_1.ArtistsCollection([Bruno, BadBunny, Michael, Ozuna, Eminem, Elvis, DonDiablo, RickAstley, MartinGarrix, Avicii]);
+let collectionArtists = new jsonTodoCollection_1.JsonTodoCollection([Bruno, BadBunny, Michael, Ozuna, Eminem, Elvis, DonDiablo, RickAstley, MartinGarrix, Avicii]);
 // GROUP 5
-const ACDC = new groups_1.Group('ACDC', BadBunny, 500, 'Rock', 'ACDC', 1205161);
+const IronMaiden = new groups_1.Group('Iron Maiden', Elvis, 1975, 'Heavy Metal', 'Senjutsu', 6591966); // FALTA PONER LOS CANTANTES DE MANERA CORRECTA
+const Queen = new groups_1.Group('Queen', Elvis, 1970, 'Rock', 'Queen', 37276204);
+const SpiceGirls = new groups_1.Group('Spice Girls', Elvis, 1994, 'Pop', 'Spice', 8614262);
+const Maroon5 = new groups_1.Group('Maroon 5', Elvis, 2001, 'Pop', 'Song About  Jane', 48803865);
+const BackStreetBoys = new groups_1.Group('Back Street Boys', Elvis, 1993, 'Pop', 'BackStreet Boys', 13533750);
+const GroupCollectionOBJ = [IronMaiden, Queen, SpiceGirls, Maroon5, BackStreetBoys];
+let collectionGroups = new jsonGroupCollection_1.JsonGroupCollection([IronMaiden, Queen, SpiceGirls, Maroon5, BackStreetBoys]);
 // MUSIC GENRE 10
+const Rock = new musicGenre_1.MusicGenre('Rock', IronMaiden, Elvis, 'Senjutsu', 'Two Minutes for MidNigth');
+const Pop = new musicGenre_1.MusicGenre('Pop', SpiceGirls, Michael, 'Spice', 'WannaBe');
+const Merengue = new musicGenre_1.MusicGenre('Merengue', Queen, Elvis, 'Suavemente', 'Suavemente');
+const ElectroHouse = new musicGenre_1.MusicGenre('Electro House', IronMaiden, DonDiablo, 'Bad', 'Bad');
+const Disco = new musicGenre_1.MusicGenre('Disco', BackStreetBoys, RickAstley, 'Together Forever', 'Never gonna give you up');
+const Rap = new musicGenre_1.MusicGenre('Rap', Queen, Eminem, 'Kamikaze', 'Kamikaze');
+const UrbanLatino = new musicGenre_1.MusicGenre('Urban Latino', Maroon5, Ozuna, 'Odisea', 'Odisea');
+const EDM = new musicGenre_1.MusicGenre('EDM', SpiceGirls, MartinGarrix, 'Summer Days', 'Summer');
+const Dance = new musicGenre_1.MusicGenre('Dance', Maroon5, Avicii, 'True', 'Levels');
+const Classic = new musicGenre_1.MusicGenre('Classic', IronMaiden, BadBunny, '', '');
+const GenresCollectionObj = new genreCollection_1.GenreCollection([Rock, Pop, Merengue, ElectroHouse, Disco, Rap, UrbanLatino, EDM, Dance, Classic]);
+let collectionGenre = new jsonGenreCollection_1.JsonGenreCollection([Rock, Pop, Merengue, ElectroHouse, Disco, Rap, UrbanLatino, EDM, Dance, Classic]);
 // SONGS 50
 // ALBUM 5-10
 // PLAYLIST 3
 /** ********** NO BORREN ESTO ************/
-const artist_1 = require("./DefinitiveHierarchy/PrincipalClases/artist");
-const artistCollection_1 = require("./DefinitiveHierarchy/Collectionables/artistCollection");
-const jsonTodoCollection_1 = require("./InquirerFiles/jsonTodoCollection");
-const process_1 = require("process");
-const events_1 = require("events");
 // Artist objects
 const artistCollectionOBJ = new artistCollection_1.ArtistsCollection([Bruno, BadBunny]);
 let collectionArtists = new jsonTodoCollection_1.JsonTodoCollection([Bruno, BadBunny]);
@@ -169,3 +193,325 @@ function promptUser() {
     });
 }
 promptUser();
+// function displayTodoList(): void {
+//   console.log(`ARTIST COLLECTION`);
+//   for (let i = 0; i < artistCollectionOBJ.getArtistsCollectionLength(); i++) {
+//     console.log(artistCollectionOBJ.getArtistList(i));
+//   }
+// }
+//     enum Commands {
+//       Add = "Add New Artist",
+//       Toggle = "Artist Added Default",
+//       Purge = "Remove New Added Artists",
+//       Quit = "Quit"
+//     }
+// function promptAdd(): void {
+//   console.clear();
+//   let artistName: string = ``;
+//   let groupName: string = ``;
+//   let genre: string = ``;
+//   let album: string = ``;
+//   let publishedSongs: string = ``;
+//   let monthlyListeners: number = 0;
+//   /** DE ESTA MANERA ES COMO SE AÑADEN VARIOS ELEMENTOS CON PROMPT 
+//    * Mirar esta página: https://typescript.hotexamples.com/es/examples/inquirer/-/prompt/typescript-prompt-function-examples.html
+//   */
+//   inquirer.prompt([{type: "input", name: "ArtistName", message: "Enter Artist Name:"},
+//     {type: "input", name: "GroupName", message: "Enter Group Name:"},
+//     {type: "input", name: "Genre", message: "Enter The Genre:"},
+//     {type: "input", name: "Album", message: "Enter Album Name:"},
+//     {type: "input", name: "PublishedSongs", message: "Enter the number of published songs:"},
+//     {type: "input", name: "monthlyListeners", message: "Enter the number of listeners:"}])
+//       .then((answers) => {
+//         artistName = answers.ArtistName;
+//         groupName = answers.GroupName;
+//         genre = answers.Genre;
+//         album = answers.Album;
+//         publishedSongs = answers.PublishedSongs;
+//         monthlyListeners = answers.monthlyListeners;
+//         artistCollectionOBJ.addArtist(new Artist(artistName, groupName, genre, album, publishedSongs, monthlyListeners))
+//         collectionArtists.restart(artistCollectionOBJ);
+//         inquirer.prompt({type: "input", name: "Continue", message: "Do you want to return to the main screen ? (y/N): "})
+//             .then((answers) => {
+//               if (answers["Continue"] === "y") {
+//                 promptUser();
+//               } else {
+//                 exit();
+//               }
+//             });
+//       });
+// }
+// function promptDefault(): void {
+//   console.clear();
+//   console.log(`ARTIST DEFAULT COLLECTION`);
+//   for (let i = 0; i < artistCollectionOBJ.getArtistsCollectionLength(); i++) {
+//     console.log(artistCollectionOBJ.getArtistList(i));
+//   }
+//   inquirer.prompt({type: "input", name: "Continue", message: "Do you want to return to the main screen ? (y/N): "})
+//       .then((answers) => {
+//         if (answers["Continue"] === "y") {
+//           promptUser();
+//         } else {
+//           exit();
+//         }
+//       });
+// }
+// function promptDelete(): void {
+//   console.clear();
+//   let artistName: string = ``;
+//   inquirer.prompt({type: "input", name: "Delete", message: "Enter the name of the artist you wish to delete: "})
+//       .then((answer) => {
+//         artistName = answer.Delete;
+//         artistCollectionOBJ.getRemoveArtist(artistName);
+//         collectionArtists.restart(artistCollectionOBJ);
+//         inquirer.prompt({type: "input", name: "Continue", message: "Do you want to return to the main screen ? (y/N): "})
+//             .then((answers) => {
+//               if (answers["Continue"] === "y") {
+//                 promptUser();
+//               } else {
+//                 exit();
+//               }
+//             });
+//       });
+// }
+// function promptUser(): void {
+//   setMaxListeners(100);
+//   console.clear();
+//   displayTodoList();
+//   inquirer.prompt({
+//     type: "list",
+//     name: "command",
+//     message: "Choose option",
+//     choices: Object.values(Commands),
+//   }).then((answers) => {
+//     switch (answers["command"]) {
+//       case Commands.Toggle:
+//         promptDefault();
+//         break;
+//       case Commands.Add:
+//         promptAdd();
+//         break;
+//       case Commands.Purge:
+//         promptDelete();
+//         break;
+//       case Commands.Quit:
+//         console.clear();
+//         console.log(`<< Program Exit >>`);
+//         exit();
+//         break;
+//     }
+//   });
+// }
+// promptUser();
+/** ********** NO BORREN ESTO ************/
+// function displayTodoList(): void {
+//   console.log(`GROUP COLLECTION`);
+//   for (let i = 0; i < GroupCollectionOBJ.length; i++) {
+//     console.log(GroupCollectionOBJ[i].getName());
+//   }
+// }
+//     enum Commands {
+//       Add = "Add New Group",
+//       Toggle = "Group Added Default",
+//       Purge = "Remove New Added Group",
+//       Quit = "Quit"
+//     }
+// function promptAdd(): void {
+//   console.clear();
+//   let groupName: string = ``;
+//   let yearCreation: number = 0;
+//   let genre: string = ``;
+//   let album: string = ``;
+//   let monthlyListeners: number = 0;
+//   /** DE ESTA MANERA ES COMO SE AÑADEN VARIOS ELEMENTOS CON PROMPT 
+//    * Mirar esta página: https://typescript.hotexamples.com/es/examples/inquirer/-/prompt/typescript-prompt-function-examples.html
+//   */
+//   inquirer.prompt([{type: "input", name: "GroupName", message: "Enter Group Name:"},
+//     {type: "input", name: "yearCreation", message: "Enter the year of creation of the group:"},
+//     {type: "input", name: "Genre", message: "Enter The Genre:"},
+//     {type: "input", name: "Album", message: "Enter Album Name:"},
+//     {type: "input", name: "monthlyListeners", message: "Enter the number of listeners:"}])
+//       .then((answers) => {
+//         groupName = answers.GroupName;
+//         yearCreation = answers.yearCreation;
+//         genre = answers.Genre;
+//         album = answers.Album;
+//         monthlyListeners = answers.monthlyListeners;
+//         GroupCollectionOBJ.push(new Group(groupName, Elvis, yearCreation, genre, album, monthlyListeners));
+//         collectionGroups.restart(GroupCollectionOBJ);
+//         inquirer.prompt({type: "input", name: "Continue", message: "Do you want to return to the main screen ? (y/N): "})
+//             .then((answers) => {
+//               if (answers["Continue"] === "y") {
+//                 promptUser();
+//               } else {
+//                 exit();
+//               }
+//             });
+//       });
+// }
+// function promptDefault(): void {
+//   console.clear();
+//   console.log(`GROUP DEFAULT COLLECTION`);
+//   for (let i = 0; i < GroupCollectionOBJ.length; i++) {
+//     console.log(GroupCollectionOBJ[i].getName());
+//   }
+//   inquirer.prompt({type: "input", name: "Continue", message: "Do you want to return to the main screen ? (y/N): "})
+//       .then((answers) => {
+//         if (answers["Continue"] === "y") {
+//           promptUser();
+//         } else {
+//           exit();
+//         }
+//       });
+// }
+// function promptDelete(): void {
+//   console.clear();
+//   let groupName: string = ``;
+//   inquirer.prompt({type: "input", name: "Delete", message: "Enter the name of the group you wish to delete: "})
+//       .then((answer) => {
+//         for (let i = 0; i < GroupCollectionOBJ.length; i++) {
+//           if (groupName === GroupCollectionOBJ[i].getName()) {
+//             // FALTA ELIMINAR EL GRUPO QUE NO SÉ COMO SE HACE
+//           }
+//         }
+//         inquirer.prompt({type: "input", name: "Continue", message: "Do you want to return to the main screen ? (y/N): "})
+//             .then((answers) => {
+//               if (answers["Continue"] === "y") {
+//                 promptUser();
+//               } else {
+//                 exit();
+//               }
+//             });
+//       });
+// }
+// function promptUser(): void {
+//   setMaxListeners(100);
+//   console.clear();
+//   displayTodoList();
+//   inquirer.prompt({
+//     type: "list",
+//     name: "command",
+//     message: "Choose option",
+//     choices: Object.values(Commands),
+//   }).then((answers) => {
+//     switch (answers["command"]) {
+//       case Commands.Toggle:
+//         promptDefault();
+//         break;
+//       case Commands.Add:
+//         promptAdd();
+//         break;
+//       case Commands.Purge:
+//         promptDelete();
+//         break;
+//       case Commands.Quit:
+//         console.clear();
+//         console.log(`<< Program Exit >>`);
+//         exit();
+//         break;
+//     }
+//   });
+// }
+// promptUser();
+/** ********** NO BORREN ESTO ************/
+// function displayTodoList(): void {
+//   console.log(`GENRE COLLECTION`);
+//   for (let i = 0; i < GenresCollectionObj.getColectionlength(); i++) {
+//     console.log(GenresCollectionObj.getnObject(i).getName());
+//   }
+// }
+//     enum Commands {
+//       Add = "Add New Genre",
+//       Toggle = "Genre Added Default",
+//       Purge = "Remove New Added Genre",
+//       Quit = "Quit"
+//     }
+// function promptAdd(): void {
+//   console.clear();
+//   let genreName: string = ``;
+//   let album: string = ``;
+//   let songs: string = ``;
+//   /** DE ESTA MANERA ES COMO SE AÑADEN VARIOS ELEMENTOS CON PROMPT 
+//    * Mirar esta página: https://typescript.hotexamples.com/es/examples/inquirer/-/prompt/typescript-prompt-function-examples.html
+//   */
+//   inquirer.prompt([{type: "input", name: "GenreName", message: "Enter Genre Name:"},
+//     {type: "input", name: "Album", message: "Enter Album Name:"},
+//     {type: "input", name: "song", message: "Enter the song name:"}])
+//       .then((answers) => {
+//         genreName = answers.GenreName;
+//         album = answers.Album;
+//         songs = answers.song;
+//         GenresCollectionObj.addGenre(new MusicGenre(genreName, IronMaiden, DonDiablo, album, songs));
+//         collectionGenre.restart(GenresCollectionObj);
+//         inquirer.prompt({type: "input", name: "Continue", message: "Do you want to return to the main screen ? (y/N): "})
+//             .then((answers) => {
+//               if (answers["Continue"] === "y") {
+//                 promptUser();
+//               } else {
+//                 exit();
+//               }
+//             });
+//       });
+// }
+// function promptDefault(): void {
+//   console.clear();
+//   console.log(`GENRE DEFAULT COLLECTION`);
+//   for (let i = 0; i < GenresCollectionObj.getColectionlength(); i++) {
+//     console.log(GenresCollectionObj.getnObject(i).getName());
+//   }
+//   inquirer.prompt({type: "input", name: "Continue", message: "Do you want to return to the main screen ? (y/N): "})
+//       .then((answers) => {
+//         if (answers["Continue"] === "y") {
+//           promptUser();
+//         } else {
+//           exit();
+//         }
+//       });
+// }
+// function promptDelete(): void {
+//   console.clear();
+//   let artistName: string = ``;
+//   inquirer.prompt({type: "input", name: "Delete", message: "Enter the name of the artist you wish to delete: "})
+//       .then((answer) => {
+//         artistName = answer.Delete;
+//         artistCollectionOBJ.getRemoveArtist(artistName);
+//         collectionArtists.restart(artistCollectionOBJ);
+//         inquirer.prompt({type: "input", name: "Continue", message: "Do you want to return to the main screen ? (y/N): "})
+//             .then((answers) => {
+//               if (answers["Continue"] === "y") {
+//                 promptUser();
+//               } else {
+//                 exit();
+//               }
+//             });
+//       });
+// }
+// function promptUser(): void {
+//   setMaxListeners(100);
+//   console.clear();
+//   displayTodoList();
+//   inquirer.prompt({
+//     type: "list",
+//     name: "command",
+//     message: "Choose option",
+//     choices: Object.values(Commands),
+//   }).then((answers) => {
+//     switch (answers["command"]) {
+//       case Commands.Toggle:
+//         promptDefault();
+//         break;
+//       case Commands.Add:
+//         promptAdd();
+//         break;
+//       case Commands.Purge:
+//         promptDelete();
+//         break;
+//       case Commands.Quit:
+//         console.clear();
+//         console.log(`<< Program Exit >>`);
+//         exit();
+//         break;
+//     }
+//   });
+// }
+// promptUser();

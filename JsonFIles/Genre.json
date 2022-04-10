@@ -1,0 +1,284 @@
+{
+  "Genre": [
+    {
+      "name": "Rock",
+      "groups": {
+        "name": "Iron Maiden",
+        "artists": {
+          "name": "Elvis Crespo",
+          "group": "Grupo Mania",
+          "genre": "Merengue",
+          "album": "Suavemente",
+          "publishedSongs": "71",
+          "monthlyListeners": 3559552
+        },
+        "yearCreation": 1975,
+        "genre": "Heavy Metal",
+        "albums": "Senjutsu",
+        "monthlyListener": 6591966
+      },
+      "artists": {
+        "name": "Elvis Crespo",
+        "group": "Grupo Mania",
+        "genre": "Merengue",
+        "album": "Suavemente",
+        "publishedSongs": "71",
+        "monthlyListeners": 3559552
+      },
+      "albums": "Senjutsu",
+      "songs": "Two Minutes for MidNigth"
+    },
+    {
+      "name": "Pop",
+      "groups": {
+        "name": "Spice Girls",
+        "artists": {
+          "name": "Elvis Crespo",
+          "group": "Grupo Mania",
+          "genre": "Merengue",
+          "album": "Suavemente",
+          "publishedSongs": "71",
+          "monthlyListeners": 3559552
+        },
+        "yearCreation": 1994,
+        "genre": "Pop",
+        "albums": "Spice",
+        "monthlyListener": 8614262
+      },
+      "artists": {
+        "name": "Michael Jackson",
+        "group": "Michael Jackson",
+        "genre": "Pop",
+        "album": "Beat It",
+        "publishedSongs": "263",
+        "monthlyListeners": 28171657
+      },
+      "albums": "Spice",
+      "songs": "WannaBe"
+    },
+    {
+      "name": "Merengue",
+      "groups": {
+        "name": "Queen",
+        "artists": {
+          "name": "Elvis Crespo",
+          "group": "Grupo Mania",
+          "genre": "Merengue",
+          "album": "Suavemente",
+          "publishedSongs": "71",
+          "monthlyListeners": 3559552
+        },
+        "yearCreation": 1970,
+        "genre": "Rock",
+        "albums": "Queen",
+        "monthlyListener": 37276204
+      },
+      "artists": {
+        "name": "Elvis Crespo",
+        "group": "Grupo Mania",
+        "genre": "Merengue",
+        "album": "Suavemente",
+        "publishedSongs": "71",
+        "monthlyListeners": 3559552
+      },
+      "albums": "Suavemente",
+      "songs": "Suavemente"
+    },
+    {
+      "name": "Electro House",
+      "groups": {
+        "name": "Iron Maiden",
+        "artists": {
+          "name": "Elvis Crespo",
+          "group": "Grupo Mania",
+          "genre": "Merengue",
+          "album": "Suavemente",
+          "publishedSongs": "71",
+          "monthlyListeners": 3559552
+        },
+        "yearCreation": 1975,
+        "genre": "Heavy Metal",
+        "albums": "Senjutsu",
+        "monthlyListener": 6591966
+      },
+      "artists": {
+        "name": "Don Diablo",
+        "group": "Don Diablo",
+        "genre": "Electro House",
+        "album": "Bad",
+        "publishedSongs": "97",
+        "monthlyListeners": 7118670
+      },
+      "albums": "Bad",
+      "songs": "Bad"
+    },
+    {
+      "name": "Disco",
+      "groups": {
+        "name": "Back Street Boys",
+        "artists": {
+          "name": "Elvis Crespo",
+          "group": "Grupo Mania",
+          "genre": "Merengue",
+          "album": "Suavemente",
+          "publishedSongs": "71",
+          "monthlyListeners": 3559552
+        },
+        "yearCreation": 1993,
+        "genre": "Pop",
+        "albums": "BackStreet Boys",
+        "monthlyListener": 13533750
+      },
+      "artists": {
+        "name": "Rick Astley",
+        "group": "Rick Astley",
+        "genre": "Disco",
+        "album": "Together Forever",
+        "publishedSongs": "110",
+        "monthlyListeners": 5754965
+      },
+      "albums": "Together Forever",
+      "songs": "Never gonna give you up"
+    },
+    {
+      "name": "Rap",
+      "groups": {
+        "name": "Queen",
+        "artists": {
+          "name": "Elvis Crespo",
+          "group": "Grupo Mania",
+          "genre": "Merengue",
+          "album": "Suavemente",
+          "publishedSongs": "71",
+          "monthlyListeners": 3559552
+        },
+        "yearCreation": 1970,
+        "genre": "Rock",
+        "albums": "Queen",
+        "monthlyListener": 37276204
+      },
+      "artists": {
+        "name": "Eminem",
+        "group": "Eminem",
+        "genre": "Rap",
+        "album": "Kamikaze",
+        "publishedSongs": "100",
+        "monthlyListeners": 52908969
+      },
+      "albums": "Kamikaze",
+      "songs": "Kamikaze"
+    },
+    {
+      "name": "Urban Latino",
+      "groups": {
+        "name": "Maroon 5",
+        "artists": {
+          "name": "Elvis Crespo",
+          "group": "Grupo Mania",
+          "genre": "Merengue",
+          "album": "Suavemente",
+          "publishedSongs": "71",
+          "monthlyListeners": 3559552
+        },
+        "yearCreation": 2001,
+        "genre": "Pop",
+        "albums": "Song About  Jane",
+        "monthlyListener": 48803865
+      },
+      "artists": {
+        "name": "Ozuna",
+        "group": "Ozuna",
+        "genre": "Urban Latino",
+        "album": "Odisea",
+        "publishedSongs": "158",
+        "monthlyListeners": 35236397
+      },
+      "albums": "Odisea",
+      "songs": "Odisea"
+    },
+    {
+      "name": "EDM",
+      "groups": {
+        "name": "Spice Girls",
+        "artists": {
+          "name": "Elvis Crespo",
+          "group": "Grupo Mania",
+          "genre": "Merengue",
+          "album": "Suavemente",
+          "publishedSongs": "71",
+          "monthlyListeners": 3559552
+        },
+        "yearCreation": 1994,
+        "genre": "Pop",
+        "albums": "Spice",
+        "monthlyListener": 8614262
+      },
+      "artists": {
+        "name": "Martin Garrix",
+        "group": "Martin Garrix",
+        "genre": "EDM",
+        "album": "Summer Days",
+        "publishedSongs": "73",
+        "monthlyListeners": 22404740
+      },
+      "albums": "Summer Days",
+      "songs": "Summer"
+    },
+    {
+      "name": "Dance",
+      "groups": {
+        "name": "Maroon 5",
+        "artists": {
+          "name": "Elvis Crespo",
+          "group": "Grupo Mania",
+          "genre": "Merengue",
+          "album": "Suavemente",
+          "publishedSongs": "71",
+          "monthlyListeners": 3559552
+        },
+        "yearCreation": 2001,
+        "genre": "Pop",
+        "albums": "Song About  Jane",
+        "monthlyListener": 48803865
+      },
+      "artists": {
+        "name": "Avicii",
+        "group": "Avicii",
+        "genre": "Dance",
+        "album": "True",
+        "publishedSongs": "98",
+        "monthlyListeners": 28729564
+      },
+      "albums": "True",
+      "songs": "Levels"
+    },
+    {
+      "name": "Classic",
+      "groups": {
+        "name": "Iron Maiden",
+        "artists": {
+          "name": "Elvis Crespo",
+          "group": "Grupo Mania",
+          "genre": "Merengue",
+          "album": "Suavemente",
+          "publishedSongs": "71",
+          "monthlyListeners": 3559552
+        },
+        "yearCreation": 1975,
+        "genre": "Heavy Metal",
+        "albums": "Senjutsu",
+        "monthlyListener": 6591966
+      },
+      "artists": {
+        "name": "BadBunny",
+        "group": "BadBunny",
+        "genre": "Urban Latino",
+        "album": "Amorfoda",
+        "publishedSongs": "127",
+        "monthlyListeners": 47666987
+      },
+      "albums": "",
+      "songs": ""
+    }
+  ]
+}
