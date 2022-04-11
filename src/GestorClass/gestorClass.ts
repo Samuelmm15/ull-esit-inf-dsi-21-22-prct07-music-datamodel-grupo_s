@@ -20,7 +20,7 @@ import {SongDurationSort} from '../DefinitiveHierarchy/SortFunctions/durationSon
 import {exit} from 'process';
 import {setMaxListeners} from 'events';
 import {Playlists} from '../DefinitiveHierarchy/PrincipalClases/playlist';
-import {JsonPlaylistCollection} from '../InquirerFiles/jsonPlaylistCollection';
+import {JsonPlaylistCollection} from '../LowdbFiles/jsonPlaylistCollection';
 import * as inquirer from 'inquirer';
 
 // // INQUIRE FUNCTIONS

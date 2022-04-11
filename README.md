@@ -20,7 +20,7 @@ Course: Desarrollo de Sistemas Informáticos
 ## Introducción
 En esta práctica, la primera grupal de la asignatura, tendrá que llevar a cabo un diseño orientado a objetos del modelo de datos de un sistema de información que permita almacenar una biblioteca de música. Esta biblioteca de música debe guardar una serie de canciones, géneros musicales, albums, grupos y artistas donde cada elemento tiene sus atributos correspondientes; toda está información se tendrá que guardar en una playlist. En las playlists existentes en la biblioteca los usuarios van a poder visualizar toda la información asociada a una playlist, como lo son el nombre de la playlist, los géneros incluidos y la duración de dicha playlist en horas, minutos y segundos. En la playlist también se debería navegar por está para ver las canciones que se incluyen en está siguiendo una serie de criterios para ordenar la información y por último un usuario debería poder crear alguna playlist y borrar su propia playlist.
 
-## Codificación
+## Implementación de las Clases Principales
 
 En está primera parte se comentará todo lo relacionada con la implementación que se ha elegido para realizar la biblioteca de música que se pretende conseguir.
 
@@ -123,7 +123,7 @@ Estas clases se han creado simplemente para poder guardar un conjunto de artista
 
 La clase base en este caso sería ```BasicStreamableCollection<T>``` y está clase extiende a la interfaz streameable que define el método ```getName()``` que debe estar en todas las colecciones. En está clase base se usa el tipo genérico ```<T>``` para poder definir el tipo que queramos para crear cualquier colección.
 
-Las clases ```ArtistsCollection```, ```GenreCollection``` y ```SongCollection```, usan los mismos atríbutos que en las clases Principales ```Artist```, ```MusicGenre``` y ```Song``` ya que las colecciones usan objetos del tipo correspondiente a estas clases. En las colecciones se definen una serie de métodos para poder acceder a los atríbutos de cada objeto dentro del array del tipo objeto que sea. También se han creado métodos para poder eliminar objetos de la array del tipo que sea.
+Las clases ```ArtistsCollection```, ```GenreCollection``` y ```SongCollection```, usan los mismos atríbutos que en las clases Principales ```Artist```, ```MusicGenre``` y ```Song``` ya que las colecciones usan objetos del tipo correspondiente. En las colecciones se definen una serie de métodos para poder acceder a los atríbutos de cada objeto dentro del array del tipo objeto que sea. También se han creado métodos para poder eliminar objetos de la array del tipo que sea.
 
 #### Funciones de ordenación
 
@@ -185,4 +185,79 @@ Las ordenaciones que se deben utilizar para navegar por las diferentes playlists
 
 ## Inquirer
 
+### ¿Qué es Inquirer?
+
+Inquirer es un paquete de NPM que proporciona de manera sencilla una forma de capturar la entrada del usuario en las aplicaciones de interfaz de línea de comandos en Node.js. Proporciona varios métodos para hacer preguntas y devolver respuestas al usuario a las que se puede acceder mediante una función ```.then``` promise.
+
+### Implementación
+
 ## Lowdb
+
+### ¿Qué es Lowdb?
+
+La librería lowdb nos permite crear una pequeña base de datos local en formato JSON. Los elementos que se quieran incluir en una base de datos usando la libreria lowdb se guardan en un fichero **JSON** en el directorio que el programador decida. Esta libreria cuenta con una serie de **APIS** y **Adaptadores** que permiten a los programadores trabajar de forma sencilla a la hora de crear una pequeña base de datos. Está libreria cuenta con soporte en **TypeScript**.
+
+### Implementación
+
+En la implementación se ha decidido crear una serie de clases para los diferentes tipos de objetos, estas clases nos van a permitir añadir entradas a la base de datos y los ficheros relacionados se encuentran en el directorio **LowdbFiles**. Cada clase va a tener un tipo de objeto asginado para crear la base de datos de dicho objeto, en conreto los tipos de objetos que deben tener una base de datos son los siguientes: género musical, canción, grupo, artista, album y playlist.
+
+En el directorio **JsonFiles** nos encontramos con las bases de datos que se crearon gracias a las clases del directorio **LowdbFiles**. Tenemos los ficheros ```Artist.json```, ```Genre.json```, ```Group.json```, ```Song.json``` y ```Album.json```. Estas bases de datos se han creado con la ayuda de la libreria lowdb implementada en las clases en el directorio **LowdbFiles**.
+
+```
+📦JsonFIles
+ ┣ 📜Artist.json
+ ┣ 📜Genre.json
+ ┣ 📜Group.json
+ ┗ 📜Song.json
+```
+
+En el directorio **LowdbFiles** se encuentran todas las clases relacionadas con la inserción de entradas en las bases de datos. Cada clase tiene un fichero asignado para que sea más comodo trabajar con ello y de paso utilizar el principo **SOLID Single Responsibility Principle** para que cada clase tenga una única responsibilidad.
+
+```
+📦src
+ ┣ 📂DefinitiveHierarchy
+ ┃ ┣ 📂Collectionables
+ ┃ ┣ 📂PrincipalClases
+ ┃ ┗ 📂SortFunctions
+ ┣ 📂GestorClass
+ ┣ 📂LowdbFiles
+ ┃ ┣ 📜jsonGenreCollection.ts
+ ┃ ┣ 📜jsonGroupCollection.ts
+ ┃ ┣ 📜jsonPlaylistCollection.ts
+ ┃ ┣ 📜jsonSongCollection.ts
+ ┃ ┗ 📜jsonTodoCollection.ts
+```
+
+Los ficheros contenidos en este directorio tienen el siguiente aspecto:
+
+```typescript
+type schemaType = {
+    Song: {name: string; author: Artist[]; songDuration: number;
+      genre: MusicGenre[]; single: boolean; reproductionsNumber: number}[]
+};
+
+export class JsonSongCollection extends SongCollection {
+  private database: lowdb.LowdbSync<schemaType>;
+
+  constructor(SongItems: Song[]) {
+    super(SongItems);
+    this.database = lowdb(new FileSync("JsonFiles/Song.json"));
+    this.database.set("Song", SongItems).write();
+  }
+
+  restart(SongItems: SongCollection): void {
+    this.database.set("Song", SongItems).write();
+  }
+}
+```
+
+En este caso se ha escogido la clase ```JsonSongCollection```. Está clase se va utilizar como ejemplo para explicar la implementación de las demás clases dentro del mismo directorio.
+
+Por un lado se ha creado un tipo de datos ```schemaType``` donde se definen los principales atributos que van a contenter la base de datos de las canciones, por otro lado tenemos la propia clase ```JsonSongCollection``` que extiende a la clase ```SongCollection``` donde se crean las colecciones de canciones. 
+
+En la clase ```JsonSongCollection``` se tienen los siguientes métodos:
+
+  - El constructor crea el fichero json donde estará la base de datos ```Song.json``` y se añade cada canción a la base de datos, al constructor se le pasa como parámetro una array de canciones.
+  - El método ```restart```, permite añadir nuevos objetos tipo ```Song``` a la base de datos.
+
+Para el resto de clases se sigue el mismo esquema.
