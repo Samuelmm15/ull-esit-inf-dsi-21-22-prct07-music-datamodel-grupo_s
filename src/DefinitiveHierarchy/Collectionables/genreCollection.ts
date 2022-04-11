@@ -19,22 +19,22 @@ export class GenreCollection extends BasicStreamableCollection<MusicGenre> {
     }
     return 'No existe el género';
   }
-  // public getArtist(author: Artist): Artist | string {
-  //   for (let i = 0; i < this.genres.length; i++) {
-  //     if (this.genres[i].getArtists() === author) {
-  //       return this.genres[i].getArtists();
-  //     }
-  //   }
-  //   return 'No existe el Artista que desea obtener';
-  // }
-  // public getGroups(groupName: Group): Group | string {
-  //   for (let i = 0; i < this.genres.length; i++) {
-  //     if (this.genres[i].getGroups() === groupName) {
-  //       return this.genres[i].getGroups();
-  //     }
-  //   }
-  //   return 'No existe el Grupo que desea obtener';
-  // }
+  public getArtist(authorName: Artist): Artist | string {
+    for (let i = 0; i < this.genres.length; i++) {
+      if (this.genres[i].getArtists(authorName.getName()) === authorName) {
+        return this.genres[i].getArtists(authorName.getName());
+      }
+    }
+    return 'No existe el Artista que desea obtener';
+  }
+  public getGroups(groupName: Group): Group | string {
+    for (let i = 0; i < this.genres.length; i++) {
+      if (this.genres[i].getGroups(groupName.getName()) === groupName) {
+        return this.genres[i].getGroups(groupName.getName());
+      }
+    }
+    return 'No existe el Grupo que desea obtener';
+  }
   public getName(genreName: string): string {
     let success: string = ``;
     for (let i = 0; i < this.genres.length; i++) {

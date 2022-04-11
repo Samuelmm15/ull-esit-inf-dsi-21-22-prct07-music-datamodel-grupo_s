@@ -469,21 +469,22 @@ function promptDefault(): void {
 }
 function promptDelete(): void {
   console.clear();
-  let artistName: string = ``;
-  inquirer.prompt({type: "input", name: "Delete", message: "Enter the name of the artist you wish to delete: "})
-      .then((answer) => {
-        artistName = answer.Delete;
-        artistCollectionOBJ.getRemoveArtist(artistName);
-        collectionArtists.restart(artistCollectionOBJ);
-        inquirer.prompt({type: "input", name: "Continue", message: "Do you want to return to the main screen ? (y/N): "})
-            .then((answers) => {
-              if (answers["Continue"] === "y") {
-                promptUser();
-              } else {
-                exit();
-              }
-            });
-      });
+  console.log(GenresCollectionObj.getArtist(BadBunny));
+  // let artistName: string = ``;
+  // inquirer.prompt({type: "input", name: "Delete", message: "Enter the name of the artist you wish to delete: "})
+  //     .then((answer) => {
+  //       artistName = answer.Delete;
+  //       artistCollectionOBJ.getRemoveArtist(artistName);
+  //       collectionArtists.restart(artistCollectionOBJ);
+  //       inquirer.prompt({type: "input", name: "Continue", message: "Do you want to return to the main screen ? (y/N): "})
+  //           .then((answers) => {
+  //             if (answers["Continue"] === "y") {
+  //               promptUser();
+  //             } else {
+  //               exit();
+  //             }
+  //           });
+  //     });
 }
 function promptUser(): void {
   setMaxListeners(100);

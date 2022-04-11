@@ -32,29 +32,50 @@ class MusicGenre {
      * Gets a group object
      * @return Group object
      */
-    getGroups() {
-        return this.groups;
+    getGroups(GroupName) {
+        for (let i = 0; i < this.groups.length; i++) {
+            if (GroupName === this.groups[i].getName()) {
+                return this.groups[i];
+            }
+        }
+        return this.groups[0]; // Default Option
     }
     /**
      * Gets an artist object
      * @return Artist object
      */
-    getArtists() {
-        return this.artists;
+    getArtists(ArtistName) {
+        for (let i = 0; i < this.artists.length; i++) {
+            if (ArtistName === this.artists[i].getName()) {
+                return this.artists[i];
+            }
+        }
+        return this.artists[0]; // Default Option
     }
     /**
      * Gets albums name
      * @return Albums name
      */
-    getAlbums() {
-        return this.albums;
+    getAlbums(AlbumName) {
+        for (let i = 0; i < this.albums.length; i++) {
+            if (AlbumName === this.albums[i]) {
+                return this.albums[i];
+            }
+        }
+        return this.albums[0]; // Default Option
     }
     /**
      * Gets songs of an specific music genre
      * @return Songs name
      */
-    getSongs() {
-        return this.songs;
+    getSongs(SongName) {
+        // return this.songs;
+        for (let i = 0; i < this.songs.length; i++) {
+            if (SongName === this.songs[i]) {
+                return this.songs[i];
+            }
+        }
+        return this.songs[0]; // Default option
     }
 }
 exports.MusicGenre = MusicGenre;

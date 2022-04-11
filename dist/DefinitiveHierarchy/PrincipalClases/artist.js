@@ -41,16 +41,26 @@ class Artist {
     /**
      * Gets the genre of the artist
      * @return Music genre of the artist
-     */
-    getGenre() {
-        return this.genre;
+    */
+    getGenre(genres) {
+        for (let i = 0; i < this.genre.length; i++) {
+            if (genres === this.genre[i]) {
+                return this.genre[i];
+            }
+        }
+        return 'falla';
     }
     /**
      * Gets the album name
      * @return Album name of the artist
      */
-    getAlbum() {
-        return this.album;
+    getAlbum(albumName) {
+        for (let i = 0; i < this.album.length; i++) {
+            if (albumName === this.album[i]) {
+                return this.album[i];
+            }
+        }
+        return 'falla';
     }
     /**
      * Gets the name of the published songs

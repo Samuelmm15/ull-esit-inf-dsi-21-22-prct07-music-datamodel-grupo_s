@@ -36,17 +36,27 @@ export class Artist {
   /**
    * Gets the genre of the artist
    * @return Music genre of the artist
-   */
-  getGenre(): string[] {
-    return this.genre;
+  */
+  getGenre(genres: string): string {
+    for (let i = 0; i < this.genre.length; i++) {
+      if (genres === this.genre[i]) {
+        return this.genre[i];
+      }
+    }
+    return 'falla';
   }
 
   /**
    * Gets the album name
    * @return Album name of the artist
    */
-  getAlbum(): string[] {
-    return this.album;
+  getAlbum(albumName: string): string {
+    for (let i = 0; i < this.album.length; i++) {
+      if (albumName === this.album[i]) {
+        return this.album[i];
+      }
+    }
+    return 'falla';
   }
 
   /**

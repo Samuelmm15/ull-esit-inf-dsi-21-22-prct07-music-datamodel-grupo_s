@@ -29,7 +29,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /* eslint-disable camelcase */
 const artist_1 = require("./DefinitiveHierarchy/PrincipalClases/artist");
 const artistCollection_1 = require("./DefinitiveHierarchy/Collectionables/artistCollection");
-const jsonTodoCollection_1 = require("./InquirerFiles/jsonTodoCollection");
+const jsonTodoCollection_1 = require("./LowdbFiles/jsonTodoCollection");
 const process_1 = require("process");
 const events_1 = require("events");
 const groups_1 = require("./DefinitiveHierarchy/PrincipalClases/groups");
@@ -39,9 +39,9 @@ const album_1 = require("./DefinitiveHierarchy/PrincipalClases/album");
 const songCollection_1 = require("./DefinitiveHierarchy/Collectionables/songCollection");
 const genreCollection_1 = require("./DefinitiveHierarchy/Collectionables/genreCollection");
 const inquirer = __importStar(require("inquirer"));
-const jsonGroupCollection_1 = require("./InquirerFiles/jsonGroupCollection");
-const jsonGenreCollection_1 = require("./InquirerFiles/jsonGenreCollection");
-const jsonSongCollection_1 = require("./InquirerFiles/jsonSongCollection");
+const jsonGroupCollection_1 = require("./LowdbFiles/jsonGroupCollection");
+const jsonGenreCollection_1 = require("./LowdbFiles/jsonGenreCollection");
+const jsonSongCollection_1 = require("./LowdbFiles/jsonSongCollection");
 // ARTISTS 10 
 // ESTO ESTÁ CORRECTO
 const BadBunny = new artist_1.Artist('Bad Bunny', 'Bad Bunny', ['Urban Latino'], ['Amorfoda'], 127, 47666987);
@@ -454,22 +454,22 @@ function promptDefault() {
 }
 function promptDelete() {
     console.clear();
-    let artistName = ``;
-    inquirer.prompt({ type: "input", name: "Delete", message: "Enter the name of the artist you wish to delete: " })
-        .then((answer) => {
-        artistName = answer.Delete;
-        artistCollectionOBJ.getRemoveArtist(artistName);
-        collectionArtists.restart(artistCollectionOBJ);
-        inquirer.prompt({ type: "input", name: "Continue", message: "Do you want to return to the main screen ? (y/N): " })
-            .then((answers) => {
-            if (answers["Continue"] === "y") {
-                promptUser();
-            }
-            else {
-                (0, process_1.exit)();
-            }
-        });
-    });
+    console.log(GenresCollectionObj.getArtist(BadBunny));
+    // let artistName: string = ``;
+    // inquirer.prompt({type: "input", name: "Delete", message: "Enter the name of the artist you wish to delete: "})
+    //     .then((answer) => {
+    //       artistName = answer.Delete;
+    //       artistCollectionOBJ.getRemoveArtist(artistName);
+    //       collectionArtists.restart(artistCollectionOBJ);
+    //       inquirer.prompt({type: "input", name: "Continue", message: "Do you want to return to the main screen ? (y/N): "})
+    //           .then((answers) => {
+    //             if (answers["Continue"] === "y") {
+    //               promptUser();
+    //             } else {
+    //               exit();
+    //             }
+    //           });
+    //     });
 }
 function promptUser() {
     (0, events_1.setMaxListeners)(100);
