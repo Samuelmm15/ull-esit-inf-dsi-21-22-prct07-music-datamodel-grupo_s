@@ -43,42 +43,42 @@ class ArtistsCollection extends basicstreamablecollection_1.BasicStreamableColle
         }
         return success;
     }
-    // public getGenre(genre: string): string {
-    //   let success: string = ``;
-    //   for (let i = 0; i < this.artists.length; i++) {
-    //     if (this.artists[i].getGenre() === genre) {
-    //       success = this.artists[i].getGenre();
-    //     }
-    //   }
-    //   if (success === ``) {
-    //     success = `No existe el género a buscar`;
-    //   }
-    //   return success;
-    // }
-    // public getAlbum(albumName: string): string {
-    //   let success: string = ``;
-    //   for (let i = 0; i < this.artists.length; i++) {
-    //     if (this.artists[i].getAlbum() === albumName) {
-    //       success = this.artists[i].getAlbum();
-    //     }
-    //   }
-    //   if (success === ``) {
-    //     success = `No existe el álbum a buscar`;
-    //   }
-    //   return success;
-    // }
-    // public getPublishedSongs(author: string): string {
-    //   let success: string = ``;
-    //   for (let i = 0; i < this.artists.length; i++) {
-    //     if (this.artists[i].getName() === author) {
-    //       success = this.artists[i].getPublishedSongs();
-    //     }
-    //   }
-    //   if (success === ``) {
-    //     success = `No existe el grupo a buscar`;
-    //   }
-    //   return success;
-    // }
+    getGenre(genre) {
+        let success = ``;
+        for (let i = 0; i < this.artists.length; i++) {
+            if (this.artists[i].getGenre() === genre) {
+                success = this.artists[i].getGenre();
+            }
+        }
+        if (success === ``) {
+            success = `No existe el género a buscar`;
+        }
+        return success;
+    }
+    getAlbum(albumName) {
+        let success = ``;
+        for (let i = 0; i < this.artists.length; i++) {
+            if (this.artists[i].getAlbum() === albumName) {
+                success = this.artists[i].getAlbum();
+            }
+        }
+        if (success === ``) {
+            success = `No existe el álbum a buscar`;
+        }
+        return success;
+    }
+    getPublishedSongs(author) {
+        let success = ``;
+        for (let i = 0; i < this.artists.length; i++) {
+            if (this.artists[i].getName() === author) {
+                success = this.artists[i].getPublishedSongs();
+            }
+        }
+        if (success === ``) {
+            success = `No existe el grupo a buscar`;
+        }
+        return success;
+    }
     getMonthlyListeners(author) {
         let success = 0;
         for (let i = 0; i < this.artists.length; i++) {
