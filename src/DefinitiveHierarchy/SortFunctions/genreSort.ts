@@ -2,7 +2,13 @@ import {GeneralSort} from './abstractSort';
 import {MusicGenre} from '../PrincipalClases/musicGenre';
 import {GenreCollection} from '../Collectionables/genreCollection';
 
+/**
+ * Class that sorts genre objects by name
+ */
 export class GenreSort extends GeneralSort<GenreCollection> {
+  /**
+   * Recieves a music genre array
+   */
   constructor(protected genreList: GenreCollection) {
     super();
   }
@@ -19,8 +25,8 @@ export class GenreSort extends GeneralSort<GenreCollection> {
     auxiliary = [];
     for (let i = 0; i < this.genreList.getColectionlength(); i++) {
       auxiliary.push(this.genreList.getGenre(greaterGenreSort[i]) as MusicGenre);
+      console.log(greaterGenreSort[i]);
     }
-    console.log(greaterGenreSort);
     const result: GenreCollection = new GenreCollection(auxiliary);
     return result;
   }
@@ -37,8 +43,8 @@ export class GenreSort extends GeneralSort<GenreCollection> {
     auxiliary = [];
     for (let i = 0; i < this.genreList.getColectionlength(); i++) {
       auxiliary.push(this.genreList.getGenre(greaterGenreSort[i]) as MusicGenre);
+      console.log(greaterGenreSort[i]);
     }
-    console.log(greaterGenreSort);
     const result: GenreCollection = new GenreCollection(auxiliary);
     return result;
   }

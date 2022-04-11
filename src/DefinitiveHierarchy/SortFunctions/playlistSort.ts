@@ -2,7 +2,13 @@
 import {GeneralSort} from './abstractSort';
 import {Playlists} from '../PrincipalClases/playlist';
 
+/**
+ * Class that sorts playlist objects by name
+ */
 export class PlaylistNameSort extends GeneralSort<Playlists> {
+  /**
+   * Recieves a playlist array
+   */
   constructor(protected playlist: Playlists[]) {
     super();
   }

@@ -4,7 +4,13 @@ exports.GroupNameSort = void 0;
 /* eslint-disable prefer-const */
 /* eslint-disable camelcase */
 const abstractSort_1 = require("./abstractSort");
+/**
+ * Class that sorts group objects by name
+ */
 class GroupNameSort extends abstractSort_1.GeneralSort {
+    /**
+     * Recieves a group array
+     */
     constructor(group) {
         super();
         this.group = group;
@@ -20,10 +26,10 @@ class GroupNameSort extends abstractSort_1.GeneralSort {
             for (let j = 0; j < this.group.length; j++) {
                 if (this.group[j].getName() === auxiliary[i]) {
                     result.push(this.group[j]);
+                    console.log(this.group[j].getName());
                 }
             }
         }
-        console.log(auxiliary);
         return result;
     }
     lowerSort() {
@@ -37,10 +43,10 @@ class GroupNameSort extends abstractSort_1.GeneralSort {
             for (let j = 0; j < this.group.length; j++) {
                 if (this.group[j].getName() === auxiliary[i]) {
                     result.push(this.group[j]);
+                    console.log(this.group[j].getName());
                 }
             }
         }
-        console.log(auxiliary);
         return result;
     }
 }

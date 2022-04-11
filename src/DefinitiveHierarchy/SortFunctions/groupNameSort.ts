@@ -3,7 +3,13 @@
 import {GeneralSort} from './abstractSort';
 import {Group} from '../PrincipalClases/groups';
 
+/**
+ * Class that sorts group objects by name
+ */
 export class GroupNameSort extends GeneralSort<Group> {
+  /**
+   * Recieves a group array
+   */
   constructor(protected group: Group[]) {
     super();
   }
@@ -18,10 +24,10 @@ export class GroupNameSort extends GeneralSort<Group> {
       for (let j = 0; j < this.group.length; j++) {
         if (this.group[j].getName() === auxiliary[i]) {
           result.push(this.group[j]);
+          console.log(this.group[j].getName());
         }
       }
     }
-    console.log(auxiliary);
     return result;
   }
   lowerSort(): Group[] {
@@ -35,10 +41,10 @@ export class GroupNameSort extends GeneralSort<Group> {
       for (let j = 0; j < this.group.length; j++) {
         if (this.group[j].getName() === auxiliary[i]) {
           result.push(this.group[j]);
+          console.log(this.group[j].getName());
         }
       }
     }
-    console.log(auxiliary);
     return result;
   }
 }

@@ -3,6 +3,9 @@ import {GeneralSort} from './abstractSort';
 import {Song} from '../PrincipalClases/song';
 import {SongCollection} from '../Collectionables/songCollection';
 
+/**
+ * Class that sorts song objects by name
+ */
 export class TitleSongSort extends GeneralSort<SongCollection> {
   constructor(protected songs: SongCollection) {
     super();
@@ -23,8 +26,8 @@ export class TitleSongSort extends GeneralSort<SongCollection> {
     i = 0;
     for (i = 0; i < this.songs.getColectionlength(); i++) {
       auxiliary.push(this.songs.getSong(greaterTitleSort[i]) as Song);
+      console.log(greaterTitleSort[i]);
     }
-    console.log(greaterTitleSort);
     const result: SongCollection = new SongCollection(auxiliary);
     return result;
   }
@@ -44,8 +47,8 @@ export class TitleSongSort extends GeneralSort<SongCollection> {
     i = 0;
     for (i = 0; i < this.songs.getColectionlength(); i++) {
       auxiliary.push(this.songs.getSong(lowerTitleSort[i]) as Song);
+      console.log(lowerTitleSort[i]);
     }
-    console.log(lowerTitleSort);
     const result: SongCollection = new SongCollection(auxiliary);
     return result;
   }

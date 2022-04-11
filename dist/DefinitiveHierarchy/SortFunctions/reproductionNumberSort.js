@@ -4,6 +4,9 @@ exports.ReproductionNumberSort = void 0;
 /* eslint-disable camelcase */
 const abstractSort_1 = require("./abstractSort");
 const songCollection_1 = require("../Collectionables/songCollection");
+/**
+ * Class that sorts songs objects by reproductions
+ */
 class ReproductionNumberSort extends abstractSort_1.GeneralSort {
     constructor(songs) {
         super();
@@ -25,8 +28,8 @@ class ReproductionNumberSort extends abstractSort_1.GeneralSort {
         i = 0;
         for (i = 0; i < this.songs.getColectionlength(); i++) {
             auxiliary.push(this.songs.getReproductionsNumber(ReproductionSort[i]));
+            console.log(`${auxiliary[i].getName()} ==> ${auxiliary[i].getReproductionsNumber()}`);
         }
-        console.log(ReproductionSort);
         const result = new songCollection_1.SongCollection(auxiliary);
         return result;
     }
@@ -46,8 +49,8 @@ class ReproductionNumberSort extends abstractSort_1.GeneralSort {
         i = 0;
         for (i = 0; i < this.songs.getColectionlength(); i++) {
             auxiliary.push(this.songs.getReproductionsNumber(ReproductionSort[i]));
+            console.log(`${auxiliary[i].getName()} ==> ${auxiliary[i].getReproductionsNumber()}`);
         }
-        console.log(ReproductionSort);
         const result = new songCollection_1.SongCollection(auxiliary);
         return result;
     }

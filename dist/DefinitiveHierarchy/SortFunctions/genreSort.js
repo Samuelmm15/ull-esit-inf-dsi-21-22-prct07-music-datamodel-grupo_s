@@ -3,7 +3,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.GenreSort = void 0;
 const abstractSort_1 = require("./abstractSort");
 const genreCollection_1 = require("../Collectionables/genreCollection");
+/**
+ * Class that sorts genre objects by name
+ */
 class GenreSort extends abstractSort_1.GeneralSort {
+    /**
+     * Recieves a music genre array
+     */
     constructor(genreList) {
         super();
         this.genreList = genreList;
@@ -21,8 +27,8 @@ class GenreSort extends abstractSort_1.GeneralSort {
         auxiliary = [];
         for (let i = 0; i < this.genreList.getColectionlength(); i++) {
             auxiliary.push(this.genreList.getGenre(greaterGenreSort[i]));
+            console.log(greaterGenreSort[i]);
         }
-        console.log(greaterGenreSort);
         const result = new genreCollection_1.GenreCollection(auxiliary);
         return result;
     }
@@ -39,8 +45,8 @@ class GenreSort extends abstractSort_1.GeneralSort {
         auxiliary = [];
         for (let i = 0; i < this.genreList.getColectionlength(); i++) {
             auxiliary.push(this.genreList.getGenre(greaterGenreSort[i]));
+            console.log(greaterGenreSort[i]);
         }
-        console.log(greaterGenreSort);
         const result = new genreCollection_1.GenreCollection(auxiliary);
         return result;
     }

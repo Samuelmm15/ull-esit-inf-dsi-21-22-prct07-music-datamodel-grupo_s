@@ -4,7 +4,13 @@ exports.ArtistNameSort = void 0;
 /* eslint-disable prefer-const */
 /* eslint-disable camelcase */
 const abstractSort_1 = require("./abstractSort");
+/**
+ * Class that sorts artist objects by name
+ */
 class ArtistNameSort extends abstractSort_1.GeneralSort {
+    /**
+     * Recieves an artist array
+     */
     constructor(artist) {
         super();
         this.artist = artist;
@@ -20,6 +26,7 @@ class ArtistNameSort extends abstractSort_1.GeneralSort {
             for (let j = 0; j < this.artist.length; j++) {
                 if (this.artist[j].getName() === auxiliary[i]) {
                     result.push(this.artist[j]);
+                    console.log(this.artist[j].getName());
                 }
             }
         }
@@ -36,6 +43,7 @@ class ArtistNameSort extends abstractSort_1.GeneralSort {
             for (let j = 0; j < this.artist.length; j++) {
                 if (this.artist[j].getName() === auxiliary[i]) {
                     result.push(this.artist[j]);
+                    console.log(this.artist[j].getName());
                 }
             }
         }

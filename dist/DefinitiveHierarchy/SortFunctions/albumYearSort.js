@@ -4,7 +4,13 @@ exports.AlbumYearSort = void 0;
 /* eslint-disable prefer-const */
 /* eslint-disable camelcase */
 const abstractSort_1 = require("./abstractSort");
+/**
+ * Class that sorts albums objects by year
+ */
 class AlbumYearSort extends abstractSort_1.GeneralSort {
+    /**
+     * Recieves an album array
+     */
     constructor(album) {
         super();
         this.album = album;

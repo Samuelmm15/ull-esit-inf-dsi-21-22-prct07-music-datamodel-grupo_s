@@ -3,7 +3,13 @@
 import {GeneralSort} from './abstractSort';
 import {Artist} from '../PrincipalClases/artist';
 
+/**
+ * Class that sorts artist objects by name
+ */
 export class ArtistNameSort extends GeneralSort<Artist> {
+  /**
+   * Recieves an artist array
+   */
   constructor(protected artist: Artist[]) {
     super();
   }
@@ -18,6 +24,7 @@ export class ArtistNameSort extends GeneralSort<Artist> {
       for (let j = 0; j < this.artist.length; j++) {
         if (this.artist[j].getName() === auxiliary[i]) {
           result.push(this.artist[j]);
+          console.log(this.artist[j].getName());
         }
       }
     }
@@ -35,6 +42,7 @@ export class ArtistNameSort extends GeneralSort<Artist> {
       for (let j = 0; j < this.artist.length; j++) {
         if (this.artist[j].getName() === auxiliary[i]) {
           result.push(this.artist[j]);
+          console.log(this.artist[j].getName());
         }
       }
     }

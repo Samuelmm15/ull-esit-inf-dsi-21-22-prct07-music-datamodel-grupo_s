@@ -3,7 +3,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PlaylistNameSort = void 0;
 /* eslint-disable prefer-const */
 const abstractSort_1 = require("./abstractSort");
+/**
+ * Class that sorts playlist objects by name
+ */
 class PlaylistNameSort extends abstractSort_1.GeneralSort {
+    /**
+     * Recieves a playlist array
+     */
     constructor(playlist) {
         super();
         this.playlist = playlist;

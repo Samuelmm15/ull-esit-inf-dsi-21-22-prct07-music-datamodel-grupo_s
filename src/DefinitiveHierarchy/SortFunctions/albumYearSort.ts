@@ -3,7 +3,13 @@
 import {GeneralSort} from './abstractSort';
 import {Album} from '../PrincipalClases/album';
 
+/**
+ * Class that sorts albums objects by year
+ */
 export class AlbumYearSort extends GeneralSort<Album> {
+  /**
+   * Recieves an album array
+   */
   constructor(protected album: Album[]) {
     super();
   }

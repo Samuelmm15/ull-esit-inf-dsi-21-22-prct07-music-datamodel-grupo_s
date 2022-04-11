@@ -5,7 +5,13 @@ exports.SongDurationSort = void 0;
 /* eslint-disable camelcase */
 const abstractSort_1 = require("./abstractSort");
 const songCollection_1 = require("../Collectionables/songCollection");
+/**
+ * Class that sorts song objects by duration
+ */
 class SongDurationSort extends abstractSort_1.GeneralSort {
+    /**
+     * Recieves a song collection
+     */
     constructor(song) {
         super();
         this.song = song;
@@ -26,6 +32,7 @@ class SongDurationSort extends abstractSort_1.GeneralSort {
         i = 0;
         for (i = 0; i < this.song.getColectionlength(); i++) {
             auxiliary.push(this.song.getDuration(ReproductionSort[i]));
+            console.log(`${auxiliary[i].getName()} ==> ${auxiliary[i].getSongDuration()}`);
         }
         // console.log(ReproductionSort);
         const result = new songCollection_1.SongCollection(auxiliary);
@@ -47,8 +54,8 @@ class SongDurationSort extends abstractSort_1.GeneralSort {
         i = 0;
         for (i = 0; i < this.song.getColectionlength(); i++) {
             auxiliary.push(this.song.getDuration(ReproductionSort[i]));
+            console.log(`${auxiliary[i].getName()} ==> ${auxiliary[i].getSongDuration()}`);
         }
-        console.log(ReproductionSort);
         const result = new songCollection_1.SongCollection(auxiliary);
         return result;
     }

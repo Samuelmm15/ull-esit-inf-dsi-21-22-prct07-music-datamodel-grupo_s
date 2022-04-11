@@ -3,7 +3,13 @@
 import {GeneralSort} from './abstractSort';
 import {Album} from '../PrincipalClases/album';
 
+/**
+ * Class that sorts albums elements by name
+ */
 export class AlbumSort extends GeneralSort<Album> {
+  /**
+   * Recieves an album array
+   */
   constructor(protected album: Album[]) {
     super();
   }
@@ -18,6 +24,7 @@ export class AlbumSort extends GeneralSort<Album> {
       for (let j = 0; j < this.album.length; j++) {
         if (this.album[j].getName() === auxiliary[i]) {
           result.push(this.album[j]);
+          console.log(this.album[j].getName());
         }
       }
     }
@@ -35,6 +42,7 @@ export class AlbumSort extends GeneralSort<Album> {
       for (let j = 0; j < this.album.length; j++) {
         if (this.album[j].getName() === auxiliary[i]) {
           result.push(this.album[j]);
+          console.log(this.album[j].getName());
         }
       }
     }

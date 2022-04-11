@@ -31,7 +31,7 @@ class Group {
     }
     /**
      * Gets artist objects that belongs to the group
-     * @return Artist objects
+     * @return Artist object
      */
     getArtists(artistName) {
         // return this.artists;
