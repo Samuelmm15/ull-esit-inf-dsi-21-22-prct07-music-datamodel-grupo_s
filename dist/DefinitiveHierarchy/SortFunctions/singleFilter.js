@@ -7,7 +7,7 @@ class SingleFilter {
         this.songs = songs;
     }
     filter() {
-        let songArray = [];
+        const songArray = [];
         for (let i = 0; i < this.songs.getColectionlength(); i++) {
             if (this.songs.getnObject(i).getSingle() === true) {
                 songArray.push(this.songs.getnObject(i));

@@ -43,7 +43,7 @@ export class Artist {
         return this.genre[i];
       }
     }
-    return 'falla';
+    return this.genre[0];
   }
 
   /**
@@ -56,7 +56,7 @@ export class Artist {
         return this.album[i];
       }
     }
-    return 'falla';
+    return this.album[0];
   }
 
   /**

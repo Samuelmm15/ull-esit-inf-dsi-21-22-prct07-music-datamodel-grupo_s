@@ -41,8 +41,13 @@ class Album {
      * Gets an artist object
      * @return Artist Object
      */
-    getArtist() {
-        return this.artist;
+    getArtist(ArtistName) {
+        for (let i = 0; i < this.artist.length; i++) {
+            if (this.artist[i].getName() === ArtistName) {
+                return this.artist[i];
+            }
+        }
+        return this.artist[0];
     }
     /**
      * Gets the year publication year
@@ -55,8 +60,14 @@ class Album {
      * Gets a music genre object
      * @return Music genre Object
      */
-    getGenre() {
-        return this.genre;
+    getGenre(GenreName) {
+        // return this.genre;
+        for (let i = 0; i < this.genre.length; i++) {
+            if (this.genre[i].getName() === GenreName) {
+                return this.genre[i];
+            }
+        }
+        return this.genre[0];
     }
     /**
      * Gets a song name

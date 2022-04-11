@@ -6,7 +6,7 @@ import {MusicGenre} from './musicGenre';
  */
 export class Playlists {
   constructor(private name: string, private songs: Song[],
-    private duration: number, private genre: MusicGenre) {
+    private duration: number, private genre: MusicGenre[]) {
   }
   getName(): string {
     return this.name;
@@ -19,7 +19,13 @@ export class Playlists {
   getDuration(): number {
     return this.duration;
   }
-  getGenre(): MusicGenre {
-    return this.genre;
+  getGenre(GenreName: string): MusicGenre {
+    // return this.genre;
+    for (let i = 0; i < this.genre.length; i++) {
+      if (this.genre[i].getName() === GenreName) {
+        return this.genre[i];
+      }
+    }
+    return this.genre[0];
   }
 }

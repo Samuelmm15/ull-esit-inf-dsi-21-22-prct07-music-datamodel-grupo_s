@@ -17,8 +17,14 @@ class Song {
     getName() {
         return this.name;
     }
-    getAuthor() {
-        return this.author;
+    getAuthor(authorName) {
+        // return this.author;
+        for (let i = 0; i < this.author.length; i++) {
+            if (authorName === this.author[i].getName()) {
+                return this.author[i];
+            }
+        }
+        return this.author[0]; // Default Option
     }
     getSongDuration() {
         return this.songDuration;
@@ -29,8 +35,14 @@ class Song {
         const result = minutes2Seconds + parseInt(prueba[1]);
         return result;
     }
-    getGenre() {
-        return this.genre;
+    getGenre(genreName) {
+        for (let i = 0; i < this.genre.length; i++) {
+            if (genreName === this.genre[i].getName()) {
+                return this.genre[i];
+            }
+        }
+        return this.genre[0]; // Default Option
+        // return this.genre;
     }
     getSingle() {
         return this.single;

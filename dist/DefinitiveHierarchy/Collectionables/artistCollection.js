@@ -54,40 +54,30 @@ class ArtistsCollection extends basicstreamablecollection_1.BasicStreamableColle
             success = `No existe el genero a buscar`;
         }
         return success;
-        // let success: string = ``;
-        // for (let i = 0; i < this.artists.length; i++) {
-        //   if (this.artists[i].getGenre() === genre) {
-        //     success = this.artists[i].getGenre();
-        //   }
-        // }
-        // if (success === ``) {
-        //   success = `No existe el genero a buscar`;
-        // }
-        // return success;
     }
     getAlbum(albumName) {
-        // let success: string = ``;
-        // for (let i = 0; i < this.artists.length; i++) {
-        //   if (this.artists[i].getAlbum() === albumName) {
-        //     success = this.artists[i].getAlbum();
-        //   }
-        // }
-        // if (success === ``) {
-        //   success = `No existe el álbum a buscar`;
-        // }
-        // return success;
+        let success = ``;
+        for (let i = 0; i < this.artists.length; i++) {
+            if (this.artists[i].getAlbum(albumName) === albumName) {
+                success = this.artists[i].getAlbum(albumName);
+            }
+        }
+        if (success === ``) {
+            success = `No existe el álbum a buscar`;
+        }
+        return success;
     }
     getPublishedSongs(author) {
-        // let success: string = ``;
-        // for (let i = 0; i < this.artists.length; i++) {
-        //   if (this.artists[i].getName() === author) {
-        //     success = this.artists[i].getPublishedSongs();
-        //   }
-        // }
-        // if (success === ``) {
-        //   success = `No existe el grupo a buscar`;
-        // }
-        // return success;
+        let success = 0;
+        for (let i = 0; i < this.artists.length; i++) {
+            if (this.artists[i].getName() === author) {
+                success = this.artists[i].getPublishedSongs();
+            }
+        }
+        if (success === 0) {
+            console.log('No existe el grupo a buscar');
+        }
+        return success;
     }
     getMonthlyListeners(author) {
         let success = 0;

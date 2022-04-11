@@ -52,40 +52,30 @@ export class ArtistsCollection extends BasicStreamableCollection<Artist> {
       success = `No existe el genero a buscar`;
     }
     return success;
-    // let success: string = ``;
-    // for (let i = 0; i < this.artists.length; i++) {
-    //   if (this.artists[i].getGenre() === genre) {
-    //     success = this.artists[i].getGenre();
-    //   }
-    // }
-    // if (success === ``) {
-    //   success = `No existe el genero a buscar`;
-    // }
-    // return success;
   }
-  public getAlbum(albumName: string): string| void {
-    // let success: string = ``;
-    // for (let i = 0; i < this.artists.length; i++) {
-    //   if (this.artists[i].getAlbum() === albumName) {
-    //     success = this.artists[i].getAlbum();
-    //   }
-    // }
-    // if (success === ``) {
-    //   success = `No existe el álbum a buscar`;
-    // }
-    // return success;
+  public getAlbum(albumName: string): string {
+    let success: string = ``;
+    for (let i = 0; i < this.artists.length; i++) {
+      if (this.artists[i].getAlbum(albumName) === albumName) {
+        success = this.artists[i].getAlbum(albumName);
+      }
+    }
+    if (success === ``) {
+      success = `No existe el álbum a buscar`;
+    }
+    return success;
   }
-  public getPublishedSongs(author: string): string | void {
-    // let success: string = ``;
-    // for (let i = 0; i < this.artists.length; i++) {
-    //   if (this.artists[i].getName() === author) {
-    //     success = this.artists[i].getPublishedSongs();
-    //   }
-    // }
-    // if (success === ``) {
-    //   success = `No existe el grupo a buscar`;
-    // }
-    // return success;
+  public getPublishedSongs(author: string): number {
+    let success: number = 0;
+    for (let i = 0; i < this.artists.length; i++) {
+      if (this.artists[i].getName() === author) {
+        success = this.artists[i].getPublishedSongs();
+      }
+    }
+    if (success === 0) {
+      console.log('No existe el grupo a buscar');
+    }
+    return success;
   }
   public getMonthlyListeners(author: string): number {
     let success: number = 0;

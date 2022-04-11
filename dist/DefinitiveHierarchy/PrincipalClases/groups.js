@@ -33,8 +33,14 @@ class Group {
      * Gets artist objects that belongs to the group
      * @return Artist objects
      */
-    getArtists() {
-        return this.artists;
+    getArtists(artistName) {
+        // return this.artists;
+        for (let i = 0; i < this.artists.length; i++) {
+            if (artistName === this.artists[i].getName()) {
+                return this.artists[i];
+            }
+        }
+        return this.artists[0]; // Default Option
     }
     /**
      * Gets the year Creation of the group

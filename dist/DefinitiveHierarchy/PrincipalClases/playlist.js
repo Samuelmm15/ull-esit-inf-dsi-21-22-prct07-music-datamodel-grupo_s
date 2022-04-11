@@ -23,8 +23,14 @@ class Playlists {
     getDuration() {
         return this.duration;
     }
-    getGenre() {
-        return this.genre;
+    getGenre(GenreName) {
+        // return this.genre;
+        for (let i = 0; i < this.genre.length; i++) {
+            if (this.genre[i].getName() === GenreName) {
+                return this.genre[i];
+            }
+        }
+        return this.genre[0];
     }
 }
 exports.Playlists = Playlists;

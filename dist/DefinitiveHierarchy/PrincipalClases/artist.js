@@ -48,7 +48,7 @@ class Artist {
                 return this.genre[i];
             }
         }
-        return 'falla';
+        return this.genre[0];
     }
     /**
      * Gets the album name
@@ -60,7 +60,7 @@ class Artist {
                 return this.album[i];
             }
         }
-        return 'falla';
+        return this.album[0];
     }
     /**
      * Gets the name of the published songs

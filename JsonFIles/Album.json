@@ -1,0 +1,2258 @@
+{
+  "Album": [
+    {
+      "name": "OASIS",
+      "artist": [
+        {
+          "name": "Bad Bunny",
+          "group": "Bad Bunny",
+          "genre": [
+            "Urban Latino"
+          ],
+          "album": [
+            "Amorfoda"
+          ],
+          "publishedSongs": 127,
+          "monthlyListeners": 47666987
+        },
+        {
+          "name": "J Balvin",
+          "group": "J Balvin",
+          "genre": [
+            "Urban Latino"
+          ],
+          "album": [
+            "Oasis"
+          ],
+          "publishedSongs": 216,
+          "monthlyListeners": 55853005
+        }
+      ],
+      "yearPublication": 2019,
+      "genre": [
+        {
+          "name": "Urban Latino",
+          "groups": [],
+          "artists": [
+            {
+              "name": "Ozuna",
+              "group": "Ozuna",
+              "genre": [
+                "Urban Latino"
+              ],
+              "album": [
+                "Odisea"
+              ],
+              "publishedSongs": 158,
+              "monthlyListeners": 35236397
+            },
+            {
+              "name": "Bad Bunny",
+              "group": "Bad Bunny",
+              "genre": [
+                "Urban Latino"
+              ],
+              "album": [
+                "Amorfoda"
+              ],
+              "publishedSongs": 127,
+              "monthlyListeners": 47666987
+            }
+          ],
+          "albums": [
+            "Odisea",
+            "Amorfoda"
+          ],
+          "songs": [
+            "Odisea",
+            "Amorfoda"
+          ]
+        }
+      ],
+      "songs": [
+        {
+          "name": "Mojaita",
+          "author": [
+            {
+              "name": "Bad Bunny",
+              "group": "Bad Bunny",
+              "genre": [
+                "Urban Latino"
+              ],
+              "album": [
+                "Amorfoda"
+              ],
+              "publishedSongs": 127,
+              "monthlyListeners": 47666987
+            },
+            {
+              "name": "J Balvin",
+              "group": "J Balvin",
+              "genre": [
+                "Urban Latino"
+              ],
+              "album": [
+                "Oasis"
+              ],
+              "publishedSongs": 216,
+              "monthlyListeners": 55853005
+            }
+          ],
+          "songDuration": "3:08",
+          "genre": [
+            {
+              "name": "Urban Latino",
+              "groups": [],
+              "artists": [
+                {
+                  "name": "Ozuna",
+                  "group": "Ozuna",
+                  "genre": [
+                    "Urban Latino"
+                  ],
+                  "album": [
+                    "Odisea"
+                  ],
+                  "publishedSongs": 158,
+                  "monthlyListeners": 35236397
+                },
+                {
+                  "name": "Bad Bunny",
+                  "group": "Bad Bunny",
+                  "genre": [
+                    "Urban Latino"
+                  ],
+                  "album": [
+                    "Amorfoda"
+                  ],
+                  "publishedSongs": 127,
+                  "monthlyListeners": 47666987
+                }
+              ],
+              "albums": [
+                "Odisea",
+                "Amorfoda"
+              ],
+              "songs": [
+                "Odisea",
+                "Amorfoda"
+              ]
+            }
+          ],
+          "single": false,
+          "reproductionsNumber": 30217133
+        },
+        {
+          "name": "La Cancion",
+          "author": [
+            {
+              "name": "Bad Bunny",
+              "group": "Bad Bunny",
+              "genre": [
+                "Urban Latino"
+              ],
+              "album": [
+                "Amorfoda"
+              ],
+              "publishedSongs": 127,
+              "monthlyListeners": 47666987
+            },
+            {
+              "name": "J Balvin",
+              "group": "J Balvin",
+              "genre": [
+                "Urban Latino"
+              ],
+              "album": [
+                "Oasis"
+              ],
+              "publishedSongs": 216,
+              "monthlyListeners": 55853005
+            }
+          ],
+          "songDuration": "4:02",
+          "genre": [
+            {
+              "name": "Urban Latino",
+              "groups": [],
+              "artists": [
+                {
+                  "name": "Ozuna",
+                  "group": "Ozuna",
+                  "genre": [
+                    "Urban Latino"
+                  ],
+                  "album": [
+                    "Odisea"
+                  ],
+                  "publishedSongs": 158,
+                  "monthlyListeners": 35236397
+                },
+                {
+                  "name": "Bad Bunny",
+                  "group": "Bad Bunny",
+                  "genre": [
+                    "Urban Latino"
+                  ],
+                  "album": [
+                    "Amorfoda"
+                  ],
+                  "publishedSongs": 127,
+                  "monthlyListeners": 47666987
+                }
+              ],
+              "albums": [
+                "Odisea",
+                "Amorfoda"
+              ],
+              "songs": [
+                "Odisea",
+                "Amorfoda"
+              ]
+            }
+          ],
+          "single": false,
+          "reproductionsNumber": 335150200
+        },
+        {
+          "name": "QUE PRETENDES",
+          "author": [
+            {
+              "name": "Bad Bunny",
+              "group": "Bad Bunny",
+              "genre": [
+                "Urban Latino"
+              ],
+              "album": [
+                "Amorfoda"
+              ],
+              "publishedSongs": 127,
+              "monthlyListeners": 47666987
+            },
+            {
+              "name": "J Balvin",
+              "group": "J Balvin",
+              "genre": [
+                "Urban Latino"
+              ],
+              "album": [
+                "Oasis"
+              ],
+              "publishedSongs": 216,
+              "monthlyListeners": 55853005
+            }
+          ],
+          "songDuration": "4:03",
+          "genre": [
+            {
+              "name": "Urban Latino",
+              "groups": [],
+              "artists": [
+                {
+                  "name": "Ozuna",
+                  "group": "Ozuna",
+                  "genre": [
+                    "Urban Latino"
+                  ],
+                  "album": [
+                    "Odisea"
+                  ],
+                  "publishedSongs": 158,
+                  "monthlyListeners": 35236397
+                },
+                {
+                  "name": "Bad Bunny",
+                  "group": "Bad Bunny",
+                  "genre": [
+                    "Urban Latino"
+                  ],
+                  "album": [
+                    "Amorfoda"
+                  ],
+                  "publishedSongs": 127,
+                  "monthlyListeners": 47666987
+                }
+              ],
+              "albums": [
+                "Odisea",
+                "Amorfoda"
+              ],
+              "songs": [
+                "Odisea",
+                "Amorfoda"
+              ]
+            }
+          ],
+          "single": false,
+          "reproductionsNumber": 340366130
+        }
+      ]
+    },
+    {
+      "name": "Odisea",
+      "artist": [
+        {
+          "name": "Ozuna",
+          "group": "Ozuna",
+          "genre": [
+            "Urban Latino"
+          ],
+          "album": [
+            "Odisea"
+          ],
+          "publishedSongs": 158,
+          "monthlyListeners": 35236397
+        }
+      ],
+      "yearPublication": 2017,
+      "genre": [
+        {
+          "name": "Urban Latino",
+          "groups": [],
+          "artists": [
+            {
+              "name": "Ozuna",
+              "group": "Ozuna",
+              "genre": [
+                "Urban Latino"
+              ],
+              "album": [
+                "Odisea"
+              ],
+              "publishedSongs": 158,
+              "monthlyListeners": 35236397
+            },
+            {
+              "name": "Bad Bunny",
+              "group": "Bad Bunny",
+              "genre": [
+                "Urban Latino"
+              ],
+              "album": [
+                "Amorfoda"
+              ],
+              "publishedSongs": 127,
+              "monthlyListeners": 47666987
+            }
+          ],
+          "albums": [
+            "Odisea",
+            "Amorfoda"
+          ],
+          "songs": [
+            "Odisea",
+            "Amorfoda"
+          ]
+        }
+      ],
+      "songs": [
+        {
+          "name": "Se preparo",
+          "author": [
+            {
+              "name": "Ozuna",
+              "group": "Ozuna",
+              "genre": [
+                "Urban Latino"
+              ],
+              "album": [
+                "Odisea"
+              ],
+              "publishedSongs": 158,
+              "monthlyListeners": 35236397
+            }
+          ],
+          "songDuration": "3:50",
+          "genre": [
+            {
+              "name": "Urban Latino",
+              "groups": [],
+              "artists": [
+                {
+                  "name": "Ozuna",
+                  "group": "Ozuna",
+                  "genre": [
+                    "Urban Latino"
+                  ],
+                  "album": [
+                    "Odisea"
+                  ],
+                  "publishedSongs": 158,
+                  "monthlyListeners": 35236397
+                },
+                {
+                  "name": "Bad Bunny",
+                  "group": "Bad Bunny",
+                  "genre": [
+                    "Urban Latino"
+                  ],
+                  "album": [
+                    "Amorfoda"
+                  ],
+                  "publishedSongs": 127,
+                  "monthlyListeners": 47666987
+                }
+              ],
+              "albums": [
+                "Odisea",
+                "Amorfoda"
+              ],
+              "songs": [
+                "Odisea",
+                "Amorfoda"
+              ]
+            }
+          ],
+          "single": false,
+          "reproductionsNumber": 1531086593
+        },
+        {
+          "name": "Dile Que Tu Me Quieres",
+          "author": [
+            {
+              "name": "Ozuna",
+              "group": "Ozuna",
+              "genre": [
+                "Urban Latino"
+              ],
+              "album": [
+                "Odisea"
+              ],
+              "publishedSongs": 158,
+              "monthlyListeners": 35236397
+            }
+          ],
+          "songDuration": "4:29",
+          "genre": [
+            {
+              "name": "Urban Latino",
+              "groups": [],
+              "artists": [
+                {
+                  "name": "Ozuna",
+                  "group": "Ozuna",
+                  "genre": [
+                    "Urban Latino"
+                  ],
+                  "album": [
+                    "Odisea"
+                  ],
+                  "publishedSongs": 158,
+                  "monthlyListeners": 35236397
+                },
+                {
+                  "name": "Bad Bunny",
+                  "group": "Bad Bunny",
+                  "genre": [
+                    "Urban Latino"
+                  ],
+                  "album": [
+                    "Amorfoda"
+                  ],
+                  "publishedSongs": 127,
+                  "monthlyListeners": 47666987
+                }
+              ],
+              "albums": [
+                "Odisea",
+                "Amorfoda"
+              ],
+              "songs": [
+                "Odisea",
+                "Amorfoda"
+              ]
+            }
+          ],
+          "single": false,
+          "reproductionsNumber": 822964742
+        },
+        {
+          "name": "El Farsante",
+          "author": [
+            {
+              "name": "Ozuna",
+              "group": "Ozuna",
+              "genre": [
+                "Urban Latino"
+              ],
+              "album": [
+                "Odisea"
+              ],
+              "publishedSongs": 158,
+              "monthlyListeners": 35236397
+            }
+          ],
+          "songDuration": "3:51",
+          "genre": [
+            {
+              "name": "Urban Latino",
+              "groups": [],
+              "artists": [
+                {
+                  "name": "Ozuna",
+                  "group": "Ozuna",
+                  "genre": [
+                    "Urban Latino"
+                  ],
+                  "album": [
+                    "Odisea"
+                  ],
+                  "publishedSongs": 158,
+                  "monthlyListeners": 35236397
+                },
+                {
+                  "name": "Bad Bunny",
+                  "group": "Bad Bunny",
+                  "genre": [
+                    "Urban Latino"
+                  ],
+                  "album": [
+                    "Amorfoda"
+                  ],
+                  "publishedSongs": 127,
+                  "monthlyListeners": 47666987
+                }
+              ],
+              "albums": [
+                "Odisea",
+                "Amorfoda"
+              ],
+              "songs": [
+                "Odisea",
+                "Amorfoda"
+              ]
+            }
+          ],
+          "single": false,
+          "reproductionsNumber": 952081355
+        },
+        {
+          "name": "Si No Te Quiere",
+          "author": [
+            {
+              "name": "Ozuna",
+              "group": "Ozuna",
+              "genre": [
+                "Urban Latino"
+              ],
+              "album": [
+                "Odisea"
+              ],
+              "publishedSongs": 158,
+              "monthlyListeners": 35236397
+            }
+          ],
+          "songDuration": "3:46",
+          "genre": [
+            {
+              "name": "Urban Latino",
+              "groups": [],
+              "artists": [
+                {
+                  "name": "Ozuna",
+                  "group": "Ozuna",
+                  "genre": [
+                    "Urban Latino"
+                  ],
+                  "album": [
+                    "Odisea"
+                  ],
+                  "publishedSongs": 158,
+                  "monthlyListeners": 35236397
+                },
+                {
+                  "name": "Bad Bunny",
+                  "group": "Bad Bunny",
+                  "genre": [
+                    "Urban Latino"
+                  ],
+                  "album": [
+                    "Amorfoda"
+                  ],
+                  "publishedSongs": 127,
+                  "monthlyListeners": 47666987
+                }
+              ],
+              "albums": [
+                "Odisea",
+                "Amorfoda"
+              ],
+              "songs": [
+                "Odisea",
+                "Amorfoda"
+              ]
+            }
+          ],
+          "single": false,
+          "reproductionsNumber": 4223870
+        }
+      ]
+    },
+    {
+      "name": "The Marshall Mathers LP",
+      "artist": [
+        {
+          "name": "Eminem",
+          "group": "Eminem",
+          "genre": [
+            "Rap"
+          ],
+          "album": [
+            "Kamikaze"
+          ],
+          "publishedSongs": 100,
+          "monthlyListeners": 52908969
+        }
+      ],
+      "yearPublication": 2000,
+      "genre": [
+        {
+          "name": "Rap",
+          "groups": [],
+          "artists": [
+            {
+              "name": "Eminem",
+              "group": "Eminem",
+              "genre": [
+                "Rap"
+              ],
+              "album": [
+                "Kamikaze"
+              ],
+              "publishedSongs": 100,
+              "monthlyListeners": 52908969
+            }
+          ],
+          "albums": [
+            "Kamikaze"
+          ],
+          "songs": [
+            "Kamikaze"
+          ]
+        }
+      ],
+      "songs": [
+        {
+          "name": "Bitch Please II",
+          "author": [
+            {
+              "name": "Eminem",
+              "group": "Eminem",
+              "genre": [
+                "Rap"
+              ],
+              "album": [
+                "Kamikaze"
+              ],
+              "publishedSongs": 100,
+              "monthlyListeners": 52908969
+            }
+          ],
+          "songDuration": "4:48",
+          "genre": [
+            {
+              "name": "Rap",
+              "groups": [],
+              "artists": [
+                {
+                  "name": "Eminem",
+                  "group": "Eminem",
+                  "genre": [
+                    "Rap"
+                  ],
+                  "album": [
+                    "Kamikaze"
+                  ],
+                  "publishedSongs": 100,
+                  "monthlyListeners": 52908969
+                }
+              ],
+              "albums": [
+                "Kamikaze"
+              ],
+              "songs": [
+                "Kamikaze"
+              ]
+            }
+          ],
+          "single": false,
+          "reproductionsNumber": 29383268
+        },
+        {
+          "name": "The Real Slim Shady",
+          "author": [
+            {
+              "name": "Eminem",
+              "group": "Eminem",
+              "genre": [
+                "Rap"
+              ],
+              "album": [
+                "Kamikaze"
+              ],
+              "publishedSongs": 100,
+              "monthlyListeners": 52908969
+            }
+          ],
+          "songDuration": "4:31",
+          "genre": [
+            {
+              "name": "Rap",
+              "groups": [],
+              "artists": [
+                {
+                  "name": "Eminem",
+                  "group": "Eminem",
+                  "genre": [
+                    "Rap"
+                  ],
+                  "album": [
+                    "Kamikaze"
+                  ],
+                  "publishedSongs": 100,
+                  "monthlyListeners": 52908969
+                }
+              ],
+              "albums": [
+                "Kamikaze"
+              ],
+              "songs": [
+                "Kamikaze"
+              ]
+            }
+          ],
+          "single": false,
+          "reproductionsNumber": 1964494
+        },
+        {
+          "name": "Criminal",
+          "author": [
+            {
+              "name": "Eminem",
+              "group": "Eminem",
+              "genre": [
+                "Rap"
+              ],
+              "album": [
+                "Kamikaze"
+              ],
+              "publishedSongs": 100,
+              "monthlyListeners": 52908969
+            }
+          ],
+          "songDuration": "5:19",
+          "genre": [
+            {
+              "name": "Rap",
+              "groups": [],
+              "artists": [
+                {
+                  "name": "Eminem",
+                  "group": "Eminem",
+                  "genre": [
+                    "Rap"
+                  ],
+                  "album": [
+                    "Kamikaze"
+                  ],
+                  "publishedSongs": 100,
+                  "monthlyListeners": 52908969
+                }
+              ],
+              "albums": [
+                "Kamikaze"
+              ],
+              "songs": [
+                "Kamikaze"
+              ]
+            }
+          ],
+          "single": false,
+          "reproductionsNumber": 18217990
+        }
+      ]
+    },
+    {
+      "name": "Beat It",
+      "artist": [
+        {
+          "name": "Michael Jackson",
+          "group": "Michael Jackson",
+          "genre": [
+            "Pop",
+            "Rock"
+          ],
+          "album": [
+            "Beat it"
+          ],
+          "publishedSongs": 263,
+          "monthlyListeners": 28223624
+        }
+      ],
+      "yearPublication": 1982,
+      "genre": [
+        {
+          "name": "Pop",
+          "groups": [
+            {
+              "name": "Spice Girls",
+              "artists": [
+                {
+                  "name": "Estelle Horner",
+                  "group": "Spice Girls",
+                  "genre": [
+                    "Pop"
+                  ],
+                  "album": [
+                    "Spice"
+                  ],
+                  "publishedSongs": 57,
+                  "monthlyListeners": 8614262
+                }
+              ],
+              "yearCreation": 1994,
+              "genre": "Pop",
+              "albums": "Spice",
+              "monthlyListener": 8614262
+            }
+          ],
+          "artists": [
+            {
+              "name": "Michael Jackson",
+              "group": "Michael Jackson",
+              "genre": [
+                "Pop",
+                "Rock"
+              ],
+              "album": [
+                "Beat it"
+              ],
+              "publishedSongs": 263,
+              "monthlyListeners": 28223624
+            },
+            {
+              "name": "Estelle Horner",
+              "group": "Spice Girls",
+              "genre": [
+                "Pop"
+              ],
+              "album": [
+                "Spice"
+              ],
+              "publishedSongs": 57,
+              "monthlyListeners": 8614262
+            }
+          ],
+          "albums": [
+            "Spice",
+            "Beat it"
+          ],
+          "songs": [
+            "WannaBe"
+          ]
+        },
+        {
+          "name": "Disco",
+          "groups": [],
+          "artists": [
+            {
+              "name": "Rick Astley",
+              "group": "Rick Astley",
+              "genre": [
+                "Disco"
+              ],
+              "album": [
+                "Together Forever"
+              ],
+              "publishedSongs": 110,
+              "monthlyListeners": 5754965
+            }
+          ],
+          "albums": [
+            "Together Forever"
+          ],
+          "songs": [
+            "Never gonna give you up"
+          ]
+        }
+      ],
+      "songs": [
+        {
+          "name": "Beat it",
+          "author": [
+            {
+              "name": "Michael Jackson",
+              "group": "Michael Jackson",
+              "genre": [
+                "Pop",
+                "Rock"
+              ],
+              "album": [
+                "Beat it"
+              ],
+              "publishedSongs": 263,
+              "monthlyListeners": 28223624
+            }
+          ],
+          "songDuration": "4:58",
+          "genre": [
+            {
+              "name": "Pop",
+              "groups": [
+                {
+                  "name": "Spice Girls",
+                  "artists": [
+                    {
+                      "name": "Estelle Horner",
+                      "group": "Spice Girls",
+                      "genre": [
+                        "Pop"
+                      ],
+                      "album": [
+                        "Spice"
+                      ],
+                      "publishedSongs": 57,
+                      "monthlyListeners": 8614262
+                    }
+                  ],
+                  "yearCreation": 1994,
+                  "genre": "Pop",
+                  "albums": "Spice",
+                  "monthlyListener": 8614262
+                }
+              ],
+              "artists": [
+                {
+                  "name": "Michael Jackson",
+                  "group": "Michael Jackson",
+                  "genre": [
+                    "Pop",
+                    "Rock"
+                  ],
+                  "album": [
+                    "Beat it"
+                  ],
+                  "publishedSongs": 263,
+                  "monthlyListeners": 28223624
+                },
+                {
+                  "name": "Estelle Horner",
+                  "group": "Spice Girls",
+                  "genre": [
+                    "Pop"
+                  ],
+                  "album": [
+                    "Spice"
+                  ],
+                  "publishedSongs": 57,
+                  "monthlyListeners": 8614262
+                }
+              ],
+              "albums": [
+                "Spice",
+                "Beat it"
+              ],
+              "songs": [
+                "WannaBe"
+              ]
+            },
+            {
+              "name": "Rock",
+              "groups": [
+                {
+                  "name": "Iron Maiden",
+                  "artists": [
+                    {
+                      "name": "Steve Harris",
+                      "group": "Iron Maiden",
+                      "genre": [
+                        "Heavy Metal"
+                      ],
+                      "album": [
+                        "Senjutsu"
+                      ],
+                      "publishedSongs": 204,
+                      "monthlyListeners": 6591966
+                    }
+                  ],
+                  "yearCreation": 1975,
+                  "genre": "Heavy Metal",
+                  "albums": "Senjutsu",
+                  "monthlyListener": 6591966
+                },
+                {
+                  "name": "Queen",
+                  "artists": [
+                    {
+                      "name": "Freddie Mercury",
+                      "group": "Queen",
+                      "genre": [
+                        "Rock"
+                      ],
+                      "album": [
+                        "Queen"
+                      ],
+                      "publishedSongs": 188,
+                      "monthlyListeners": 37276204
+                    }
+                  ],
+                  "yearCreation": 1970,
+                  "genre": "Rock",
+                  "albums": "Queen",
+                  "monthlyListener": 37276204
+                }
+              ],
+              "artists": [
+                {
+                  "name": "Steve Harris",
+                  "group": "Iron Maiden",
+                  "genre": [
+                    "Heavy Metal"
+                  ],
+                  "album": [
+                    "Senjutsu"
+                  ],
+                  "publishedSongs": 204,
+                  "monthlyListeners": 6591966
+                },
+                {
+                  "name": "Freddie Mercury",
+                  "group": "Queen",
+                  "genre": [
+                    "Rock"
+                  ],
+                  "album": [
+                    "Queen"
+                  ],
+                  "publishedSongs": 188,
+                  "monthlyListeners": 37276204
+                },
+                {
+                  "name": "Estelle Horner",
+                  "group": "Spice Girls",
+                  "genre": [
+                    "Pop"
+                  ],
+                  "album": [
+                    "Spice"
+                  ],
+                  "publishedSongs": 57,
+                  "monthlyListeners": 8614262
+                },
+                {
+                  "name": "Michael Jackson",
+                  "group": "Michael Jackson",
+                  "genre": [
+                    "Pop",
+                    "Rock"
+                  ],
+                  "album": [
+                    "Beat it"
+                  ],
+                  "publishedSongs": 263,
+                  "monthlyListeners": 28223624
+                }
+              ],
+              "albums": [
+                "Senjutsu"
+              ],
+              "songs": [
+                "Two Minutes for MidNigth"
+              ]
+            }
+          ],
+          "single": false,
+          "reproductionsNumber": 813716305
+        },
+        {
+          "name": "Billie Jean",
+          "author": [
+            {
+              "name": "Michael Jackson",
+              "group": "Michael Jackson",
+              "genre": [
+                "Pop",
+                "Rock"
+              ],
+              "album": [
+                "Beat it"
+              ],
+              "publishedSongs": 263,
+              "monthlyListeners": 28223624
+            }
+          ],
+          "songDuration": "4:55",
+          "genre": [
+            {
+              "name": "Pop",
+              "groups": [
+                {
+                  "name": "Spice Girls",
+                  "artists": [
+                    {
+                      "name": "Estelle Horner",
+                      "group": "Spice Girls",
+                      "genre": [
+                        "Pop"
+                      ],
+                      "album": [
+                        "Spice"
+                      ],
+                      "publishedSongs": 57,
+                      "monthlyListeners": 8614262
+                    }
+                  ],
+                  "yearCreation": 1994,
+                  "genre": "Pop",
+                  "albums": "Spice",
+                  "monthlyListener": 8614262
+                }
+              ],
+              "artists": [
+                {
+                  "name": "Michael Jackson",
+                  "group": "Michael Jackson",
+                  "genre": [
+                    "Pop",
+                    "Rock"
+                  ],
+                  "album": [
+                    "Beat it"
+                  ],
+                  "publishedSongs": 263,
+                  "monthlyListeners": 28223624
+                },
+                {
+                  "name": "Estelle Horner",
+                  "group": "Spice Girls",
+                  "genre": [
+                    "Pop"
+                  ],
+                  "album": [
+                    "Spice"
+                  ],
+                  "publishedSongs": 57,
+                  "monthlyListeners": 8614262
+                }
+              ],
+              "albums": [
+                "Spice",
+                "Beat it"
+              ],
+              "songs": [
+                "WannaBe"
+              ]
+            },
+            {
+              "name": "Rock",
+              "groups": [
+                {
+                  "name": "Iron Maiden",
+                  "artists": [
+                    {
+                      "name": "Steve Harris",
+                      "group": "Iron Maiden",
+                      "genre": [
+                        "Heavy Metal"
+                      ],
+                      "album": [
+                        "Senjutsu"
+                      ],
+                      "publishedSongs": 204,
+                      "monthlyListeners": 6591966
+                    }
+                  ],
+                  "yearCreation": 1975,
+                  "genre": "Heavy Metal",
+                  "albums": "Senjutsu",
+                  "monthlyListener": 6591966
+                },
+                {
+                  "name": "Queen",
+                  "artists": [
+                    {
+                      "name": "Freddie Mercury",
+                      "group": "Queen",
+                      "genre": [
+                        "Rock"
+                      ],
+                      "album": [
+                        "Queen"
+                      ],
+                      "publishedSongs": 188,
+                      "monthlyListeners": 37276204
+                    }
+                  ],
+                  "yearCreation": 1970,
+                  "genre": "Rock",
+                  "albums": "Queen",
+                  "monthlyListener": 37276204
+                }
+              ],
+              "artists": [
+                {
+                  "name": "Steve Harris",
+                  "group": "Iron Maiden",
+                  "genre": [
+                    "Heavy Metal"
+                  ],
+                  "album": [
+                    "Senjutsu"
+                  ],
+                  "publishedSongs": 204,
+                  "monthlyListeners": 6591966
+                },
+                {
+                  "name": "Freddie Mercury",
+                  "group": "Queen",
+                  "genre": [
+                    "Rock"
+                  ],
+                  "album": [
+                    "Queen"
+                  ],
+                  "publishedSongs": 188,
+                  "monthlyListeners": 37276204
+                },
+                {
+                  "name": "Estelle Horner",
+                  "group": "Spice Girls",
+                  "genre": [
+                    "Pop"
+                  ],
+                  "album": [
+                    "Spice"
+                  ],
+                  "publishedSongs": 57,
+                  "monthlyListeners": 8614262
+                },
+                {
+                  "name": "Michael Jackson",
+                  "group": "Michael Jackson",
+                  "genre": [
+                    "Pop",
+                    "Rock"
+                  ],
+                  "album": [
+                    "Beat it"
+                  ],
+                  "publishedSongs": 263,
+                  "monthlyListeners": 28223624
+                }
+              ],
+              "albums": [
+                "Senjutsu"
+              ],
+              "songs": [
+                "Two Minutes for MidNigth"
+              ]
+            }
+          ],
+          "single": false,
+          "reproductionsNumber": 1159766450
+        }
+      ]
+    },
+    {
+      "name": "Bad",
+      "artist": [
+        {
+          "name": "Michael Jackson",
+          "group": "Michael Jackson",
+          "genre": [
+            "Pop",
+            "Rock"
+          ],
+          "album": [
+            "Beat it"
+          ],
+          "publishedSongs": 263,
+          "monthlyListeners": 28223624
+        }
+      ],
+      "yearPublication": 1987,
+      "genre": [
+        {
+          "name": "Pop",
+          "groups": [
+            {
+              "name": "Spice Girls",
+              "artists": [
+                {
+                  "name": "Estelle Horner",
+                  "group": "Spice Girls",
+                  "genre": [
+                    "Pop"
+                  ],
+                  "album": [
+                    "Spice"
+                  ],
+                  "publishedSongs": 57,
+                  "monthlyListeners": 8614262
+                }
+              ],
+              "yearCreation": 1994,
+              "genre": "Pop",
+              "albums": "Spice",
+              "monthlyListener": 8614262
+            }
+          ],
+          "artists": [
+            {
+              "name": "Michael Jackson",
+              "group": "Michael Jackson",
+              "genre": [
+                "Pop",
+                "Rock"
+              ],
+              "album": [
+                "Beat it"
+              ],
+              "publishedSongs": 263,
+              "monthlyListeners": 28223624
+            },
+            {
+              "name": "Estelle Horner",
+              "group": "Spice Girls",
+              "genre": [
+                "Pop"
+              ],
+              "album": [
+                "Spice"
+              ],
+              "publishedSongs": 57,
+              "monthlyListeners": 8614262
+            }
+          ],
+          "albums": [
+            "Spice",
+            "Beat it"
+          ],
+          "songs": [
+            "WannaBe"
+          ]
+        }
+      ],
+      "songs": [
+        {
+          "name": "The Way You Make Me Feel",
+          "author": [
+            {
+              "name": "Michael Jackson",
+              "group": "Michael Jackson",
+              "genre": [
+                "Pop",
+                "Rock"
+              ],
+              "album": [
+                "Beat it"
+              ],
+              "publishedSongs": 263,
+              "monthlyListeners": 28223624
+            }
+          ],
+          "songDuration": "4:56",
+          "genre": [
+            {
+              "name": "Pop",
+              "groups": [
+                {
+                  "name": "Spice Girls",
+                  "artists": [
+                    {
+                      "name": "Estelle Horner",
+                      "group": "Spice Girls",
+                      "genre": [
+                        "Pop"
+                      ],
+                      "album": [
+                        "Spice"
+                      ],
+                      "publishedSongs": 57,
+                      "monthlyListeners": 8614262
+                    }
+                  ],
+                  "yearCreation": 1994,
+                  "genre": "Pop",
+                  "albums": "Spice",
+                  "monthlyListener": 8614262
+                }
+              ],
+              "artists": [
+                {
+                  "name": "Michael Jackson",
+                  "group": "Michael Jackson",
+                  "genre": [
+                    "Pop",
+                    "Rock"
+                  ],
+                  "album": [
+                    "Beat it"
+                  ],
+                  "publishedSongs": 263,
+                  "monthlyListeners": 28223624
+                },
+                {
+                  "name": "Estelle Horner",
+                  "group": "Spice Girls",
+                  "genre": [
+                    "Pop"
+                  ],
+                  "album": [
+                    "Spice"
+                  ],
+                  "publishedSongs": 57,
+                  "monthlyListeners": 8614262
+                }
+              ],
+              "albums": [
+                "Spice",
+                "Beat it"
+              ],
+              "songs": [
+                "WannaBe"
+              ]
+            },
+            {
+              "name": "Rock",
+              "groups": [
+                {
+                  "name": "Iron Maiden",
+                  "artists": [
+                    {
+                      "name": "Steve Harris",
+                      "group": "Iron Maiden",
+                      "genre": [
+                        "Heavy Metal"
+                      ],
+                      "album": [
+                        "Senjutsu"
+                      ],
+                      "publishedSongs": 204,
+                      "monthlyListeners": 6591966
+                    }
+                  ],
+                  "yearCreation": 1975,
+                  "genre": "Heavy Metal",
+                  "albums": "Senjutsu",
+                  "monthlyListener": 6591966
+                },
+                {
+                  "name": "Queen",
+                  "artists": [
+                    {
+                      "name": "Freddie Mercury",
+                      "group": "Queen",
+                      "genre": [
+                        "Rock"
+                      ],
+                      "album": [
+                        "Queen"
+                      ],
+                      "publishedSongs": 188,
+                      "monthlyListeners": 37276204
+                    }
+                  ],
+                  "yearCreation": 1970,
+                  "genre": "Rock",
+                  "albums": "Queen",
+                  "monthlyListener": 37276204
+                }
+              ],
+              "artists": [
+                {
+                  "name": "Steve Harris",
+                  "group": "Iron Maiden",
+                  "genre": [
+                    "Heavy Metal"
+                  ],
+                  "album": [
+                    "Senjutsu"
+                  ],
+                  "publishedSongs": 204,
+                  "monthlyListeners": 6591966
+                },
+                {
+                  "name": "Freddie Mercury",
+                  "group": "Queen",
+                  "genre": [
+                    "Rock"
+                  ],
+                  "album": [
+                    "Queen"
+                  ],
+                  "publishedSongs": 188,
+                  "monthlyListeners": 37276204
+                },
+                {
+                  "name": "Estelle Horner",
+                  "group": "Spice Girls",
+                  "genre": [
+                    "Pop"
+                  ],
+                  "album": [
+                    "Spice"
+                  ],
+                  "publishedSongs": 57,
+                  "monthlyListeners": 8614262
+                },
+                {
+                  "name": "Michael Jackson",
+                  "group": "Michael Jackson",
+                  "genre": [
+                    "Pop",
+                    "Rock"
+                  ],
+                  "album": [
+                    "Beat it"
+                  ],
+                  "publishedSongs": 263,
+                  "monthlyListeners": 28223624
+                }
+              ],
+              "albums": [
+                "Senjutsu"
+              ],
+              "songs": [
+                "Two Minutes for MidNigth"
+              ]
+            }
+          ],
+          "single": false,
+          "reproductionsNumber": 14676203
+        },
+        {
+          "name": "Rock With You",
+          "author": [
+            {
+              "name": "Michael Jackson",
+              "group": "Michael Jackson",
+              "genre": [
+                "Pop",
+                "Rock"
+              ],
+              "album": [
+                "Beat it"
+              ],
+              "publishedSongs": 263,
+              "monthlyListeners": 28223624
+            }
+          ],
+          "songDuration": "3:22",
+          "genre": [
+            {
+              "name": "Pop",
+              "groups": [
+                {
+                  "name": "Spice Girls",
+                  "artists": [
+                    {
+                      "name": "Estelle Horner",
+                      "group": "Spice Girls",
+                      "genre": [
+                        "Pop"
+                      ],
+                      "album": [
+                        "Spice"
+                      ],
+                      "publishedSongs": 57,
+                      "monthlyListeners": 8614262
+                    }
+                  ],
+                  "yearCreation": 1994,
+                  "genre": "Pop",
+                  "albums": "Spice",
+                  "monthlyListener": 8614262
+                }
+              ],
+              "artists": [
+                {
+                  "name": "Michael Jackson",
+                  "group": "Michael Jackson",
+                  "genre": [
+                    "Pop",
+                    "Rock"
+                  ],
+                  "album": [
+                    "Beat it"
+                  ],
+                  "publishedSongs": 263,
+                  "monthlyListeners": 28223624
+                },
+                {
+                  "name": "Estelle Horner",
+                  "group": "Spice Girls",
+                  "genre": [
+                    "Pop"
+                  ],
+                  "album": [
+                    "Spice"
+                  ],
+                  "publishedSongs": 57,
+                  "monthlyListeners": 8614262
+                }
+              ],
+              "albums": [
+                "Spice",
+                "Beat it"
+              ],
+              "songs": [
+                "WannaBe"
+              ]
+            },
+            {
+              "name": "Rock",
+              "groups": [
+                {
+                  "name": "Iron Maiden",
+                  "artists": [
+                    {
+                      "name": "Steve Harris",
+                      "group": "Iron Maiden",
+                      "genre": [
+                        "Heavy Metal"
+                      ],
+                      "album": [
+                        "Senjutsu"
+                      ],
+                      "publishedSongs": 204,
+                      "monthlyListeners": 6591966
+                    }
+                  ],
+                  "yearCreation": 1975,
+                  "genre": "Heavy Metal",
+                  "albums": "Senjutsu",
+                  "monthlyListener": 6591966
+                },
+                {
+                  "name": "Queen",
+                  "artists": [
+                    {
+                      "name": "Freddie Mercury",
+                      "group": "Queen",
+                      "genre": [
+                        "Rock"
+                      ],
+                      "album": [
+                        "Queen"
+                      ],
+                      "publishedSongs": 188,
+                      "monthlyListeners": 37276204
+                    }
+                  ],
+                  "yearCreation": 1970,
+                  "genre": "Rock",
+                  "albums": "Queen",
+                  "monthlyListener": 37276204
+                }
+              ],
+              "artists": [
+                {
+                  "name": "Steve Harris",
+                  "group": "Iron Maiden",
+                  "genre": [
+                    "Heavy Metal"
+                  ],
+                  "album": [
+                    "Senjutsu"
+                  ],
+                  "publishedSongs": 204,
+                  "monthlyListeners": 6591966
+                },
+                {
+                  "name": "Freddie Mercury",
+                  "group": "Queen",
+                  "genre": [
+                    "Rock"
+                  ],
+                  "album": [
+                    "Queen"
+                  ],
+                  "publishedSongs": 188,
+                  "monthlyListeners": 37276204
+                },
+                {
+                  "name": "Estelle Horner",
+                  "group": "Spice Girls",
+                  "genre": [
+                    "Pop"
+                  ],
+                  "album": [
+                    "Spice"
+                  ],
+                  "publishedSongs": 57,
+                  "monthlyListeners": 8614262
+                },
+                {
+                  "name": "Michael Jackson",
+                  "group": "Michael Jackson",
+                  "genre": [
+                    "Pop",
+                    "Rock"
+                  ],
+                  "album": [
+                    "Beat it"
+                  ],
+                  "publishedSongs": 263,
+                  "monthlyListeners": 28223624
+                }
+              ],
+              "albums": [
+                "Senjutsu"
+              ],
+              "songs": [
+                "Two Minutes for MidNigth"
+              ]
+            }
+          ],
+          "single": false,
+          "reproductionsNumber": 274647363
+        }
+      ]
+    },
+    {
+      "name": "Senjutsu",
+      "artist": [
+        {
+          "name": "Steve Harris",
+          "group": "Iron Maiden",
+          "genre": [
+            "Heavy Metal"
+          ],
+          "album": [
+            "Senjutsu"
+          ],
+          "publishedSongs": 204,
+          "monthlyListeners": 6591966
+        }
+      ],
+      "yearPublication": 2021,
+      "genre": [
+        {
+          "name": "Heavy Metal",
+          "groups": [
+            {
+              "name": "Iron Maiden",
+              "artists": [
+                {
+                  "name": "Steve Harris",
+                  "group": "Iron Maiden",
+                  "genre": [
+                    "Heavy Metal"
+                  ],
+                  "album": [
+                    "Senjutsu"
+                  ],
+                  "publishedSongs": 204,
+                  "monthlyListeners": 6591966
+                }
+              ],
+              "yearCreation": 1975,
+              "genre": "Heavy Metal",
+              "albums": "Senjutsu",
+              "monthlyListener": 6591966
+            }
+          ],
+          "artists": [
+            {
+              "name": "Steve Harris",
+              "group": "Iron Maiden",
+              "genre": [
+                "Heavy Metal"
+              ],
+              "album": [
+                "Senjutsu"
+              ],
+              "publishedSongs": 204,
+              "monthlyListeners": 6591966
+            }
+          ],
+          "albums": [
+            "Senjutsu"
+          ],
+          "songs": [
+            "Two Minutes for MidNigth"
+          ]
+        }
+      ],
+      "songs": [
+        {
+          "name": "Days Of Future Past",
+          "author": [
+            {
+              "name": "Steve Harris",
+              "group": "Iron Maiden",
+              "genre": [
+                "Heavy Metal"
+              ],
+              "album": [
+                "Senjutsu"
+              ],
+              "publishedSongs": 204,
+              "monthlyListeners": 6591966
+            }
+          ],
+          "songDuration": "4:03",
+          "genre": [
+            {
+              "name": "Heavy Metal",
+              "groups": [
+                {
+                  "name": "Iron Maiden",
+                  "artists": [
+                    {
+                      "name": "Steve Harris",
+                      "group": "Iron Maiden",
+                      "genre": [
+                        "Heavy Metal"
+                      ],
+                      "album": [
+                        "Senjutsu"
+                      ],
+                      "publishedSongs": 204,
+                      "monthlyListeners": 6591966
+                    }
+                  ],
+                  "yearCreation": 1975,
+                  "genre": "Heavy Metal",
+                  "albums": "Senjutsu",
+                  "monthlyListener": 6591966
+                }
+              ],
+              "artists": [
+                {
+                  "name": "Steve Harris",
+                  "group": "Iron Maiden",
+                  "genre": [
+                    "Heavy Metal"
+                  ],
+                  "album": [
+                    "Senjutsu"
+                  ],
+                  "publishedSongs": 204,
+                  "monthlyListeners": 6591966
+                }
+              ],
+              "albums": [
+                "Senjutsu"
+              ],
+              "songs": [
+                "Two Minutes for MidNigth"
+              ]
+            }
+          ],
+          "single": false,
+          "reproductionsNumber": 972101
+        },
+        {
+          "name": "Senjutsu",
+          "author": [
+            {
+              "name": "Steve Harris",
+              "group": "Iron Maiden",
+              "genre": [
+                "Heavy Metal"
+              ],
+              "album": [
+                "Senjutsu"
+              ],
+              "publishedSongs": 204,
+              "monthlyListeners": 6591966
+            }
+          ],
+          "songDuration": "8:20",
+          "genre": [
+            {
+              "name": "Heavy Metal",
+              "groups": [
+                {
+                  "name": "Iron Maiden",
+                  "artists": [
+                    {
+                      "name": "Steve Harris",
+                      "group": "Iron Maiden",
+                      "genre": [
+                        "Heavy Metal"
+                      ],
+                      "album": [
+                        "Senjutsu"
+                      ],
+                      "publishedSongs": 204,
+                      "monthlyListeners": 6591966
+                    }
+                  ],
+                  "yearCreation": 1975,
+                  "genre": "Heavy Metal",
+                  "albums": "Senjutsu",
+                  "monthlyListener": 6591966
+                }
+              ],
+              "artists": [
+                {
+                  "name": "Steve Harris",
+                  "group": "Iron Maiden",
+                  "genre": [
+                    "Heavy Metal"
+                  ],
+                  "album": [
+                    "Senjutsu"
+                  ],
+                  "publishedSongs": 204,
+                  "monthlyListeners": 6591966
+                }
+              ],
+              "albums": [
+                "Senjutsu"
+              ],
+              "songs": [
+                "Two Minutes for MidNigth"
+              ]
+            }
+          ],
+          "single": false,
+          "reproductionsNumber": 1611164
+        }
+      ]
+    },
+    {
+      "name": "Suavemente",
+      "artist": [
+        {
+          "name": "Elvis Crespo",
+          "group": "Grupo Mania",
+          "genre": [
+            "Merengue"
+          ],
+          "album": [
+            "Suavemente"
+          ],
+          "publishedSongs": 71,
+          "monthlyListeners": 3559552
+        }
+      ],
+      "yearPublication": 1998,
+      "genre": [
+        {
+          "name": "Merengue",
+          "groups": [
+            {
+              "name": "Queen",
+              "artists": [
+                {
+                  "name": "Freddie Mercury",
+                  "group": "Queen",
+                  "genre": [
+                    "Rock"
+                  ],
+                  "album": [
+                    "Queen"
+                  ],
+                  "publishedSongs": 188,
+                  "monthlyListeners": 37276204
+                }
+              ],
+              "yearCreation": 1970,
+              "genre": "Rock",
+              "albums": "Queen",
+              "monthlyListener": 37276204
+            }
+          ],
+          "artists": [
+            {
+              "name": "Elvis Crespo",
+              "group": "Grupo Mania",
+              "genre": [
+                "Merengue"
+              ],
+              "album": [
+                "Suavemente"
+              ],
+              "publishedSongs": 71,
+              "monthlyListeners": 3559552
+            }
+          ],
+          "albums": [
+            "Suavemente"
+          ],
+          "songs": [
+            "Suavemente"
+          ]
+        }
+      ],
+      "songs": [
+        {
+          "name": "Suavemente",
+          "author": [
+            {
+              "name": "Elvis Crespo",
+              "group": "Grupo Mania",
+              "genre": [
+                "Merengue"
+              ],
+              "album": [
+                "Suavemente"
+              ],
+              "publishedSongs": 71,
+              "monthlyListeners": 3559552
+            }
+          ],
+          "songDuration": "4:28",
+          "genre": [
+            {
+              "name": "Merengue",
+              "groups": [
+                {
+                  "name": "Queen",
+                  "artists": [
+                    {
+                      "name": "Freddie Mercury",
+                      "group": "Queen",
+                      "genre": [
+                        "Rock"
+                      ],
+                      "album": [
+                        "Queen"
+                      ],
+                      "publishedSongs": 188,
+                      "monthlyListeners": 37276204
+                    }
+                  ],
+                  "yearCreation": 1970,
+                  "genre": "Rock",
+                  "albums": "Queen",
+                  "monthlyListener": 37276204
+                }
+              ],
+              "artists": [
+                {
+                  "name": "Elvis Crespo",
+                  "group": "Grupo Mania",
+                  "genre": [
+                    "Merengue"
+                  ],
+                  "album": [
+                    "Suavemente"
+                  ],
+                  "publishedSongs": 71,
+                  "monthlyListeners": 3559552
+                }
+              ],
+              "albums": [
+                "Suavemente"
+              ],
+              "songs": [
+                "Suavemente"
+              ]
+            }
+          ],
+          "single": false,
+          "reproductionsNumber": 174354373
+        },
+        {
+          "name": "Luna Llena",
+          "author": [
+            {
+              "name": "Elvis Crespo",
+              "group": "Grupo Mania",
+              "genre": [
+                "Merengue"
+              ],
+              "album": [
+                "Suavemente"
+              ],
+              "publishedSongs": 71,
+              "monthlyListeners": 3559552
+            }
+          ],
+          "songDuration": "4:29",
+          "genre": [
+            {
+              "name": "Merengue",
+              "groups": [
+                {
+                  "name": "Queen",
+                  "artists": [
+                    {
+                      "name": "Freddie Mercury",
+                      "group": "Queen",
+                      "genre": [
+                        "Rock"
+                      ],
+                      "album": [
+                        "Queen"
+                      ],
+                      "publishedSongs": 188,
+                      "monthlyListeners": 37276204
+                    }
+                  ],
+                  "yearCreation": 1970,
+                  "genre": "Rock",
+                  "albums": "Queen",
+                  "monthlyListener": 37276204
+                }
+              ],
+              "artists": [
+                {
+                  "name": "Elvis Crespo",
+                  "group": "Grupo Mania",
+                  "genre": [
+                    "Merengue"
+                  ],
+                  "album": [
+                    "Suavemente"
+                  ],
+                  "publishedSongs": 71,
+                  "monthlyListeners": 3559552
+                }
+              ],
+              "albums": [
+                "Suavemente"
+              ],
+              "songs": [
+                "Suavemente"
+              ]
+            }
+          ],
+          "single": false,
+          "reproductionsNumber": 14480477
+        },
+        {
+          "name": "Tu Sonrisa",
+          "author": [
+            {
+              "name": "Elvis Crespo",
+              "group": "Grupo Mania",
+              "genre": [
+                "Merengue"
+              ],
+              "album": [
+                "Suavemente"
+              ],
+              "publishedSongs": 71,
+              "monthlyListeners": 3559552
+            }
+          ],
+          "songDuration": "4:34",
+          "genre": [
+            {
+              "name": "Merengue",
+              "groups": [
+                {
+                  "name": "Queen",
+                  "artists": [
+                    {
+                      "name": "Freddie Mercury",
+                      "group": "Queen",
+                      "genre": [
+                        "Rock"
+                      ],
+                      "album": [
+                        "Queen"
+                      ],
+                      "publishedSongs": 188,
+                      "monthlyListeners": 37276204
+                    }
+                  ],
+                  "yearCreation": 1970,
+                  "genre": "Rock",
+                  "albums": "Queen",
+                  "monthlyListener": 37276204
+                }
+              ],
+              "artists": [
+                {
+                  "name": "Elvis Crespo",
+                  "group": "Grupo Mania",
+                  "genre": [
+                    "Merengue"
+                  ],
+                  "album": [
+                    "Suavemente"
+                  ],
+                  "publishedSongs": 71,
+                  "monthlyListeners": 3559552
+                }
+              ],
+              "albums": [
+                "Suavemente"
+              ],
+              "songs": [
+                "Suavemente"
+              ]
+            }
+          ],
+          "single": false,
+          "reproductionsNumber": 7669356
+        },
+        {
+          "name": "Princesita",
+          "author": [
+            {
+              "name": "Elvis Crespo",
+              "group": "Grupo Mania",
+              "genre": [
+                "Merengue"
+              ],
+              "album": [
+                "Suavemente"
+              ],
+              "publishedSongs": 71,
+              "monthlyListeners": 3559552
+            }
+          ],
+          "songDuration": "4:50",
+          "genre": [
+            {
+              "name": "Merengue",
+              "groups": [
+                {
+                  "name": "Queen",
+                  "artists": [
+                    {
+                      "name": "Freddie Mercury",
+                      "group": "Queen",
+                      "genre": [
+                        "Rock"
+                      ],
+                      "album": [
+                        "Queen"
+                      ],
+                      "publishedSongs": 188,
+                      "monthlyListeners": 37276204
+                    }
+                  ],
+                  "yearCreation": 1970,
+                  "genre": "Rock",
+                  "albums": "Queen",
+                  "monthlyListener": 37276204
+                }
+              ],
+              "artists": [
+                {
+                  "name": "Elvis Crespo",
+                  "group": "Grupo Mania",
+                  "genre": [
+                    "Merengue"
+                  ],
+                  "album": [
+                    "Suavemente"
+                  ],
+                  "publishedSongs": 71,
+                  "monthlyListeners": 3559552
+                }
+              ],
+              "albums": [
+                "Suavemente"
+              ],
+              "songs": [
+                "Suavemente"
+              ]
+            }
+          ],
+          "single": false,
+          "reproductionsNumber": 4363157
+        }
+      ]
+    }
+  ]
+}

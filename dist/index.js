@@ -1,28 +1,31 @@
+/* eslint-disable no-invalid-this */
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
+const __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  let desc = Object.getOwnPropertyDescriptor(m, k);
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {enumerable: true, get: function() {
+      return m[k];
+    }};
+  }
+  Object.defineProperty(o, k2, desc);
 }) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
+  if (k2 === undefined) k2 = k;
+  o[k2] = m[k];
 }));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
+const __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+  Object.defineProperty(o, "default", {enumerable: true, value: v});
 }) : function(o, v) {
-    o["default"] = v;
+  o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
+const __importStar = (this && this.__importStar) || function(mod) {
+  if (mod && mod.__esModule) return mod;
+  const result = {};
+  if (mod != null) for (const k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+  __setModuleDefault(result, mod);
+  return result;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
+Object.defineProperty(exports, "__esModule", {value: true});
 /* eslint-disable prefer-const */
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable no-unused-vars */
@@ -36,12 +39,15 @@ const groups_1 = require("./DefinitiveHierarchy/PrincipalClases/groups");
 const musicGenre_1 = require("./DefinitiveHierarchy/PrincipalClases/musicGenre");
 const song_1 = require("./DefinitiveHierarchy/PrincipalClases/song");
 const album_1 = require("./DefinitiveHierarchy/PrincipalClases/album");
+const playlist_1 = require("./DefinitiveHierarchy/PrincipalClases/playlist");
 const songCollection_1 = require("./DefinitiveHierarchy/Collectionables/songCollection");
 const genreCollection_1 = require("./DefinitiveHierarchy/Collectionables/genreCollection");
 const inquirer = __importStar(require("inquirer"));
 const jsonGroupCollection_1 = require("./LowdbFiles/jsonGroupCollection");
 const jsonGenreCollection_1 = require("./LowdbFiles/jsonGenreCollection");
 const jsonSongCollection_1 = require("./LowdbFiles/jsonSongCollection");
+const jsonAlbumCollection_1 = require("./LowdbFiles/jsonAlbumCollection");
+const jsonPlaylistCollection_1 = require("./LowdbFiles/jsonPlaylistCollection");
 // ARTISTS 10 
 // ESTO ESTÁ CORRECTO
 const BadBunny = new artist_1.Artist('Bad Bunny', 'Bad Bunny', ['Urban Latino'], ['Amorfoda'], 127, 47666987);
@@ -158,21 +164,33 @@ const DontStopMeNow = new song_1.Song('Dont Stop Me Now', [FreddieMercury], '3:3
 const KillerQueen = new song_1.Song('Killer Queen', [FreddieMercury], '3:11', [Rock], false, 237639020);
 const AnotherOneBitestheDust = new song_1.Song('Another One Bites the Dust', [FreddieMercury], '3:42', [Rock], false, 533903036);
 const SongCollectionOBJ = new songCollection_1.SongCollection([BadBunny120, Yoganuni, Mojaita, LaCancion, QuePretendes, TheLazySong, KMagic, UptownFunk, Treasure, ThatsWhatILike, BeatIt, BillieJean,
-    DontStopTilYouGetEnough, RockWithYou, TheWayYouMakeMeFeel, SePreparo, Dile, Farsante, Marido, UnaLocura, RapGod, WhenImGone, Criminal, TheRealSlimShady, Suavemente, Bailar, Princesita,
-    TuSonrisa, LunaLlena, Bad, Congratulations, Momentum, SaveALittleLove, Anthem, NeverGonnaGiveYouUp, TogetherForever, TakeMetoYourHeart, WheneverYouNeedSomebody, BitchPleaseII,
-    SheWantsToDanceWithMe, Animals, ForbiddenVoices, Virus, Tremor, TurnUpTheSpeakers, TheNights, WakeMeUp, Levels, WaitingForLove, ICouldBeTheOne, TheTrooper, PhantomoftheOpera,
-    TwoMinutesToMidnight, DaysOfFuturePast, Senjutsu, BohemianRhapsody, IWantToBreakFree, DontStopMeNow, KillerQueen, AnotherOneBitestheDust]);
+  DontStopTilYouGetEnough, RockWithYou, TheWayYouMakeMeFeel, SePreparo, Dile, Farsante, Marido, UnaLocura, RapGod, WhenImGone, Criminal, TheRealSlimShady, Suavemente, Bailar, Princesita,
+  TuSonrisa, LunaLlena, Bad, Congratulations, Momentum, SaveALittleLove, Anthem, NeverGonnaGiveYouUp, TogetherForever, TakeMetoYourHeart, WheneverYouNeedSomebody, BitchPleaseII,
+  SheWantsToDanceWithMe, Animals, ForbiddenVoices, Virus, Tremor, TurnUpTheSpeakers, TheNights, WakeMeUp, Levels, WaitingForLove, ICouldBeTheOne, TheTrooper, PhantomoftheOpera,
+  TwoMinutesToMidnight, DaysOfFuturePast, Senjutsu, BohemianRhapsody, IWantToBreakFree, DontStopMeNow, KillerQueen, AnotherOneBitestheDust]);
 const collectionSongs = new jsonSongCollection_1.JsonSongCollection([BadBunny120, Yoganuni, Mojaita, LaCancion, QuePretendes, TheLazySong, KMagic, UptownFunk, Treasure, ThatsWhatILike, BeatIt, BillieJean,
-    DontStopTilYouGetEnough, RockWithYou, TheWayYouMakeMeFeel, SePreparo, Dile, Farsante, Marido, UnaLocura, RapGod, WhenImGone, Criminal, TheRealSlimShady, Suavemente, Bailar, Princesita,
-    TuSonrisa, LunaLlena, Bad, Congratulations, Momentum, SaveALittleLove, Anthem, NeverGonnaGiveYouUp, TogetherForever, TakeMetoYourHeart, WheneverYouNeedSomebody, BitchPleaseII,
-    SheWantsToDanceWithMe, Animals, ForbiddenVoices, Virus, Tremor, TurnUpTheSpeakers, TheNights, WakeMeUp, Levels, WaitingForLove, ICouldBeTheOne, TheTrooper, PhantomoftheOpera,
-    TwoMinutesToMidnight, DaysOfFuturePast, Senjutsu, BohemianRhapsody, IWantToBreakFree, DontStopMeNow, KillerQueen, AnotherOneBitestheDust]);
+  DontStopTilYouGetEnough, RockWithYou, TheWayYouMakeMeFeel, SePreparo, Dile, Farsante, Marido, UnaLocura, RapGod, WhenImGone, Criminal, TheRealSlimShady, Suavemente, Bailar, Princesita,
+  TuSonrisa, LunaLlena, Bad, Congratulations, Momentum, SaveALittleLove, Anthem, NeverGonnaGiveYouUp, TogetherForever, TakeMetoYourHeart, WheneverYouNeedSomebody, BitchPleaseII,
+  SheWantsToDanceWithMe, Animals, ForbiddenVoices, Virus, Tremor, TurnUpTheSpeakers, TheNights, WakeMeUp, Levels, WaitingForLove, ICouldBeTheOne, TheTrooper, PhantomoftheOpera,
+  TwoMinutesToMidnight, DaysOfFuturePast, Senjutsu, BohemianRhapsody, IWantToBreakFree, DontStopMeNow, KillerQueen, AnotherOneBitestheDust]);
 // ALBUM 5-10
 const OASIS = new album_1.Album('OASIS', [BadBunny, JBalvin], 2019, [UrbanLatino], [Mojaita, LaCancion, QuePretendes]);
 const Odisea = new album_1.Album('Odisea', [Ozuna], 2017, [UrbanLatino], [SePreparo, Dile, Farsante, Marido]);
 const TheMarshallMathersLP = new album_1.Album('The Marshall Mathers LP', [Eminem], 2000, [Rap], [BitchPleaseII, TheRealSlimShady, Criminal]);
+const BeatItAlbum = new album_1.Album('Beat It', [Michael], 1982, [Pop, Disco], [BeatIt, BillieJean]);
+const BadAlbum = new album_1.Album('Bad', [Michael], 1987, [Pop], [TheWayYouMakeMeFeel, RockWithYou]);
+const SenjutsuAlbum = new album_1.Album('Senjutsu', [SteveHarris], 2021, [HeavyMetal], [DaysOfFuturePast, Senjutsu]);
+const SuavementeAlbum = new album_1.Album('Suavemente', [Elvis], 1998, [Merengue], [Suavemente, LunaLlena, TuSonrisa, Princesita]);
+const AlbumCollectionOBJ = [OASIS, Odisea, TheMarshallMathersLP, BeatItAlbum, BadAlbum, SenjutsuAlbum, SuavementeAlbum];
+const collectionAlbums = new jsonAlbumCollection_1.JsonAlbumCollection([OASIS, Odisea, TheMarshallMathersLP, BeatItAlbum, BadAlbum, SenjutsuAlbum, SuavementeAlbum]);
 // PLAYLIST 3
-// const Fiestuki = new Playlist();
+const Fiestuki = new playlist_1.Playlists('Fiestuki', [BadBunny120, Yoganuni, Mojaita, LaCancion, QuePretendes, SePreparo, Dile, Farsante, Marido,
+  UnaLocura, TheNights, Levels, Animals, Virus, Tremor, WaitingForLove], 60, [UrbanLatino, ElectroHouse, EDM, Dance]);
+const Merengaso = new playlist_1.Playlists('Merengaso', [LunaLlena, Suavemente, Bailar, Princesita, TuSonrisa], 30, [Merengue]);
+const ClassicalSongs = new playlist_1.Playlists('Classical Songs', [BeatIt, BillieJean, RockWithYou, BohemianRhapsody, IWantToBreakFree, DontStopMeNow,
+  KillerQueen, AnotherOneBitestheDust], 60, [Rock, Pop, Dance]);
+const PlaylistCollectionOBJ = [Fiestuki, Merengaso, ClassicalSongs];
+const collectionPlaylists = new jsonPlaylistCollection_1.JsonPlaylistCollection([Fiestuki, Merengaso, ClassicalSongs]);
 /** ********** NO BORREN ESTO ************/
 // function displayTodoList(): void {
 //   console.log(`ARTIST COLLECTION`);
@@ -396,107 +414,105 @@ const TheMarshallMathersLP = new album_1.Album('The Marshall Mathers LP', [Emine
 // promptUser();
 /** ********** NO BORREN ESTO ************/
 function displayTodoList() {
-    console.log(`GENRE COLLECTION`);
-    for (let i = 0; i < GenresCollectionObj.getColectionlength(); i++) {
-        console.log(GenresCollectionObj.getnObject(i).getName());
-    }
+  console.log(`GENRE COLLECTION`);
+  for (let i = 0; i < GenresCollectionObj.getColectionlength(); i++) {
+    console.log(GenresCollectionObj.getnObject(i).getName());
+  }
 }
-var Commands;
-(function (Commands) {
-    Commands["Add"] = "Add New Genre";
-    Commands["Toggle"] = "Genre Added Default";
-    Commands["Purge"] = "Remove New Added Genre";
-    Commands["Quit"] = "Quit";
+let Commands;
+(function(Commands) {
+  Commands["Add"] = "Add New Genre";
+  Commands["Toggle"] = "Genre Added Default";
+  Commands["Purge"] = "Remove New Added Genre";
+  Commands["Quit"] = "Quit";
 })(Commands || (Commands = {}));
 function promptAdd() {
-    console.clear();
-    let genreName = ``;
-    let album = ``;
-    let songs = ``;
-    /** DE ESTA MANERA ES COMO SE AÑADEN VARIOS ELEMENTOS CON PROMPT
+  console.clear();
+  let genreName = ``;
+  let album = ``;
+  let songs = ``;
+  /** DE ESTA MANERA ES COMO SE AÑADEN VARIOS ELEMENTOS CON PROMPT
      * Mirar esta página: https://typescript.hotexamples.com/es/examples/inquirer/-/prompt/typescript-prompt-function-examples.html
     */
-    inquirer.prompt([{ type: "input", name: "GenreName", message: "Enter Genre Name:" },
-        { type: "input", name: "Album", message: "Enter Album Name:" },
-        { type: "input", name: "song", message: "Enter the song name:" }])
-        .then((answers) => {
+  inquirer.prompt([{type: "input", name: "GenreName", message: "Enter Genre Name:"},
+    {type: "input", name: "Album", message: "Enter Album Name:"},
+    {type: "input", name: "song", message: "Enter the song name:"}])
+      .then((answers) => {
         genreName = answers.GenreName;
         album = answers.Album;
         songs = answers.song;
         GenresCollectionObj.addGenre(new musicGenre_1.MusicGenre(genreName, [IronMaiden], [DonDiablo], [album], [songs]));
         collectionGenre.restart(GenresCollectionObj);
-        inquirer.prompt({ type: "input", name: "Continue", message: "Do you want to return to the main screen ? (y/N): " })
+        inquirer.prompt({type: "input", name: "Continue", message: "Do you want to return to the main screen ? (y/N): "})
             .then((answers) => {
-            if (answers["Continue"] === "y") {
+              if (answers["Continue"] === "y") {
                 promptUser();
-            }
-            else {
+              } else {
                 (0, process_1.exit)();
-            }
-        });
-    });
+              }
+            });
+      });
 }
 function promptDefault() {
-    console.clear();
-    console.log(`GENRE DEFAULT COLLECTION`);
-    for (let i = 0; i < GenresCollectionObj.getColectionlength(); i++) {
-        console.log(GenresCollectionObj.getnObject(i).getName());
-    }
-    inquirer.prompt({ type: "input", name: "Continue", message: "Do you want to return to the main screen ? (y/N): " })
-        .then((answers) => {
+  console.clear();
+  console.log(`GENRE DEFAULT COLLECTION`);
+  for (let i = 0; i < GenresCollectionObj.getColectionlength(); i++) {
+    console.log(GenresCollectionObj.getnObject(i).getName());
+  }
+  inquirer.prompt({type: "input", name: "Continue", message: "Do you want to return to the main screen ? (y/N): "})
+      .then((answers) => {
         if (answers["Continue"] === "y") {
-            promptUser();
+          promptUser();
+        } else {
+          (0, process_1.exit)();
         }
-        else {
-            (0, process_1.exit)();
-        }
-    });
+      });
 }
 function promptDelete() {
-    console.clear();
-    console.log(GenresCollectionObj.getArtist(BadBunny));
-    // let artistName: string = ``;
-    // inquirer.prompt({type: "input", name: "Delete", message: "Enter the name of the artist you wish to delete: "})
-    //     .then((answer) => {
-    //       artistName = answer.Delete;
-    //       artistCollectionOBJ.getRemoveArtist(artistName);
-    //       collectionArtists.restart(artistCollectionOBJ);
-    //       inquirer.prompt({type: "input", name: "Continue", message: "Do you want to return to the main screen ? (y/N): "})
-    //           .then((answers) => {
-    //             if (answers["Continue"] === "y") {
-    //               promptUser();
-    //             } else {
-    //               exit();
-    //             }
-    //           });
-    //     });
+  console.clear();
+  console.log(GenresCollectionObj.getArtist(BadBunny));
+  // let artistName: string = ``;
+  // inquirer.prompt({type: "input", name: "Delete", message: "Enter the name of the artist you wish to delete: "})
+  //     .then((answer) => {
+  //       artistName = answer.Delete;
+  //       artistCollectionOBJ.getRemoveArtist(artistName);
+  //       collectionArtists.restart(artistCollectionOBJ);
+  //       inquirer.prompt({type: "input", name: "Continue", message: "Do you want to return to the main screen ? (y/N): "})
+  //           .then((answers) => {
+  //             if (answers["Continue"] === "y") {
+  //               promptUser();
+  //             } else {
+  //               exit();
+  //             }
+  //           });
+  //     });
 }
 function promptUser() {
-    (0, events_1.setMaxListeners)(100);
-    console.clear();
-    displayTodoList();
-    inquirer.prompt({
-        type: "list",
-        name: "command",
-        message: "Choose option",
-        choices: Object.values(Commands),
-    }).then((answers) => {
-        switch (answers["command"]) {
-            case Commands.Toggle:
-                promptDefault();
-                break;
-            case Commands.Add:
-                promptAdd();
-                break;
-            case Commands.Purge:
-                promptDelete();
-                break;
-            case Commands.Quit:
-                console.clear();
-                console.log(`<< Program Exit >>`);
-                (0, process_1.exit)();
-                break;
-        }
-    });
+  (0, events_1.setMaxListeners)(100);
+  console.clear();
+  displayTodoList();
+  inquirer.prompt({
+    type: "list",
+    name: "command",
+    message: "Choose option",
+    choices: Object.values(Commands),
+  }).then((answers) => {
+    switch (answers["command"]) {
+      case Commands.Toggle:
+        promptDefault();
+        break;
+      case Commands.Add:
+        promptAdd();
+        break;
+      case Commands.Purge:
+        promptDelete();
+        break;
+      case Commands.Quit:
+        console.clear();
+        console.log(`<< Program Exit >>`);
+        (0, process_1.exit)();
+        break;
+    }
+  });
 }
 promptUser();

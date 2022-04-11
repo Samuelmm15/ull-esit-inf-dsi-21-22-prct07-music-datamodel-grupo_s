@@ -13,8 +13,14 @@ export class Song {
     return this.name;
   }
 
-  getAuthor() : Artist[] {
-    return this.author;
+  getAuthor(authorName: string) : Artist {
+    // return this.author;
+    for (let i = 0; i < this.author.length; i++) {
+      if (authorName === this.author[i].getName()) {
+        return this.author[i];
+      }
+    }
+    return this.author[0]; // Default Option
   }
 
   getSongDuration(): string {
@@ -29,8 +35,14 @@ export class Song {
     return result;
   }
 
-  getGenre() : MusicGenre[] {
-    return this.genre;
+  getGenre(genreName: string): MusicGenre {
+    for (let i = 0; i < this.genre.length; i++) {
+      if (genreName === this.genre[i].getName()) {
+        return this.genre[i];
+      }
+    }
+    return this.genre[0]; // Default Option
+    // return this.genre;
   }
 
   getSingle() : boolean {
