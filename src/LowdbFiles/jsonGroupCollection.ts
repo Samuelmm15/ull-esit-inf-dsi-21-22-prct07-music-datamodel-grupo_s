@@ -26,6 +26,10 @@ export class JsonGroupCollection {
     this.database.set("Group", GroupItem).write();
   }
 
+  /**
+   * Adds new entries to the group data base
+   * @param GroupItem Group array
+   */
   restart(GroupItem: Group[]): void {
     this.database.set("Group", GroupItem).write();
   }

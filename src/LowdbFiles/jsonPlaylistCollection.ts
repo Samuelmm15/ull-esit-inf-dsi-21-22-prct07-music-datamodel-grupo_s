@@ -27,7 +27,11 @@ export class JsonPlaylistCollection {
     this.database = lowdb(new FileSync("JsonFiles/Playlist.json"));
     this.database.set("Playlist", Playlist).write();
   }
-  
+
+  /**
+   * Adds new entries to the playlist data base
+   * @param Playlist Playlist array
+   */
   restart(Playlist: Playlists[]): void {
     this.database.set("Playlist", Playlist).write();
   }

@@ -28,6 +28,10 @@ export class JsonAlbumCollection {
     this.database.set("Album", albumItems).write();
   }
 
+  /**
+   * Adds new entries to the album data
+   * @param albumItem Album object
+   */
   restart(albumItem: Album): void {
     this.database.set("Album", albumItem).write();
   }

@@ -27,6 +27,10 @@ export class JsonTodoCollection extends ArtistsCollection {
     this.database.set("Artist", ArtistItems).write();
   }
 
+  /**
+   * Adds new entries to the artist data base
+   * @param ArtistItems Srtist collection
+   */
   restart(ArtistItems: ArtistsCollection): void {
     this.database.set("Artist", ArtistItems).write();
   }

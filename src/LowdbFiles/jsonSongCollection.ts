@@ -29,6 +29,10 @@ export class JsonSongCollection extends SongCollection {
     this.database.set("Song", SongItems).write();
   }
 
+  /**
+   * Adds new entries to the song data base
+   * @param SongItems Song collection
+   */
   restart(SongItems: SongCollection): void {
     this.database.set("Song", SongItems).write();
   }

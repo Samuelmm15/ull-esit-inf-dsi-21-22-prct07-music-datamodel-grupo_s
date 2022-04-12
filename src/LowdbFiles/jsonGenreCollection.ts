@@ -28,6 +28,10 @@ export class JsonGenreCollection extends GenreCollection {
     this.database.set("Genre", GenreItems).write();
   }
 
+  /**
+   * Adds new entries to the genre data base
+   * @param GenreItems Genre collection
+   */
   restart(GenreItems: GenreCollection): void {
     this.database.set("Genre", GenreItems).write();
   }
