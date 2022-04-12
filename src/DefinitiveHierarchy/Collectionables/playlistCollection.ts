@@ -3,7 +3,6 @@ import {BasicStreamableCollection} from './basicstreamablecollection';
 import {Playlists} from '../PrincipalClases/playlist';
 import {Song} from '../PrincipalClases/song';
 import {MusicGenre} from '../PrincipalClases/musicGenre';
-// import {Artist} from '../PrincipalClases/artist';
 
 export class PlaylistCollection extends BasicStreamableCollection<Playlists> {
   constructor(protected playlists: Playlists[]) {
@@ -21,6 +20,9 @@ export class PlaylistCollection extends BasicStreamableCollection<Playlists> {
     }
     return result;
   }
+  public getSong(playlistName: Playlists, song: Song): string {
+    return playlistName.getSongs(song.getName()).getName();
+  }
   public getSongsArray(playlistName: string): Song[] {
     let result: Song[] = [];
     for (let i = 0; i < this.playlists.length; i++) {
@@ -30,16 +32,6 @@ export class PlaylistCollection extends BasicStreamableCollection<Playlists> {
     }
     return result;
   }
-
-  // public getArtistArray(playlistName: string): Artist[] {
-  //   let result: Artist[] = [];
-  //   for (let i = 0; i < this.playlists.length; i++) {
-  //     if (this.playlists[i].getName() === playlistName) {
-  //       result = this.playlists[i].getArtistArray();
-  //     }
-  //   }
-  //   return result;
-  // }
   public getName(PlaylistName: string): string {
     let success: string = ``;
     for (let i = 0; i < this.playlists.length; i++) {
@@ -69,5 +61,18 @@ export class PlaylistCollection extends BasicStreamableCollection<Playlists> {
   }
   public getPlaylistArray(): Playlists[] {
     return this.playlists;
+  }
+  private removePlaylist(index: number): Playlists[] {
+    this.playlists.splice(index, 1);
+    return this.playlists;
+  }
+  public getRemoveIndex(PlaylistName: string): Playlists[] {
+    let i = 0;
+    for (i = 0; i < this.playlists.length; i++) {
+      if (this.playlists[i].getName() === PlaylistName) {
+        break;
+      }
+    }
+    return this.removePlaylist(i);
   }
 }

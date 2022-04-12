@@ -12,12 +12,13 @@ class SongCollection extends basicstreamablecollection_1.BasicStreamableCollecti
         this.songs.push(song);
     }
     getSong(songName) {
+        let result = this.songs[0];
         for (let i = 0; i < this.songs.length; i++) {
             if (this.songs[i].getName() === songName) {
-                return this.songs[i];
+                result = this.songs[i];
             }
         }
-        return `No existe la canción que intenta buscar`;
+        return result;
     }
     getSongAuthor(authorName) {
         for (let i = 0; i < this.songs.length; i++) {
@@ -73,6 +74,9 @@ class SongCollection extends basicstreamablecollection_1.BasicStreamableCollecti
     }
     getnObject(position) {
         return this.songs[position];
+    }
+    getSongArray() {
+        return this.songs;
     }
 }
 exports.SongCollection = SongCollection;

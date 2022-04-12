@@ -13,11 +13,12 @@ class Playlists {
      * @param duration Playlist duration
      * @param genre Music genres included on the playlist
      */
-    constructor(name, songs, duration, genre) {
+    constructor(name, songs, duration, genre, systemPlaylist) {
         this.name = name;
         this.songs = songs;
         this.duration = duration;
         this.genre = genre;
+        this.systemPlaylist = systemPlaylist;
     }
     /**
      * Gets the playlist name
@@ -45,6 +46,31 @@ class Playlists {
     getSongsArray() {
         return this.songs;
     }
+    getSongString(song) {
+        let songResult = '';
+        for (let i = 0; i < this.songs.length; i++) {
+            if (this.songs[i].getName() === song) {
+                songResult = this.songs[i].getName();
+            }
+        }
+        return songResult;
+    }
+    addSong(song) {
+        this.songs.push(song);
+    }
+    removeSong(index) {
+        this.songs.splice(index, 1);
+        return this.songs;
+    }
+    getRemoveIndex(songName) {
+        let i = 0;
+        for (i = 0; i < this.songs.length; i++) {
+            if (this.songs[i].getName() === songName) {
+                break;
+            }
+        }
+        return this.removeSong(i);
+    }
     getGenreArray() {
         return this.genre;
     }
@@ -68,6 +94,9 @@ class Playlists {
             }
         }
         return this.genre[0];
+    }
+    getsystemPlaylistBoolean() {
+        return this.systemPlaylist;
     }
 }
 exports.Playlists = Playlists;

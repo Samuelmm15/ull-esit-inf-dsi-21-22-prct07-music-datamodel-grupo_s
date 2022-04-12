@@ -10,13 +10,14 @@ export class SongCollection extends BasicStreamableCollection<Song> {
   public addSong(song: Song) {
     this.songs.push(song);
   }
-  public getSong(songName: string): Song | string {
+  public getSong(songName: string): Song {
+    let result: Song = this.songs[0];
     for (let i = 0; i < this.songs.length; i++) {
       if (this.songs[i].getName() === songName) {
-        return this.songs[i];
+        result = this.songs[i];
       }
     }
-    return `No existe la canción que intenta buscar`;
+    return result;
   }
   public getSongAuthor(authorName: Artist): Artist | string {
     for (let i = 0; i < this.songs.length; i++) {
@@ -72,5 +73,8 @@ export class SongCollection extends BasicStreamableCollection<Song> {
   }
   public getnObject(position: number): Song {
     return this.songs[position];
+  }
+  public getSongArray(): Song[] {
+    return this.songs;
   }
 }

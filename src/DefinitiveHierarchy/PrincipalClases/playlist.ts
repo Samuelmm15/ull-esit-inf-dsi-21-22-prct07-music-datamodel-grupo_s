@@ -13,7 +13,7 @@ export class Playlists {
    * @param genre Music genres included on the playlist
    */
   constructor(private name: string, private songs: Song[],
-    private duration: number, private genre: MusicGenre[]) {
+    private duration: number, private genre: MusicGenre[], private systemPlaylist: boolean) {
   }
   /**
    * Gets the playlist name
@@ -41,6 +41,31 @@ export class Playlists {
   getSongsArray(): Song[] {
     return this.songs;
   }
+  getSongString(song: string): string {
+    let songResult: string = '';
+    for (let i = 0; i < this.songs.length; i++) {
+      if (this.songs[i].getName() === song) {
+        songResult = this.songs[i].getName();
+      }
+    }
+    return songResult;
+  }
+  addSong(song: Song): void {
+    this.songs.push(song);
+  }
+  removeSong(index: number): Song[] {
+    this.songs.splice(index, 1);
+    return this.songs;
+  }
+  getRemoveIndex(songName: string): Song[] {
+    let i = 0;
+    for (i = 0; i < this.songs.length; i++) {
+      if (this.songs[i].getName() === songName) {
+        break;
+      }
+    }
+    return this.removeSong(i);
+  }
   getGenreArray(): MusicGenre[] {
     return this.genre;
   }
@@ -65,5 +90,8 @@ export class Playlists {
       }
     }
     return this.genre[0];
+  }
+  getsystemPlaylistBoolean(): boolean {
+    return this.systemPlaylist;
   }
 }

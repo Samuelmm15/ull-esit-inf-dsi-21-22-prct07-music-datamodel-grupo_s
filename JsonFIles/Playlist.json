@@ -1064,7 +1064,8 @@
             "Levels"
           ]
         }
-      ]
+      ],
+      "systemPlaylist": true
     },
     {
       "name": "Merengaso",
@@ -1482,7 +1483,8 @@
             "Suavemente"
           ]
         }
-      ]
+      ],
+      "systemPlaylist": true
     },
     {
       "name": "Classical Songs",
@@ -2869,7 +2871,8 @@
             "Levels"
           ]
         }
-      ]
+      ],
+      "systemPlaylist": true
     }
   ]
 }

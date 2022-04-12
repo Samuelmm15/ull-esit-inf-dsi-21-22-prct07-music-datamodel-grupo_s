@@ -171,7 +171,7 @@ const DontStopMeNow = new Song('Dont Stop Me Now', [FreddieMercury], '3:32', [Ro
 const KillerQueen = new Song('Killer Queen', [FreddieMercury], '3:11', [Rock], false, 237639020);
 const AnotherOneBitestheDust = new Song('Another One Bites the Dust', [FreddieMercury], '3:42', [Rock], false, 533903036);
 
-const SongCollectionOBJ = new SongCollection([BadBunny120, Yoganuni, Mojaita, LaCancion, QuePretendes, TheLazySong, KMagic, UptownFunk, Treasure, ThatsWhatILike, BeatIt, BillieJean, 
+export const SongCollectionOBJ = new SongCollection([BadBunny120, Yoganuni, Mojaita, LaCancion, QuePretendes, TheLazySong, KMagic, UptownFunk, Treasure, ThatsWhatILike, BeatIt, BillieJean, 
   DontStopTilYouGetEnough, RockWithYou, TheWayYouMakeMeFeel, SePreparo, Dile, Farsante, Marido, UnaLocura, RapGod, WhenImGone, Criminal, TheRealSlimShady, Suavemente, Bailar, Princesita,
   TuSonrisa, LunaLlena, Bad, Congratulations, Momentum, SaveALittleLove, Anthem, NeverGonnaGiveYouUp, TogetherForever, TakeMetoYourHeart, WheneverYouNeedSomebody, BitchPleaseII, 
   SheWantsToDanceWithMe, Animals, ForbiddenVoices, Virus, Tremor, TurnUpTheSpeakers, TheNights, WakeMeUp, Levels, WaitingForLove, ICouldBeTheOne, TheTrooper, PhantomoftheOpera,
@@ -198,14 +198,14 @@ const collectionAlbums: JsonAlbumCollection = new JsonAlbumCollection([OASIS, Od
 
 // PLAYLIST 3
 const Fiestuki = new Playlists('Fiestuki', [BadBunny120, Yoganuni, Mojaita, LaCancion, QuePretendes, SePreparo, Dile, Farsante, Marido,
-  UnaLocura, TheNights, Levels, Animals, Virus, Tremor, WaitingForLove], 60, [UrbanLatino, ElectroHouse, EDM, Dance]);
-const Merengaso = new Playlists('Merengaso', [LunaLlena, Suavemente, Bailar, Princesita, TuSonrisa], 30, [Merengue]);
+  UnaLocura, TheNights, Levels, Animals, Virus, Tremor, WaitingForLove], 60, [UrbanLatino, ElectroHouse, EDM, Dance], true);
+const Merengaso = new Playlists('Merengaso', [LunaLlena, Suavemente, Bailar, Princesita, TuSonrisa], 30, [Merengue], true);
 const ClassicalSongs = new Playlists('Classical Songs', [BeatIt, BillieJean, RockWithYou, BohemianRhapsody, IWantToBreakFree, DontStopMeNow,
-  KillerQueen, AnotherOneBitestheDust], 60, [Rock, Pop, Dance]);
+  KillerQueen, AnotherOneBitestheDust], 60, [Rock, Pop, Dance], true);
 
 export const PlaylistCollectionOBJ = new PlaylistCollection([Fiestuki, Merengaso, ClassicalSongs]);
 
-const collectionPlaylists: JsonPlaylistCollection = new JsonPlaylistCollection([Fiestuki, Merengaso, ClassicalSongs]);
+export const collectionPlaylists: JsonPlaylistCollection = new JsonPlaylistCollection([Fiestuki, Merengaso, ClassicalSongs]);
 
 const GestorMenu = new Gestor();
 GestorMenu.menu();

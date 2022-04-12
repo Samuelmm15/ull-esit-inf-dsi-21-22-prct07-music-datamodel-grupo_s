@@ -34,6 +34,9 @@ import {GenresCollectionObj} from '../index';
 import {AlbumCollectionOBJ} from '../index';
 import {artistArray} from '../index';
 import {GroupCollectionOBJ} from '../index';
+import {collectionPlaylists} from '../index';
+import {PlaylistCollection} from '../DefinitiveHierarchy/Collectionables/playlistCollection';
+import {SongCollectionOBJ} from '../index';
 
 // INQUIRE FUNCTIONS
 function displayPlayList(): void {
@@ -50,7 +53,7 @@ function displayPlayList(): void {
 }
     enum Commands {
       Add = "Add New Playlist",
-      Toggle = "Defaults Playlists",
+      Toggle = "Defaults Options To Sort",
       Purge = "Remove New Added Playlist",
       Quit = "Quit"
     }
@@ -69,9 +72,215 @@ function displayPlayList(): void {
       Duration = "Songs Duration Sort",
       Filter = "Filter Single Songs"
     }
+    enum OptionToAdd {
+      NewPlaylist = "Add a new playlist from scratch",
+      UsingExistsPlaylist = "Adding a new playlist from an existing one"
+    }
+function addingNewSongs(PlaylisToOperate: Playlists): void {
+  console.clear();
+  let SongToAdd: string = '';
+  inquirer.prompt({type: "list",
+    name: "SongList",
+    message: "Select a Song To Add: ",
+    choices: SongCollectionOBJ.getSongArray().map((item) => ({name: SongCollectionOBJ.getName(item.getName())}))})
+      .then((answers) => {
+        SongToAdd = answers["SongList"];
+        if (PlaylisToOperate.getSongString(SongToAdd) !== SongToAdd) {
+          let songToAddOBJ = SongCollectionOBJ.getSong(SongToAdd);
+          PlaylisToOperate.addSong(songToAddOBJ);
+          collectionPlaylists.restart(PlaylistCollectionOBJ.getPlaylistArray());
+          console.clear();
+          console.log('<< The song has been added correctly >>');
+          inquirer.prompt({
+            type: "confirm",
+            name: "AddNewSongs",
+            message: "Do you want to add new Songs?"})
+              .then((answers) => {
+                if (answers["AddNewSongs"] === true) {
+                  addingNewSongs(PlaylisToOperate);
+                } else {
+                  console.clear();
+                  inquirer.prompt({type: "confirm",
+                    name: "SongsDelete",
+                    message: "Do you want to delete any Song?"})
+                      .then((answers) => {
+                        if (answers["SongsDelete"] === true) {
+                          deleteSongs(PlaylisToOperate);
+                        } else {
+                          console.clear();
+                          defaultMenuReturn();
+                        }
+                      });
+                }
+              });
+        } else {
+          console.clear();
+          console.log('<< The song you are trying to add is already in the playlist >>');
+          inquirer.prompt({
+            type: "confirm",
+            name: "AddNewSongs",
+            message: "Do you want to add new Songs?"})
+              .then((answers) => {
+                if (answers["AddNewSongs"] === true) {
+                  addingNewSongs(PlaylisToOperate);
+                } else {
+                  console.clear();
+                  inquirer.prompt({type: "confirm",
+                    name: "SongsDelete",
+                    message: "Do you want to delete any Song?"})
+                      .then((answers) => {
+                        if (answers["SongsDelete"] === true) {
+                          deleteSongs(PlaylisToOperate);
+                        } else {
+                          console.clear();
+                          defaultMenuReturn();
+                        }
+                      });
+                }
+              });
+        }
+      });
+}
+function deleteSongs(PlaylistToOperate: Playlists): void {
+  console.clear();
+  let SongToDelete: string = '';
+  inquirer.prompt({type: "list",
+    name: "SongList",
+    message: "Select a Song To Delete: ",
+    choices: PlaylistCollectionOBJ.getSongsArray(PlaylistToOperate.getName()).map((item) => ({name: PlaylistCollectionOBJ.getSong(PlaylistToOperate, item)}))})
+      .then((answers) => {
+        SongToDelete = answers["SongList"];
+        if (PlaylistToOperate.getSongString(SongToDelete) === SongToDelete) {
+          let songToDeleteOBJ = SongCollectionOBJ.getSong(SongToDelete);
+          PlaylistToOperate.getRemoveIndex(songToDeleteOBJ.getName());
+          collectionPlaylists.restart(PlaylistCollectionOBJ.getPlaylistArray());
+          console.clear();
+          console.log('<< The song has been deleted correctly >>');
+          inquirer.prompt({
+            type: "confirm",
+            name: "DeleteSongs",
+            message: "Do you want to delete more Songs?"})
+              .then((answers) => {
+                if (answers["DeleteSongs"] === true) {
+                  deleteSongs(PlaylistToOperate);
+                } else {
+                  console.clear();
+                  inquirer.prompt({type: "confirm",
+                    name: "SongsAdd",
+                    message: "Do you want to add new Songs to the playlist?"})
+                      .then((answers) => {
+                        if (answers["SongsAdd"] === true) {
+                          addingNewSongs(PlaylistToOperate);
+                        } else {
+                          defaultMenuReturn();
+                        }
+                      });
+                }
+              });
+        }
+      });
+}
+function newPlaylistFromScractch(): void {
+  // let selectedPlaylist: string = '';
+  let newPlaylistName: string = '';
+  inquirer.prompt({type: "input",
+    name: "newName",
+    message: "Enter the new playlist name:"})
+      .then((answers) => {
+        newPlaylistName = answers.newName;
+        // const playlistSelected: Playlists = PlaylistCollectionOBJ.getPlaylist(newPlaylistName);
+        const newPlaylistUserAdded = new Playlists(newPlaylistName, playlistSelected.getSongsArray(), playlistSelected.getDuration(), playlistSelected.getGenreArray(), false);
+        PlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
+        collectionPlaylists.restart(PlaylistCollectionOBJ.getPlaylistArray());
+        console.clear();
+        inquirer.prompt({type: "confirm",
+          name: "SongsAdd",
+          message: "Do you want to add new Songs to the playlist?"})
+            .then((answers) => {
+              if (answers["SongsAdd"] === true) {
+                addingNewSongs(newPlaylistUserAdded);
+              } else {
+                console.clear();
+                inquirer.prompt({type: "confirm",
+                  name: "SongsDelete",
+                  message: "Do you want to delete any Song?"})
+                    .then((answers) => {
+                      if (answers["SongsDelete"] === true) {
+                        deleteSongs(newPlaylistUserAdded);
+                      } else {
+                        console.clear();
+                        defaultMenuReturn();
+                      }
+                    });
+              }
+            });
+      });
+}
+function newPlaylistUsingAnExisting(): void {
+  let selectedPlaylist: string = '';
+  inquirer.prompt({
+    type: "list", 
+    name: "PlaylistSelector", 
+    message: "Select a Playlist to see: ", 
+    choices: PlaylistCollectionOBJ.getPlaylistArray().map((item) => ({name: PlaylistCollectionOBJ.getName(item.getName())}))})
+      .then((answers) => {
+        selectedPlaylist = answers["PlaylistSelector"];
+        console.clear();
+        console.log(`La playlist seleccionada ha sido: ${selectedPlaylist}`);
+        console.log();
+        let newPlaylistName: string = '';
+        inquirer.prompt({type: "input",
+          name: "newName",
+          message: "Enter the new playlist name:"})
+            .then((answers) => {
+              newPlaylistName = answers.newName;
+              const playlistSelected: Playlists = PlaylistCollectionOBJ.getPlaylist(selectedPlaylist);
+              const newPlaylistUserAdded = new Playlists(newPlaylistName, playlistSelected.getSongsArray(), playlistSelected.getDuration(), playlistSelected.getGenreArray(), false);
+              PlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
+              collectionPlaylists.restart(PlaylistCollectionOBJ.getPlaylistArray());
+              console.clear();
+              inquirer.prompt({type: "confirm",
+                name: "SongsAdd",
+                message: "Do you want to add new Songs to the playlist?"})
+                  .then((answers) => {
+                    if (answers["SongsAdd"] === true) {
+                      addingNewSongs(newPlaylistUserAdded);
+                    } else {
+                      console.clear();
+                      inquirer.prompt({type: "confirm",
+                        name: "SongsDelete",
+                        message: "Do you want to delete any Song?"})
+                          .then((answers) => {
+                            if (answers["SongsDelete"] === true) {
+                              deleteSongs(newPlaylistUserAdded);
+                            } else {
+                              console.clear();
+                              defaultMenuReturn();
+                            }
+                          });
+                    }
+                  });
+            });
+      });
+}
 function promptAdd(): void {
   console.clear();
-  // FALTA AÑADIR LA FUNCIÓN DE AÑADIR NUEVAS PLAYLISTS
+  inquirer.prompt({type: "list",
+    name: "OptionToAdd",
+    message: "Choose option",
+    choices: Object.values(OptionToAdd)})
+      .then((answers) => {
+        switch (answers["OptionToAdd"]) {
+          case OptionToAdd.NewPlaylist:
+            console.clear();
+            newPlaylistFromScractch();
+            break;
+          case OptionToAdd.UsingExistsPlaylist:
+            console.clear();
+            newPlaylistUsingAnExisting();
+            break;
+        }
+      });
 }
 function greaterSort(playlistName: string): void {
   console.clear();
@@ -253,14 +462,38 @@ function promptDefault(): void {
 }
 function promptDelete(): void {
   console.clear();
-  // ELIMINAR LAS PLAYLISTS QUE ESTÁN CREADAS POR EL PROPIO USUARIO
+  let selectedPlaylist: string = '';
+  inquirer.prompt({
+    type: "list", 
+    name: "PlaylistSelector", 
+    message: "Select a Playlist to see: ", 
+    choices: PlaylistCollectionOBJ.getPlaylistArray().map((item) => ({name: PlaylistCollectionOBJ.getName(item.getName())}))})
+      .then((answers) => {
+        selectedPlaylist = answers["PlaylistSelector"];
+        console.clear();
+        console.log(`La playlist seleccionada ha sido: ${selectedPlaylist}`);
+        console.log();
+        const playlistSelected: Playlists = PlaylistCollectionOBJ.getPlaylist(selectedPlaylist);
+        if (playlistSelected.getsystemPlaylistBoolean() === false) {
+          PlaylistCollectionOBJ.getRemoveIndex(playlistSelected.getName());
+          collectionPlaylists.restart(PlaylistCollectionOBJ.getPlaylistArray());
+          console.log('<< The selected playlist was deleted >>');
+          defaultMenuReturn();
+        } else {
+          console.clear();
+          console.log('<< The selected playlist is a system playlist >>');
+          console.log('<< It cant be deleted >>');
+          defaultMenuReturn();
+        }
+      });
 }
 function defaultMenuReturn(): void {
-  inquirer.prompt({type: "input", name: "Continue", message: "Do you want to return to the main screen ? (y/N): "})
+  inquirer.prompt({type: "confirm", name: "Continue", message: "Do you want to return to the main screen ?"})
       .then((answers) => {
-        if (answers["Continue"] === "y") {
+        if (answers["Continue"] === true) {
           promptUser();
         } else {
+          console.log('<< Program Exit >>');
           exit();
         }
       });

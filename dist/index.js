@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PlaylistCollectionOBJ = exports.AlbumCollectionOBJ = exports.GenresCollectionObj = exports.GroupCollectionOBJ = exports.artistArray = void 0;
+exports.collectionPlaylists = exports.PlaylistCollectionOBJ = exports.AlbumCollectionOBJ = exports.SongCollectionOBJ = exports.GenresCollectionObj = exports.GroupCollectionOBJ = exports.artistArray = void 0;
 /* eslint-disable prefer-const */
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable no-unused-vars */
@@ -138,7 +138,7 @@ const IWantToBreakFree = new song_1.Song('I Want To Break Free', [FreddieMercury
 const DontStopMeNow = new song_1.Song('Dont Stop Me Now', [FreddieMercury], '3:32', [Rock], false, 756217708);
 const KillerQueen = new song_1.Song('Killer Queen', [FreddieMercury], '3:11', [Rock], false, 237639020);
 const AnotherOneBitestheDust = new song_1.Song('Another One Bites the Dust', [FreddieMercury], '3:42', [Rock], false, 533903036);
-const SongCollectionOBJ = new songCollection_1.SongCollection([BadBunny120, Yoganuni, Mojaita, LaCancion, QuePretendes, TheLazySong, KMagic, UptownFunk, Treasure, ThatsWhatILike, BeatIt, BillieJean,
+exports.SongCollectionOBJ = new songCollection_1.SongCollection([BadBunny120, Yoganuni, Mojaita, LaCancion, QuePretendes, TheLazySong, KMagic, UptownFunk, Treasure, ThatsWhatILike, BeatIt, BillieJean,
     DontStopTilYouGetEnough, RockWithYou, TheWayYouMakeMeFeel, SePreparo, Dile, Farsante, Marido, UnaLocura, RapGod, WhenImGone, Criminal, TheRealSlimShady, Suavemente, Bailar, Princesita,
     TuSonrisa, LunaLlena, Bad, Congratulations, Momentum, SaveALittleLove, Anthem, NeverGonnaGiveYouUp, TogetherForever, TakeMetoYourHeart, WheneverYouNeedSomebody, BitchPleaseII,
     SheWantsToDanceWithMe, Animals, ForbiddenVoices, Virus, Tremor, TurnUpTheSpeakers, TheNights, WakeMeUp, Levels, WaitingForLove, ICouldBeTheOne, TheTrooper, PhantomoftheOpera,
@@ -160,11 +160,11 @@ exports.AlbumCollectionOBJ = [OASIS, Odisea, TheMarshallMathersLP, BeatItAlbum, 
 const collectionAlbums = new jsonAlbumCollection_1.JsonAlbumCollection([OASIS, Odisea, TheMarshallMathersLP, BeatItAlbum, BadAlbum, SenjutsuAlbum, SuavementeAlbum]);
 // PLAYLIST 3
 const Fiestuki = new playlist_1.Playlists('Fiestuki', [BadBunny120, Yoganuni, Mojaita, LaCancion, QuePretendes, SePreparo, Dile, Farsante, Marido,
-    UnaLocura, TheNights, Levels, Animals, Virus, Tremor, WaitingForLove], 60, [UrbanLatino, ElectroHouse, EDM, Dance]);
-const Merengaso = new playlist_1.Playlists('Merengaso', [LunaLlena, Suavemente, Bailar, Princesita, TuSonrisa], 30, [Merengue]);
+    UnaLocura, TheNights, Levels, Animals, Virus, Tremor, WaitingForLove], 60, [UrbanLatino, ElectroHouse, EDM, Dance], true);
+const Merengaso = new playlist_1.Playlists('Merengaso', [LunaLlena, Suavemente, Bailar, Princesita, TuSonrisa], 30, [Merengue], true);
 const ClassicalSongs = new playlist_1.Playlists('Classical Songs', [BeatIt, BillieJean, RockWithYou, BohemianRhapsody, IWantToBreakFree, DontStopMeNow,
-    KillerQueen, AnotherOneBitestheDust], 60, [Rock, Pop, Dance]);
+    KillerQueen, AnotherOneBitestheDust], 60, [Rock, Pop, Dance], true);
 exports.PlaylistCollectionOBJ = new playlistCollection_1.PlaylistCollection([Fiestuki, Merengaso, ClassicalSongs]);
-const collectionPlaylists = new jsonPlaylistCollection_1.JsonPlaylistCollection([Fiestuki, Merengaso, ClassicalSongs]);
+exports.collectionPlaylists = new jsonPlaylistCollection_1.JsonPlaylistCollection([Fiestuki, Merengaso, ClassicalSongs]);
 const GestorMenu = new gestorClass_1.Gestor();
 GestorMenu.menu();

@@ -3,7 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PlaylistCollection = void 0;
 /* eslint-disable linebreak-style */
 const basicstreamablecollection_1 = require("./basicstreamablecollection");
-// import {Artist} from '../PrincipalClases/artist';
 class PlaylistCollection extends basicstreamablecollection_1.BasicStreamableCollection {
     constructor(playlists) {
         super(playlists);
@@ -21,6 +20,9 @@ class PlaylistCollection extends basicstreamablecollection_1.BasicStreamableColl
         }
         return result;
     }
+    getSong(playlistName, song) {
+        return playlistName.getSongs(song.getName()).getName();
+    }
     getSongsArray(playlistName) {
         let result = [];
         for (let i = 0; i < this.playlists.length; i++) {
@@ -30,15 +32,6 @@ class PlaylistCollection extends basicstreamablecollection_1.BasicStreamableColl
         }
         return result;
     }
-    // public getArtistArray(playlistName: string): Artist[] {
-    //   let result: Artist[] = [];
-    //   for (let i = 0; i < this.playlists.length; i++) {
-    //     if (this.playlists[i].getName() === playlistName) {
-    //       result = this.playlists[i].getArtistArray();
-    //     }
-    //   }
-    //   return result;
-    // }
     getName(PlaylistName) {
         let success = ``;
         for (let i = 0; i < this.playlists.length; i++) {
@@ -68,6 +61,19 @@ class PlaylistCollection extends basicstreamablecollection_1.BasicStreamableColl
     }
     getPlaylistArray() {
         return this.playlists;
+    }
+    removePlaylist(index) {
+        this.playlists.splice(index, 1);
+        return this.playlists;
+    }
+    getRemoveIndex(PlaylistName) {
+        let i = 0;
+        for (i = 0; i < this.playlists.length; i++) {
+            if (this.playlists[i].getName() === PlaylistName) {
+                break;
+            }
+        }
+        return this.removePlaylist(i);
     }
 }
 exports.PlaylistCollection = PlaylistCollection;

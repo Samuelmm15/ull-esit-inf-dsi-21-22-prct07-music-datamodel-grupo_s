@@ -18,7 +18,7 @@ export class JsonPlaylistCollection {
     this.database.set("Playlist", Playlist).write();
   }
   
-  restart(Playlist: Playlists): void {
+  restart(Playlist: Playlists[]): void {
     this.database.set("Playlist", Playlist).write();
   }
 }
