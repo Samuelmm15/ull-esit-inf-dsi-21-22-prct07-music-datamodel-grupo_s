@@ -5,8 +5,15 @@ import {SongCollection} from '../Collectionables/songCollection';
  * Class that filters if a song is a single or not
  */
 export class SingleFilter {
+  /**
+   * Recieves a song collection
+   */
   constructor(protected songs: SongCollection) {
   }
+  /**
+   * Filters the songs if they are a single or not
+   * @returns Song Collection of the songs filtered
+   */
   filter(): SongCollection {
     const songArray: Song[] = [];
     for (let i = 0; i < this.songs.getColectionlength(); i++) {

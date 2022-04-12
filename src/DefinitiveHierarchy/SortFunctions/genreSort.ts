@@ -12,6 +12,10 @@ export class GenreSort extends GeneralSort<GenreCollection> {
   constructor(protected genreList: GenreCollection) {
     super();
   }
+  /**
+   * Ascendent ordenation of the music genre by name
+   * @returns Music genre collection with sorted music genre by name
+   */
   greaterSort(): GenreCollection {
     const greaterGenreSort: string[] = [];
     let auxiliary: MusicGenre[] = [];
@@ -30,6 +34,10 @@ export class GenreSort extends GeneralSort<GenreCollection> {
     const result: GenreCollection = new GenreCollection(auxiliary);
     return result;
   }
+  /**
+   * Descendent ordenation of the music genre by name
+   * @returns Music genre collection with sorted music genre by name
+   */
   lowerSort(): GenreCollection {
     const greaterGenreSort: string[] = [];
     let auxiliary: MusicGenre[] = [];

@@ -13,6 +13,10 @@ export class AlbumYearSort extends GeneralSort<Album> {
   constructor(protected album: Album[]) {
     super();
   }
+  /**
+   * Ascendent ordenation of the album by year
+   * @returns Album array with sorted album by year
+   */
   greaterSort(): Album[] {
     let auxiliary: number[] = [];
     for (let i = 0; i < this.album.length; i++) {
@@ -30,6 +34,10 @@ export class AlbumYearSort extends GeneralSort<Album> {
 
     return result;
   }
+  /**
+   * Descendent ordenation of the album by year
+   * @returns Album array with sorted album by year
+   */
   lowerSort(): Album[] {
     let auxiliary: number[] = [];
     for (let i = 0; i < this.album.length; i++) {

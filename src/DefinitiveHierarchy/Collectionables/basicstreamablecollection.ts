@@ -1,8 +1,15 @@
 /* eslint-disable linebreak-style */
 import {Streamable} from './streamable';
 
+/**
+ * Abstract class of the collections
+ */
 export abstract class BasicStreamableCollection<T> implements Streamable<T> {
-  constructor(protected artists: T[]) {
+  /**
+   * Recieves the name of the object on the collection
+   * @param name Name of the object
+   */
+  constructor(protected name: T[]) {
   }
-  abstract getName(author: string): string;
+  abstract getName(name: string): string;
 }

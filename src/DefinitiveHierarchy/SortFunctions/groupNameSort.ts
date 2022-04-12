@@ -13,6 +13,10 @@ export class GroupNameSort extends GeneralSort<Group> {
   constructor(protected group: Group[]) {
     super();
   }
+  /**
+   * Ascendent ordenation of the groups by name
+   * @returns Group Array with sorted groups by name
+   */
   greaterSort(): Group[] {
     let auxiliary: string[] = [];
     for (let i = 0; i < this.group.length; i++) {
@@ -30,6 +34,10 @@ export class GroupNameSort extends GeneralSort<Group> {
     }
     return result;
   }
+  /**
+   * Descendent ordenation of the groups by name
+   * @returns Group Array with sorted groups by name
+   */
   lowerSort(): Group[] {
     let auxiliary: string[] = [];
     for (let i = 0; i < this.group.length; i++) {

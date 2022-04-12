@@ -12,6 +12,10 @@ export class PlaylistNameSort extends GeneralSort<Playlists> {
   constructor(protected playlist: Playlists[]) {
     super();
   }
+  /**
+   * Ascendent ordenation of the playlists by name
+   * @returns Playlist Array with sorted playlists by name
+   */
   greaterSort(): Playlists[] {
     let auxiliary: string[] = [];
     for (let i = 0; i < this.playlist.length; i++) {
@@ -28,6 +32,10 @@ export class PlaylistNameSort extends GeneralSort<Playlists> {
     }
     return result;
   }
+  /**
+   * Descendent ordenation of the playlists by name
+   * @returns Playlist Array with sorted playlists by name
+   */
   lowerSort(): Playlists[] {
     let auxiliary: string[] = [];
     for (let i = 0; i < this.playlist.length; i++) {

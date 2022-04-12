@@ -5,14 +5,24 @@ import FileSync from 'lowdb/adapters/FileSync';
 import {Artist} from '../DefinitiveHierarchy/PrincipalClases/artist';
 import {MusicGenre} from '../DefinitiveHierarchy/PrincipalClases/musicGenre';
 
+/**
+ * Song entry type
+ */
 type schemaType = {
     Song: {name: string; author: Artist[]; songDuration: number;
       genre: MusicGenre[]; single: boolean; reproductionsNumber: number}[]
 };
 
+/**
+ * Song data base class
+ */
 export class JsonSongCollection extends SongCollection {
   private database: lowdb.LowdbSync<schemaType>;
 
+  /**
+   * Creates the JSON file that contains the song data base
+   * @param SongItems Song array
+   */
   constructor(SongItems: Song[]) {
     super(SongItems);
     this.database = lowdb(new FileSync("JsonFiles/Song.json"));

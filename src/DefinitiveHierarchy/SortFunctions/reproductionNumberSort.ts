@@ -7,9 +7,16 @@ import {SongCollection} from '../Collectionables/songCollection';
  * Class that sorts songs objects by reproductions
  */
 export class ReproductionNumberSort extends GeneralSort<SongCollection> {
+  /**
+   * Recieves a song collection
+   */
   constructor(protected songs: SongCollection) {
     super();
   }
+  /**
+   * Ascendent ordenation of the songs by reproductions
+   * @returns Song collection with sorted songs by reproductions
+   */
   greaterSort(): SongCollection {
     const ReproductionSort: number[] = [];
     let i: number = 0;
@@ -32,6 +39,10 @@ export class ReproductionNumberSort extends GeneralSort<SongCollection> {
     const result: SongCollection = new SongCollection(auxiliary);
     return result;
   }
+  /**
+   * Descendent ordenation of the songs by reproductions
+   * @returns Song collection with sorted songs by reproductions
+   */
   lowerSort(): SongCollection {
     const ReproductionSort: number[] = [];
     let i: number = 0;

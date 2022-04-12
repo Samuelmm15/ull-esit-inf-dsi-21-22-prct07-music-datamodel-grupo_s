@@ -4,13 +4,28 @@ import {Playlists} from '../PrincipalClases/playlist';
 import {Song} from '../PrincipalClases/song';
 import {MusicGenre} from '../PrincipalClases/musicGenre';
 
+/**
+ * Collection of playlists
+ */
 export class PlaylistCollection extends BasicStreamableCollection<Playlists> {
+  /**
+   * Recieves a playlist array
+   * @param playlists Playlists array
+   */
   constructor(protected playlists: Playlists[]) {
     super(playlists);
   }
+  /**
+   * Adds a playlist object to the collection
+   * @param playlist Playlist of any song
+   */
   public addPlaylist(playlist: Playlists) {
     this.playlists.push(playlist);
   }
+  /**
+   * Gets the playlist object of the collection
+   * @param PlaylistName Playlist name
+   */
   public getPlaylist(PlaylistName: string): Playlists {
     let result: Playlists = this.playlists[0];
     for (let i = 0; i < this.playlists.length; i++) {
@@ -20,6 +35,12 @@ export class PlaylistCollection extends BasicStreamableCollection<Playlists> {
     }
     return result;
   }
+  /**
+   * Get a song of the playlist
+   * @param playlistName Playlist object
+   * @param song Song object
+   * @returns The songs a specific name
+   */
   public getSong(playlistName: Playlists, song: Song): string {
     return playlistName.getSongs(song.getName()).getName();
   }
@@ -32,6 +53,11 @@ export class PlaylistCollection extends BasicStreamableCollection<Playlists> {
     }
     return result;
   }
+  /**
+   * Gets the playlist name 
+   * @param PlaylistName Playlist name
+   * @return Artist name 
+   */
   public getName(PlaylistName: string): string {
     let success: string = ``;
     for (let i = 0; i < this.playlists.length; i++) {
@@ -44,6 +70,11 @@ export class PlaylistCollection extends BasicStreamableCollection<Playlists> {
     }
     return success;
   }
+  /**
+   * Gets the genre of the playlist
+   * @param playlistName Playlist name
+   * @returns Playlist genre/s
+   */
   public getGenreArray(playlistName: String): MusicGenre[] {
     let result: MusicGenre[] = [];
     for (let i = 0; i < this.playlists.length; i++) {
@@ -53,19 +84,42 @@ export class PlaylistCollection extends BasicStreamableCollection<Playlists> {
     }
     return result;
   }
+  /**
+   * The lenght of the playlist array
+   * @returns The array lenght
+   */
   public getColectionlength(): number {
     return this.playlists.length;
   }
+  /**
+   * The playlist array
+   * @param position The index of the element
+   * @returns Playlist object 
+   */
   public getnObject(position: number): Playlists {
     return this.playlists[position];
   }
+  /**
+   * gets the playlist array
+   * @returns Artist playlist
+   */
   public getPlaylistArray(): Playlists[] {
     return this.playlists;
   }
+  /**
+   * Remove a playlist of the collection
+   * @param index Index of the element to be removed
+   * @return The artist array without the deleted element
+   */ 
   private removePlaylist(index: number): Playlists[] {
     this.playlists.splice(index, 1);
     return this.playlists;
   }
+  /**
+   * Gets the index of the element to be deleted
+   * @param PlaylistName Name of the playlist
+   * @return The index of the element that wants to be deleted
+   */
   public getRemoveIndex(PlaylistName: string): Playlists[] {
     let i = 0;
     for (i = 0; i < this.playlists.length; i++) {

@@ -13,6 +13,11 @@ export class AlbumSort extends GeneralSort<Album> {
   constructor(protected album: Album[]) {
     super();
   }
+
+  /**
+   * Ascendent ordenation of the album by name
+   * @returns Album array with sorted album by name
+   */
   greaterSort(): Album[] {
     let auxiliary: string[] = [];
     for (let i = 0; i < this.album.length; i++) {
@@ -31,6 +36,10 @@ export class AlbumSort extends GeneralSort<Album> {
 
     return result;
   }
+  /**
+   * Descendent ordenation of the album by name
+   * @returns Album array with sorted album by name
+   */
   lowerSort(): Album[] {
     let auxiliary: string[] = [];
     for (let i = 0; i < this.album.length; i++) {

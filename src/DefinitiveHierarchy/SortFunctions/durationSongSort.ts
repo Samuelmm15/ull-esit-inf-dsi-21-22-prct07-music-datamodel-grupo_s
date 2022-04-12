@@ -14,6 +14,10 @@ export class SongDurationSort extends GeneralSort<SongCollection> {
   constructor(protected song: SongCollection) {
     super();
   }
+  /**
+   * Ascendent ordenation of the songs by duration
+   * @returns Songs collection with sorted songs by duration
+   */
   greaterSort(): SongCollection {
     const ReproductionSort: number[] = [];
     let i: number = 0;
@@ -37,6 +41,10 @@ export class SongDurationSort extends GeneralSort<SongCollection> {
     const result: SongCollection = new SongCollection(auxiliary);
     return result;
   }
+  /**
+   * Ascendent ordenation of the songs by duration
+   * @returns Songs collection with sorted songs by duration
+   */
   lowerSort(): SongCollection {
     const ReproductionSort: number[] = [];
     let i: number = 0;

@@ -13,6 +13,10 @@ export class ArtistNameSort extends GeneralSort<Artist> {
   constructor(protected artist: Artist[]) {
     super();
   }
+  /**
+   * Ascendent ordenation of the artist by name
+   * @returns Artist array with sorted artist by name
+   */
   greaterSort(): Artist[] {
     let auxiliary: string[] = [];
     for (let i = 0; i < this.artist.length; i++) {
@@ -31,6 +35,10 @@ export class ArtistNameSort extends GeneralSort<Artist> {
 
     return result;
   }
+  /**
+   * Descendent ordenation of the artist by name
+   * @returns Artist array with sorted artist by name
+   */
   lowerSort(): Artist[] {
     let auxiliary: string[] = [];
     for (let i = 0; i < this.artist.length; i++) {

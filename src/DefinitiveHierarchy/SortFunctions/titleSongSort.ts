@@ -10,6 +10,10 @@ export class TitleSongSort extends GeneralSort<SongCollection> {
   constructor(protected songs: SongCollection) {
     super();
   }
+  /**
+   * Ascendent ordenation of the songs by name
+   * @returns Song collection with sorted songs by name
+   */
   greaterSort(): SongCollection {
     const greaterTitleSort: string[] = [];
     let i: number = 0;
@@ -31,6 +35,10 @@ export class TitleSongSort extends GeneralSort<SongCollection> {
     const result: SongCollection = new SongCollection(auxiliary);
     return result;
   }
+  /**
+   * Descendent ordenation of the songs by name
+   * @returns Song collection with sorted songs by name
+   */
   lowerSort(): SongCollection {
     const lowerTitleSort: string[] = [];
     let i: number = 0;
