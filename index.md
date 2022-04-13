@@ -195,6 +195,8 @@ Como se puede ver la clase Gestor y ya se comento anteriormente es muy simple, y
 
 En este apartado se va a hablar sobre las funciones que implementan los menus que usan el paquete inquirer. Primero se va a comentar sobre la función ```promptUser```, está función muestra está primera parte del menu:
 
+![Captura de pantalla 2022-04-13 182048](https://user-images.githubusercontent.com/64638993/163252491-3bd63675-79ad-4c83-883c-a8e8d844f76e.png)
+
 En está imagen podemos ver las playlists disponibles y los géneros musicales que recoge nuestra biblioteca, y justo debajo una serie de acciones que se pueden realizar sobre las playlist y crear nuevas playlists que se puedan eliminar si el usuario lo desea.
 
 Está parte del menu representa está parte del código:
@@ -238,18 +240,30 @@ function promptUser(): void {
 Como se puede ver, con el método inquirer prompt se inicia lo que es el menu y dentro de este se añaden todas las elecciones, estas elecciones se pueden ver en la imagen anterior. A partir de alguna elección que haga el usuario accedemos a diferentes submenus: 
 
   1. Mostrar una playlist de la base de datos siguiendo los criterios de ordenación enumerados en el apartado **Funciones de ordenación**.
-    - En este submenu se nos permite elegir una de las opciones de ordenación: ordenación ascendente, descendente y por defecto. Al elegir una opción de ordenación se accede a un submenu donde se elige el criterio de ordenación que se desee dentro de una playlist. 
+
+  - En este submenu se nos permite elegir una de las opciones de ordenación: ordenación ascendente, descendente y por defecto. Al elegir una opción de ordenación se accede a un submenu donde se elige el criterio de ordenación que se desee dentro de una playlist. 
+
   2. Crear nuevas playlists, a partir de una existente o a partir de una playlist vacía.
-    - En este submenu se elige una de las opciones de forma similar al menu anterior y dependiendo de cada elección se accede a un submenu dentro del submenu o a otro:
-      - En el primer submenu se pregunta si se quieren agregar más canciones y se muestra un listado de las canciones existentes en la base de datos.
-      - En el segundo submenu se pregunta si se quieren añadir nuevas canciones a la playlist o eliminar algunas de las canciones que se copiaron de la playlist anterior.
+
+  - En este submenu se elige una de las opciones de forma similar al menu anterior y dependiendo de cada elección se accede a un submenu dentro del submenu o a otro:
+
+    - En el primer submenu se pregunta si se quieren agregar más canciones y se muestra un listado de las canciones existentes en la base de datos.
+
+    - En el segundo submenu se pregunta si se quieren añadir nuevas canciones a la playlist o eliminar algunas de las canciones que se copiaron de la playlist anterior.
+
   3. Eliminar canciones de una playlist.
-    - En este submenu se utilizan los métodos para eliminar canciones que se encuentra en la clase de colecciones de música.
+
+  - En este submenu se utilizan los métodos para eliminar canciones que se encuentra en la clase de colecciones de música.
+
   4. Eliminar una playlist creada por el usuario.
-    - En este submenu se accede a un listado de las playlists existentes o creadas por el usuario para que pueda eliminar sus playlists, las playlists del sistema no se pueden borrar.
+
+  - En este submenu se accede a un listado de las playlists existentes o creadas por el usuario para que pueda eliminar sus playlists, las playlists del sistema no se pueden borrar.
+
   5. Salir del programa.
 
-En los otros submenus definidos, las sistemas de elección de los diferenetes subemenus son muy similares al que se tiene implementado en el menu ```promptUser```.
+  - En este apartado no fue necesario ningún submenu, ya que directamente se sale del programa usando el método **exit()**.
+
+En los otros submenus definidos, los sistemas de elección de los diferentes submenus son muy similares al que se tiene implementado en el menu ```promptUser```. Tras terminar cada submenu, se vuelve al punto de partida usando el menu ```defaultMenuReturn``` donde se le pregunta al usuario si quiere continuar con la ejecución del programa o no, en el primer caso se vuelve al menu ```promptUser``` y en el segundo caso simplemente se sale del programa usando el método **exit()**.
 
 ### Lowdb
 
