@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "inquire": "^0.4.8",
-    "lowdb": "^1.0.0"
+    "lowdb": "^1.0.0",
+    "test": "^0.6.0"
   }
 }
