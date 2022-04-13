@@ -8,10 +8,17 @@ const songCollection_1 = require("../Collectionables/songCollection");
  * Class that sorts songs objects by reproductions
  */
 class ReproductionNumberSort extends abstractSort_1.GeneralSort {
+    /**
+     * Recieves a song collection
+     */
     constructor(songs) {
         super();
         this.songs = songs;
     }
+    /**
+     * Ascendent ordenation of the songs by reproductions
+     * @returns Song collection with sorted songs by reproductions
+     */
     greaterSort() {
         const ReproductionSort = [];
         let i = 0;
@@ -33,6 +40,10 @@ class ReproductionNumberSort extends abstractSort_1.GeneralSort {
         const result = new songCollection_1.SongCollection(auxiliary);
         return result;
     }
+    /**
+     * Descendent ordenation of the songs by reproductions
+     * @returns Song collection with sorted songs by reproductions
+     */
     lowerSort() {
         const ReproductionSort = [];
         let i = 0;

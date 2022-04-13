@@ -14,6 +14,10 @@ class GenreSort extends abstractSort_1.GeneralSort {
         super();
         this.genreList = genreList;
     }
+    /**
+     * Ascendent ordenation of the music genre by name
+     * @returns Music genre collection with sorted music genre by name
+     */
     greaterSort() {
         const greaterGenreSort = [];
         let auxiliary = [];
@@ -32,6 +36,10 @@ class GenreSort extends abstractSort_1.GeneralSort {
         const result = new genreCollection_1.GenreCollection(auxiliary);
         return result;
     }
+    /**
+     * Descendent ordenation of the music genre by name
+     * @returns Music genre collection with sorted music genre by name
+     */
     lowerSort() {
         const greaterGenreSort = [];
         let auxiliary = [];

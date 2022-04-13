@@ -7,12 +7,23 @@ exports.JsonSongCollection = void 0;
 const songCollection_1 = require("../DefinitiveHierarchy/Collectionables/songCollection");
 const lowdb_1 = __importDefault(require("lowdb"));
 const FileSync_1 = __importDefault(require("lowdb/adapters/FileSync"));
+/**
+ * Song data base class
+ */
 class JsonSongCollection extends songCollection_1.SongCollection {
+    /**
+     * Creates the JSON file that contains the song data base
+     * @param SongItems Song array
+     */
     constructor(SongItems) {
         super(SongItems);
         this.database = (0, lowdb_1.default)(new FileSync_1.default("JsonFiles/Song.json"));
         this.database.set("Song", SongItems).write();
     }
+    /**
+     * Adds new entries to the song data base
+     * @param SongItems Song collection
+     */
     restart(SongItems) {
         this.database.set("Song", SongItems).write();
     }

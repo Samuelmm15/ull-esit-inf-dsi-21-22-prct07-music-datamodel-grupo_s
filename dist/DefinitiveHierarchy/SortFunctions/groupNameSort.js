@@ -15,6 +15,10 @@ class GroupNameSort extends abstractSort_1.GeneralSort {
         super();
         this.group = group;
     }
+    /**
+     * Ascendent ordenation of the groups by name
+     * @returns Group Array with sorted groups by name
+     */
     greaterSort() {
         let auxiliary = [];
         for (let i = 0; i < this.group.length; i++) {
@@ -32,6 +36,10 @@ class GroupNameSort extends abstractSort_1.GeneralSort {
         }
         return result;
     }
+    /**
+     * Descendent ordenation of the groups by name
+     * @returns Group Array with sorted groups by name
+     */
     lowerSort() {
         let auxiliary = [];
         for (let i = 0; i < this.group.length; i++) {

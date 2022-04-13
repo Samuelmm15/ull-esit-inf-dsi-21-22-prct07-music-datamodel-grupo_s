@@ -54,9 +54,9 @@ export class PlaylistCollection extends BasicStreamableCollection<Playlists> {
     return result;
   }
   /**
-   * Gets the playlist name 
+   * Gets the playlist name
    * @param PlaylistName Playlist name
-   * @return Artist name 
+   * @return Artist name
    */
   public getName(PlaylistName: string): string {
     let success: string = ``;
@@ -94,7 +94,7 @@ export class PlaylistCollection extends BasicStreamableCollection<Playlists> {
   /**
    * The playlist array
    * @param position The index of the element
-   * @returns Playlist object 
+   * @returns Playlist object
    */
   public getnObject(position: number): Playlists {
     return this.playlists[position];
@@ -110,7 +110,7 @@ export class PlaylistCollection extends BasicStreamableCollection<Playlists> {
    * Remove a playlist of the collection
    * @param index Index of the element to be removed
    * @return The artist array without the deleted element
-   */ 
+   */
   private removePlaylist(index: number): Playlists[] {
     this.playlists.splice(index, 1);
     return this.playlists;
