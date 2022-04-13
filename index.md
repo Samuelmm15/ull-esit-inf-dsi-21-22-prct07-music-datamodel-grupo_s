@@ -165,8 +165,6 @@ Las ordenaciones que se deben utilizar para navegar por las diferentes playlists
   - Por número de reproducciones totales, ascendente y descendente.
     - Esto se realiza en la clase ```TReproductionNumberSort```
 
-### Clase Gestor
-
 ### Inquirer
 
 #### ¿Qué es Inquirer?
@@ -174,6 +172,84 @@ Las ordenaciones que se deben utilizar para navegar por las diferentes playlists
 Inquirer es un paquete de NPM que proporciona de manera sencilla una forma de capturar la entrada del usuario en las aplicaciones de interfaz de línea de comandos en Node.js. Proporciona varios métodos para hacer preguntas y devolver respuestas al usuario a las que se puede acceder mediante una función ```.then``` promise.
 
 #### Implementación
+
+La implementación completa del paquete inquirer se encuentra en fichero ```gestorClass```, en este fichero nos encontramos con la clase gestor y las funciones que contienen los menus del paquete inquirer. Por un lado, tenemos la clase gestor que es una clase muy simple donde se invoca a la función principal del menu; por otro lado, tenemos las funciones que contienen los menus realizados con el paquete Inquirer.
+
+##### Clase Gestor
+
+La clase Gestor tiene el siguiente aspecto:
+
+```typescript
+class Gestor {
+  constructor() {
+  }
+  menu() {
+    promptUser();
+  }
+}
+```
+
+Como se puede ver la clase Gestor y ya se comento anteriormente es muy simple, ya que para acceder al primer menu de Inquirer se accede através del método ```menu``` y dentro de la clase se invoca a la función ```promptUser```.
+
+##### Funciones inquirer
+
+En este apartado se va a hablar sobre las funciones que implementan los menus que usan el paquete inquirer. Primero se va a comentar sobre la función ```promptUser```, está función muestra está primera parte del menu:
+
+En está imagen podemos ver las playlists disponibles y los géneros musicales que recoge nuestra biblioteca, y justo debajo una serie de acciones que se pueden realizar sobre las playlist y crear nuevas playlists que se puedan eliminar si el usuario lo desea.
+
+Está parte del menu representa está parte del código:
+
+```typescript
+function promptUser(): void {
+  setMaxListeners(100);
+  console.clear();
+  displayPlayList();
+  inquirer.prompt({
+    type: "list",
+    name: "command",
+    message: "Choose option",
+    choices: Object.values(Commands),
+  }).then((answers) => {
+    switch (answers["command"]) {
+      case Commands.Toggle:
+        promptDefault();
+        break;
+      case Commands.Add:
+        promptAdd();
+        break;
+      case Commands.New:
+        promptPlaylistSelect('New');
+        break;
+      case Commands.Delete:
+        promptPlaylistSelect('Delete');
+        break;
+      case Commands.Purge:
+        promptDelete();
+        break;
+      case Commands.Quit:
+        console.clear();
+        console.log(`<< Program Exit >>`);
+        exit();
+    }
+  });
+}
+```
+
+Como se puede ver, con el método inquirer prompt se inicia lo que es el menu y dentro de este se añaden todas las elecciones, estas elecciones se pueden ver en la imagen anterior. A partir de alguna elección que haga el usuario accedemos a diferentes submenus: 
+
+  1. Mostrar una playlist de la base de datos siguiendo los criterios de ordenación enumerados en el apartado **Funciones de ordenación**.
+    - En este submenu se nos permite elegir una de las opciones de ordenación: ordenación ascendente, descendente y por defecto. Al elegir una opción de ordenación se accede a un submenu donde se elige el criterio de ordenación que se desee dentro de una playlist. 
+  2. Crear nuevas playlists, a partir de una existente o a partir de una playlist vacía.
+    - En este submenu se elige una de las opciones de forma similar al menu anterior y dependiendo de cada elección se accede a un submenu dentro del submenu o a otro:
+      - En el primer submenu se pregunta si se quieren agregar más canciones y se muestra un listado de las canciones existentes en la base de datos.
+      - En el segundo submenu se pregunta si se quieren añadir nuevas canciones a la playlist o eliminar algunas de las canciones que se copiaron de la playlist anterior.
+  3. Eliminar canciones de una playlist.
+    - En este submenu se utilizan los métodos para eliminar canciones que se encuentra en la clase de colecciones de música.
+  4. Eliminar una playlist creada por el usuario.
+    - En este submenu se accede a un listado de las playlists existentes o creadas por el usuario para que pueda eliminar sus playlists, las playlists del sistema no se pueden borrar.
+  5. Salir del programa.
+
+En los otros submenus definidos, las sistemas de elección de los diferenetes subemenus son muy similares al que se tiene implementado en el menu ```promptUser```.
 
 ### Lowdb
 
