@@ -2875,7 +2875,7 @@
       "systemPlaylist": true
     },
     {
-      "name": "ERPABLO",
+      "name": "ABLO",
       "songs": [
         {
           "name": "120",
@@ -2883,7 +2883,7 @@
             {
               "name": "Bad Bunny",
               "group": "Bad Bunny",
-              "genre": [
+              "genERPre": [
                 "Urban Latino"
               ],
               "album": [
