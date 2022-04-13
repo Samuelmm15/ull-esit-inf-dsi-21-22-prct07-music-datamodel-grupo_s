@@ -259,7 +259,9 @@ Como se puede ver, con el método inquirer prompt se inicia lo que es el menu y 
 
   5. Salir del programa.
 
-En los otros submenus definidos, las sistemas de elección de los diferenetes subemenus son muy similares al que se tiene implementado en el menu ```promptUser```.
+  - En este apartado no fue necesario ningún submenu, ya que directamente se sale del programa usando el método **exit()**.
+
+En los otros submenus definidos, los sistemas de elección de los diferentes submenus son muy similares al que se tiene implementado en el menu ```promptUser```. Tras terminar cada submenu, se vuelve al punto de partida usando el menu ```defaultMenuReturn``` donde se le pregunta al usuario si quiere continuar con la ejecución del programa o no, en el primer caso se vuelve al menu ```promptUser``` y en el segundo caso simplemente se sale del programa usando el método **exit()**.
 
 ### Lowdb
 
