@@ -238,15 +238,25 @@ function promptUser(): void {
 Como se puede ver, con el método inquirer prompt se inicia lo que es el menu y dentro de este se añaden todas las elecciones, estas elecciones se pueden ver en la imagen anterior. A partir de alguna elección que haga el usuario accedemos a diferentes submenus: 
 
   1. Mostrar una playlist de la base de datos siguiendo los criterios de ordenación enumerados en el apartado **Funciones de ordenación**.
+
     - En este submenu se nos permite elegir una de las opciones de ordenación: ordenación ascendente, descendente y por defecto. Al elegir una opción de ordenación se accede a un submenu donde se elige el criterio de ordenación que se desee dentro de una playlist. 
+
   2. Crear nuevas playlists, a partir de una existente o a partir de una playlist vacía.
+
     - En este submenu se elige una de las opciones de forma similar al menu anterior y dependiendo de cada elección se accede a un submenu dentro del submenu o a otro:
+
       - En el primer submenu se pregunta si se quieren agregar más canciones y se muestra un listado de las canciones existentes en la base de datos.
+
       - En el segundo submenu se pregunta si se quieren añadir nuevas canciones a la playlist o eliminar algunas de las canciones que se copiaron de la playlist anterior.
+
   3. Eliminar canciones de una playlist.
+
     - En este submenu se utilizan los métodos para eliminar canciones que se encuentra en la clase de colecciones de música.
+
   4. Eliminar una playlist creada por el usuario.
+
     - En este submenu se accede a un listado de las playlists existentes o creadas por el usuario para que pueda eliminar sus playlists, las playlists del sistema no se pueden borrar.
+    
   5. Salir del programa.
 
 En los otros submenus definidos, las sistemas de elección de los diferenetes subemenus son muy similares al que se tiene implementado en el menu ```promptUser```.
