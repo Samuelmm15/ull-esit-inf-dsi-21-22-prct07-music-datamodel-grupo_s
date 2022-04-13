@@ -40,6 +40,7 @@ import {SongCollectionOBJ} from '../index';
 
 // INQUIRE FUNCTIONS
 function displayPlayList(): void {
+  console.clear();
   console.log('<< PLAYLIST COLLECTION >>');
   for (let i = 0; i < PlaylistCollectionOBJ.getColectionlength(); i++) {
     console.log(`${PlaylistCollectionOBJ.getnObject(i).getName()} ==> ${PlaylistCollectionOBJ.getnObject(i).getDuration()} seconds.`);

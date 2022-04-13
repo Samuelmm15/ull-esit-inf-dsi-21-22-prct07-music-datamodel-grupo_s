@@ -47,6 +47,7 @@ const index_6 = require("../index");
 const index_7 = require("../index");
 // INQUIRE FUNCTIONS
 function displayPlayList() {
+    console.clear();
     console.log('<< PLAYLIST COLLECTION >>');
     for (let i = 0; i < index_1.PlaylistCollectionOBJ.getColectionlength(); i++) {
         console.log(`${index_1.PlaylistCollectionOBJ.getnObject(i).getName()} ==> ${index_1.PlaylistCollectionOBJ.getnObject(i).getDuration()} seconds.`);
