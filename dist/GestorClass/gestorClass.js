@@ -23,7 +23,6 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Gestor = void 0;
 const titleSongSort_1 = require("../DefinitiveHierarchy/SortFunctions/titleSongSort");
 const process_1 = require("process");
 const events_1 = require("events");
@@ -246,7 +245,8 @@ function newPlaylistUsingAnExisting() {
             .then((answers) => {
             newPlaylistName = answers.newName;
             const playlistSelected = index_1.PlaylistCollectionOBJ.getPlaylist(selectedPlaylist);
-            const newPlaylistUserAdded = new playlist_1.Playlists(newPlaylistName, playlistSelected.getSongsArray(), playlistSelected.getDuration(), playlistSelected.getGenreArray(), false);
+            const auxiliary = playlistSelected.getSongsArray();
+            const newPlaylistUserAdded = new playlist_1.Playlists(newPlaylistName, auxiliary, playlistSelected.getDuration(), playlistSelected.getGenreArray(), false);
             index_1.PlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
             index_6.collectionPlaylists.restart(index_1.PlaylistCollectionOBJ.getPlaylistArray());
             console.clear();
@@ -583,4 +583,5 @@ class Gestor {
         promptUser();
     }
 }
-exports.Gestor = Gestor;
+const newMenu = new Gestor();
+newMenu.menu();

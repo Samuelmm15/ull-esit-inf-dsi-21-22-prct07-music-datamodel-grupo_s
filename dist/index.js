@@ -20,7 +20,7 @@ const jsonGenreCollection_1 = require("./LowdbFiles/jsonGenreCollection");
 const jsonSongCollection_1 = require("./LowdbFiles/jsonSongCollection");
 const jsonAlbumCollection_1 = require("./LowdbFiles/jsonAlbumCollection");
 const jsonPlaylistCollection_1 = require("./LowdbFiles/jsonPlaylistCollection");
-const gestorClass_1 = require("./GestorClass/gestorClass");
+// import {Gestor} from './GestorClass/gestorClass';
 const playlistCollection_1 = require("./DefinitiveHierarchy/Collectionables/playlistCollection");
 // ARTISTS 10 
 // ESTO ESTÁ CORRECTO
@@ -166,5 +166,6 @@ const ClassicalSongs = new playlist_1.Playlists('Classical Songs', [BeatIt, Bill
     KillerQueen, AnotherOneBitestheDust], 60, [Rock, Pop, Dance], true);
 exports.PlaylistCollectionOBJ = new playlistCollection_1.PlaylistCollection([Fiestuki, Merengaso, ClassicalSongs]);
 exports.collectionPlaylists = new jsonPlaylistCollection_1.JsonPlaylistCollection([Fiestuki, Merengaso, ClassicalSongs]);
-const GestorMenu = new gestorClass_1.Gestor();
-GestorMenu.menu();
+// export const PlaylistCollectionOBJ = new PlaylistCollection(collectionPlaylists.read());
+// const GestorMenu = new Gestor();
+// GestorMenu.menu();

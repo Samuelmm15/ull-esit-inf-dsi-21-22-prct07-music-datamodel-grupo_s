@@ -38,6 +38,7 @@ import {collectionPlaylists} from '../index';
 import {PlaylistCollection} from '../DefinitiveHierarchy/Collectionables/playlistCollection';
 import {SongCollectionOBJ} from '../index';
 
+
 // INQUIRE FUNCTIONS
 function displayPlayList(): void {
   console.clear();
@@ -224,7 +225,8 @@ function newPlaylistUsingAnExisting(): void {
             .then((answers) => {
               newPlaylistName = answers.newName;
               const playlistSelected: Playlists = PlaylistCollectionOBJ.getPlaylist(selectedPlaylist);
-              const newPlaylistUserAdded = new Playlists(newPlaylistName, playlistSelected.getSongsArray(), playlistSelected.getDuration(), playlistSelected.getGenreArray(), false);
+              const auxiliary: Song[] = playlistSelected.getSongsArray();
+              const newPlaylistUserAdded = new Playlists(newPlaylistName, auxiliary, playlistSelected.getDuration(), playlistSelected.getGenreArray(), false);
               PlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
               collectionPlaylists.restart(PlaylistCollectionOBJ.getPlaylistArray());
               console.clear();
@@ -545,10 +547,13 @@ function promptUser(): void {
   });
 }
 
-export class Gestor {
+class Gestor {
   constructor() {
   }
   menu() {
     promptUser();
   }
 }
+
+const newMenu = new Gestor();
+newMenu.menu();
