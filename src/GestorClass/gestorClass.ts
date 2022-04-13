@@ -116,16 +116,19 @@ function promptUser(): void {
 }
 
 function convertHMS(value: number) : string {
-  let hours   = Math.floor(value / 3600); // get hours
+  let hours = Math.floor(value / 3600); // get hours
   let minutes = Math.floor((value - (hours * 3600)) / 60); // get minutes
   let seconds = value - (hours * 3600) - (minutes * 60); //  get seconds
   
-  if (hours < 10) 
-    hours   = hours;
-  if (minutes < 10) 
+  if (hours < 10) {
+    hours = hours;
+  }
+  if (minutes < 10) { 
     minutes = minutes;
-  if (seconds < 10) 
+  }
+  if (seconds < 10) {
     seconds = seconds;
+  }
 
   return hours+' hrs '+minutes+' min '+seconds+' segs'; 
 }
