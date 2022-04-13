@@ -195,7 +195,7 @@ Como se puede ver la clase Gestor y ya se comento anteriormente es muy simple, y
 
 En este apartado se va a hablar sobre las funciones que implementan los menus que usan el paquete inquirer. Primero se va a comentar sobre la función ```promptUser```, está función muestra está primera parte del menu:
 
-![Captura de pantalla 2022-04-13 182048](https://user-images.githubusercontent.com/64638993/163252491-3bd63675-79ad-4c83-883c-a8e8d844f76e.png)
+![Captura de pantalla 2022-04-13 201431](https://user-images.githubusercontent.com/64638993/163253486-3f92a66a-d617-441d-a879-ad22c6223acb.png)
 
 En está imagen podemos ver las playlists disponibles y los géneros musicales que recoge nuestra biblioteca, y justo debajo una serie de acciones que se pueden realizar sobre las playlist y crear nuevas playlists que se puedan eliminar si el usuario lo desea.
 
