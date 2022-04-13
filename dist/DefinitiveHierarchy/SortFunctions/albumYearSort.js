@@ -15,6 +15,10 @@ class AlbumYearSort extends abstractSort_1.GeneralSort {
         super();
         this.album = album;
     }
+    /**
+     * Ascendent ordenation of the album by year
+     * @returns Album array with sorted album by year
+     */
     greaterSort() {
         let auxiliary = [];
         for (let i = 0; i < this.album.length; i++) {
@@ -31,6 +35,10 @@ class AlbumYearSort extends abstractSort_1.GeneralSort {
         }
         return result;
     }
+    /**
+     * Descendent ordenation of the album by year
+     * @returns Album array with sorted album by year
+     */
     lowerSort() {
         let auxiliary = [];
         for (let i = 0; i < this.album.length; i++) {

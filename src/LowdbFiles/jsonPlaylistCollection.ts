@@ -25,7 +25,12 @@ export class JsonPlaylistCollection {
    */
   constructor(Playlist: Playlists[]) {
     this.database = lowdb(new FileSync("JsonFiles/Playlist.json"));
-    this.database.set("Playlist", Playlist).write();
+    if (this.database.has("Playlist")) {
+      console.log('La base de datos ha sido creada');
+      this.database.get("Playlist").value();
+    } else {
+      this.database.set("Playlist", Playlist).write();
+    }
   }
 
   /**
@@ -34,5 +39,8 @@ export class JsonPlaylistCollection {
    */
   restart(Playlist: Playlists[]): void {
     this.database.set("Playlist", Playlist).write();
+  }
+  read(): any {
+    return this.database.get("Playlist").value();
   }
 }

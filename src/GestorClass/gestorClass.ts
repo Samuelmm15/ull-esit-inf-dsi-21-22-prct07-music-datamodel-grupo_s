@@ -38,11 +38,13 @@ import {collectionPlaylists} from '../index';
 import {PlaylistCollection} from '../DefinitiveHierarchy/Collectionables/playlistCollection';
 import {SongCollectionOBJ} from '../index';
 
+
 // INQUIRE FUNCTIONS
 function displayPlayList(): void {
+  console.clear();
   console.log('<< PLAYLIST COLLECTION >>');
   for (let i = 0; i < PlaylistCollectionOBJ.getColectionlength(); i++) {
-    console.log(`${PlaylistCollectionOBJ.getnObject(i).getName()} ==> ${PlaylistCollectionOBJ.getnObject(i).getDuration()}`);
+    console.log(`${PlaylistCollectionOBJ.getnObject(i).getName()} ==> ${PlaylistCollectionOBJ.getnObject(i).getDuration()} seconds.`);
   }
   console.log();
   console.log('<< MUSICAL GENRES >>');
@@ -54,6 +56,8 @@ function displayPlayList(): void {
     enum Commands {
       Add = "Add New Playlist",
       Toggle = "Defaults Options To Sort",
+      New = "Add New Song to a Playlist",
+      Delete = "Delete Song to a Playlist",
       Purge = "Remove New Added Playlist",
       Quit = "Quit"
     }
@@ -181,52 +185,38 @@ function deleteSongs(PlaylistToOperate: Playlists): void {
       });
 }
 function newPlaylistFromScractch(): void {
-  // let selectedPlaylist: string = '';
-  let newPlaylistName: string = '';
   inquirer.prompt({type: "input",
     name: "newName",
     message: "Enter the new playlist name:"})
       .then((answers) => {
-        newPlaylistName = answers.newName;
-        // const playlistSelected: Playlists = PlaylistCollectionOBJ.getPlaylist(newPlaylistName);
-        const newPlaylistUserAdded = new Playlists(newPlaylistName, playlistSelected.getSongsArray(), playlistSelected.getDuration(), playlistSelected.getGenreArray(), false);
-        PlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
-        collectionPlaylists.restart(PlaylistCollectionOBJ.getPlaylistArray());
-        console.clear();
-        inquirer.prompt({type: "confirm",
-          name: "SongsAdd",
-          message: "Do you want to add new Songs to the playlist?"})
-            .then((answers) => {
-              if (answers["SongsAdd"] === true) {
-                addingNewSongs(newPlaylistUserAdded);
-              } else {
-                console.clear();
-                inquirer.prompt({type: "confirm",
-                  name: "SongsDelete",
-                  message: "Do you want to delete any Song?"})
-                    .then((answers) => {
-                      if (answers["SongsDelete"] === true) {
-                        deleteSongs(newPlaylistUserAdded);
-                      } else {
-                        console.clear();
-                        defaultMenuReturn();
-                      }
-                    });
-              }
-            });
+        if (PlaylistCollectionOBJ.getName(answers["newName"]) !== answers["newName"]) {
+          let newPlaylistName = answers.newName;
+          const newPlaylistUserAdded = new Playlists(newPlaylistName, [], 0, [], false);
+          PlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
+          collectionPlaylists.restart(PlaylistCollectionOBJ.getPlaylistArray());
+          console.clear();
+          inquirer.prompt({type: "confirm",
+            name: "SongsAdd",
+            message: "Do you want to add new Songs to the playlist?"})
+              .then((answers) => {
+                if (answers["SongsAdd"] === true) {
+                  addingNewSongs(newPlaylistUserAdded);
+                }
+              });
+        }
       });
 }
 function newPlaylistUsingAnExisting(): void {
   let selectedPlaylist: string = '';
   inquirer.prompt({
-    type: "list", 
+    type: "list",
     name: "PlaylistSelector", 
     message: "Select a Playlist to see: ", 
     choices: PlaylistCollectionOBJ.getPlaylistArray().map((item) => ({name: PlaylistCollectionOBJ.getName(item.getName())}))})
       .then((answers) => {
         selectedPlaylist = answers["PlaylistSelector"];
         console.clear();
-        console.log(`La playlist seleccionada ha sido: ${selectedPlaylist}`);
+        console.log(`The selected playlist is: ${selectedPlaylist}`);
         console.log();
         let newPlaylistName: string = '';
         inquirer.prompt({type: "input",
@@ -235,7 +225,8 @@ function newPlaylistUsingAnExisting(): void {
             .then((answers) => {
               newPlaylistName = answers.newName;
               const playlistSelected: Playlists = PlaylistCollectionOBJ.getPlaylist(selectedPlaylist);
-              const newPlaylistUserAdded = new Playlists(newPlaylistName, playlistSelected.getSongsArray(), playlistSelected.getDuration(), playlistSelected.getGenreArray(), false);
+              const auxiliary: Song[] = playlistSelected.getSongsArray();
+              const newPlaylistUserAdded = new Playlists(newPlaylistName, auxiliary, playlistSelected.getDuration(), playlistSelected.getGenreArray(), false);
               PlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
               collectionPlaylists.restart(PlaylistCollectionOBJ.getPlaylistArray());
               console.clear();
@@ -281,6 +272,29 @@ function promptAdd(): void {
             break;
         }
       });
+}
+function promptPlaylistSelect(type: string) {
+  if (type === 'New') {
+    inquirer.prompt({
+      type: "list",
+      name: "PlaylistSelector", 
+      message: "Select a Playlist to see: ", 
+      choices: PlaylistCollectionOBJ.getPlaylistArray().map((item) => ({name: PlaylistCollectionOBJ.getName(item.getName())}))})
+        .then((answers) => {
+          console.clear();
+          addingNewSongs(PlaylistCollectionOBJ.getPlaylist(answers["PlaylistSelector"]));
+        });
+  } else if (type === 'Delete') {
+    inquirer.prompt({
+      type: "list",
+      name: "PlaylistSelector", 
+      message: "Select a Playlist to see: ", 
+      choices: PlaylistCollectionOBJ.getPlaylistArray().map((item) => ({name: PlaylistCollectionOBJ.getName(item.getName())}))})
+        .then((answers) => {
+          console.clear();
+          deleteSongs(PlaylistCollectionOBJ.getPlaylist(answers["PlaylistSelector"]));
+        });
+  }
 }
 function greaterSort(playlistName: string): void {
   console.clear();
@@ -515,6 +529,12 @@ function promptUser(): void {
       case Commands.Add:
         promptAdd();
         break;
+      case Commands.New:
+        promptPlaylistSelect('New');
+        break;
+      case Commands.Delete:
+        promptPlaylistSelect('Delete');
+        break;
       case Commands.Purge:
         promptDelete();
         break;
@@ -527,10 +547,13 @@ function promptUser(): void {
   });
 }
 
-export class Gestor {
+class Gestor {
   constructor() {
   }
   menu() {
     promptUser();
   }
 }
+
+const newMenu = new Gestor();
+newMenu.menu();

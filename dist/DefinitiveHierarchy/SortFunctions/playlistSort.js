@@ -14,6 +14,10 @@ class PlaylistNameSort extends abstractSort_1.GeneralSort {
         super();
         this.playlist = playlist;
     }
+    /**
+     * Ascendent ordenation of the playlists by name
+     * @returns Playlist Array with sorted playlists by name
+     */
     greaterSort() {
         let auxiliary = [];
         for (let i = 0; i < this.playlist.length; i++) {
@@ -30,6 +34,10 @@ class PlaylistNameSort extends abstractSort_1.GeneralSort {
         }
         return result;
     }
+    /**
+     * Descendent ordenation of the playlists by name
+     * @returns Playlist Array with sorted playlists by name
+     */
     lowerSort() {
         let auxiliary = [];
         for (let i = 0; i < this.playlist.length; i++) {

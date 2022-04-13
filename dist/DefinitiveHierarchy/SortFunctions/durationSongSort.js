@@ -16,6 +16,10 @@ class SongDurationSort extends abstractSort_1.GeneralSort {
         super();
         this.song = song;
     }
+    /**
+     * Ascendent ordenation of the songs by duration
+     * @returns Songs collection with sorted songs by duration
+     */
     greaterSort() {
         const ReproductionSort = [];
         let i = 0;
@@ -38,6 +42,10 @@ class SongDurationSort extends abstractSort_1.GeneralSort {
         const result = new songCollection_1.SongCollection(auxiliary);
         return result;
     }
+    /**
+     * Ascendent ordenation of the songs by duration
+     * @returns Songs collection with sorted songs by duration
+     */
     lowerSort() {
         const ReproductionSort = [];
         let i = 0;

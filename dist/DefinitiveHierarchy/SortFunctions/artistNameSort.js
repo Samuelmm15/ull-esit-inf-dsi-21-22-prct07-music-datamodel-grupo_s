@@ -15,6 +15,10 @@ class ArtistNameSort extends abstractSort_1.GeneralSort {
         super();
         this.artist = artist;
     }
+    /**
+     * Ascendent ordenation of the artist by name
+     * @returns Artist array with sorted artist by name
+     */
     greaterSort() {
         let auxiliary = [];
         for (let i = 0; i < this.artist.length; i++) {
@@ -32,6 +36,10 @@ class ArtistNameSort extends abstractSort_1.GeneralSort {
         }
         return result;
     }
+    /**
+     * Descendent ordenation of the artist by name
+     * @returns Artist array with sorted artist by name
+     */
     lowerSort() {
         let auxiliary = [];
         for (let i = 0; i < this.artist.length; i++) {

@@ -15,6 +15,10 @@ class AlbumSort extends abstractSort_1.GeneralSort {
         super();
         this.album = album;
     }
+    /**
+     * Ascendent ordenation of the album by name
+     * @returns Album array with sorted album by name
+     */
     greaterSort() {
         let auxiliary = [];
         for (let i = 0; i < this.album.length; i++) {
@@ -32,6 +36,10 @@ class AlbumSort extends abstractSort_1.GeneralSort {
         }
         return result;
     }
+    /**
+     * Descendent ordenation of the album by name
+     * @returns Album array with sorted album by name
+     */
     lowerSort() {
         let auxiliary = [];
         for (let i = 0; i < this.album.length; i++) {

@@ -29,7 +29,7 @@ import {JsonGenreCollection} from './LowdbFiles/jsonGenreCollection';
 import {JsonSongCollection} from './LowdbFiles/jsonSongCollection';
 import {JsonAlbumCollection} from './LowdbFiles/jsonAlbumCollection';
 import {JsonPlaylistCollection} from './LowdbFiles/jsonPlaylistCollection';
-import {Gestor} from './GestorClass/gestorClass';
+// import {Gestor} from './GestorClass/gestorClass';
 import {PlaylistCollection} from './DefinitiveHierarchy/Collectionables/playlistCollection';
 
 
@@ -207,5 +207,7 @@ export const PlaylistCollectionOBJ = new PlaylistCollection([Fiestuki, Merengaso
 
 export const collectionPlaylists: JsonPlaylistCollection = new JsonPlaylistCollection([Fiestuki, Merengaso, ClassicalSongs]);
 
-const GestorMenu = new Gestor();
-GestorMenu.menu();
+// export const PlaylistCollectionOBJ = new PlaylistCollection(collectionPlaylists.read());
+
+// const GestorMenu = new Gestor();
+// GestorMenu.menu();

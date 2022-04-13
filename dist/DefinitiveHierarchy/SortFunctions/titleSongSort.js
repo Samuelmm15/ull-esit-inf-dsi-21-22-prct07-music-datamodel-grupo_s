@@ -12,6 +12,10 @@ class TitleSongSort extends abstractSort_1.GeneralSort {
         super();
         this.songs = songs;
     }
+    /**
+     * Ascendent ordenation of the songs by name
+     * @returns Song collection with sorted songs by name
+     */
     greaterSort() {
         const greaterTitleSort = [];
         let i = 0;
@@ -33,6 +37,10 @@ class TitleSongSort extends abstractSort_1.GeneralSort {
         const result = new songCollection_1.SongCollection(auxiliary);
         return result;
     }
+    /**
+     * Descendent ordenation of the songs by name
+     * @returns Song collection with sorted songs by name
+     */
     lowerSort() {
         const lowerTitleSort = [];
         let i = 0;

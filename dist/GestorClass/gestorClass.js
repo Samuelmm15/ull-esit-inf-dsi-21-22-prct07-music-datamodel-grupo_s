@@ -23,7 +23,6 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Gestor = void 0;
 const titleSongSort_1 = require("../DefinitiveHierarchy/SortFunctions/titleSongSort");
 const process_1 = require("process");
 const events_1 = require("events");
@@ -47,9 +46,10 @@ const index_6 = require("../index");
 const index_7 = require("../index");
 // INQUIRE FUNCTIONS
 function displayPlayList() {
+    console.clear();
     console.log('<< PLAYLIST COLLECTION >>');
     for (let i = 0; i < index_1.PlaylistCollectionOBJ.getColectionlength(); i++) {
-        console.log(`${index_1.PlaylistCollectionOBJ.getnObject(i).getName()} ==> ${index_1.PlaylistCollectionOBJ.getnObject(i).getDuration()}`);
+        console.log(`${index_1.PlaylistCollectionOBJ.getnObject(i).getName()} ==> ${index_1.PlaylistCollectionOBJ.getnObject(i).getDuration()} seconds.`);
     }
     console.log();
     console.log('<< MUSICAL GENRES >>');
@@ -62,6 +62,8 @@ var Commands;
 (function (Commands) {
     Commands["Add"] = "Add New Playlist";
     Commands["Toggle"] = "Defaults Options To Sort";
+    Commands["New"] = "Add New Song to a Playlist";
+    Commands["Delete"] = "Delete Song to a Playlist";
     Commands["Purge"] = "Remove New Added Playlist";
     Commands["Quit"] = "Quit";
 })(Commands || (Commands = {}));
@@ -202,41 +204,25 @@ function deleteSongs(PlaylistToOperate) {
     });
 }
 function newPlaylistFromScractch() {
-    // let selectedPlaylist: string = '';
-    let newPlaylistName = '';
     inquirer.prompt({ type: "input",
         name: "newName",
         message: "Enter the new playlist name:" })
         .then((answers) => {
-        newPlaylistName = answers.newName;
-        // const playlistSelected: Playlists = PlaylistCollectionOBJ.getPlaylist(newPlaylistName);
-        const newPlaylistUserAdded = new playlist_1.Playlists(newPlaylistName, playlistSelected.getSongsArray(), playlistSelected.getDuration(), playlistSelected.getGenreArray(), false);
-        index_1.PlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
-        index_6.collectionPlaylists.restart(index_1.PlaylistCollectionOBJ.getPlaylistArray());
-        console.clear();
-        inquirer.prompt({ type: "confirm",
-            name: "SongsAdd",
-            message: "Do you want to add new Songs to the playlist?" })
-            .then((answers) => {
-            if (answers["SongsAdd"] === true) {
-                addingNewSongs(newPlaylistUserAdded);
-            }
-            else {
-                console.clear();
-                inquirer.prompt({ type: "confirm",
-                    name: "SongsDelete",
-                    message: "Do you want to delete any Song?" })
-                    .then((answers) => {
-                    if (answers["SongsDelete"] === true) {
-                        deleteSongs(newPlaylistUserAdded);
-                    }
-                    else {
-                        console.clear();
-                        defaultMenuReturn();
-                    }
-                });
-            }
-        });
+        if (index_1.PlaylistCollectionOBJ.getName(answers["newName"]) !== answers["newName"]) {
+            let newPlaylistName = answers.newName;
+            const newPlaylistUserAdded = new playlist_1.Playlists(newPlaylistName, [], 0, [], false);
+            index_1.PlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
+            index_6.collectionPlaylists.restart(index_1.PlaylistCollectionOBJ.getPlaylistArray());
+            console.clear();
+            inquirer.prompt({ type: "confirm",
+                name: "SongsAdd",
+                message: "Do you want to add new Songs to the playlist?" })
+                .then((answers) => {
+                if (answers["SongsAdd"] === true) {
+                    addingNewSongs(newPlaylistUserAdded);
+                }
+            });
+        }
     });
 }
 function newPlaylistUsingAnExisting() {
@@ -250,7 +236,7 @@ function newPlaylistUsingAnExisting() {
         .then((answers) => {
         selectedPlaylist = answers["PlaylistSelector"];
         console.clear();
-        console.log(`La playlist seleccionada ha sido: ${selectedPlaylist}`);
+        console.log(`The selected playlist is: ${selectedPlaylist}`);
         console.log();
         let newPlaylistName = '';
         inquirer.prompt({ type: "input",
@@ -259,7 +245,8 @@ function newPlaylistUsingAnExisting() {
             .then((answers) => {
             newPlaylistName = answers.newName;
             const playlistSelected = index_1.PlaylistCollectionOBJ.getPlaylist(selectedPlaylist);
-            const newPlaylistUserAdded = new playlist_1.Playlists(newPlaylistName, playlistSelected.getSongsArray(), playlistSelected.getDuration(), playlistSelected.getGenreArray(), false);
+            const auxiliary = playlistSelected.getSongsArray();
+            const newPlaylistUserAdded = new playlist_1.Playlists(newPlaylistName, auxiliary, playlistSelected.getDuration(), playlistSelected.getGenreArray(), false);
             index_1.PlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
             index_6.collectionPlaylists.restart(index_1.PlaylistCollectionOBJ.getPlaylistArray());
             console.clear();
@@ -307,6 +294,32 @@ function promptAdd() {
                 break;
         }
     });
+}
+function promptPlaylistSelect(type) {
+    if (type === 'New') {
+        inquirer.prompt({
+            type: "list",
+            name: "PlaylistSelector",
+            message: "Select a Playlist to see: ",
+            choices: index_1.PlaylistCollectionOBJ.getPlaylistArray().map((item) => ({ name: index_1.PlaylistCollectionOBJ.getName(item.getName()) }))
+        })
+            .then((answers) => {
+            console.clear();
+            addingNewSongs(index_1.PlaylistCollectionOBJ.getPlaylist(answers["PlaylistSelector"]));
+        });
+    }
+    else if (type === 'Delete') {
+        inquirer.prompt({
+            type: "list",
+            name: "PlaylistSelector",
+            message: "Select a Playlist to see: ",
+            choices: index_1.PlaylistCollectionOBJ.getPlaylistArray().map((item) => ({ name: index_1.PlaylistCollectionOBJ.getName(item.getName()) }))
+        })
+            .then((answers) => {
+            console.clear();
+            deleteSongs(index_1.PlaylistCollectionOBJ.getPlaylist(answers["PlaylistSelector"]));
+        });
+    }
 }
 function greaterSort(playlistName) {
     console.clear();
@@ -546,6 +559,12 @@ function promptUser() {
             case Commands.Add:
                 promptAdd();
                 break;
+            case Commands.New:
+                promptPlaylistSelect('New');
+                break;
+            case Commands.Delete:
+                promptPlaylistSelect('Delete');
+                break;
             case Commands.Purge:
                 promptDelete();
                 break;
@@ -564,4 +583,5 @@ class Gestor {
         promptUser();
     }
 }
-exports.Gestor = Gestor;
+const newMenu = new Gestor();
+newMenu.menu();

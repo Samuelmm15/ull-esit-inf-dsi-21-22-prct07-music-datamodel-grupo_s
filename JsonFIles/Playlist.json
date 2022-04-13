@@ -2873,6 +2873,74 @@
         }
       ],
       "systemPlaylist": true
+    },
+    {
+      "name": "ABLO",
+      "songs": [
+        {
+          "name": "120",
+          "author": [
+            {
+              "name": "Bad Bunny",
+              "group": "Bad Bunny",
+              "genERPre": [
+                "Urban Latino"
+              ],
+              "album": [
+                "Amorfoda"
+              ],
+              "publishedSongs": 127,
+              "monthlyListeners": 47666987
+            }
+          ],
+          "songDuration": "2:31",
+          "genre": [
+            {
+              "name": "Urban Latino",
+              "groups": [],
+              "artists": [
+                {
+                  "name": "Ozuna",
+                  "group": "Ozuna",
+                  "genre": [
+                    "Urban Latino"
+                  ],
+                  "album": [
+                    "Odisea"
+                  ],
+                  "publishedSongs": 158,
+                  "monthlyListeners": 35236397
+                },
+                {
+                  "name": "Bad Bunny",
+                  "group": "Bad Bunny",
+                  "genre": [
+                    "Urban Latino"
+                  ],
+                  "album": [
+                    "Amorfoda"
+                  ],
+                  "publishedSongs": 127,
+                  "monthlyListeners": 47666987
+                }
+              ],
+              "albums": [
+                "Odisea",
+                "Amorfoda"
+              ],
+              "songs": [
+                "Odisea",
+                "Amorfoda"
+              ]
+            }
+          ],
+          "single": false,
+          "reproductionsNumber": 96933446
+        }
+      ],
+      "duration": 0,
+      "genre": [],
+      "systemPlaylist": false
     }
   ]
 }
