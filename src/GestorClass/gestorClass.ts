@@ -42,7 +42,7 @@ import {SongCollectionOBJ} from '../index';
 function displayPlayList(): void {
   console.log('<< PLAYLIST COLLECTION >>');
   for (let i = 0; i < PlaylistCollectionOBJ.getColectionlength(); i++) {
-    console.log(`${PlaylistCollectionOBJ.getnObject(i).getName()} ==> ${PlaylistCollectionOBJ.getnObject(i).getDuration()}`);
+    console.log(`${PlaylistCollectionOBJ.getnObject(i).getName()} ==> ${PlaylistCollectionOBJ.getnObject(i).getDuration()} seconds.`);
   }
   console.log();
   console.log('<< MUSICAL GENRES >>');

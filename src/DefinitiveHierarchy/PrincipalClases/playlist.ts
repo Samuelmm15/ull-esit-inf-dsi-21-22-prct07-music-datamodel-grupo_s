@@ -75,7 +75,11 @@ export class Playlists {
    */
   // Podríamos hacer una interfaz para esto
   getDuration(): number {
-    return this.duration;
+    let result: number = 0;
+    for (let i = 0; i < this.songs.length; i++) {
+      result = result + this.songs[i].durationFormat();
+    }
+    return result;
   }
 
   /**

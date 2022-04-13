@@ -80,7 +80,11 @@ class Playlists {
      */
     // Podríamos hacer una interfaz para esto
     getDuration() {
-        return this.duration;
+        let result = 0;
+        for (let i = 0; i < this.songs.length; i++) {
+            result = result + this.songs[i].durationFormat();
+        }
+        return result;
     }
     /**
      * Gets music genres included on the playlist

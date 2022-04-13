@@ -49,7 +49,7 @@ const index_7 = require("../index");
 function displayPlayList() {
     console.log('<< PLAYLIST COLLECTION >>');
     for (let i = 0; i < index_1.PlaylistCollectionOBJ.getColectionlength(); i++) {
-        console.log(`${index_1.PlaylistCollectionOBJ.getnObject(i).getName()} ==> ${index_1.PlaylistCollectionOBJ.getnObject(i).getDuration()}`);
+        console.log(`${index_1.PlaylistCollectionOBJ.getnObject(i).getName()} ==> ${index_1.PlaylistCollectionOBJ.getnObject(i).getDuration()} seconds.`);
     }
     console.log();
     console.log('<< MUSICAL GENRES >>');
