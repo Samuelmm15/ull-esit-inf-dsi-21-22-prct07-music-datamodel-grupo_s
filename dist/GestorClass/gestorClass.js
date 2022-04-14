@@ -44,6 +44,7 @@ const index_4 = require("../index");
 const index_5 = require("../index");
 const index_6 = require("../index");
 const index_7 = require("../index");
+// collectionPlaylists.read();
 var Commands;
 (function (Commands) {
     Commands["Toggle"] = "Defaults Options To Sort";
@@ -149,6 +150,7 @@ function displayPlayList() {
 function promptDefault() {
     console.clear();
     let selectedPlaylist = '';
+    // console.log(PlaylistCollectionOBJ);
     inquirer.prompt({
         type: "list",
         name: "PlaylistSelector",
@@ -186,7 +188,7 @@ function promptAdd() {
         switch (answers["OptionToAdd"]) {
             case OptionToAdd.NewPlaylist:
                 console.clear();
-                newPlaylistFromScractch();
+                newPlaylistFromScratch();
                 break;
             case OptionToAdd.UsingExistsPlaylist:
                 console.clear();
@@ -364,7 +366,8 @@ function deleteSongs(PlaylistToOperate) {
         }
     });
 }
-function newPlaylistFromScractch() {
+const fs = require('fs');
+function newPlaylistFromScratch() {
     inquirer.prompt({ type: "input",
         name: "newName",
         message: "Enter the new playlist name:" })
@@ -373,6 +376,17 @@ function newPlaylistFromScractch() {
             let newPlaylistName = answers.newName;
             const newPlaylistUserAdded = new playlist_1.Playlists(newPlaylistName, [], 0, [], false);
             index_1.PlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
+            // const loadData = (path: any) => {
+            //   try {
+            //     return fs.readFileSync(path, 'utf8');
+            //   } catch (err) {
+            //     console.error(err);
+            //     return false;
+            //   }
+            // };
+            // const data = loadData('../../JsonFIles/Playlist.json');
+            // PlaylistCollectionOBJ.addPlaylist(JSON.parse(data));
+            // collectionPlaylists.restart(data.getPlaylistArray());
             index_6.collectionPlaylists.restart(index_1.PlaylistCollectionOBJ.getPlaylistArray());
             console.clear();
             inquirer.prompt({ type: "confirm",

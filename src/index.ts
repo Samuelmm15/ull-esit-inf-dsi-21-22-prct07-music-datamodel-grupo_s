@@ -203,9 +203,30 @@ const Merengaso = new Playlists('Merengaso', [LunaLlena, Suavemente, Bailar, Pri
 const ClassicalSongs = new Playlists('Classical Songs', [BeatIt, BillieJean, RockWithYou, BohemianRhapsody, IWantToBreakFree, DontStopMeNow,
   KillerQueen, AnotherOneBitestheDust], 60, [Rock, Pop, Dance], true);
 
-export const PlaylistCollectionOBJ = new PlaylistCollection([Fiestuki, Merengaso, ClassicalSongs]);
+// const fs = require('fs');
+// const storeData = (data: any, path: any) => {
+//   try {
+//     fs.writeFile(path, JSON.stringify(data));
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
 
-export const collectionPlaylists: JsonPlaylistCollection = new JsonPlaylistCollection([Fiestuki, Merengaso, ClassicalSongs]);
+export let PlaylistCollectionOBJ = new PlaylistCollection([Fiestuki, Merengaso, ClassicalSongs]);
+
+// storeData(PlaylistCollectionOBJ.getPlaylistArray(), '../JsonFIles/Playlist.json');
+
+
+// const PlaylistCollectionOBJaux = new PlaylistCollection([]);
+// if (PlaylistCollectionOBJaux.getPlaylistArray().length === 0) {
+
+// } else {
+//   PlaylistCollectionOBJaux.getPlaylistArray().forEach((element) => {
+//     PlaylistCollectionOBJ.addPlaylist(element);
+//   });
+// }
+
+export let collectionPlaylists: JsonPlaylistCollection = new JsonPlaylistCollection([Fiestuki, Merengaso, ClassicalSongs]);
 
 // export const PlaylistCollectionOBJ = new PlaylistCollection(collectionPlaylists.read());
 

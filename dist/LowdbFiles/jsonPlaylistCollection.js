@@ -18,7 +18,7 @@ class JsonPlaylistCollection {
         this.database = (0, lowdb_1.default)(new FileSync_1.default("JsonFiles/Playlist.json"));
         if (this.database.has("Playlist")) {
             console.log('La base de datos ha sido creada');
-            this.database.get("Playlist").value();
+            // this.database.read();
         }
         else {
             this.database.set("Playlist", Playlist).write();
@@ -29,10 +29,27 @@ class JsonPlaylistCollection {
      * @param Playlist Playlist array
      */
     restart(Playlist) {
+        // const PlaylistCollectionOBJaux = new PlaylistCollection([]);
+        // if (PlaylistCollectionOBJaux.getPlaylistArray().length === 0) {
+        //   this.database.set("Playlist", Playlist).write();
+        // } else {
+        //   PlaylistCollectionOBJaux.getPlaylistArray().forEach((element) => {
+        //     PlaylistCollectionOBJ.addPlaylist(element);
+        //     this.database.set("Playlist", Playlist).write();
+        //   });
+        //   this.database.set("Playlist", Playlist).write();
+        // }
+        this.database.read();
         this.database.set("Playlist", Playlist).write();
     }
+    getSuperPlaylist(playlist) {
+        return playlist;
+    }
     read() {
-        return this.database.get("Playlist").value();
+        // console.log(this.database.read());
+        const Playlist = [];
+        this.database.get("Playlist", Playlist).value();
+        console.log(Playlist);
     }
 }
 exports.JsonPlaylistCollection = JsonPlaylistCollection;

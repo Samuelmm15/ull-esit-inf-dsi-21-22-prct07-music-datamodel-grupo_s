@@ -38,6 +38,9 @@ import {collectionPlaylists} from '../index';
 import {PlaylistCollection} from '../DefinitiveHierarchy/Collectionables/playlistCollection';
 import {SongCollectionOBJ} from '../index';
 
+
+// collectionPlaylists.read();
+
 enum Commands {
   Toggle = "Defaults Options To Sort",
   Add = "Add New Playlist",
@@ -149,11 +152,12 @@ function displayPlayList(): void {
 
 function promptDefault(): void {
   console.clear();
-  let selectedPlaylist: string = ''; 
+  let selectedPlaylist: string = '';
+  // console.log(PlaylistCollectionOBJ);
   inquirer.prompt({
-    type: "list", 
-    name: "PlaylistSelector", 
-    message: "Select a Playlist to see: ", 
+    type: "list",
+    name: "PlaylistSelector",
+    message: "Select a Playlist to see: ",
     choices: PlaylistCollectionOBJ.getPlaylistArray().map((item) => ({name: PlaylistCollectionOBJ.getName(item.getName())}))})
       .then((answers) => {
         selectedPlaylist = answers["PlaylistSelector"];
@@ -187,7 +191,7 @@ function promptAdd(): void {
         switch (answers["OptionToAdd"]) {
           case OptionToAdd.NewPlaylist:
             console.clear();
-            newPlaylistFromScractch();
+            newPlaylistFromScratch();
             break;
           case OptionToAdd.UsingExistsPlaylist:
             console.clear();
@@ -353,7 +357,10 @@ function deleteSongs(PlaylistToOperate: Playlists): void {
         }
       });
 }
-function newPlaylistFromScractch(): void {
+
+const fs = require('fs');
+
+function newPlaylistFromScratch(): void {
   inquirer.prompt({type: "input",
     name: "newName",
     message: "Enter the new playlist name:"})
@@ -362,6 +369,17 @@ function newPlaylistFromScractch(): void {
           let newPlaylistName = answers.newName;
           const newPlaylistUserAdded = new Playlists(newPlaylistName, [], 0, [], false);
           PlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
+          // const loadData = (path: any) => {
+          //   try {
+          //     return fs.readFileSync(path, 'utf8');
+          //   } catch (err) {
+          //     console.error(err);
+          //     return false;
+          //   }
+          // };
+          // const data = loadData('../../JsonFIles/Playlist.json');
+          // PlaylistCollectionOBJ.addPlaylist(JSON.parse(data));
+          // collectionPlaylists.restart(data.getPlaylistArray());
           collectionPlaylists.restart(PlaylistCollectionOBJ.getPlaylistArray());
           console.clear();
           inquirer.prompt({type: "confirm",
@@ -375,6 +393,7 @@ function newPlaylistFromScractch(): void {
         }
       });
 }
+
 function newPlaylistUsingAnExisting(): void {
   let selectedPlaylist: string = '';
   inquirer.prompt({

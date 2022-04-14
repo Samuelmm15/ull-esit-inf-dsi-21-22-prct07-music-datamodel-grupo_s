@@ -164,7 +164,24 @@ const Fiestuki = new playlist_1.Playlists('Fiestuki', [BadBunny120, Yoganuni, Mo
 const Merengaso = new playlist_1.Playlists('Merengaso', [LunaLlena, Suavemente, Bailar, Princesita, TuSonrisa], 30, [Merengue], true);
 const ClassicalSongs = new playlist_1.Playlists('Classical Songs', [BeatIt, BillieJean, RockWithYou, BohemianRhapsody, IWantToBreakFree, DontStopMeNow,
     KillerQueen, AnotherOneBitestheDust], 60, [Rock, Pop, Dance], true);
+const fs = require('fs');
+const storeData = (data, path) => {
+    try {
+        fs.writeFile(path, JSON.stringify(data));
+    }
+    catch (err) {
+        console.log(err);
+    }
+};
 exports.PlaylistCollectionOBJ = new playlistCollection_1.PlaylistCollection([Fiestuki, Merengaso, ClassicalSongs]);
+storeData(exports.PlaylistCollectionOBJ.getPlaylistArray(), '../JsonFIles/Playlist.json');
+// const PlaylistCollectionOBJaux = new PlaylistCollection([]);
+// if (PlaylistCollectionOBJaux.getPlaylistArray().length === 0) {
+// } else {
+//   PlaylistCollectionOBJaux.getPlaylistArray().forEach((element) => {
+//     PlaylistCollectionOBJ.addPlaylist(element);
+//   });
+// }
 exports.collectionPlaylists = new jsonPlaylistCollection_1.JsonPlaylistCollection([Fiestuki, Merengaso, ClassicalSongs]);
 // export const PlaylistCollectionOBJ = new PlaylistCollection(collectionPlaylists.read());
 // const GestorMenu = new Gestor();

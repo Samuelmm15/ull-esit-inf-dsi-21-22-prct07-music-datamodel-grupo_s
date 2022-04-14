@@ -4,6 +4,8 @@ import {Song} from '../DefinitiveHierarchy/PrincipalClases/song';
 import {MusicGenre} from '../DefinitiveHierarchy/PrincipalClases/musicGenre';
 import lowdb from 'lowdb';
 import FileSync from 'lowdb/adapters/FileSync';
+// import { PlaylistCollectionOBJ } from '..';
+// import { PlaylistCollection } from '../DefinitiveHierarchy/Collectionables/playlistCollection';
 
 /**
  * Playlist entry type
@@ -27,7 +29,7 @@ export class JsonPlaylistCollection {
     this.database = lowdb(new FileSync("JsonFiles/Playlist.json"));
     if (this.database.has("Playlist")) {
       console.log('La base de datos ha sido creada');
-      this.database.get("Playlist").value();
+      // this.database.read();
     } else {
       this.database.set("Playlist", Playlist).write();
     }
@@ -38,9 +40,38 @@ export class JsonPlaylistCollection {
    * @param Playlist Playlist array
    */
   restart(Playlist: Playlists[]): void {
+    // const PlaylistCollectionOBJaux = new PlaylistCollection([]);
+    // if (PlaylistCollectionOBJaux.getPlaylistArray().length === 0) {
+    //   this.database.set("Playlist", Playlist).write();
+    // } else {
+    //   PlaylistCollectionOBJaux.getPlaylistArray().forEach((element) => {
+    //     PlaylistCollectionOBJ.addPlaylist(element);
+    //     this.database.set("Playlist", Playlist).write();
+    //   });
+    //   this.database.set("Playlist", Playlist).write();
+    // }
+    // this.database.read();
     this.database.set("Playlist", Playlist).write();
   }
-  read(): any {
-    return this.database.get("Playlist").value();
+  getSuperPlaylist(playlist: Playlists): Playlists {
+    return playlist;
   }
+
+  read(): void {
+    // console.log(this.database.read());
+    const Playlist: Playlists[] = [];
+    this.database.get("Playlist", Playlist).value();
+    console.log(Playlist);
+  }
+  /** We get the value from the lowdb database ***/
+  // getValue(): Playlists[] {
+  //   return this.database.get("Playlist").value();
+  // }
+  /** We get the entire object from the lowdb array database ***/
+  // getObject(): schemaType {
+  //   return this.database.get("Playlist").value();
+  // }
+  // getwraped(): void| lowdb.LowdbSync<schemaType> {
+  //   //return this.database;
+  // }
 }
