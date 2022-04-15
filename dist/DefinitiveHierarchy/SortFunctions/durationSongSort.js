@@ -22,16 +22,19 @@ class SongDurationSort extends abstractSort_1.GeneralSort {
      */
     greaterSort() {
         const ReproductionSort = [];
+        let i = 0;
         let auxiliary = [];
         for (let i = 0; i < this.song.getColectionlength(); i++) {
             auxiliary.push(this.song.getnObject(i));
         }
-        for (let i = 0; i < auxiliary.length; i++) {
+        i = 0;
+        for (i = 0; i < auxiliary.length; i++) {
             ReproductionSort.push(auxiliary[i].durationFormat());
         }
         ReproductionSort.sort();
         auxiliary = [];
-        for (let i = 0; i < this.song.getColectionlength(); i++) {
+        i = 0;
+        for (i = 0; i < this.song.getColectionlength(); i++) {
             auxiliary.push(this.song.getDuration(ReproductionSort[i]));
             console.log(`${auxiliary[i].getName()} ==> ${auxiliary[i].getSongDuration()}`);
         }
@@ -45,16 +48,19 @@ class SongDurationSort extends abstractSort_1.GeneralSort {
      */
     lowerSort() {
         const ReproductionSort = [];
+        let i = 0;
         let auxiliary = [];
-        for (let i = 0; i < this.song.getColectionlength(); i++) {
+        for (i = 0; i < this.song.getColectionlength(); i++) {
             auxiliary.push(this.song.getnObject(i));
         }
-        for (let i = 0; i < auxiliary.length; i++) {
+        i = 0;
+        for (i = 0; i < auxiliary.length; i++) {
             ReproductionSort.push(auxiliary[i].durationFormat());
         }
         ReproductionSort.sort().reverse();
         auxiliary = [];
-        for (let i = 0; i < this.song.getColectionlength(); i++) {
+        i = 0;
+        for (i = 0; i < this.song.getColectionlength(); i++) {
             auxiliary.push(this.song.getDuration(ReproductionSort[i]));
             console.log(`${auxiliary[i].getName()} ==> ${auxiliary[i].getSongDuration()}`);
         }

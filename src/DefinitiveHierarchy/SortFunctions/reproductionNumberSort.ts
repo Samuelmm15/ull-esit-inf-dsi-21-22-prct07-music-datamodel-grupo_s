@@ -19,18 +19,19 @@ export class ReproductionNumberSort extends GeneralSort<SongCollection> {
    */
   greaterSort(): SongCollection {
     const ReproductionSort: number[] = [];
+    let i: number = 0;
     let auxiliary: Song[] = [];
     for (let i = 0; i < this.songs.getColectionlength(); i++) {
       auxiliary.push(this.songs.getnObject(i));
     }
-
-    for (let i = 0; i < auxiliary.length; i++) {
+    i = 0;
+    for (i = 0; i < auxiliary.length; i++) {
       ReproductionSort.push(auxiliary[i].getReproductionsNumber());
     }
     ReproductionSort.sort();
     auxiliary = [];
-
-    for (let i = 0; i < this.songs.getColectionlength(); i++) {
+    i = 0;
+    for (i = 0; i < this.songs.getColectionlength(); i++) {
       auxiliary.push(this.songs.getReproductionsNumber(ReproductionSort[i]) as Song);
       console.log(`${auxiliary[i].getName()} ==> ${auxiliary[i].getReproductionsNumber()}`);
     }
@@ -44,18 +45,19 @@ export class ReproductionNumberSort extends GeneralSort<SongCollection> {
    */
   lowerSort(): SongCollection {
     const ReproductionSort: number[] = [];
+    let i: number = 0;
     let auxiliary: Song[] = [];
-    for (let i = 0; i < this.songs.getColectionlength(); i++) {
+    for (i = 0; i < this.songs.getColectionlength(); i++) {
       auxiliary.push(this.songs.getnObject(i));
     }
-
-    for (let i = 0; i < auxiliary.length; i++) {
+    i = 0;
+    for (i = 0; i < auxiliary.length; i++) {
       ReproductionSort.push(auxiliary[i].getReproductionsNumber());
     }
     ReproductionSort.sort().reverse();
     auxiliary = [];
-
-    for (let i = 0; i < this.songs.getColectionlength(); i++) {
+    i = 0;
+    for (i = 0; i < this.songs.getColectionlength(); i++) {
       auxiliary.push(this.songs.getReproductionsNumber(ReproductionSort[i]) as Song);
       console.log(`${auxiliary[i].getName()} ==> ${auxiliary[i].getReproductionsNumber()}`);
     }
