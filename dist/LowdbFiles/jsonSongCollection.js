@@ -4,13 +4,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.JsonSongCollection = void 0;
-const songCollection_1 = require("../DefinitiveHierarchy/Collectionables/songCollection");
+const songCollection_2 = require("../DefinitiveHierarchy/Collectionables/songCollection");
 const lowdb_1 = __importDefault(require("lowdb"));
 const FileSync_1 = __importDefault(require("lowdb/adapters/FileSync"));
 /**
  * Song data base class
  */
-class JsonSongCollection extends songCollection_1.SongCollection {
+class JsonSongCollection extends songCollection_2.SongCollection {
     /**
      * Creates the JSON file that contains the song data base
      * @param SongItems Song array

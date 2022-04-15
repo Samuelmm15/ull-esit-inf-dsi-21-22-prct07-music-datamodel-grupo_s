@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SingleFilter = void 0;
-const songCollection_1 = require("../Collectionables/songCollection");
+const songCollection_2 = require("../Collectionables/songCollection");
 /**
  * Class that filters if a song is a single or not
  */
@@ -24,7 +24,7 @@ class SingleFilter {
                 songArray.push(this.songs.getnObject(i));
             }
         }
-        const result = new songCollection_1.SongCollection(songArray);
+        const result = new songCollection_2.SongCollection(songArray);
         return result;
     }
 }

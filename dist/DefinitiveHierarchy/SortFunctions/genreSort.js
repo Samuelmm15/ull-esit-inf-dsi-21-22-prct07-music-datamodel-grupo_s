@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GenreSort = void 0;
-const abstractSort_1 = require("./abstractSort");
+const abstractSort_2 = require("./abstractSort");
 const genreCollection_1 = require("../Collectionables/genreCollection");
 /**
  * Class that sorts genre objects by name
  */
-class GenreSort extends abstractSort_1.GeneralSort {
+class GenreSort extends abstractSort_2.GeneralSort {
     /**
      * Recieves a music genre array
      */

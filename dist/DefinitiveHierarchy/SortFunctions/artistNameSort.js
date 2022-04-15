@@ -3,11 +3,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ArtistNameSort = void 0;
 /* eslint-disable prefer-const */
 /* eslint-disable camelcase */
-const abstractSort_1 = require("./abstractSort");
+const abstractSort_2 = require("./abstractSort");
 /**
  * Class that sorts artist objects by name
  */
-class ArtistNameSort extends abstractSort_1.GeneralSort {
+class ArtistNameSort extends abstractSort_2.GeneralSort {
     /**
      * Recieves an artist array
      */

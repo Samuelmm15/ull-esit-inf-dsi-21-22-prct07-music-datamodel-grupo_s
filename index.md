@@ -627,7 +627,7 @@ La elecciones que procesa el switch son las siguientes:
   }
   ```
 
-  > Igual que en la función ```promptUser``` se utilizan las mismas opciones de inquirer, pero las elecciones se sacan del enum **SortCommands**. En ambas funciones en cada opción del switch se crea una variable de tipo Playlist donde se recibe una playlist donde se quiera realizar la ordenación y se crea una variable de tipo ```Song[]``` donde se recogen las canciones de dicha playlist y se realiza la ordenación con la array de canciones. 
+  > Igual que en la función ```promptUser``` se utilizan las mismas opciones de inquirer, pero, las elecciones se sacan del enum **SortCommands**. En ambas funciones, en cada opción del switch se crea una variable de tipo Playlist, donde, se recibe una playlist que se quiera ordenar y, se crea una variable de tipo ```Song[]``` donde, se recogen las canciones de dicha playlist y se realiza la ordenación con el vector de canciones. 
 
   2. Crear nuevas playlists, a partir de una existente o a partir de una playlist vacía.
 
@@ -655,7 +655,7 @@ La elecciones que procesa el switch son las siguientes:
     }
     ```
 
-    > En está función se definen las dos opciones que permitan a los usuarios crear playlists usando una de las dos formas. El paquete inquirer se implementa de la misma manera que en la función ```promptUser```, pero usando el enum **OptionToAdd**.
+    > En está función, se definen las dos opciones que permitan a los usuarios crear playlists usando una de las dos formas. El paquete inquirer se implementa de la misma manera que en la función ```promptUser```, pero usando el enum **OptionToAdd**.
 
     - En el primer submenu se pregunta si se quieren agregar más canciones y se muestra un listado de las canciones existentes en la base de datos.
 
@@ -710,7 +710,7 @@ La elecciones que procesa el switch son las siguientes:
     }
     ```
 
-    > En esta función se realiza un segundo y tercer ```inquirer.prompt```, el primer ```inquirer.prompt``` es igual al de la función ```promptUser``` pero usando el nombre de cada playlist como opción donde se depenediendo de la playlist se copia el contenido de este a la nueva palylist creada para el usuario. En el segundo se recibe una entrada, es decir el nombre de la nueva playlist y en el tercer se le pregunta al usuario si quiere añadir canciones o no.
+    > En esta función, se realiza un segundo y tercer ```inquirer.prompt()```, el primer ```inquirer.prompt()``` es igual al de la función ```promptUser()``` pero, usando el nombre de cada playlist como opción donde, depenediendo de la playlist, se copia el contenido de este a la nueva palylist creada para el usuario. En el segundo, se recibe una entrada, es decir, el nombre de la nueva playlist y en el tercero se le pregunta al usuario si quiere añadir canciones o no.
 
     - En el segundo submenu se pregunta si se quieren añadir nuevas canciones a la playlist o eliminar algunas de las canciones que se copiaron de la playlist anterior.
 
@@ -747,9 +747,9 @@ La elecciones que procesa el switch son las siguientes:
     }
     ```
 
-    > En esta función se utiliza un ```ìnquirer.prompt``` pidiendo un nombre de la playlist al usuario y un segundo ```ìnquirer.prompt``` donde se le pregunta al usuario si quiere añadir canciones o no.
+    > En esta función, se utiliza un ```ìnquirer.prompt()``` pidiendo un nombre de la playlist al usuario y un segundo ```ìnquirer.prompt()``` donde, se le pregunta al usuario si quiere añadir canciones o no.
 
-    > En caso de que el usuario quiera añadir canciones se accede a la función ```addingNewSongs```, donde se añadan canciones o en otro caso se accede a la función ```deleteSongs``` en caso de que no se quieran agregar más canciones.
+    > En caso de que el usuario quiera añadir canciones, se accede a la función ```addingNewSongs()```, donde, se añadan canciones o en otro caso se accede a la función ```deleteSongs()``` en caso de que no se quieran agregar más canciones.
 
     ```typescript
     function addingNewSongs(PlaylisToOperate: Playlists): void {
@@ -821,7 +821,7 @@ La elecciones que procesa el switch son las siguientes:
 
   3. Eliminar canciones de una playlist.
 
-  - En este submenu se utilizan los métodos para eliminar canciones que se encuentra en la clase de colecciones de música.
+  - En este submenu, se utilizan los métodos para eliminar canciones que se encuentra en la clase de colecciones de música.
 
   ```typescript
   function deleteSongs(PlaylistToOperate: Playlists): void {
@@ -867,7 +867,7 @@ La elecciones que procesa el switch son las siguientes:
 
   4. Eliminar una playlist creada por el usuario.
 
-  - En este submenu se accede a un listado de las playlists existentes o creadas por el usuario para que pueda eliminar sus playlists, las playlists del sistema no se pueden borrar.
+  - En este submenu, se accede a un listado de las playlists existentes o creadas por el usuario para que pueda eliminar sus playlists, las playlists del sistema no se pueden borrar.
 
   ```typescript
   function promptDelete(): void {
@@ -901,21 +901,19 @@ La elecciones que procesa el switch son las siguientes:
 
   5. Salir del programa.
 
-  - En este apartado no fue necesario ningún submenu, ya que directamente se sale del programa usando el método **exit()**.
-
-En los otros submenus definidos, los sistemas de elección de los diferentes submenus son muy similares al que se tiene implementado en el menu ```promptUser```. Tras terminar cada submenu, se vuelve al punto de partida usando el menu ```defaultMenuReturn``` donde se le pregunta al usuario si quiere continuar con la ejecución del programa o no, en el primer caso se vuelve al menu ```promptUser``` y en el segundo caso simplemente se sale del programa usando el método **exit()**.
+En los otros submenus definidos, los sistemas de elección de los diferentes submenus son muy similares al que se tiene implementado en el menu ```promptUser()```. Tras terminar cada submenu, se vuelve al punto de partida usando el menu ```defaultMenuReturn()``` donde, se le pregunta al usuario si quiere continuar con la ejecución del programa o no, en el primer caso se vuelve al menu ```promptUser()``` y en el segundo caso simplemente se sale del programa usando el método **exit()**.
 
 ### Lowdb
 
 #### ¿Qué es Lowdb?
 
-La librería lowdb nos permite crear una pequeña base de datos local en formato JSON. Los elementos que se quieran incluir en una base de datos usando la libreria lowdb se guardan en un fichero **JSON** en el directorio que el programador decida. Esta libreria cuenta con una serie de **APIS** y **Adaptadores** que permiten a los programadores trabajar de forma sencilla a la hora de crear una pequeña base de datos. Está libreria cuenta con soporte en **TypeScript**.
+La librería lowdb, nos permite crear una pequeña base de datos local en formato JSON. Los elementos que se quieran incluir en una base de datos usando la libreria lowdb se guardan en un fichero **JSON** en el directorio que el programador decida. Esta libreria, cuenta con una serie de **APIS** y **Adaptadores** que permiten a los programadores trabajar de forma sencilla a la hora de crear una pequeña base de datos. Está libreria cuenta con soporte en **TypeScript**.
 
 #### Implementación
 
-En la implementación se ha decidido crear una serie de clases para los diferentes tipos de objetos, estas clases nos van a permitir añadir entradas a la base de datos y los ficheros relacionados se encuentran en el directorio **LowdbFiles**. Cada clase va a tener un tipo de objeto asginado para crear la base de datos de dicho objeto, en conreto los tipos de objetos que deben tener una base de datos son los siguientes: género musical, canción, grupo, artista, album y playlist.
+En la implementación, se ha decidido crear una serie de clases para los diferentes tipos de objetos, estas clases, nos van a permitir añadir entradas a la base de datos y los ficheros relacionados se encuentran en el directorio **LowdbFiles**. Cada clase, va a tener un tipo de objeto asginado para crear la base de datos de dicho objeto, en conreto los tipos de objetos que deben tener una base de datos son los siguientes: género musical, canción, grupo, artista, album y playlist.
 
-En el directorio **JsonFiles** nos encontramos con las bases de datos que se crearon gracias a las clases del directorio **LowdbFiles**. Tenemos los ficheros ```Artist.json```, ```Genre.json```, ```Group.json```, ```Song.json``` y ```Album.json```. Estas bases de datos se han creado con la ayuda de la libreria lowdb implementada en las clases en el directorio **LowdbFiles**.
+En el directorio **JsonFiles** nos encontramos con las bases de datos que se crearon gracias a las clases del directorio **LowdbFiles**. Tenemos los ficheros ```Artist.json```, ```Genre.json```, ```Group.json```, ```Song.json``` y ```Album.json```. Estas bases de datos, se han creado con la ayuda de la libreria lowdb implementada en las clases en el directorio **LowdbFiles**.
 
 ```
 📦JsonFIles
@@ -925,7 +923,7 @@ En el directorio **JsonFiles** nos encontramos con las bases de datos que se cre
  ┗ 📜Song.json
 ```
 
-En el directorio **LowdbFiles** se encuentran todas las clases relacionadas con la inserción de entradas en las bases de datos. Cada clase tiene un fichero asignado para que sea más comodo trabajar con ello y de paso utilizar el principo **SOLID Single Responsibility Principle** para que cada clase tenga una única responsibilidad.
+En el directorio **LowdbFiles** se encuentran todas las clases relacionadas con la inserción de entradas en las bases de datos. Cada clase, tiene un fichero asignado para que sea más comodo trabajar con ello y de paso utilizar el principo **SOLID Single Responsibility Principle** para que cada clase tenga una única responsibilidad.
 
 ```
 📦src
@@ -965,13 +963,13 @@ export class JsonSongCollection extends SongCollection {
 }
 ```
 
-En este caso se ha escogido la clase ```JsonSongCollection```. Está clase se va utilizar como ejemplo para explicar la implementación de las demás clases dentro del mismo directorio.
+En este caso se ha escogido la clase ```JsonSongCollection```. Está clase, se va utilizar como ejemplo para explicar la implementación de las demás clases dentro del mismo directorio.
 
-Por un lado se ha creado un tipo de datos ```schemaType``` donde se definen los principales atributos que van a contenter la base de datos de las canciones, por otro lado tenemos la propia clase ```JsonSongCollection``` que extiende a la clase ```SongCollection``` donde se crean las colecciones de canciones. 
+Por un lado se ha creado un tipo de datos ```schemaType``` donde, se definen los principales atributos que van a contenter la base de datos de las canciones, por otro lado, tenemos la propia clase ```JsonSongCollection``` que extiende a la clase ```SongCollection``` donde se crean las colecciones de canciones. 
 
 En la clase ```JsonSongCollection``` se tienen los siguientes métodos:
 
-  - El constructor crea el fichero json donde estará la base de datos ```Song.json``` y se añade cada canción a la base de datos, al constructor se le pasa como parámetro una array de canciones.
+  - El constructor, crea el fichero json donde estará la base de datos ```Song.json``` y se añade cada canción a la base de datos, al constructor se le pasa como parámetro una array de canciones.
   - El método ```restart```, permite añadir nuevos objetos tipo ```Song``` a la base de datos.
 
 Para el resto de clases se sigue el mismo esquema.

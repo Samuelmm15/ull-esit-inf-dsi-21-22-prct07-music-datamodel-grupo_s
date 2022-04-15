@@ -3,11 +3,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.GroupNameSort = void 0;
 /* eslint-disable prefer-const */
 /* eslint-disable camelcase */
-const abstractSort_1 = require("./abstractSort");
+const abstractSort_2 = require("./abstractSort");
 /**
  * Class that sorts group objects by name
  */
-class GroupNameSort extends abstractSort_1.GeneralSort {
+class GroupNameSort extends abstractSort_2.GeneralSort {
     /**
      * Recieves a group array
      */

@@ -2,9 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ReproductionNumberSort = void 0;
 /* eslint-disable camelcase */
-const abstractSort_1 = require("./abstractSort");
-const songCollection_1 = require("../Collectionables/songCollection");
-class ReproductionNumberSort extends abstractSort_1.GeneralSort {
+const abstractSort_2 = require("./abstractSort");
+const songCollection_2 = require("../Collectionables/songCollection");
+class ReproductionNumberSort extends abstractSort_2.GeneralSort {
     constructor(songs) {
         super();
         this.songs = songs;
@@ -27,7 +27,7 @@ class ReproductionNumberSort extends abstractSort_1.GeneralSort {
             auxiliary.push(this.songs.getReproductionsNumber(ReproductionSort[i]));
         }
         console.log(ReproductionSort);
-        const result = new songCollection_1.SongCollection(auxiliary);
+        const result = new songCollection_2.SongCollection(auxiliary);
         return result;
     }
     greaterSort() {
@@ -48,7 +48,7 @@ class ReproductionNumberSort extends abstractSort_1.GeneralSort {
             auxiliary.push(this.songs.getReproductionsNumber(ReproductionSort[i]));
         }
         console.log(ReproductionSort);
-        const result = new songCollection_1.SongCollection(auxiliary);
+        const result = new songCollection_2.SongCollection(auxiliary);
         return result;
     }
 }

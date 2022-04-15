@@ -4,9 +4,6 @@ import {GeneralSort} from './abstractSort';
 import {Song} from '../PrincipalClases/song';
 import {SongCollection} from '../Collectionables/songCollection';
 
-/**
- * Class that sorts song objects by duration
- */
 export class SongDurationSort extends GeneralSort<SongCollection> {
   /**
    * Recieves a song collection
