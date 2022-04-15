@@ -24,6 +24,10 @@ Antes de empezar, podemos observar todo el contenido del directorio ```src``` do
 
 En el directorio de ```DefinitiveHierarchy``` se encuentran las clases base, donde nos encontramos con las clases principales, las colecciones y las clases que definen las distintas ordenaciones. En este directorio se encuentran todos los ficheros necesarios para implementar lo que es la funcionalidad de la aplicación, como se dijo anteriormente, en este directorio se implementan las clases que definen los diferentes tipos de objetos necesarios, las colecciones de los diferentes objetos y los sistemas de ordenación que se deben utilizar a la hora de navegar por la playlist.
 
+## Jerarquía básica para los distintos objetos
+
+Para la implementación 
+
 ### Clases Principales
 
 Las clases Principales las encontramos en el directorio ```PrincipalClases``` y son las siguientes:
@@ -87,16 +91,7 @@ Los atributos se van a representar usando la siguiente tabla:
 
 Algunos atributos interesantes son ```songs: Song[]``` y ```single: boolean```. Los atributos ```songs```, son basicamente una array de objetos de tipos ```Song```, ya que en las clases ```Playlist``` y ```Album``` necesitan un conjunto de objetos de tipo ```Song```. El atributo ```single``` indica si una canción es un single o pertence a algún album. De manera general, se va a usar un booleano que indica ```true``` si la canción es un single y ```false``` si el single pertenece a un album. 
 
-Estas clases, reciben una serie de atributos que, como se puede ver en la tabla, estas clases se encargan de crear los diferentes objetos necesarios para la librería de música que se quiere crear.
-
-En cada clase se crean objetos de distintos tipos:
-
-  - La clase ```Song``` crea objetos tipo ```Song```.
-  - La clase ```Artist ``` crea objetos tipo ```Artist```.
-  - La clase ```Group ``` crea objetos tipo ```Group```.
-  - La clase ```Album``` crea objetos tipo ```Album```. 
-  - La clase ```MusicGenre``` crea objetos tipo ```MusicGenre```.
-  - La clase ```Playlist``` crea objetos tipo ```Playlist```.
+Estas clases, reciben una serie de atributos que, como se puede ver en la tabla, se encargan de crear los diferentes objetos necesarios para la librería de música que se quiere crear.
 
 ### Colecciones
 

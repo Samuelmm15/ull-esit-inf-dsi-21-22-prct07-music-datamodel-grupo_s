@@ -45,6 +45,8 @@ export let NewcollectionPlaylists: JsonNewPlaylistCollection = new JsonNewPlayli
 const auxarray: JsonNewPlaylistCollection = new JsonNewPlaylistCollection([]);
 auxarray.read();
 auxarray.write(NewPlaylistCollectionOBJ);
+export const NewPlaylistName: JsonNewPlaylistCollection[] = [NewcollectionPlaylists];
+
 
 enum Commands {
   Toggle = "Defaults Options To Sort",
