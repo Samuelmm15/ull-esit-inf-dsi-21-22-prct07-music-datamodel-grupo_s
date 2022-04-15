@@ -21,19 +21,16 @@ class ReproductionNumberSort extends abstractSort_1.GeneralSort {
      */
     greaterSort() {
         const ReproductionSort = [];
-        let i = 0;
         let auxiliary = [];
-        for (i = 0; i < this.songs.getColectionlength(); i++) {
+        for (let i = 0; i < this.songs.getColectionlength(); i++) {
             auxiliary.push(this.songs.getnObject(i));
         }
-        i = 0;
-        for (i = 0; i < auxiliary.length; i++) {
+        for (let i = 0; i < auxiliary.length; i++) {
             ReproductionSort.push(auxiliary[i].getReproductionsNumber());
         }
         ReproductionSort.sort();
         auxiliary = [];
-        i = 0;
-        for (i = 0; i < this.songs.getColectionlength(); i++) {
+        for (let i = 0; i < this.songs.getColectionlength(); i++) {
             auxiliary.push(this.songs.getReproductionsNumber(ReproductionSort[i]));
             console.log(`${auxiliary[i].getName()} ==> ${auxiliary[i].getReproductionsNumber()}`);
         }
@@ -46,19 +43,16 @@ class ReproductionNumberSort extends abstractSort_1.GeneralSort {
      */
     lowerSort() {
         const ReproductionSort = [];
-        let i = 0;
         let auxiliary = [];
-        for (i = 0; i < this.songs.getColectionlength(); i++) {
+        for (let i = 0; i < this.songs.getColectionlength(); i++) {
             auxiliary.push(this.songs.getnObject(i));
         }
-        i = 0;
-        for (i = 0; i < auxiliary.length; i++) {
+        for (let i = 0; i < auxiliary.length; i++) {
             ReproductionSort.push(auxiliary[i].getReproductionsNumber());
         }
         ReproductionSort.sort().reverse();
         auxiliary = [];
-        i = 0;
-        for (i = 0; i < this.songs.getColectionlength(); i++) {
+        for (let i = 0; i < this.songs.getColectionlength(); i++) {
             auxiliary.push(this.songs.getReproductionsNumber(ReproductionSort[i]));
             console.log(`${auxiliary[i].getName()} ==> ${auxiliary[i].getReproductionsNumber()}`);
         }
