@@ -85,9 +85,9 @@ Los atributos se van a representar usando la siguiente tabla:
 | Album      | name: string | artists: Artist     | genre: MusicGenre     | yearPublication: number | songs: ```Song[]```    | groups: Group                |
 | Playlist   | name: string | songs: ```Song[]``` | genre: MusicGenre     | duration: number        |                        |                              |
 
-Algunos atributos interesantes son ```songs: Song[]``` y ```single: boolean```. Los atributos ```songs``` son basicamente una array de objetos de tipos ```Song```, ya que en las clases ```Playlist``` y ```Album``` necesitan un conjunto de objetos de tipo ```Song```. El atríbuto ```single``` indica si una canción es un single o pertence a algún album, basicamente se va a usar un booleano que indica ```true``` si la canción es un single y ```false``` si el single pertenece a un album. 
+Algunos atributos interesantes son ```songs: Song[]``` y ```single: boolean```. Los atributos ```songs```, son basicamente una array de objetos de tipos ```Song```, ya que en las clases ```Playlist``` y ```Album``` necesitan un conjunto de objetos de tipo ```Song```. El atributo ```single``` indica si una canción es un single o pertence a algún album. De manera general, se va a usar un booleano que indica ```true``` si la canción es un single y ```false``` si el single pertenece a un album. 
 
-Estas clases reciben una serie de atríbutos, como se puede ver en la tabla, y estas clases se encargan de crear los diferentes objetos necesarios para la librería de música que se quiere crear.
+Estas clases, reciben una serie de atributos que, como se puede ver en la tabla, estas clases se encargan de crear los diferentes objetos necesarios para la librería de música que se quiere crear.
 
 En cada clase se crean objetos de distintos tipos:
 

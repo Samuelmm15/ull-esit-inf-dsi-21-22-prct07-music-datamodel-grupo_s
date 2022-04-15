@@ -46,17 +46,6 @@ const auxarray: JsonNewPlaylistCollection = new JsonNewPlaylistCollection([]);
 auxarray.read();
 auxarray.write(NewPlaylistCollectionOBJ);
 
-let content = require('../../JsonFiles/NewPlaylists.json');
-
-const data = content;
-export const NewPlaylistName: JsonNewPlaylistCollection[] = [NewcollectionPlaylists];
-for (const object in data) {
-  if (data.hasOwnProperty(object)) {
-    const element = data[object];
-    NewPlaylistName.push(element);
-  }
-}
-
 enum Commands {
   Toggle = "Defaults Options To Sort",
   Add = "Add New Playlist",
