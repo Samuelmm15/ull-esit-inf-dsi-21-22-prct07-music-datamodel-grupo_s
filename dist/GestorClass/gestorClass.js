@@ -52,15 +52,7 @@ exports.NewcollectionPlaylists = new jsonNewPlaylistCollection_1.JsonNewPlaylist
 const auxarray = new jsonNewPlaylistCollection_1.JsonNewPlaylistCollection([]);
 auxarray.read();
 auxarray.write(exports.NewPlaylistCollectionOBJ);
-let content = require('../../JsonFiles/NewPlaylists.json');
-const data = content;
 exports.NewPlaylistName = [exports.NewcollectionPlaylists];
-for (const object in data) {
-    if (data.hasOwnProperty(object)) {
-        const element = data[object];
-        exports.NewPlaylistName.push(element);
-    }
-}
 var Commands;
 (function (Commands) {
     Commands["Toggle"] = "Defaults Options To Sort";

@@ -24,7 +24,7 @@ class SongDurationSort extends abstractSort_1.GeneralSort {
         const ReproductionSort = [];
         let i = 0;
         let auxiliary = [];
-        for (let i = 0; i < this.song.getColectionlength(); i++) {
+        for (i = 0; i < this.song.getColectionlength(); i++) {
             auxiliary.push(this.song.getnObject(i));
         }
         i = 0;

@@ -109,9 +109,9 @@ Las colecciones las encontramos en el directorio ```Collectionables``` y son las
  ┗ 📂SortFunctions
 ```
 
-Estas clases se han creado simplemente para poder guardar un conjunto de artistas, géneros y canciones. Estas colecciones también nos ayudarán a organizar mejor la información de cada uno de los conjuntos y poder acceder a la información que queramos de cada conjunto.
+Estas clases, se han creado simplemente para poder guardar un conjunto de artistas, géneros y canciones. Estas colecciones, también nos ayudarán a organizar mejor la información de cada uno de los conjuntos y poder acceder a la información que queramos de cada conjunto.
 
-La clase base en este caso sería ```BasicStreamableCollection<T>``` y está clase extiende a la interfaz streameable que define el método ```getName()``` que debe estar en todas las colecciones. En está clase base se usa el tipo genérico ```<T>``` para poder definir el tipo que queramos para crear cualquier colección.
+La clase base en este caso es ```BasicStreamableCollection<T>``` y, extiende la interfaz streameable que define el método ```getName()``` . En esta clase base, se usa el tipo genérico ```<T>```, necesario para poder definir el tipo de objectos a coleccionar.
 
 - Interfaz stremeable
 
@@ -131,7 +131,7 @@ export abstract class BasicStreamableCollection<T> implements Streamable<T> {
 }
 ```
 
-Las clases ```ArtistsCollection```, ```GenreCollection``` y ```SongCollection```, usan los mismos atríbutos que en las clases Principales ```Artist```, ```MusicGenre``` y ```Song``` ya que las colecciones usan objetos del tipo correspondiente. En las colecciones se definen una serie de métodos para poder acceder a los atríbutos de cada objeto dentro del array del tipo objeto que sea. También se han creado métodos para poder eliminar objetos de la array del tipo que sea.
+Las clases ```ArtistsCollection```, ```GenreCollection``` y ```SongCollection```, usan los mismos atríbutos que en las clases Principales ```Artist```, ```MusicGenre``` y ```Song``` ya que, las colecciones usan objetos del tipo correspondiente. En las colecciones, se definen una serie de métodos para poder acceder a los atríbutos de cada objeto dentro del array del tipo objeto que sea. También, se han creado métodos para poder eliminar objetos de la array del tipo que sea.
 
 Un ejemplo de implementación lo tenemos en el código de la clase ```SongCollection```:
 
@@ -225,7 +225,7 @@ export class SongCollection extends BasicStreamableCollection<Song> {
 }
 ```
 
-> Los primeros métodos de esta clase representan a sus atríbutos (Las demás clase usan sus propios atríbutos), pero en este caso en la colección se guardan todos los objetos tipo ```Song``` que se hayan creado. Los siguiente métodos se encuentran disponibles en las demás clases y nos permiten eliminar elementos de cada colección, un método para recibir el tamaño de la array de canciones que contiene la colección, para recibir algun objeto del tipo ```Song``` en concreto y otro para recibir el array de canciones contenidas en la colección.
+> Los primeros métodos de esta clase representan a sus atríbutos (Las demás clase usan sus propios atríbutos), pero, en este caso en la colección se guardan todos los objetos tipo ```Song``` que se hayan creado. Los siguiente métodos, se encuentran disponibles en las demás clases y nos permiten eliminar elementos de cada colección, recibir el tamaño de la array de canciones que contiene la colección, recibir algun objeto del tipo ```Song``` en concreto y otro, para recibir el array de canciones contenidas en la colección.
 
 ### Funciones de ordenación
 
@@ -249,9 +249,9 @@ Las funciones de ordenación las encontramos en el directorio ```SortFunctions``
  ┃ ┗ 📜titleSongSort.ts
 ```
 
-En este directorio se encuentran todas las ordenaciones y filtros que se deben añadir a la funcionalidad del sistema que van a utilizar los usuarios para navegar las playlists existentes o la lista de canciones. 
+En este directorio, se encuentran todas las ordenaciones y filtros que se deben añadir a la funcionalidad del sistema que van a utilizar los usuarios para navegar las playlists existentes o las listas de canciones. 
 
-En está implementación tenemos una clase abstracta llamada ```GeneralSort``` donde se definen las funciones de ordenación ascendente y descendente que deben de tener el resto de clases derivadas. En está clase se definen dos métodos, el método ```greaterSort``` que ordena de forma ascendente y del método ```lowerSort``` que ordena de forma descendente.
+En está implementación, tenemos una clase abstracta llamada ```GeneralSort``` donde, se definen las funciones de ordenación ascendente y descendente que deben de tener el resto de clases derivadas. En está clase, se definen dos métodos, el método ```greaterSort``` que ordena de forma ascendente y del método ```lowerSort``` que ordena de forma descendente.
 
 Las ordenaciones que se deben utilizar para mostrar las diferentes listas de artistas, canciones, albums y playlists siguen los siguientes criterios:
 
@@ -332,7 +332,7 @@ export class AlbumSort extends GeneralSort<Album> {
 }
 ```
 
-> Este implementación es muy similar al de las demás ordenaciones, menos ```SingleFilter```, pero utilizando otros atríbutos.
+> Este implementación es muy similar al de las demás ordenaciones, menos ```SingleFilter```, pero, utilizando otros atributos.
 
 En la clase ```SingleFilter``` tenemos lo siguiente:
 
@@ -355,17 +355,17 @@ export class SingleFilter {
 }
 ```
 
-> En está clase se usa el método ```filter```, donde se filtran las canciones según sean un single o no.
+> En está clase, se usa el método ```filter```, donde, se filtran las canciones según sean un single o no.
 
 ### Inquirer
 
 #### ¿Qué es Inquirer?
 
-Inquirer es un paquete de NPM que proporciona de manera sencilla una forma de capturar la entrada del usuario en las aplicaciones de interfaz de línea de comandos en Node.js. Proporciona varios métodos para hacer preguntas y devolver respuestas al usuario a las que se puede acceder mediante una función ```.then``` promise.
+Inquirer es un paquete de NPM que proporciona de manera sencilla una forma de capturar la entrada del usuario en las aplicaciones de interfaz de línea de comandos en Node.js. Proporciona varios métodos para hacer preguntas y devolver respuestas al usuario a las que se puede acceder mediante una función ```.then```.
 
 #### Implementación
 
-La implementación completa del paquete inquirer se encuentra en fichero ```gestorClass```, en este fichero nos encontramos con la clase gestor y las funciones que contienen los menus del paquete inquirer. Por un lado, tenemos la clase gestor que es una clase muy simple donde se invoca a la función principal del menu; por otro lado, tenemos las funciones que contienen los menus realizados con el paquete Inquirer.
+La implementación completa del paquete inquirer se encuentra en fichero ```gestorClass```, en este fichero, nos encontramos con la clase gestor y las funciones que contienen los menús del paquete inquirer. Por un lado, tenemos la clase gestor donde, se invoca a la función principal del menu, por otro lado, tenemos las funciones que contienen los menús realizados con el paquete Inquirer.
 
 ##### Clase Gestor
 
@@ -381,15 +381,13 @@ class Gestor {
 }
 ```
 
-Como se puede ver la clase Gestor y ya se comento anteriormente es muy simple, ya que para acceder al primer menu de Inquirer se accede através del método ```menu``` y dentro de la clase se invoca a la función ```promptUser```.
-
 ##### Funciones inquirer
 
-En este apartado se va a hablar sobre las funciones que implementan los menus que usan el paquete inquirer. Primero se va a comentar sobre la función ```promptUser```, está función muestra está primera parte del menu:
+En este apartado, se va a hablar sobre las funciones que implementan los menús que usan el paquete inquirer. Primero, se va a comentar sobre la función ```promptUser```, está función, muestra está primera parte del menu:
 
 ![Captura de pantalla 2022-04-13 201431](https://user-images.githubusercontent.com/64638993/163253486-3f92a66a-d617-441d-a879-ad22c6223acb.png)
 
-En está imagen podemos ver las playlists disponibles y los géneros musicales que recoge nuestra biblioteca, y justo debajo una serie de acciones que se pueden realizar sobre las playlist y crear nuevas playlists que se puedan eliminar si el usuario lo desea.
+En está imagen podemos ver las playlists disponibles y los géneros musicales que recoge nuestra biblioteca, y justo debajo una serie de opciones que se pueden realizar sobre las playlist y crear nuevas playlists que se puedan eliminar si el usuario lo desea.
 
 Está parte del menu representa está parte del código:
 
@@ -462,7 +460,7 @@ enum OptionToAdd {
 }
 ```
 
-> En este código podemos que se invoca al método setmaxListeners, este método hace . A continuación se invoca a la función ```displayPlayList``` que muestra las playlists disponibles, el tiempo que dura cada playlist y la cantidad de géenros que contiene nuestra biblioteca. Por último, se utiliza el paquete inquirer. Primero se utiliza ```inquirer.promp``` donde se muestran unas preguntas indicando la opción ```type: list```, luego se indica la opción **name** (Nombre del comando), la opción **message** que indica el mensaje que se muestra antes de elegir cualquier opción y por último choices donde se indican las elecciones usando el enum **Commands**; tras esto se accede al ```then``` donde dependiendo de la elecciones que se haya hecho el switch accede ha dicha opción.
+> En este código, podemos ver que se invoca al método setmaxListeners, este, se encarga de establecer un máximo de oyentes o de puntos del tipo inquirer.prompt(). A continuación, se invoca la función ```displayPlayList``` que muestra las playlists disponibles, el tiempo que dura cada playlist y la cantidad de géneros que contiene nuestra biblioteca. Por último, se utiliza el paquete inquirer. Primero, se utiliza ```inquirer.promp()``` donde, se muestran unas preguntas indicando la opción ```type: list```, luego, se indica la opción **name** (Nombre del comando), la opción **message** que indica el mensaje que se muestra antes de elegir cualquier opción y por último choices, donde se indican las elecciones usando el enum **Commands**, tras esto, se accede al ```then``` donde, dependiendo de la elecciones que se haya hecho, el switch accede ha dicha opción.
 
 La elecciones que procesa el switch son las siguientes:
 
