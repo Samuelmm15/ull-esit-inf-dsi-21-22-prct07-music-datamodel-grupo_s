@@ -2,33 +2,22 @@
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
-import {Artist} from "../DefinitiveHierarchy/PrincipalClases/artist";
-import {ArtistsCollection} from "../DefinitiveHierarchy/Collectionables/artistCollection";
 import {TitleSongSort} from '../DefinitiveHierarchy/SortFunctions/titleSongSort';
-import {JsonTodoCollection} from "../LowdbFiles/jsonTodoCollection";
 import {exit} from 'process';
 import {setMaxListeners} from 'events';
-import {Group} from '../DefinitiveHierarchy/PrincipalClases/groups';
 import {MusicGenre} from '../DefinitiveHierarchy/PrincipalClases/musicGenre';
 import {Song} from '../DefinitiveHierarchy/PrincipalClases/song';
-import {Album} from '../DefinitiveHierarchy/PrincipalClases/album';
 import {Playlists} from "../DefinitiveHierarchy/PrincipalClases/playlist";
 import {SongCollection} from '../DefinitiveHierarchy/Collectionables/songCollection';
 import {GenreCollection} from '../DefinitiveHierarchy/Collectionables/genreCollection';
 import {AlbumSort} from '../DefinitiveHierarchy/SortFunctions/albumSort';
 import {ReproductionNumberSort} from '../DefinitiveHierarchy/SortFunctions/reproductionNumberSort';
 import {SingleFilter} from '../DefinitiveHierarchy/SortFunctions/singleFilter';
-import {AlbumYearSort} from '../DefinitiveHierarchy/SortFunctions/albumYearSort';
 import {ArtistNameSort} from '../DefinitiveHierarchy/SortFunctions/artistNameSort';
 import {GroupNameSort} from '../DefinitiveHierarchy/SortFunctions/groupNameSort';
 import {GenreSort} from '../DefinitiveHierarchy/SortFunctions/genreSort';
 import {SongDurationSort} from '../DefinitiveHierarchy/SortFunctions/durationSongSort';
 import * as inquirer from 'inquirer';
-import {JsonGroupCollection} from '../LowdbFiles/jsonGroupCollection';
-import {JsonGenreCollection} from '../LowdbFiles/jsonGenreCollection';
-import {JsonSongCollection} from '../LowdbFiles/jsonSongCollection';
-import {JsonAlbumCollection} from '../LowdbFiles/jsonAlbumCollection';
-import {JsonPlaylistCollection} from '../LowdbFiles/jsonPlaylistCollection';
 import {PlaylistCollectionOBJ} from '../index';
 import {JsonNewPlaylistCollection} from '../LowdbFiles/jsonNewPlaylistCollection';
 import {GenresCollectionObj} from '../index';
@@ -40,8 +29,8 @@ import {PlaylistCollection} from '../DefinitiveHierarchy/Collectionables/playlis
 import {SongCollectionOBJ} from '../index';
 
 
-export let NewPlaylistCollectionOBJ = new PlaylistCollection([]);
-export let NewcollectionPlaylists: JsonNewPlaylistCollection = new JsonNewPlaylistCollection([]);
+let NewPlaylistCollectionOBJ = new PlaylistCollection([]);
+let NewcollectionPlaylists: JsonNewPlaylistCollection = new JsonNewPlaylistCollection([]);
 const auxarray: JsonNewPlaylistCollection = new JsonNewPlaylistCollection([]);
 auxarray.read();
 auxarray.write(NewPlaylistCollectionOBJ);
@@ -370,10 +359,6 @@ function deleteSongs(PlaylistToOperate: Playlists): void {
         }
       });
 }
-
-const fs = require('fs');
-
-import {PlaylistName} from '../index';
 
 function newPlaylistFromScratch(): void {
   inquirer.prompt({type: "input",

@@ -23,7 +23,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NewPlaylistName = exports.NewcollectionPlaylists = exports.NewPlaylistCollectionOBJ = void 0;
+exports.NewPlaylistName = void 0;
+/* eslint-disable prefer-const */
+/* eslint-disable no-trailing-spaces */
+/* eslint-disable no-unused-vars */
+/* eslint-disable camelcase */
 const titleSongSort_1 = require("../DefinitiveHierarchy/SortFunctions/titleSongSort");
 const process_1 = require("process");
 const events_1 = require("events");
@@ -47,12 +51,12 @@ const index_5 = require("../index");
 const index_6 = require("../index");
 const playlistCollection_1 = require("../DefinitiveHierarchy/Collectionables/playlistCollection");
 const index_7 = require("../index");
-exports.NewPlaylistCollectionOBJ = new playlistCollection_1.PlaylistCollection([]);
-exports.NewcollectionPlaylists = new jsonNewPlaylistCollection_1.JsonNewPlaylistCollection([]);
+let NewPlaylistCollectionOBJ = new playlistCollection_1.PlaylistCollection([]);
+let NewcollectionPlaylists = new jsonNewPlaylistCollection_1.JsonNewPlaylistCollection([]);
 const auxarray = new jsonNewPlaylistCollection_1.JsonNewPlaylistCollection([]);
 auxarray.read();
-auxarray.write(exports.NewPlaylistCollectionOBJ);
-exports.NewPlaylistName = [exports.NewcollectionPlaylists];
+auxarray.write(NewPlaylistCollectionOBJ);
+exports.NewPlaylistName = [NewcollectionPlaylists];
 var Commands;
 (function (Commands) {
     Commands["Toggle"] = "Defaults Options To Sort";
@@ -148,12 +152,12 @@ function displayPlayList() {
     for (let i = 0; i < index_1.PlaylistCollectionOBJ.getColectionlength(); i++) {
         console.log(`${index_1.PlaylistCollectionOBJ.getnObject(i).getName()} ==> ${convertHMS(index_1.PlaylistCollectionOBJ.getnObject(i).getDuration())}`);
     }
-    auxarray.restart(exports.NewPlaylistCollectionOBJ.getPlaylistArray());
-    for (let i = 0; i < exports.NewPlaylistCollectionOBJ.getColectionlength(); i++) {
-        console.log(`${exports.NewPlaylistCollectionOBJ.getnObject(i).getName()} ==> ${convertHMS(exports.NewPlaylistCollectionOBJ.getnObject(i).getDuration())}`);
+    auxarray.restart(NewPlaylistCollectionOBJ.getPlaylistArray());
+    for (let i = 0; i < NewPlaylistCollectionOBJ.getColectionlength(); i++) {
+        console.log(`${NewPlaylistCollectionOBJ.getnObject(i).getName()} ==> ${convertHMS(NewPlaylistCollectionOBJ.getnObject(i).getDuration())}`);
         auxarray.read();
-        auxarray.write(exports.NewPlaylistCollectionOBJ.getnObject(i));
-        auxarray.restart(exports.NewPlaylistCollectionOBJ.getPlaylistArray());
+        auxarray.write(NewPlaylistCollectionOBJ.getnObject(i));
+        auxarray.restart(NewPlaylistCollectionOBJ.getPlaylistArray());
     }
     console.log();
     console.log('<< MUSICAL GENRES >>');
@@ -380,17 +384,16 @@ function deleteSongs(PlaylistToOperate) {
         }
     });
 }
-const fs = require('fs');
 function newPlaylistFromScratch() {
     inquirer.prompt({ type: "input",
         name: "newName",
         message: "Enter the new playlist name:" })
         .then((answers) => {
-        if (exports.NewPlaylistCollectionOBJ.getName(answers["newName"]) !== answers["newName"]) {
+        if (NewPlaylistCollectionOBJ.getName(answers["newName"]) !== answers["newName"]) {
             let newPlaylistName = answers.newName;
             const newPlaylistUserAdded = new playlist_1.Playlists(newPlaylistName, [], 0, [], false);
-            exports.NewPlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
-            exports.NewcollectionPlaylists.restart(exports.NewPlaylistCollectionOBJ.getPlaylistArray());
+            NewPlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
+            NewcollectionPlaylists.restart(NewPlaylistCollectionOBJ.getPlaylistArray());
             console.clear();
             inquirer.prompt({ type: "confirm",
                 name: "SongsAdd",
@@ -435,8 +438,8 @@ function newPlaylistUsingAnExisting() {
             const playlistSelected = index_1.PlaylistCollectionOBJ.getPlaylist(selectedPlaylist);
             const auxiliary = playlistSelected.getSongsArray();
             const newPlaylistUserAdded = new playlist_1.Playlists(newPlaylistName, auxiliary, playlistSelected.getDuration(), playlistSelected.getGenreArray(), false);
-            exports.NewPlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
-            exports.NewcollectionPlaylists.restart(exports.NewPlaylistCollectionOBJ.getPlaylistArray());
+            NewPlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
+            NewcollectionPlaylists.restart(NewPlaylistCollectionOBJ.getPlaylistArray());
             console.clear();
             inquirer.prompt({ type: "confirm",
                 name: "SongsAdd",
