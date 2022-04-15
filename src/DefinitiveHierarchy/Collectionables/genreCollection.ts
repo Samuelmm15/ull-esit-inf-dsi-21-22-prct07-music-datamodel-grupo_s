@@ -17,7 +17,7 @@ export class GenreCollection extends BasicStreamableCollection<MusicGenre> {
   }
   /**
    * Adds a genre object to the collection
-   * @param genre Music genre 
+   * @param genre Music genre
    */
   public addGenre(genre: MusicGenre) {
     this.genres.push(genre);
@@ -81,7 +81,7 @@ export class GenreCollection extends BasicStreamableCollection<MusicGenre> {
    * Remove a genre of the collection
    * @param index Index of the element to be removed
    * @return The artist array without the deleted element
-   */ 
+   */
   private removeArtist(index: number): MusicGenre[] {
     this.genres.splice(index, 1);
     return this.genres;
@@ -102,15 +102,15 @@ export class GenreCollection extends BasicStreamableCollection<MusicGenre> {
   }
   /**
    * The lenght of the genre array
-   * @returns The array lenght 
+   * @returns The array lenght
    */
   public getColectionlength(): number {
     return this.genres.length;
   }
   /**
-   * The genre array
+   * Obtain the object of the n postion of the array
    * @param position The index of the element
-   * @returns Genre object 
+   * @returns Genre object
    */
   public getnObject(position: number): MusicGenre {
     return this.genres[position];

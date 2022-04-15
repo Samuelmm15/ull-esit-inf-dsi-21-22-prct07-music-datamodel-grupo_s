@@ -71,7 +71,6 @@ export class Album {
    * @return Song name
    */
   getSongs(song: Song): Song[] {
-    // return this.songs;
     return this.songs.filter((s) => s.getName() === song.getName());
   }
 }

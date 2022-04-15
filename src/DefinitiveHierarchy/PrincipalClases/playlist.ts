@@ -22,9 +22,6 @@ export class Playlists {
   getName(): string {
     return this.name;
   }
-  // getAlbums(): Album[] {
-  //   return this.albums;
-  // }
   /**
    * Gets the songs included on the playlist
    * @return Song object
@@ -87,13 +84,13 @@ export class Playlists {
    * @return Genre object
    */
   getGenre(GenreName: string): MusicGenre {
-    // return this.genre;
+    let result: MusicGenre = this.genre[0];
     for (let i = 0; i < this.genre.length; i++) {
       if (this.genre[i].getName() === GenreName) {
-        return this.genre[i];
+        result = this.genre[i];
       }
     }
-    return this.genre[0];
+    return result;
   }
   getsystemPlaylistBoolean(): boolean {
     return this.systemPlaylist;

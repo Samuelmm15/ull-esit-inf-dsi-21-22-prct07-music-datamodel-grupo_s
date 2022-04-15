@@ -33,9 +33,9 @@ export class ArtistsCollection extends BasicStreamableCollection<Artist> {
     return `No existe el artista que desea obtener`;
   }
   /**
-   * Gets the artist name 
+   * Gets the artist name
    * @param author Author name
-   * @return Artist name 
+   * @return Artist name
    */
   public getName(author: string): string {
     let success: string = ``;
@@ -50,7 +50,7 @@ export class ArtistsCollection extends BasicStreamableCollection<Artist> {
     return success;
   }
   /**
-   * Gets the artists groups 
+   * Gets the artists groups
    * @param groupName Group name
    * @return Artist group
    */
@@ -68,8 +68,8 @@ export class ArtistsCollection extends BasicStreamableCollection<Artist> {
   }
   /**
    * Gets the artist genre/s
-   * @param genre 
-   * @return 
+   * @param genre
+   * @return
    */
   public getGenre(genre: string): string {
     let success: string = ``;
@@ -101,7 +101,7 @@ export class ArtistsCollection extends BasicStreamableCollection<Artist> {
     return success;
   }
   /**
-   * Gets the artists published songs 
+   * Gets the artists published songs
    * @param author Author name
    * @return Artist published songs
    */
@@ -118,7 +118,7 @@ export class ArtistsCollection extends BasicStreamableCollection<Artist> {
     return success;
   }
   /**
-   * Gets the artists monthly listeners 
+   * Gets the artists monthly listeners
    * @param author Author name
    * @return Artist monthly listeners
    */
@@ -138,7 +138,7 @@ export class ArtistsCollection extends BasicStreamableCollection<Artist> {
    * Remove an artist of the collection
    * @param index Index of the element to be removed
    * @return The artist array without the deleted element
-   */ 
+   */
   private removeArtist(index: number): Artist[] {
     this.artists.splice(index, 1);
     return this.artists;

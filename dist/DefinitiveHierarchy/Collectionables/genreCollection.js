@@ -108,7 +108,7 @@ class GenreCollection extends basicstreamablecollection_1.BasicStreamableCollect
         return this.genres.length;
     }
     /**
-     * The genre array
+     * Obtain the object of the n postion of the array
      * @param position The index of the element
      * @returns Genre object
      */

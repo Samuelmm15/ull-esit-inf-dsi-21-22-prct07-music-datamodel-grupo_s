@@ -47,7 +47,7 @@ export class SongCollection extends BasicStreamableCollection<Song> {
     return `No existe el autor que intenta buscar`;
   }
   /**
-   * Gets the song name 
+   * Gets the song name
    * @param songName Song name
    * @returns Song name
    */
@@ -93,7 +93,7 @@ export class SongCollection extends BasicStreamableCollection<Song> {
    * Remove a song of the collection
    * @param index Index of the element to be removed
    * @return The artist array without the deleted element
-   */ 
+   */
   private removeSong(index: number): Song[] {
     this.songs.splice(index, 1);
     return this.songs;
@@ -122,7 +122,7 @@ export class SongCollection extends BasicStreamableCollection<Song> {
   /**
    * The song object
    * @param position The index of the element
-   * @returns Song object 
+   * @returns Song object
    */
   public getnObject(position: number): Song {
     return this.songs[position];

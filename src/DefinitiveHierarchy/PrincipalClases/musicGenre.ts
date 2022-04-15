@@ -32,12 +32,13 @@ export class MusicGenre {
    * @return Group object
    */
   getGroups(GroupName: string): Group {
+    let result: Group = this.groups[0];
     for (let i = 0; i < this.groups.length; i++) {
       if (GroupName === this.groups[i].getName()) {
-        return this.groups[i];
+        result = this.groups[i];
       }
     }
-    return this.groups[0]; // Default Option
+    return result;
   }
 
   /**
@@ -45,12 +46,13 @@ export class MusicGenre {
    * @return Artist object
    */
   getArtists(ArtistName: string): Artist {
+    let result: Artist = this.artists[0];
     for (let i = 0; i < this.artists.length; i++) {
       if (ArtistName === this.artists[i].getName()) {
-        return this.artists[i];
+        result = this.artists[i];
       }
     }
-    return this.artists[0]; // Default Option
+    return result;
   }
 
   /**
@@ -58,12 +60,13 @@ export class MusicGenre {
    * @return Albums name
    */
   getAlbums(AlbumName: string): string {
+    let result: string = '';
     for (let i = 0; i < this.albums.length; i++) {
       if (AlbumName === this.albums[i]) {
-        return this.albums[i];
+        result = this.albums[i];
       }
     }
-    return this.albums[0]; // Default Option
+    return result;
   }
 
   /**
@@ -71,12 +74,12 @@ export class MusicGenre {
    * @return Songs name
    */
   getSongs(SongName: string): string {
-    // return this.songs;
+    let result: string = '';
     for (let i = 0; i < this.songs.length; i++) {
       if (SongName === this.songs[i]) {
-        return this.songs[i];
+        result = this.songs[i];
       }
     }
-    return this.songs[0]; // Default option
+    return result;
   }
 }

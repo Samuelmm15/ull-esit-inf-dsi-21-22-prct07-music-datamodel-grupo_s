@@ -30,6 +30,7 @@ import {JsonSongCollection} from '../LowdbFiles/jsonSongCollection';
 import {JsonAlbumCollection} from '../LowdbFiles/jsonAlbumCollection';
 import {JsonPlaylistCollection} from '../LowdbFiles/jsonPlaylistCollection';
 import {PlaylistCollectionOBJ} from '../index';
+import {JsonNewPlaylistCollection} from '../LowdbFiles/jsonNewPlaylistCollection';
 import {GenresCollectionObj} from '../index';
 import {AlbumCollectionOBJ} from '../index';
 import {artistArray} from '../index';
@@ -40,6 +41,11 @@ import {SongCollectionOBJ} from '../index';
 
 
 // collectionPlaylists.read();
+export let NewPlaylistCollectionOBJ = new PlaylistCollection([]);
+export let NewcollectionPlaylists: JsonNewPlaylistCollection = new JsonNewPlaylistCollection([]);
+const auxarray: JsonNewPlaylistCollection = new JsonNewPlaylistCollection([]);
+auxarray.read();
+auxarray.write(NewPlaylistCollectionOBJ);
 
 enum Commands {
   Toggle = "Defaults Options To Sort",
@@ -141,6 +147,13 @@ function displayPlayList(): void {
   console.log('<< PLAYLIST COLLECTION >>');
   for (let i = 0; i < PlaylistCollectionOBJ.getColectionlength(); i++) {
     console.log(`${PlaylistCollectionOBJ.getnObject(i).getName()} ==> ${convertHMS(PlaylistCollectionOBJ.getnObject(i).getDuration())}`);
+  }
+  auxarray.restart(NewPlaylistCollectionOBJ.getPlaylistArray());
+  for (let i = 0; i < NewPlaylistCollectionOBJ.getColectionlength(); i++) {
+    console.log(`${NewPlaylistCollectionOBJ.getnObject(i).getName()} ==> ${convertHMS(NewPlaylistCollectionOBJ.getnObject(i).getDuration())}`);
+    auxarray.read();
+    auxarray.write(NewPlaylistCollectionOBJ.getnObject(i));
+    auxarray.restart(NewPlaylistCollectionOBJ.getPlaylistArray());
   }
   console.log();
   console.log('<< MUSICAL GENRES >>');
@@ -360,27 +373,45 @@ function deleteSongs(PlaylistToOperate: Playlists): void {
 
 const fs = require('fs');
 
+import {PlaylistName} from '../index';
+
 function newPlaylistFromScratch(): void {
+  // inquirer.prompt({type: "input",
+  //   name: "newName",
+  //   message: "Enter the new playlist name:"})
+  //     .then((answers) => {
+  //       if (PlaylistCollectionOBJ.getName(answers["newName"]) !== answers["newName"]) {
+  //         let newPlaylistName = answers.newName;
+  //         const newPlaylistUserAdded = new Playlists(newPlaylistName, [], 0, [], false);
+  //         PlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
+  //         collectionPlaylists.restart(PlaylistCollectionOBJ.getPlaylistArray());
+  //         console.clear();
+  //         inquirer.prompt({type: "confirm",
+  //           name: "SongsAdd",
+  //           message: "Do you want to add new Songs to the playlist?"})
+  //             .then((answers) => {
+  //               if (answers["SongsAdd"] === true) {
+  //                 addingNewSongs(newPlaylistUserAdded);
+  //               } else {
+  //                 console.clear();
+  //                 defaultMenuReturn();
+  //               }
+  //             });
+  //       } else {
+  //         console.clear();
+  //         console.log('<< The playlist cannot be created because it already exists >>');
+  //         defaultMenuReturn();
+  //       }
+  //     });
   inquirer.prompt({type: "input",
     name: "newName",
     message: "Enter the new playlist name:"})
       .then((answers) => {
-        if (PlaylistCollectionOBJ.getName(answers["newName"]) !== answers["newName"]) {
+        if (NewPlaylistCollectionOBJ.getName(answers["newName"]) !== answers["newName"]) {
           let newPlaylistName = answers.newName;
           const newPlaylistUserAdded = new Playlists(newPlaylistName, [], 0, [], false);
-          PlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
-          // const loadData = (path: any) => {
-          //   try {
-          //     return fs.readFileSync(path, 'utf8');
-          //   } catch (err) {
-          //     console.error(err);
-          //     return false;
-          //   }
-          // };
-          // const data = loadData('../../JsonFIles/Playlist.json');
-          // PlaylistCollectionOBJ.addPlaylist(JSON.parse(data));
-          // collectionPlaylists.restart(data.getPlaylistArray());
-          collectionPlaylists.restart(PlaylistCollectionOBJ.getPlaylistArray());
+          NewPlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
+          NewcollectionPlaylists.restart(NewPlaylistCollectionOBJ.getPlaylistArray());
           console.clear();
           inquirer.prompt({type: "confirm",
             name: "SongsAdd",
@@ -388,8 +419,16 @@ function newPlaylistFromScratch(): void {
               .then((answers) => {
                 if (answers["SongsAdd"] === true) {
                   addingNewSongs(newPlaylistUserAdded);
+                } else {
+                  console.clear();
+                  console.log('<< You must to add any song if you want to create a playlist >>');
+                  defaultMenuReturn();
                 }
               });
+        } else {
+          console.clear();
+          console.log('<< The playlist cannot be created because it already exists >>');
+          defaultMenuReturn();
         }
       });
 }

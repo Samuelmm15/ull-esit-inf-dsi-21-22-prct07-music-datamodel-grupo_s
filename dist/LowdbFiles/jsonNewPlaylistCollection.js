@@ -3,19 +3,21 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.JsonPlaylistCollection = void 0;
+exports.JsonNewPlaylistCollection = void 0;
 const lowdb_1 = __importDefault(require("lowdb"));
 const FileSync_1 = __importDefault(require("lowdb/adapters/FileSync"));
+// import { PlaylistCollectionOBJ } from '..';
+// import { PlaylistCollection } from '../DefinitiveHierarchy/Collectionables/playlistCollection';
 /**
  * Playlist data base class
  */
-class JsonPlaylistCollection {
+class JsonNewPlaylistCollection {
     /**
      * Creates the JSON file that contains the playlist data base
      * @param Playlist Playlist array
     */
     constructor(Playlist) {
-        this.database = (0, lowdb_1.default)(new FileSync_1.default("JsonFiles/Playlist.json"));
+        this.database = (0, lowdb_1.default)(new FileSync_1.default("JsonFiles/NewPlaylists.json"));
         if (this.database.has("Playlist")) {
             console.log('La base de datos ha sido creada');
             // this.database.read();
@@ -48,8 +50,11 @@ class JsonPlaylistCollection {
     read() {
         // console.log(this.database.read());
         const Playlist = [];
-        this.database.get("Playlist", Playlist).value();
-        console.log(Playlist);
+        return this.database.get("Playlist", Playlist).value();
+        // console.log(Playlist);
+    }
+    write(data) {
+        this.database.set("Playlist", data).write();
     }
 }
-exports.JsonPlaylistCollection = JsonPlaylistCollection;
+exports.JsonNewPlaylistCollection = JsonNewPlaylistCollection;

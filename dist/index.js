@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.collectionPlaylists = exports.PlaylistCollectionOBJ = exports.AlbumCollectionOBJ = exports.SongCollectionOBJ = exports.GenresCollectionObj = exports.GroupCollectionOBJ = exports.artistArray = void 0;
+exports.PlaylistName = exports.collectionPlaylists = exports.PlaylistCollectionOBJ = exports.AlbumCollectionOBJ = exports.SongCollectionOBJ = exports.GenresCollectionObj = exports.GroupCollectionOBJ = exports.artistArray = void 0;
 /* eslint-disable prefer-const */
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable no-unused-vars */
@@ -22,8 +22,7 @@ const jsonAlbumCollection_1 = require("./LowdbFiles/jsonAlbumCollection");
 const jsonPlaylistCollection_1 = require("./LowdbFiles/jsonPlaylistCollection");
 // import {Gestor} from './GestorClass/gestorClass';
 const playlistCollection_1 = require("./DefinitiveHierarchy/Collectionables/playlistCollection");
-// ARTISTS 10 
-// ESTO ESTÁ CORRECTO
+// ARTISTS
 const BadBunny = new artist_1.Artist('Bad Bunny', 'Bad Bunny', ['Urban Latino'], ['Amorfoda'], 127, 47666987);
 const Bruno = new artist_1.Artist('Bruno Mars', 'Bruno Mars', ['Pop'], ['24K Magic'], 101, 52517377);
 const Ozuna = new artist_1.Artist('Ozuna', 'Ozuna', ['Urban Latino'], ['Odisea'], 158, 35236397);
@@ -43,7 +42,7 @@ const JBalvin = new artist_1.Artist('J Balvin', 'J Balvin', ['Urban Latino'], ['
 exports.artistArray = [Bruno, BadBunny, Michael, Ozuna, Eminem, Elvis, DonDiablo, RickAstley, MartinGarrix, Avicii, SteveHarris, FreddieMercury, EstelleHorner, AdamLevine, NickCarter, JBalvin];
 const artistCollectionOBJ = new artistCollection_1.ArtistsCollection([Bruno, BadBunny, Michael, Ozuna, Eminem, Elvis, DonDiablo, RickAstley, MartinGarrix, Avicii, SteveHarris, FreddieMercury, EstelleHorner, AdamLevine, NickCarter, JBalvin]);
 let collectionArtists = new jsonTodoCollection_1.JsonTodoCollection([Bruno, BadBunny, Michael, Ozuna, Eminem, Elvis, DonDiablo, RickAstley, MartinGarrix, Avicii, SteveHarris, FreddieMercury, EstelleHorner, AdamLevine, NickCarter, JBalvin]);
-// GROUP 5
+// GROUP
 const IronMaiden = new groups_1.Group('Iron Maiden', [SteveHarris], 1975, 'Heavy Metal', 'Senjutsu', 6591966);
 const Queen = new groups_1.Group('Queen', [FreddieMercury], 1970, 'Rock', 'Queen', 37276204);
 const SpiceGirls = new groups_1.Group('Spice Girls', [EstelleHorner], 1994, 'Pop', 'Spice', 8614262);
@@ -51,7 +50,7 @@ const Maroon5 = new groups_1.Group('Maroon 5', [AdamLevine], 2001, 'Pop', 'Song 
 const BackStreetBoys = new groups_1.Group('BackStreet Boys', [NickCarter], 1993, 'Pop', 'BackStreet Boys', 13533750);
 exports.GroupCollectionOBJ = [IronMaiden, Queen, SpiceGirls, Maroon5, BackStreetBoys];
 let collectionGroups = new jsonGroupCollection_1.JsonGroupCollection([IronMaiden, Queen, SpiceGirls, Maroon5, BackStreetBoys]);
-// MUSIC GENRE 10
+// MUSIC GENRE
 const Rock = new musicGenre_1.MusicGenre('Rock', [IronMaiden, Queen], [SteveHarris, FreddieMercury, EstelleHorner, Michael], ['Senjutsu'], ['Two Minutes for MidNigth']);
 const HeavyMetal = new musicGenre_1.MusicGenre('Heavy Metal', [IronMaiden], [SteveHarris], ['Senjutsu'], ['Two Minutes for MidNigth']);
 const Pop = new musicGenre_1.MusicGenre('Pop', [SpiceGirls], [Michael, EstelleHorner], ['Spice', 'Beat it'], ['WannaBe']);
@@ -65,7 +64,7 @@ const Dance = new musicGenre_1.MusicGenre('Dance', [], [Avicii], ['True'], ['Lev
 const Classic = new musicGenre_1.MusicGenre('Classic', [], [], [''], ['']);
 exports.GenresCollectionObj = new genreCollection_1.GenreCollection([Rock, Pop, Merengue, ElectroHouse, Disco, Rap, UrbanLatino, EDM, Dance, Classic, HeavyMetal]);
 let collectionGenre = new jsonGenreCollection_1.JsonGenreCollection([Rock, Pop, Merengue, ElectroHouse, Disco, Rap, UrbanLatino, EDM, Dance, Classic]);
-// SONGS 50
+// SONGS
 /** ********** BAD BUNNY SONGS ***************/
 const BadBunny120 = new song_1.Song('120', [BadBunny], '2:31', [UrbanLatino], false, 96933446);
 const Yoganuni = new song_1.Song('Yoganuni', [BadBunny], '3:26', [UrbanLatino], false, 602713990);
@@ -148,7 +147,7 @@ const collectionSongs = new jsonSongCollection_1.JsonSongCollection([BadBunny120
     TuSonrisa, LunaLlena, Bad, Congratulations, Momentum, SaveALittleLove, Anthem, NeverGonnaGiveYouUp, TogetherForever, TakeMetoYourHeart, WheneverYouNeedSomebody, BitchPleaseII,
     SheWantsToDanceWithMe, Animals, ForbiddenVoices, Virus, Tremor, TurnUpTheSpeakers, TheNights, WakeMeUp, Levels, WaitingForLove, ICouldBeTheOne, TheTrooper, PhantomoftheOpera,
     TwoMinutesToMidnight, DaysOfFuturePast, Senjutsu, BohemianRhapsody, IWantToBreakFree, DontStopMeNow, KillerQueen, AnotherOneBitestheDust]);
-// ALBUM 5-10
+// ALBUM
 const OASIS = new album_1.Album('OASIS', [BadBunny, JBalvin], 2019, [UrbanLatino], [Mojaita, LaCancion, QuePretendes]);
 const Odisea = new album_1.Album('Odisea', [Ozuna], 2017, [UrbanLatino], [SePreparo, Dile, Farsante, Marido]);
 const TheMarshallMathersLP = new album_1.Album('The Marshall Mathers LP', [Eminem], 2000, [Rap], [BitchPleaseII, TheRealSlimShady, Criminal]);
@@ -164,17 +163,11 @@ const Fiestuki = new playlist_1.Playlists('Fiestuki', [BadBunny120, Yoganuni, Mo
 const Merengaso = new playlist_1.Playlists('Merengaso', [LunaLlena, Suavemente, Bailar, Princesita, TuSonrisa], 30, [Merengue], true);
 const ClassicalSongs = new playlist_1.Playlists('Classical Songs', [BeatIt, BillieJean, RockWithYou, BohemianRhapsody, IWantToBreakFree, DontStopMeNow,
     KillerQueen, AnotherOneBitestheDust], 60, [Rock, Pop, Dance], true);
-const fs = require('fs');
-const storeData = (data, path) => {
-    try {
-        fs.writeFile(path, JSON.stringify(data));
-    }
-    catch (err) {
-        console.log(err);
-    }
-};
+let content = require('../JsonFiles/Playlist.json');
+// const content = readFileSync('../JsonFiles/Playlist.json', 'utf-8');
+const data = content;
 exports.PlaylistCollectionOBJ = new playlistCollection_1.PlaylistCollection([Fiestuki, Merengaso, ClassicalSongs]);
-storeData(exports.PlaylistCollectionOBJ.getPlaylistArray(), '../JsonFIles/Playlist.json');
+// storeData(PlaylistCollectionOBJ.getPlaylistArray(), '../JsonFIles/Playlist.json');
 // const PlaylistCollectionOBJaux = new PlaylistCollection([]);
 // if (PlaylistCollectionOBJaux.getPlaylistArray().length === 0) {
 // } else {
@@ -183,6 +176,19 @@ storeData(exports.PlaylistCollectionOBJ.getPlaylistArray(), '../JsonFIles/Playli
 //   });
 // }
 exports.collectionPlaylists = new jsonPlaylistCollection_1.JsonPlaylistCollection([Fiestuki, Merengaso, ClassicalSongs]);
+exports.PlaylistName = [exports.collectionPlaylists];
+// eslint-disable-next-line guard-for-in
+for (const object in data) {
+    if (data.hasOwnProperty(object)) {
+        const element = data[object];
+        exports.PlaylistName.push(element);
+    }
+    // console.log(typeof(object));
+    // PlaylistName.push(object);
+    // PlaylistName.push(object.name);
+    // PlaylistName[object.name] = object.name;
+}
+// module.exports = {PlaylistName};
 // export const PlaylistCollectionOBJ = new PlaylistCollection(collectionPlaylists.read());
 // const GestorMenu = new Gestor();
 // GestorMenu.menu();

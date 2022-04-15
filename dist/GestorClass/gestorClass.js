@@ -23,6 +23,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.NewcollectionPlaylists = exports.NewPlaylistCollectionOBJ = void 0;
 const titleSongSort_1 = require("../DefinitiveHierarchy/SortFunctions/titleSongSort");
 const process_1 = require("process");
 const events_1 = require("events");
@@ -38,13 +39,20 @@ const genreSort_1 = require("../DefinitiveHierarchy/SortFunctions/genreSort");
 const durationSongSort_1 = require("../DefinitiveHierarchy/SortFunctions/durationSongSort");
 const inquirer = __importStar(require("inquirer"));
 const index_1 = require("../index");
+const jsonNewPlaylistCollection_1 = require("../LowdbFiles/jsonNewPlaylistCollection");
 const index_2 = require("../index");
 const index_3 = require("../index");
 const index_4 = require("../index");
 const index_5 = require("../index");
 const index_6 = require("../index");
+const playlistCollection_1 = require("../DefinitiveHierarchy/Collectionables/playlistCollection");
 const index_7 = require("../index");
 // collectionPlaylists.read();
+exports.NewPlaylistCollectionOBJ = new playlistCollection_1.PlaylistCollection([]);
+exports.NewcollectionPlaylists = new jsonNewPlaylistCollection_1.JsonNewPlaylistCollection([]);
+const auxarray = new jsonNewPlaylistCollection_1.JsonNewPlaylistCollection([]);
+auxarray.read();
+auxarray.write(exports.NewPlaylistCollectionOBJ);
 var Commands;
 (function (Commands) {
     Commands["Toggle"] = "Defaults Options To Sort";
@@ -139,6 +147,13 @@ function displayPlayList() {
     console.log('<< PLAYLIST COLLECTION >>');
     for (let i = 0; i < index_1.PlaylistCollectionOBJ.getColectionlength(); i++) {
         console.log(`${index_1.PlaylistCollectionOBJ.getnObject(i).getName()} ==> ${convertHMS(index_1.PlaylistCollectionOBJ.getnObject(i).getDuration())}`);
+    }
+    auxarray.restart(exports.NewPlaylistCollectionOBJ.getPlaylistArray());
+    for (let i = 0; i < exports.NewPlaylistCollectionOBJ.getColectionlength(); i++) {
+        console.log(`${exports.NewPlaylistCollectionOBJ.getnObject(i).getName()} ==> ${convertHMS(exports.NewPlaylistCollectionOBJ.getnObject(i).getDuration())}`);
+        auxarray.read();
+        auxarray.write(exports.NewPlaylistCollectionOBJ.getnObject(i));
+        auxarray.restart(exports.NewPlaylistCollectionOBJ.getPlaylistArray());
     }
     console.log();
     console.log('<< MUSICAL GENRES >>');
@@ -368,26 +383,42 @@ function deleteSongs(PlaylistToOperate) {
 }
 const fs = require('fs');
 function newPlaylistFromScratch() {
+    // inquirer.prompt({type: "input",
+    //   name: "newName",
+    //   message: "Enter the new playlist name:"})
+    //     .then((answers) => {
+    //       if (PlaylistCollectionOBJ.getName(answers["newName"]) !== answers["newName"]) {
+    //         let newPlaylistName = answers.newName;
+    //         const newPlaylistUserAdded = new Playlists(newPlaylistName, [], 0, [], false);
+    //         PlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
+    //         collectionPlaylists.restart(PlaylistCollectionOBJ.getPlaylistArray());
+    //         console.clear();
+    //         inquirer.prompt({type: "confirm",
+    //           name: "SongsAdd",
+    //           message: "Do you want to add new Songs to the playlist?"})
+    //             .then((answers) => {
+    //               if (answers["SongsAdd"] === true) {
+    //                 addingNewSongs(newPlaylistUserAdded);
+    //               } else {
+    //                 console.clear();
+    //                 defaultMenuReturn();
+    //               }
+    //             });
+    //       } else {
+    //         console.clear();
+    //         console.log('<< The playlist cannot be created because it already exists >>');
+    //         defaultMenuReturn();
+    //       }
+    //     });
     inquirer.prompt({ type: "input",
         name: "newName",
         message: "Enter the new playlist name:" })
         .then((answers) => {
-        if (index_1.PlaylistCollectionOBJ.getName(answers["newName"]) !== answers["newName"]) {
+        if (exports.NewPlaylistCollectionOBJ.getName(answers["newName"]) !== answers["newName"]) {
             let newPlaylistName = answers.newName;
             const newPlaylistUserAdded = new playlist_1.Playlists(newPlaylistName, [], 0, [], false);
-            index_1.PlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
-            // const loadData = (path: any) => {
-            //   try {
-            //     return fs.readFileSync(path, 'utf8');
-            //   } catch (err) {
-            //     console.error(err);
-            //     return false;
-            //   }
-            // };
-            // const data = loadData('../../JsonFIles/Playlist.json');
-            // PlaylistCollectionOBJ.addPlaylist(JSON.parse(data));
-            // collectionPlaylists.restart(data.getPlaylistArray());
-            index_6.collectionPlaylists.restart(index_1.PlaylistCollectionOBJ.getPlaylistArray());
+            exports.NewPlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
+            exports.NewcollectionPlaylists.restart(exports.NewPlaylistCollectionOBJ.getPlaylistArray());
             console.clear();
             inquirer.prompt({ type: "confirm",
                 name: "SongsAdd",
@@ -396,7 +427,17 @@ function newPlaylistFromScratch() {
                 if (answers["SongsAdd"] === true) {
                     addingNewSongs(newPlaylistUserAdded);
                 }
+                else {
+                    console.clear();
+                    console.log('<< You must to add any song if you want to create a playlist >>');
+                    defaultMenuReturn();
+                }
             });
+        }
+        else {
+            console.clear();
+            console.log('<< The playlist cannot be created because it already exists >>');
+            defaultMenuReturn();
         }
     });
 }

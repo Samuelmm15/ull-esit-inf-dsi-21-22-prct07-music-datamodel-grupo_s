@@ -35,13 +35,13 @@ class Song {
      * @return Artist object
      */
     getAuthor(authorName) {
-        // return this.author;
+        let result = this.author[0];
         for (let i = 0; i < this.author.length; i++) {
             if (authorName === this.author[i].getName()) {
-                return this.author[i];
+                result = this.author[i];
             }
         }
-        return this.author[0]; // Default Option
+        return result;
     }
     /**
      * Gets song duration on string format
@@ -65,13 +65,13 @@ class Song {
      * @return Song genres
      */
     getGenre(genreName) {
+        let result = this.genre[0];
         for (let i = 0; i < this.genre.length; i++) {
             if (genreName === this.genre[i].getName()) {
-                return this.genre[i];
+                result = this.genre[i];
             }
         }
-        return this.genre[0]; // Default Option
-        // return this.genre;
+        return result;
     }
     /**
      * Gets if the song is a single or not

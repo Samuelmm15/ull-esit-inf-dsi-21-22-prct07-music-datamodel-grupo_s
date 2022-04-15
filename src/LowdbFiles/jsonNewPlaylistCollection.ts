@@ -1,24 +1,18 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-trailing-spaces */
 import {Playlists} from '../DefinitiveHierarchy/PrincipalClases/playlist';
 import {Song} from '../DefinitiveHierarchy/PrincipalClases/song';
 import {MusicGenre} from '../DefinitiveHierarchy/PrincipalClases/musicGenre';
 import lowdb from 'lowdb';
 import FileSync from 'lowdb/adapters/FileSync';
+import {schemaType} from './jsonPlaylistCollection';
 // import { PlaylistCollectionOBJ } from '..';
 // import { PlaylistCollection } from '../DefinitiveHierarchy/Collectionables/playlistCollection';
 
 /**
- * Playlist entry type
- */
-export type schemaType = {
-    Playlist: {name: string; songs: Song[]; duration: number;
-      genre: MusicGenre}[]
-};
-
-/**
  * Playlist data base class
  */
-export class JsonPlaylistCollection {
+export class JsonNewPlaylistCollection {
   private database: lowdb.LowdbSync<schemaType>;
 
   /**
@@ -26,7 +20,7 @@ export class JsonPlaylistCollection {
    * @param Playlist Playlist array
   */
   constructor(Playlist: Playlists[]) {
-    this.database = lowdb(new FileSync("JsonFiles/Playlist.json"));
+    this.database = lowdb(new FileSync("JsonFiles/NewPlaylists.json"));
     if (this.database.has("Playlist")) {
       console.log('La base de datos ha sido creada');
       // this.database.read();
@@ -57,11 +51,14 @@ export class JsonPlaylistCollection {
     return playlist;
   }
 
-  read(): void {
+  read(): Playlists | any {
     // console.log(this.database.read());
     const Playlist: Playlists[] = [];
-    this.database.get("Playlist", Playlist).value();
-    console.log(Playlist);
+    return this.database.get("Playlist", Playlist).value();
+    // console.log(Playlist);
+  }
+  write(data: any): void {
+    this.database.set("Playlist", data).write();
   }
   /** We get the value from the lowdb database ***/
   // getValue(): Playlists[] {

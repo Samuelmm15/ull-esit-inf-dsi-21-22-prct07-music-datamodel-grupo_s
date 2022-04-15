@@ -15,14 +15,14 @@ export class Song {
    * @param single If song is a single or not
    * @param reproductionsNumber Number of repoductions of the song
    */
-  constructor(private name : string, private author : Artist[], private songDuration : string,
-  private genre : MusicGenre[], private single : boolean, private reproductionsNumber : number) {}
+  constructor(private name: string, private author: Artist[], private songDuration: string,
+  private genre: MusicGenre[], private single: boolean, private reproductionsNumber: number) {}
 
   /**
    * Gets the name of the song
    * @return Song name
    */
-  getName() : string {
+  getName(): string {
     return this.name;
   }
 
@@ -30,14 +30,14 @@ export class Song {
    * Gets artist objects that participates on the song
    * @return Artist object
    */
-  getAuthor(authorName: string) : Artist {
-    // return this.author;
+  getAuthor(authorName: string): Artist {
+    let result: Artist = this.author[0];
     for (let i = 0; i < this.author.length; i++) {
       if (authorName === this.author[i].getName()) {
-        return this.author[i];
+        result = this.author[i];
       }
     }
-    return this.author[0]; // Default Option
+    return result;
   }
 
   /**
@@ -65,20 +65,20 @@ export class Song {
    * @return Song genres
    */
   getGenre(genreName: string): MusicGenre {
+    let result: MusicGenre = this.genre[0];
     for (let i = 0; i < this.genre.length; i++) {
       if (genreName === this.genre[i].getName()) {
-        return this.genre[i];
+        result = this.genre[i];
       }
     }
-    return this.genre[0]; // Default Option
-    // return this.genre;
+    return result;
   }
 
   /**
    * Gets if the song is a single or not
    * @return True if is a single, false if is not a single
    */
-  getSingle() : boolean {
+  getSingle(): boolean {
     return this.single;
   }
 
@@ -86,7 +86,7 @@ export class Song {
    * Gets reproduction number of the song
    * @return Number of reproductions of the song
    */
-  getReproductionsNumber() : number {
+  getReproductionsNumber(): number {
     return this.reproductionsNumber;
   }
 }
