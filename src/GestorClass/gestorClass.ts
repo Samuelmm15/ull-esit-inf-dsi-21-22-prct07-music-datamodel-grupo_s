@@ -40,18 +40,14 @@ import {PlaylistCollection} from '../DefinitiveHierarchy/Collectionables/playlis
 import {SongCollectionOBJ} from '../index';
 
 
-// collectionPlaylists.read();
 export let NewPlaylistCollectionOBJ = new PlaylistCollection([]);
 export let NewcollectionPlaylists: JsonNewPlaylistCollection = new JsonNewPlaylistCollection([]);
 const auxarray: JsonNewPlaylistCollection = new JsonNewPlaylistCollection([]);
 auxarray.read();
 auxarray.write(NewPlaylistCollectionOBJ);
 
-// import {readFileSync} from 'fs';
-
 let content = require('../../JsonFiles/NewPlaylists.json');
 
-// const content = readFileSync('../JsonFiles/Playlist.json', 'utf-8');
 const data = content;
 export const NewPlaylistName: JsonNewPlaylistCollection[] = [NewcollectionPlaylists];
 for (const object in data) {
@@ -59,10 +55,6 @@ for (const object in data) {
     const element = data[object];
     NewPlaylistName.push(element);
   }
-  // console.log(typeof(object));
-  // PlaylistName.push(object);
-  // PlaylistName.push(object.name);
-  // PlaylistName[object.name] = object.name;
 }
 
 enum Commands {
@@ -184,7 +176,6 @@ function displayPlayList(): void {
 function promptDefault(): void {
   console.clear();
   let selectedPlaylist: string = '';
-  // console.log(PlaylistCollectionOBJ);
   inquirer.prompt({
     type: "list",
     name: "PlaylistSelector",
@@ -394,33 +385,6 @@ const fs = require('fs');
 import {PlaylistName} from '../index';
 
 function newPlaylistFromScratch(): void {
-  // inquirer.prompt({type: "input",
-  //   name: "newName",
-  //   message: "Enter the new playlist name:"})
-  //     .then((answers) => {
-  //       if (PlaylistCollectionOBJ.getName(answers["newName"]) !== answers["newName"]) {
-  //         let newPlaylistName = answers.newName;
-  //         const newPlaylistUserAdded = new Playlists(newPlaylistName, [], 0, [], false);
-  //         PlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
-  //         collectionPlaylists.restart(PlaylistCollectionOBJ.getPlaylistArray());
-  //         console.clear();
-  //         inquirer.prompt({type: "confirm",
-  //           name: "SongsAdd",
-  //           message: "Do you want to add new Songs to the playlist?"})
-  //             .then((answers) => {
-  //               if (answers["SongsAdd"] === true) {
-  //                 addingNewSongs(newPlaylistUserAdded);
-  //               } else {
-  //                 console.clear();
-  //                 defaultMenuReturn();
-  //               }
-  //             });
-  //       } else {
-  //         console.clear();
-  //         console.log('<< The playlist cannot be created because it already exists >>');
-  //         defaultMenuReturn();
-  //       }
-  //     });
   inquirer.prompt({type: "input",
     name: "newName",
     message: "Enter the new playlist name:"})
@@ -472,8 +436,8 @@ function newPlaylistUsingAnExisting(): void {
               const playlistSelected: Playlists = PlaylistCollectionOBJ.getPlaylist(selectedPlaylist);
               const auxiliary: Song[] = playlistSelected.getSongsArray();
               const newPlaylistUserAdded = new Playlists(newPlaylistName, auxiliary, playlistSelected.getDuration(), playlistSelected.getGenreArray(), false);
-              PlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
-              collectionPlaylists.restart(PlaylistCollectionOBJ.getPlaylistArray());
+              NewPlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
+              NewcollectionPlaylists.restart(NewPlaylistCollectionOBJ.getPlaylistArray());
               console.clear();
               inquirer.prompt({type: "confirm",
                 name: "SongsAdd",
@@ -662,5 +626,4 @@ function defaultMenuReturn(): void {
         }
       });
 }
-
 

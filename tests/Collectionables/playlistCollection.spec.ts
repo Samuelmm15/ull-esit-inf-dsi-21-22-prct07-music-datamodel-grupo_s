@@ -86,38 +86,41 @@ const Merengaso = new Playlists('Merengaso', [LunaLlena, Suavemente, Bailar, Pri
 const ClassicalSongs = new Playlists('Classical Songs', [BeatIt, BillieJean, RockWithYou, BohemianRhapsody, IWantToBreakFree, DontStopMeNow,
   KillerQueen, AnotherOneBitestheDust], 60, [Rock, Pop, Dance], true);
 
-const PlaylistCollectionOBJ = new PlaylistCollection([Fiestuki, Merengaso, ClassicalSongs]);
+const PlaylistCollectionOBJ = new PlaylistCollection([Fiestuki, Merengaso]);
 
-describe('SongCollection', () => {
+describe('PlaylistCollection', () => {
   it('should create an instance', () => {
     expect(PlaylistCollectionOBJ).to.be.an.instanceof(PlaylistCollection);
   });
-  it('should create an instance', () => {
+  it('PlaylistCollectionOBJ.getPlaylist(Fiestuki) return Fiestuki', () => {
     expect(PlaylistCollectionOBJ.getPlaylist('Fiestuki')).to.be.equal(Fiestuki);
   });
-  it('should create an instance', () => {
+  it('PlaylistCollectionOBJ.getSong(Fiestuki, BadBunny120) return 120', () => {
     expect(PlaylistCollectionOBJ.getSong(Fiestuki, BadBunny120)).to.be.equal('120');
   });
-  // it('should create an instance', () => {
-  //   expect(PlaylistCollectionOBJ.getSongsArray('Fiestuki')).to.be.equal([BadBunny120, Yoganuni, Mojaita, LaCancion, QuePretendes, SePreparo, Dile, Farsante, Marido,
-  //     UnaLocura, TheNights, Levels, Animals, Virus, Tremor, WaitingForLove]);
-  // });
-  it('should create an instance', () => {
-    expect(PlaylistCollectionOBJ.getName('120')).to.be.equal('120');
+  it('PlaylistCollectionOBJ.getSongsArray(Fiestuki) return [BadBunny120, Yoganuni, Mojaita, LaCancion, QuePretendes, SePreparo, Dile, Farsante, Marido, UnaLocura, TheNights, Levels, Animals, Virus, Tremor, WaitingForLove]', () => {
+    expect(PlaylistCollectionOBJ.getSongsArray('Fiestuki')).to.be.eqls([BadBunny120, Yoganuni, Mojaita, LaCancion, QuePretendes, SePreparo, Dile, Farsante, Marido,
+      UnaLocura, TheNights, Levels, Animals, Virus, Tremor, WaitingForLove]);
   });
-  // it('The troop Repoduction Number', () => {
-  //   expect(PlaylistCollectionOBJ.getGenreArray(58366710)).to.be.equal(TheTrooper);
-  // });
-  it('should create an instance', () => {
+  it('PlaylistCollectionOBJ.getName(Fiestuki) return Fiestuki', () => {
+    expect(PlaylistCollectionOBJ.getName('Fiestuki')).to.be.equal('Fiestuki');
+  });
+  it('PlaylistCollectionOBJ.getName(Prueba) return No existe la playlist que desea buscar', () => {
+    expect(PlaylistCollectionOBJ.getName('Prueba')).to.be.equal(`No existe la playlist que desea buscar`);
+  });
+  it('PlaylistCollectionOBJ.getGenreArray(Fiestuki) return Fiestuki', () => {
+    expect(PlaylistCollectionOBJ.getGenreArray('Fiestuki')).to.be.eqls([UrbanLatino, ElectroHouse, EDM, Dance]);
+  });
+  it('PlaylistCollectionOBJ.addPlaylist(ClassicalSongs) return undefined)', () => {
+    expect(PlaylistCollectionOBJ.addPlaylist(ClassicalSongs)).to.be.equal(undefined);
+  });
+  it('PlaylistCollectionOBJ.getColectionlength() return 3', () => {
     expect(PlaylistCollectionOBJ.getColectionlength()).to.be.equal(3);
   });
-  it('should create an instance', () => {
+  it('PlaylistCollectionOBJ.getPlaylistArray() return [Fiestuki, Merengaso, ClassicalSongs]', () => {
+    expect(PlaylistCollectionOBJ.getPlaylistArray()).to.be.eqls([Fiestuki, Merengaso, ClassicalSongs]);
+  });
+  it('PlaylistCollectionOBJ.getnObject(0) return Fiestuki', () => {
     expect(PlaylistCollectionOBJ.getnObject(0)).to.be.equal(Fiestuki);
   });
-  // it('should create an instance', () => {
-  //   expect(SongCollectionOBJ.getSongArray()).to.be.equal([SongCollectionOBJ]);
-  // });
-  // it('should create an instance', () => {
-  //   expect(SongCollectionOBJ.getRemoveIndex('The Trooper')).to.be.equal([PhantomoftheOpera, TwoMinutesToMidnight, DaysOfFuturePast, Senjutsu]);
-  // });
 });

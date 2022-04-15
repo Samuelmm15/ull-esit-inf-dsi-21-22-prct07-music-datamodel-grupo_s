@@ -1,35 +1,35 @@
-// import 'mocha';
-// import {expect} from 'chai';
-// import {Artist} from '../../src/DefinitiveHierarchy/PrincipalClases/artist';
-// import {Group} from '../../src/DefinitiveHierarchy/PrincipalClases/groups';
-// import {MusicGenre} from '../../src/DefinitiveHierarchy/PrincipalClases/musicgenre';
-// import {Song} from '../../src/DefinitiveHierarchy/PrincipalClases/song';
+import 'mocha';
+import {expect} from 'chai';
+import {Artist} from '../../src/DefinitiveHierarchy/PrincipalClases/artist';
+import {MusicGenre} from '../../src/DefinitiveHierarchy/PrincipalClases/musicGenre';
+import {Song} from '../../src/DefinitiveHierarchy/PrincipalClases/song';
 
-// const ArtistName = new Artist('ArtistName', 'GroupName', ['GenreName'], ['AlbumName'], 0, 100000);
-// const GroupName = new Group('Iron Maiden', [ArtistName], 1975, 'Heavy Metal', 'Senjutsu', 6591966);
-// const GenreName = new MusicGenre('GenreName', [GroupName], [ArtistName], ['AlbumName'], ['Songs']);
-// const Songs = new Song('Bohemian Rhapsody', [ArtistName], '5:59', [GenreName], false, 1481925623);
+const Avicii = new Artist('Avicii', 'Avicii', ['Dance'], ['True'], 98, 28729564);
+const Dance = new MusicGenre('Dance', [], [Avicii], ['True'], ['Levels']);
 
-// describe('Song', () => {
-//   it('should create an instance', () => {
-//     expect(Songs).to.be.an.instanceof(Song);
-//   });
-//   it('should create an instance', () => {
-//     expect(Songs.getName()).to.be.equal('Beat it');
-//   });
-//   it('should create an instance', () => {
-//     expect(Songs.getAuthor('ArtistName')).to.be.equal('ArtistName');
-//   });
-//   it('should create an instance', () => {
-//     expect(Songs.getSongDuration()).to.be.equal('4:58');
-//   });
-//   it('should create an instance', () => {
-//     expect(Songs.getGenre('GenreName')).to.be.equal(GenreName);
-//   });
-//   it('should create an instance', () => {
-//     expect(Songs.getReproductionsNumber()).to.be.equal(813716305);
-//   });
-//   it('should create an instance', () => {
-//     expect(Songs.getSingle()).to.be.equal(false);
-//   });
-// });
+const Levels = new Song('Levels', [Avicii], '3:18', [Dance], false, 582217851);
+
+describe('Song', () => {
+  it('should create an instance', () => {
+    expect(Levels).to.be.an.instanceof(Song);
+  });
+  it('Levels.getName() return Levels', () => {
+    expect(Levels.getName()).to.be.equal('Levels');
+  });
+  it('Levels.getAuthor(Avicii) return Avicii', () => {
+    expect(Levels.getAuthor('Avicii')).to.be.equal(Avicii);
+  });
+  it('Levels.getSongDuration() return 3:18', () => {
+    expect(Levels.getSongDuration()).to.be.equal('3:18');
+  });
+  it('Levels.getGenre(Dance) return Dance', () => {
+    expect(Levels.getGenre('Dance')).to.be.equal(Dance);
+  });
+  it('Levels.getReproductionsNumber() return 582217851', () => {
+    expect(Levels.getReproductionsNumber()).to.be.equal(582217851);
+  });
+  it('Levels.getSingle() return false', () => {
+    expect(Levels.getSingle()).to.be.equal(false);
+  });
+});
+

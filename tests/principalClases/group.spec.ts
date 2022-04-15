@@ -9,22 +9,22 @@ describe('Group', () => {
   it('should create an instance', () => {
     expect(group).to.be.an.instanceof(Group);
   });
-  it('should create an instance', () => {
+  it('group.getName() return Iron Maiden', () => {
     expect(group.getName()).to.be.equal('Iron Maiden');
   });
-  it('should create an instance', () => {
+  it('group.getArtists(ArtistName) return ArtistName', () => {
     expect(group.getArtists('ArtistName')).to.be.equal(ArtistName);
   });
-  it('should create an instance', () => {
+  it('group.getYearCreation() return 1975', () => {
     expect(group.getYearCreation()).to.be.equal(1975);
   });
-  it('should create an instance', () => {
+  it('group.getGenre() return Heavy Metal', () => {
     expect(group.getGenre()).to.be.equal('Heavy Metal');
   });
-  it('should create an instance', () => {
+  it('group.getAlbums() return Senjutsu', () => {
     expect(group.getAlbums()).to.be.equal('Senjutsu');
   });
-  it('should create an instance', () => {
+  it('group.getMonthlyListener() return 6591966', () => {
     expect(group.getMonthlyListener()).to.be.equal(6591966);
   });
 });

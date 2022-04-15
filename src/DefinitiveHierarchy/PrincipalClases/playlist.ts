@@ -11,6 +11,7 @@ export class Playlists {
    * @param songs Songs included on the playlist
    * @param duration Playlist duration
    * @param genre Music genres included on the playlist
+   * @param systemPlaylist To know if it's a playlist of the system or not
    */
   constructor(private name: string, private songs: Song[],
     private duration: number, private genre: MusicGenre[], private systemPlaylist: boolean) {

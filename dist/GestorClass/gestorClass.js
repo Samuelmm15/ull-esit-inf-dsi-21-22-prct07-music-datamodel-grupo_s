@@ -47,15 +47,12 @@ const index_5 = require("../index");
 const index_6 = require("../index");
 const playlistCollection_1 = require("../DefinitiveHierarchy/Collectionables/playlistCollection");
 const index_7 = require("../index");
-// collectionPlaylists.read();
 exports.NewPlaylistCollectionOBJ = new playlistCollection_1.PlaylistCollection([]);
 exports.NewcollectionPlaylists = new jsonNewPlaylistCollection_1.JsonNewPlaylistCollection([]);
 const auxarray = new jsonNewPlaylistCollection_1.JsonNewPlaylistCollection([]);
 auxarray.read();
 auxarray.write(exports.NewPlaylistCollectionOBJ);
-// import {readFileSync} from 'fs';
 let content = require('../../JsonFiles/NewPlaylists.json');
-// const content = readFileSync('../JsonFiles/Playlist.json', 'utf-8');
 const data = content;
 exports.NewPlaylistName = [exports.NewcollectionPlaylists];
 for (const object in data) {
@@ -63,10 +60,6 @@ for (const object in data) {
         const element = data[object];
         exports.NewPlaylistName.push(element);
     }
-    // console.log(typeof(object));
-    // PlaylistName.push(object);
-    // PlaylistName.push(object.name);
-    // PlaylistName[object.name] = object.name;
 }
 var Commands;
 (function (Commands) {
@@ -180,7 +173,6 @@ function displayPlayList() {
 function promptDefault() {
     console.clear();
     let selectedPlaylist = '';
-    // console.log(PlaylistCollectionOBJ);
     inquirer.prompt({
         type: "list",
         name: "PlaylistSelector",
@@ -398,33 +390,6 @@ function deleteSongs(PlaylistToOperate) {
 }
 const fs = require('fs');
 function newPlaylistFromScratch() {
-    // inquirer.prompt({type: "input",
-    //   name: "newName",
-    //   message: "Enter the new playlist name:"})
-    //     .then((answers) => {
-    //       if (PlaylistCollectionOBJ.getName(answers["newName"]) !== answers["newName"]) {
-    //         let newPlaylistName = answers.newName;
-    //         const newPlaylistUserAdded = new Playlists(newPlaylistName, [], 0, [], false);
-    //         PlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
-    //         collectionPlaylists.restart(PlaylistCollectionOBJ.getPlaylistArray());
-    //         console.clear();
-    //         inquirer.prompt({type: "confirm",
-    //           name: "SongsAdd",
-    //           message: "Do you want to add new Songs to the playlist?"})
-    //             .then((answers) => {
-    //               if (answers["SongsAdd"] === true) {
-    //                 addingNewSongs(newPlaylistUserAdded);
-    //               } else {
-    //                 console.clear();
-    //                 defaultMenuReturn();
-    //               }
-    //             });
-    //       } else {
-    //         console.clear();
-    //         console.log('<< The playlist cannot be created because it already exists >>');
-    //         defaultMenuReturn();
-    //       }
-    //     });
     inquirer.prompt({ type: "input",
         name: "newName",
         message: "Enter the new playlist name:" })
@@ -478,8 +443,8 @@ function newPlaylistUsingAnExisting() {
             const playlistSelected = index_1.PlaylistCollectionOBJ.getPlaylist(selectedPlaylist);
             const auxiliary = playlistSelected.getSongsArray();
             const newPlaylistUserAdded = new playlist_1.Playlists(newPlaylistName, auxiliary, playlistSelected.getDuration(), playlistSelected.getGenreArray(), false);
-            index_1.PlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
-            index_6.collectionPlaylists.restart(index_1.PlaylistCollectionOBJ.getPlaylistArray());
+            exports.NewPlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
+            exports.NewcollectionPlaylists.restart(exports.NewPlaylistCollectionOBJ.getPlaylistArray());
             console.clear();
             inquirer.prompt({ type: "confirm",
                 name: "SongsAdd",

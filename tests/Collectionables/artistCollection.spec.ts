@@ -14,22 +14,46 @@ describe('ArtistsCollection', () => {
   it('should create an instance', () => {
     expect(artistCollectionOBJ).to.be.an.instanceof(ArtistsCollection);
   });
-  it('should create an instance', () => {
+  it('artistCollectionOBJ.addArtist(Avicii) return undefined', () => {
     expect(artistCollectionOBJ.addArtist(Avicii)).to.be.equal(undefined);
   });
-  it('should create an instance', () => {
-    expect(artistCollectionOBJ.getGroup('Iron Maiden')).to.be.equal('Iron Maiden');
-  });
-  it('should create an instance', () => {
-    expect(artistCollectionOBJ.getName('MartinGarrix')).to.be.equal('No existe el artista a buscar');
-  });
-  it('should create an instance', () => {
+  it('artistCollectionOBJ.getArtist(MartinGarrix) return No existe el artista que desea obtener', () => {
     expect(artistCollectionOBJ.getArtist('MartinGarrix')).to.be.equal('No existe el artista que desea obtener');
   });
-  it('should create an instance', () => {
+  it('artistCollectionOBJ.getName(MartinGarrix) return No existe el artista a buscar', () => {
+    expect(artistCollectionOBJ.getName('MartinGarrix')).to.be.equal('No existe el artista a buscar');
+  });
+  it('artistCollectionOBJ.getGroup(Iron Maiden) return Iron Maiden', () => {
+    expect(artistCollectionOBJ.getGroup('Iron Maiden')).to.be.equal('Iron Maiden');
+  });
+  it('artistCollectionOBJ.getGenre(Dance) return Dance', () => {
+    expect(artistCollectionOBJ.getGenre('Dance')).to.be.equal('Dance');
+  });
+  it('artistCollectionOBJ.getGenre(All Caps) return No existe el genero a buscar', () => {
+    expect(artistCollectionOBJ.getGenre('All Caps')).to.be.equal(`No existe el genero a buscar`);
+  });
+  it('artistCollectionOBJ.getAlbum(Senjutsu) return Senjutsu', () => {
+    expect(artistCollectionOBJ.getAlbum('Senjutsu')).to.be.equal('Senjutsu');
+  });
+  it('artistCollectionOBJ.getAlbum(Pimp to a butterfly) return No existe el álbum a buscar', () => {
+    expect(artistCollectionOBJ.getAlbum('Pimp to a butterfly')).to.be.equal(`No existe el álbum a buscar`);
+  });
+  it('artistCollectionOBJ.getPublishedSongs(Summer Days) return 0', () => {
     expect(artistCollectionOBJ.getPublishedSongs('Summer Days')).to.be.equal(0);
   });
-  it('should create an instance', () => {
+  it('artistCollectionOBJ.getPublishedSongs(Rick Astley) return 110', () => {
+    expect(artistCollectionOBJ.getPublishedSongs('Rick Astley')).to.be.equal(110);
+  });
+  it('artistCollectionOBJ.getMonthlyListeners(Rick Astley) return 5754965', () => {
+    expect(artistCollectionOBJ.getMonthlyListeners('Rick Astley')).to.be.equal(5754965);
+  });
+  it('artistCollectionOBJ.getMonthlyListeners(Kendrick Lamar) return -1', () => {
+    expect(artistCollectionOBJ.getMonthlyListeners('Kendrick Lamar')).to.be.equal(-1);
+  });
+  it('artistCollectionOBJ.getArtistsCollectionLength() return 4', () => {
     expect(artistCollectionOBJ.getArtistsCollectionLength()).to.be.equal(4);
+  });
+  it('artistCollectionOBJ.getArtistList(0) return Rick Astley', () => {
+    expect(artistCollectionOBJ.getArtistList(0)).to.be.equal('Rick Astley');
   });
 });

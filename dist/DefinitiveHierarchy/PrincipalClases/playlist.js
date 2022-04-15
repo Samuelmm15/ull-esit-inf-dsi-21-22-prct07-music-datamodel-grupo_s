@@ -12,6 +12,7 @@ class Playlists {
      * @param songs Songs included on the playlist
      * @param duration Playlist duration
      * @param genre Music genres included on the playlist
+     * @param systemPlaylist To know if it's a playlist of the system or not
      */
     constructor(name, songs, duration, genre, systemPlaylist) {
         this.name = name;

@@ -203,54 +203,8 @@ const Merengaso = new Playlists('Merengaso', [LunaLlena, Suavemente, Bailar, Pri
 const ClassicalSongs = new Playlists('Classical Songs', [BeatIt, BillieJean, RockWithYou, BohemianRhapsody, IWantToBreakFree, DontStopMeNow,
   KillerQueen, AnotherOneBitestheDust], 60, [Rock, Pop, Dance], true);
 
-// const fs = require('fs');
-// const storeData = (data: any, path: any) => {
-//   try {
-//     fs.writeFile(path, JSON.stringify(data));
-//   } catch (err) {
-//     console.log(err);
-//   }
-// };
-
-import {readFileSync} from 'fs';
-
-let content = require('../JsonFiles/Playlist.json');
-
-// const content = readFileSync('../JsonFiles/Playlist.json', 'utf-8');
-const data = content;
-
 export let PlaylistCollectionOBJ = new PlaylistCollection([Fiestuki, Merengaso, ClassicalSongs]);
-
-// storeData(PlaylistCollectionOBJ.getPlaylistArray(), '../JsonFIles/Playlist.json');
-
-
-// const PlaylistCollectionOBJaux = new PlaylistCollection([]);
-// if (PlaylistCollectionOBJaux.getPlaylistArray().length === 0) {
-
-// } else {
-//   PlaylistCollectionOBJaux.getPlaylistArray().forEach((element) => {
-//     PlaylistCollectionOBJ.addPlaylist(element);
-//   });
-// }
 
 export let collectionPlaylists: JsonPlaylistCollection = new JsonPlaylistCollection([Fiestuki, Merengaso, ClassicalSongs]);
 
 export const PlaylistName: JsonPlaylistCollection[] = [collectionPlaylists];
-// eslint-disable-next-line guard-for-in
-for (const object in data) {
-  if (data.hasOwnProperty(object)) {
-    const element = data[object];
-    PlaylistName.push(element);
-  }
-  // console.log(typeof(object));
-  // PlaylistName.push(object);
-  // PlaylistName.push(object.name);
-  // PlaylistName[object.name] = object.name;
-}
-
-// module.exports = {PlaylistName};
-
-// export const PlaylistCollectionOBJ = new PlaylistCollection(collectionPlaylists.read());
-
-// const GestorMenu = new Gestor();
-// GestorMenu.menu();

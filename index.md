@@ -2,13 +2,13 @@
 
 ## Introducción
 
-En esta práctica, la primera grupal de la asignatura, se tendrá que llevar a cabo un diseño orientado a objetos del modelo de datos de un sistema de información que permita almacenar una biblioteca de música. Esta biblioteca de música debe guardar una serie de canciones, géneros musicales, albums, grupos y artistas donde cada elemento tiene sus atributos correspondientes; toda está información se tendrá que guardar en una playlist. En las playlists existentes en la biblioteca los usuarios van a poder visualizar toda la información asociada a una playlist, como lo son el nombre de la playlist, los géneros incluidos y la duración de dicha playlist en horas, minutos y segundos. En la playlist también se debería navegar por está para ver las canciones que se incluyen en está siguiendo una serie de criterios para ordenar la información y por último un usuario debería poder crear alguna playlist y borrar su propia playlist.
+En esta práctica, la primera grupal de la asignatura, se tendrá que llevar a cabo un diseño orientado a objetos del modelo de datos de un sistema de información que permita almacenar una biblioteca de música. Esta biblioteca de música debe guardar una serie de canciones, géneros musicales, albumes, grupos y artistas donde cada elemento tiene sus atributos correspondientes; toda está información se tendrá que guardar en una playlist. En las playlists existentes en la biblioteca los usuarios van a poder visualizar toda la información asociada a una playlist, como lo son el nombre de la playlist, los géneros incluidos y la duración de dicha playlist en horas, minutos y segundos. En la playlist también se debería navegar por está para ver las canciones que se incluyen en está siguiendo una serie de criterios para ordenar la información y por último un usuario debería poder crear alguna playlist y borrar su propia playlist.
 
 ## Organización de los directorios
 
-En está primera parte se comentará todo lo relacionada con la implementación que se ha elegido para realizar la biblioteca de música que se pretende conseguir.
+En está primera parte, se comentará todo lo relacionada con la implementación que se ha elegido para realizar la biblioteca de música que se pretende conseguir.
 
-Antes de empezar podemos observar todo el contenido del directorio ```src``` donde se encuentra todo nuestro código. Podemos ver 3 directorios principales, por un lado tenemos el directorio ```DefinitiveHierarchy``` donde se encuentran las clases base del proyecto, por otro lado el directorio ```GestorClass``` donde se encuentra la clase gestor y por último el directorio ```LowdbFiles``` donde se encuentra todo lo relacionado con Lowdb.
+Antes de empezar podemos observar todo el contenido del directorio ```src``` donde se encuentra todo nuestro código. Podemos ver 3 directorios principales, por un lado tenemos el directorio ```DefinitiveHierarchy``` donde, se encuentran las clases base del proyecto, por otro lado el directorio ```GestorClass``` donde, se encuentra la clase gestor y por último el directorio ```LowdbFiles``` donde se encuentra todo lo relacionado con Lowdb.
 
 ```
 📦src
@@ -85,7 +85,18 @@ Los atributos se van a representar usando la siguiente tabla:
 | Album      | name: string | artists: Artist     | genre: MusicGenre     | yearPublication: number | songs: ```Song[]```    | groups: Group                |
 | Playlist   | name: string | songs: ```Song[]``` | genre: MusicGenre     | duration: number        |                        |                              |
 
-Algunos atributos interesantes son ```songs: Song[]``` y ```single: boolean```. Los atributos ```songs``` son basicamente una array de objetos de tipos ```Song```, ya que en las clases ```Playlist``` y ```Album``` necesitan un conjunto de objetos de tipo ```Song```. El atríbuto ```single``` indica si una canción es un single o pertence a algún album, basicamente se va a usar un booleano que indica ```true``` si la canción es un single y ```false``` si el single pertenece a un album.
+Algunos atributos interesantes son ```songs: Song[]``` y ```single: boolean```. Los atributos ```songs``` son basicamente una array de objetos de tipos ```Song```, ya que en las clases ```Playlist``` y ```Album``` necesitan un conjunto de objetos de tipo ```Song```. El atríbuto ```single``` indica si una canción es un single o pertence a algún album, basicamente se va a usar un booleano que indica ```true``` si la canción es un single y ```false``` si el single pertenece a un album. 
+
+Estas clases reciben una serie de atríbutos, como se puede ver en la tabla, y estas clases se encargan de crear los diferentes objetos necesarios para la librería de música que se quiere crear.
+
+En cada clase se crean objetos de distintos tipos:
+
+  - La clase ```Song``` crea objetos tipo ```Song```.
+  - La clase ```Artist ``` crea objetos tipo ```Artist```.
+  - La clase ```Group ``` crea objetos tipo ```Group```.
+  - La clase ```Album``` crea objetos tipo ```Album```. 
+  - La clase ```MusicGenre``` crea objetos tipo ```MusicGenre```.
+  - La clase ```Playlist``` crea objetos tipo ```Playlist```.
 
 ### Colecciones
 
@@ -107,7 +118,119 @@ Estas clases se han creado simplemente para poder guardar un conjunto de artista
 
 La clase base en este caso sería ```BasicStreamableCollection<T>``` y está clase extiende a la interfaz streameable que define el método ```getName()``` que debe estar en todas las colecciones. En está clase base se usa el tipo genérico ```<T>``` para poder definir el tipo que queramos para crear cualquier colección.
 
+- Interfaz stremeable
+
+```typescript
+export interface Streamable<T> {
+    getName(name: string): string;
+}
+```
+
+- Clase abstracta
+
+```typescript
+export abstract class BasicStreamableCollection<T> implements Streamable<T> {
+  constructor(protected name: T[]) {
+  }
+  abstract getName(name: string): string;
+}
+```
+
 Las clases ```ArtistsCollection```, ```GenreCollection``` y ```SongCollection```, usan los mismos atríbutos que en las clases Principales ```Artist```, ```MusicGenre``` y ```Song``` ya que las colecciones usan objetos del tipo correspondiente. En las colecciones se definen una serie de métodos para poder acceder a los atríbutos de cada objeto dentro del array del tipo objeto que sea. También se han creado métodos para poder eliminar objetos de la array del tipo que sea.
+
+Un ejemplo de implementación lo tenemos en el código de la clase ```SongCollection```:
+
+```typescript
+export class SongCollection extends BasicStreamableCollection<Song> {
+
+  constructor(protected songs: Song[]) {
+    super(songs);
+  }
+
+  public addSong(song: Song) {
+    this.songs.push(song);
+  }
+
+  public getSong(songName: string): Song {
+    let result: Song = this.songs[0];
+    for (let i = 0; i < this.songs.length; i++) {
+      if (this.songs[i].getName() === songName) {
+        result = this.songs[i];
+      }
+    }
+    return result;
+  }
+
+  public getSongAuthor(authorName: Artist): Artist | string {
+    for (let i = 0; i < this.songs.length; i++) {
+      if (this.songs[i].getAuthor(authorName.getName()) === authorName) {
+        return this.songs[i].getAuthor(authorName.getName());
+      }
+    }
+    return `No existe el autor que intenta buscar`;
+  }
+
+  public getName(songName: string): string {
+    let success: string = ``;
+    for (let i = 0; i < this.songs.length; i++) {
+      if (this.songs[i].getName() === songName) {
+        success = this.songs[i].getName();
+      }
+    }
+    if (success === ``) {
+      success = `No existe la canción a buscar`;
+    }
+    return success;
+  }
+
+  public getReproductionsNumber(reproductionsNumber: number): Song | string {
+    for (let i = 0; i < this.songs.length; i++) {
+      if (this.songs[i].getReproductionsNumber() === reproductionsNumber) {
+        return this.songs[i];
+      }
+    }
+    return `No existe la canción que intenta buscar`;
+  }
+
+  public getDuration(duration: number): Song | string {
+    for (let i = 0; i < this.songs.length; i++) {
+      if (this.songs[i].durationFormat() === duration) {
+        return this.songs[i];
+      }
+    }
+    return `No existe la canción que intenta buscar`;
+  }
+
+  private removeSong(index: number): Song[] {
+    this.songs.splice(index, 1);
+    return this.songs;
+  }
+
+  public getRemoveIndex(songName: string): Song[] {
+    let i = 0;
+    for (i = 0; i < this.songs.length; i++) {
+      if (this.songs[i].getName() === songName) {
+        break;
+      }
+    }
+    return this.removeSong(i);
+  }
+
+  public getColectionlength(): number {
+    return this.songs.length;
+  }
+
+  public getnObject(position: number): Song {
+    return this.songs[position];
+  }
+
+  public getSongArray(): Song[] {
+    return this.songs;
+  }
+}
+```
+
+> Los primeros métodos de esta clase representan a sus atríbutos (Las demás clase usan sus propios atríbutos), pero en este caso en la colección se guardan todos los objetos tipo ```Song``` que se hayan creado. Los siguiente métodos se encuentran disponibles en las demás clases y nos permiten eliminar elementos de cada colección, un método para recibir el tamaño de la array de canciones que contiene la colección, para recibir algun objeto del tipo ```Song``` en concreto y otro para recibir el array de canciones contenidas en la colección.
 
 ### Funciones de ordenación
 
@@ -133,7 +256,7 @@ Las funciones de ordenación las encontramos en el directorio ```SortFunctions``
 
 En este directorio se encuentran todas las ordenaciones y filtros que se deben añadir a la funcionalidad del sistema que van a utilizar los usuarios para navegar las playlists existentes o la lista de canciones. 
 
-En está implementación tenemos una clase abstracta llamada ```GeneralSort``` donde se definen las funciones de ordenación asecendente y descendente que deben de tener el resto de clases derivadas. En está clase se definen dos métodos, el método ```greaterSort``` que ordena de forma descendente y del método ```lowerSort``` que ordena de forma ascendente.
+En está implementación tenemos una clase abstracta llamada ```GeneralSort``` donde se definen las funciones de ordenación ascendente y descendente que deben de tener el resto de clases derivadas. En está clase se definen dos métodos, el método ```greaterSort``` que ordena de forma ascendente y del método ```lowerSort``` que ordena de forma descendente.
 
 Las ordenaciones que se deben utilizar para mostrar las diferentes listas de artistas, canciones, albums y playlists siguen los siguientes criterios:
 
@@ -164,6 +287,80 @@ Las ordenaciones que se deben utilizar para navegar por las diferentes playlists
     - Esto se realiza en la clase ```GenreSort```
   - Por número de reproducciones totales, ascendente y descendente.
     - Esto se realiza en la clase ```TReproductionNumberSort```
+
+Un ejemplo de implementación lo tenemos en el código de la clase ```AlbumSort```:
+
+```typescript
+export class AlbumSort extends GeneralSort<Album> {
+
+  constructor(protected album: Album[]) {
+    super();
+  }
+
+  greaterSort(): Album[] {
+    let auxiliary: string[] = [];
+    for (let i = 0; i < this.album.length; i++) {
+      auxiliary.push(this.album[i].getName());
+    }
+    auxiliary.sort();
+    let result: Album[] = [];
+    for (let i = 0; i < auxiliary.length; i++) {
+      for (let j = 0; j < this.album.length; j++) {
+        if (this.album[j].getName() === auxiliary[i]) {
+          result.push(this.album[j]);
+          console.log(this.album[j].getName());
+        }
+      }
+    }
+
+    return result;
+  }
+
+  lowerSort(): Album[] {
+    let auxiliary: string[] = [];
+    for (let i = 0; i < this.album.length; i++) {
+      auxiliary.push(this.album[i].getName());
+    }
+    auxiliary.sort().reverse();
+    let result: Album[] = [];
+    for (let i = 0; i < auxiliary.length; i++) {
+      for (let j = 0; j < this.album.length; j++) {
+        if (this.album[j].getName() === auxiliary[i]) {
+          result.push(this.album[j]);
+          console.log(this.album[j].getName());
+        }
+      }
+    }
+
+    return result;
+  }
+}
+```
+
+> Este implementación es muy similar al de las demás ordenaciones, menos ```SingleFilter```, pero utilizando otros atríbutos.
+
+En la clase ```SingleFilter``` tenemos lo siguiente:
+
+```typescript
+export class SingleFilter {
+  constructor(protected songs: SongCollection) {
+  }
+
+  filter(): SongCollection {
+    const songArray: Song[] = [];
+    for (let i = 0; i < this.songs.getColectionlength(); i++) {
+      if (this.songs.getnObject(i).getSingle() === true) {
+        console.log(this.songs.getnObject(i).getName());
+        songArray.push(this.songs.getnObject(i));
+      }
+    }
+    const result: SongCollection = new SongCollection(songArray);
+    return result;
+  }
+}
+```
+
+> En está clase se usa el método ```filter```, donde se filtran las canciones según sean un single o no.
 
 ### Inquirer
 
@@ -237,27 +434,477 @@ function promptUser(): void {
 }
 ```
 
-Como se puede ver, con el método inquirer prompt se inicia lo que es el menu y dentro de este se añaden todas las elecciones, estas elecciones se pueden ver en la imagen anterior. A partir de alguna elección que haga el usuario accedemos a diferentes submenus: 
+```typescript
+enum Commands {
+  Toggle = "Defaults Options To Sort",
+  Add = "Add New Playlist",
+  New = "Add New Song to a Playlist",
+  Delete = "Delete Song of a Playlist",
+  Purge = "Remove New Added Playlist",
+  Quit = "Quit"
+}
+
+enum SortCommands {
+  Greater = "Greater Sort",
+  Lower = "Lower Sort",
+  Default = "Default Sort"
+}
+
+enum OptionsToSort {
+  Songs = "Song Sort",
+  Artists = "Artist Sort",
+  Albums = "Album Sort",
+  Genre = "Genre Sort",
+  Group = "Group Sort",
+  Reproduction = "Reproduction Sort",
+  Duration = "Songs Duration Sort",
+  Filter = "Filter Single Songs"
+}
+
+enum OptionToAdd {
+  NewPlaylist = "Add a new playlist from scratch",
+  UsingExistsPlaylist = "Adding a new playlist from an existing one"
+}
+```
+
+> En este código podemos que se invoca al método setmaxListeners, este método hace . A continuación se invoca a la función ```displayPlayList``` que muestra las playlists disponibles, el tiempo que dura cada playlist y la cantidad de géenros que contiene nuestra biblioteca. Por último, se utiliza el paquete inquirer. Primero se utiliza ```inquirer.promp``` donde se muestran unas preguntas indicando la opción ```type: list```, luego se indica la opción **name** (Nombre del comando), la opción **message** que indica el mensaje que se muestra antes de elegir cualquier opción y por último choices donde se indican las elecciones usando el enum **Commands**; tras esto se accede al ```then``` donde dependiendo de la elecciones que se haya hecho el switch accede ha dicha opción.
+
+La elecciones que procesa el switch son las siguientes:
 
   1. Mostrar una playlist de la base de datos siguiendo los criterios de ordenación enumerados en el apartado **Funciones de ordenación**.
 
   - En este submenu se nos permite elegir una de las opciones de ordenación: ordenación ascendente, descendente y por defecto. Al elegir una opción de ordenación se accede a un submenu donde se elige el criterio de ordenación que se desee dentro de una playlist. 
+  
+  - Ordenación ascendente
+
+  ```typescript
+  function greaterSort(playlistName: string): void {
+    console.clear();
+    inquirer.prompt({type: "list", 
+      name: "OptionsToSort", 
+      message: "Choose option", 
+      choices: Object.values(OptionsToSort)})
+        .then((answers) => {
+          switch (answers["OptionsToSort"]) {
+            case OptionsToSort.Albums:
+              console.clear();
+              let AlbumSortCollection = new AlbumSort(AlbumCollectionOBJ);
+              AlbumSortCollection.greaterSort();
+              defaultMenuReturn();
+              break;
+            case OptionsToSort.Artists:
+              console.clear();
+              let ArtistNameSortCollection = new ArtistNameSort(artistArray);
+              ArtistNameSortCollection.greaterSort();
+              defaultMenuReturn();
+              break;
+            case OptionsToSort.Duration:
+              console.clear();
+              let PlaylistOBJ1: Playlists = PlaylistCollectionOBJ.getPlaylist(playlistName);
+              let SongArray1: Song[] = PlaylistOBJ1.getSongsArray();
+              let collectionSongs1 = new SongCollection(SongArray1);
+              let DurationSongSort = new SongDurationSort(collectionSongs1);
+              DurationSongSort.greaterSort();
+              defaultMenuReturn();
+              break;
+            case OptionsToSort.Filter:
+              console.clear();
+              let PlaylistOBJ2: Playlists = PlaylistCollectionOBJ.getPlaylist(playlistName);
+              let SongArray2: Song[] = PlaylistOBJ2.getSongsArray();
+              let collectionSongs2 = new SongCollection(SongArray2);
+              let FilterSortCollectionSongs = new SingleFilter(collectionSongs2);
+              FilterSortCollectionSongs.filter();
+              defaultMenuReturn();
+              break;
+            case OptionsToSort.Genre:
+              console.clear();
+              let PlaylistOBJ3: Playlists = PlaylistCollectionOBJ.getPlaylist(playlistName);
+              let GenreArray: MusicGenre[] = PlaylistOBJ3.getGenreArray();
+              let collectionGenre = new GenreCollection(GenreArray);
+              let GenreSortCollection = new GenreSort(collectionGenre);
+              GenreSortCollection.greaterSort();
+              defaultMenuReturn();
+              break;
+            case OptionsToSort.Group:
+              console.clear();
+              let GroupNameSortCollection = new GroupNameSort(GroupCollectionOBJ);
+              GroupNameSortCollection.greaterSort();
+              defaultMenuReturn();
+              break;
+            case OptionsToSort.Reproduction:
+              console.clear();
+              let PlaylistOBJ4: Playlists = PlaylistCollectionOBJ.getPlaylist(playlistName);
+              let SongArray4: Song[] = PlaylistOBJ4.getSongsArray();
+              let collectionSongs4 = new SongCollection(SongArray4);
+              let ReproductionSongSort = new ReproductionNumberSort(collectionSongs4);
+              ReproductionSongSort.greaterSort();
+              defaultMenuReturn();
+              break;
+            case OptionsToSort.Songs:
+              console.clear();
+              let PlaylistOBJ5: Playlists = PlaylistCollectionOBJ.getPlaylist(playlistName);
+              let SongArray5: Song[] = PlaylistOBJ5.getSongsArray();
+              let collectionSongs5 = new SongCollection(SongArray5);
+              let GreaterSortCollectionSongs = new TitleSongSort(collectionSongs5);
+              GreaterSortCollectionSongs.greaterSort();
+              defaultMenuReturn();
+              break;
+          }
+        });
+  }
+  ```
+ 
+  - Ordenación descendente
+
+  ```typescript
+  function lowerSort(playlistName: string): void {
+    console.clear();
+    inquirer.prompt({
+      type: "list",
+      name: "OptionSort",
+      message: "Choose option",
+      choices: Object.values(OptionsToSort)})
+        .then((answers) => {
+          switch (answers["OptionSort"]) {
+            case OptionsToSort.Albums:
+              console.clear();
+              let AlbumSortCollection = new AlbumSort(AlbumCollectionOBJ);
+              AlbumSortCollection.lowerSort();
+              defaultMenuReturn();
+              break;
+            case OptionsToSort.Artists:
+              console.clear();
+              let ArtistNameSortCollection = new ArtistNameSort(artistArray);
+              ArtistNameSortCollection.lowerSort();
+              defaultMenuReturn();
+              break;
+            case OptionsToSort.Duration:
+              console.clear();
+              let PlaylistOBJ1: Playlists = PlaylistCollectionOBJ.getPlaylist(playlistName);
+              let SongArray1: Song[] = PlaylistOBJ1.getSongsArray();
+              let collectionSongs1 = new SongCollection(SongArray1);
+              let DurationSongSort = new SongDurationSort(collectionSongs1);
+              DurationSongSort.lowerSort();
+              defaultMenuReturn();
+              break;
+            case OptionsToSort.Filter:
+              console.clear();
+              let PlaylistOBJ2: Playlists = PlaylistCollectionOBJ.getPlaylist(playlistName);
+              let SongArray2: Song[] = PlaylistOBJ2.getSongsArray();
+              let collectionSongs2 = new SongCollection(SongArray2);
+              let FilterSortCollectionSongs = new SingleFilter(collectionSongs2);
+              FilterSortCollectionSongs.filter();
+              defaultMenuReturn();
+              break;
+            case OptionsToSort.Genre:
+              console.clear();
+              let PlaylistOBJ3: Playlists = PlaylistCollectionOBJ.getPlaylist(playlistName);
+              let GenreArray: MusicGenre[] = PlaylistOBJ3.getGenreArray();
+              let collectionGenre = new GenreCollection(GenreArray);
+              let GenreSortCollection = new GenreSort(collectionGenre);
+              GenreSortCollection.lowerSort();
+              defaultMenuReturn();
+              break;
+            case OptionsToSort.Group:
+              console.clear();
+              let GroupNameSortCollection = new GroupNameSort(GroupCollectionOBJ);
+              GroupNameSortCollection.lowerSort();
+              defaultMenuReturn();
+              break;
+            case OptionsToSort.Reproduction:
+              console.clear();
+              let PlaylistOBJ4: Playlists = PlaylistCollectionOBJ.getPlaylist(playlistName);
+              let SongArray4: Song[] = PlaylistOBJ4.getSongsArray();
+              let collectionSongs4 = new SongCollection(SongArray4);
+              let ReproductionSongSort = new ReproductionNumberSort(collectionSongs4);
+              ReproductionSongSort.lowerSort();
+              defaultMenuReturn();
+              break;
+            case OptionsToSort.Songs:
+              console.clear();
+              let PlaylistOBJ5: Playlists = PlaylistCollectionOBJ.getPlaylist(playlistName);
+              let SongArray5: Song[] = PlaylistOBJ5.getSongsArray();
+              let collectionSongs5 = new SongCollection(SongArray5);
+              let GreaterSortCollectionSongs = new TitleSongSort(collectionSongs5);
+              GreaterSortCollectionSongs.lowerSort();
+              defaultMenuReturn();
+              break;
+          } 
+        });
+  }
+  ```
+
+  > Igual que en la función ```promptUser``` se utilizan las mismas opciones de inquirer, pero las elecciones se sacan del enum **SortCommands**. En ambas funciones en cada opción del switch se crea una variable de tipo Playlist donde se recibe una playlist donde se quiera realizar la ordenación y se crea una variable de tipo ```Song[]``` donde se recogen las canciones de dicha playlist y se realiza la ordenación con la array de canciones. 
 
   2. Crear nuevas playlists, a partir de una existente o a partir de una playlist vacía.
 
   - En este submenu se elige una de las opciones de forma similar al menu anterior y dependiendo de cada elección se accede a un submenu dentro del submenu o a otro:
 
+    ```typescript
+    function promptAdd(): void {
+    console.clear();
+    inquirer.prompt({type: "list",
+      name: "OptionToAdd",
+      message: "Choose option",
+      choices: Object.values(OptionToAdd)})
+        .then((answers) => {
+          switch (answers["OptionToAdd"]) {
+            case OptionToAdd.NewPlaylist:
+              console.clear();
+              newPlaylistFromScratch();
+              break;
+            case OptionToAdd.UsingExistsPlaylist:
+              console.clear();
+              newPlaylistUsingAnExisting();
+              break;
+          }
+        });
+    }
+    ```
+
+    > En está función se definen las dos opciones que permitan a los usuarios crear playlists usando una de las dos formas. El paquete inquirer se implementa de la misma manera que en la función ```promptUser```, pero usando el enum **OptionToAdd**.
+
     - En el primer submenu se pregunta si se quieren agregar más canciones y se muestra un listado de las canciones existentes en la base de datos.
 
+    ```typescript
+    function newPlaylistUsingAnExisting(): void {
+      let selectedPlaylist: string = '';
+      inquirer.prompt({
+        type: "list",
+        name: "PlaylistSelector", 
+        message: "Select a Playlist to see: ", 
+        choices: PlaylistCollectionOBJ.getPlaylistArray().map((item) => ({name: PlaylistCollectionOBJ.getName(item.getName())}))})
+          .then((answers) => {
+            selectedPlaylist = answers["PlaylistSelector"];
+            console.clear();
+            console.log(`The selected playlist is: ${selectedPlaylist}`);
+            console.log();
+            let newPlaylistName: string = '';
+            inquirer.prompt({type: "input",
+              name: "newName",
+              message: "Enter the new playlist name:"})
+                .then((answers) => {
+                  newPlaylistName = answers.newName;
+                  const playlistSelected: Playlists = PlaylistCollectionOBJ.getPlaylist(selectedPlaylist);
+                  const auxiliary: Song[] = playlistSelected.getSongsArray();
+                  const newPlaylistUserAdded = new Playlists(newPlaylistName, auxiliary, playlistSelected.getDuration(), playlistSelected.getGenreArray(), false);
+                  PlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
+                  collectionPlaylists.restart(PlaylistCollectionOBJ.getPlaylistArray());
+                  console.clear();
+                  inquirer.prompt({type: "confirm",
+                    name: "SongsAdd",
+                    message: "Do you want to add new Songs to the playlist?"})
+                      .then((answers) => {
+                        if (answers["SongsAdd"] === true) {
+                          addingNewSongs(newPlaylistUserAdded);
+                        } else {
+                          console.clear();
+                          inquirer.prompt({type: "confirm",
+                            name: "SongsDelete",
+                            message: "Do you want to delete any Song?"})
+                              .then((answers) => {
+                                if (answers["SongsDelete"] === true) {
+                                  deleteSongs(newPlaylistUserAdded);
+                                } else {
+                                  console.clear();
+                                  defaultMenuReturn();
+                                }
+                              });
+                        }
+                      });
+                });
+          });
+    }
+    ```
+
+    > En esta función se realiza un segundo y tercer ```inquirer.prompt```, el primer ```inquirer.prompt``` es igual al de la función ```promptUser``` pero usando el nombre de cada playlist como opción donde se depenediendo de la playlist se copia el contenido de este a la nueva palylist creada para el usuario. En el segundo se recibe una entrada, es decir el nombre de la nueva playlist y en el tercer se le pregunta al usuario si quiere añadir canciones o no.
+
     - En el segundo submenu se pregunta si se quieren añadir nuevas canciones a la playlist o eliminar algunas de las canciones que se copiaron de la playlist anterior.
+
+    ```typescript
+    function newPlaylistFromScratch(): void {
+      inquirer.prompt({type: "input",
+        name: "newName",
+        message: "Enter the new playlist name:"})
+          .then((answers) => {
+            if ((NewPlaylistCollectionOBJ.getName(answers["newName"]) !== answers["newName"]) && (NewPlaylistCollectionOBJ.getName(answers["newName"]) === undefined)) {
+              let newPlaylistName = answers.newName;
+              const newPlaylistUserAdded = new Playlists(newPlaylistName, [], 0, [], false);
+              NewPlaylistCollectionOBJ.addPlaylist(newPlaylistUserAdded);
+              NewcollectionPlaylists.restart(NewPlaylistCollectionOBJ.getPlaylistArray());
+              console.clear();
+              inquirer.prompt({type: "confirm",
+                name: "SongsAdd",
+                message: "Do you want to add new Songs to the playlist?"})
+                  .then((answers) => {
+                    if (answers["SongsAdd"] === true) {
+                      addingNewSongs(newPlaylistUserAdded);
+                    } else {
+                      console.clear();
+                      console.log('<< You must to add any song if you want to create a playlist >>');
+                      defaultMenuReturn();
+                    }
+                  });
+            } else {
+              console.clear();
+              console.log('<< The playlist cannot be created because it already exists or it doesnt have a name >>');
+              defaultMenuReturn();
+            }
+          });
+    }
+    ```
+
+    > En esta función se utiliza un ```ìnquirer.prompt``` pidiendo un nombre de la playlist al usuario y un segundo ```ìnquirer.prompt``` donde se le pregunta al usuario si quiere añadir canciones o no.
+
+    > En caso de que el usuario quiera añadir canciones se accede a la función ```addingNewSongs```, donde se añadan canciones o en otro caso se accede a la función ```deleteSongs``` en caso de que no se quieran agregar más canciones.
+
+    ```typescript
+    function addingNewSongs(PlaylisToOperate: Playlists): void {
+      console.clear();
+      let SongToAdd: string = '';
+      inquirer.prompt({type: "list",
+        name: "SongList",
+        message: "Select a Song To Add: ",
+        choices: SongCollectionOBJ.getSongArray().map((item) => ({name: SongCollectionOBJ.getName(item.getName())}))})
+          .then((answers) => {
+            SongToAdd = answers["SongList"];
+            if (PlaylisToOperate.getSongString(SongToAdd) !== SongToAdd) {
+              let songToAddOBJ = SongCollectionOBJ.getSong(SongToAdd);
+              PlaylisToOperate.addSong(songToAddOBJ);
+              collectionPlaylists.restart(PlaylistCollectionOBJ.getPlaylistArray());
+              console.clear();
+              console.log('<< The song has been added correctly >>');
+              inquirer.prompt({
+                type: "confirm",
+                name: "AddNewSongs",
+                message: "Do you want to add new Songs?"})
+                  .then((answers) => {
+                    if (answers["AddNewSongs"] === true) {
+                      addingNewSongs(PlaylisToOperate);
+                    } else {
+                      console.clear();
+                      inquirer.prompt({type: "confirm",
+                        name: "SongsDelete",
+                        message: "Do you want to delete any Song?"})
+                          .then((answers) => {
+                            if (answers["SongsDelete"] === true) {
+                              deleteSongs(PlaylisToOperate);
+                            } else {
+                              console.clear();
+                              defaultMenuReturn();
+                            }
+                          });
+                    }
+                  });
+            } else {
+              console.clear();
+              console.log('<< The song you are trying to add is already in the playlist >>');
+              inquirer.prompt({
+                type: "confirm",
+                name: "AddNewSongs",
+                message: "Do you want to add new Songs?"})
+                  .then((answers) => {
+                    if (answers["AddNewSongs"] === true) {
+                      addingNewSongs(PlaylisToOperate);
+                    } else {
+                      console.clear();
+                      inquirer.prompt({type: "confirm",
+                        name: "SongsDelete",
+                        message: "Do you want to delete any Song?"})
+                          .then((answers) => {
+                            if (answers["SongsDelete"] === true) {
+                              deleteSongs(PlaylisToOperate);
+                            } else {
+                              console.clear();
+                              defaultMenuReturn();
+                            }
+                          });
+                    }
+                  });
+            }
+          });
+    }
+    ```
 
   3. Eliminar canciones de una playlist.
 
   - En este submenu se utilizan los métodos para eliminar canciones que se encuentra en la clase de colecciones de música.
 
+  ```typescript
+  function deleteSongs(PlaylistToOperate: Playlists): void {
+      console.clear();
+      let SongToDelete: string = '';
+      inquirer.prompt({type: "list",
+        name: "SongList",
+        message: "Select a Song To Delete: ",
+        choices: PlaylistCollectionOBJ.getSongsArray(PlaylistToOperate.getName()).map((item) => ({name: PlaylistCollectionOBJ.getSong(PlaylistToOperate, item)}))})
+          .then((answers) => {
+            SongToDelete = answers["SongList"];
+            if (PlaylistToOperate.getSongString(SongToDelete) === SongToDelete) {
+              let songToDeleteOBJ = SongCollectionOBJ.getSong(SongToDelete);
+              PlaylistToOperate.getRemoveIndex(songToDeleteOBJ.getName());
+              collectionPlaylists.restart(PlaylistCollectionOBJ.getPlaylistArray());
+              console.clear();
+              console.log('<< The song has been deleted correctly >>');
+              inquirer.prompt({
+                type: "confirm",
+                name: "DeleteSongs",
+                message: "Do you want to delete more Songs?"})
+                  .then((answers) => {
+                    if (answers["DeleteSongs"] === true) {
+                      deleteSongs(PlaylistToOperate);
+                    } else {
+                      console.clear();
+                      inquirer.prompt({type: "confirm",
+                        name: "SongsAdd",
+                        message: "Do you want to add new Songs to the playlist?"})
+                          .then((answers) => {
+                            if (answers["SongsAdd"] === true) {
+                              addingNewSongs(PlaylistToOperate);
+                            } else {
+                              defaultMenuReturn();
+                            }
+                          });
+                    }
+                  });
+            }
+          });
+  }
+  ```
+
   4. Eliminar una playlist creada por el usuario.
 
   - En este submenu se accede a un listado de las playlists existentes o creadas por el usuario para que pueda eliminar sus playlists, las playlists del sistema no se pueden borrar.
+
+  ```typescript
+  function promptDelete(): void {
+    console.clear();
+    let selectedPlaylist: string = '';
+    inquirer.prompt({
+      type: "list", 
+      name: "PlaylistSelector", 
+      message: "Select a Playlist to see: ", 
+      choices: PlaylistCollectionOBJ.getPlaylistArray().map((item) => ({name: PlaylistCollectionOBJ.getName(item.getName())}))})
+        .then((answers) => {
+          selectedPlaylist = answers["PlaylistSelector"];
+          console.clear();
+          console.log(`La playlist seleccionada ha sido: ${selectedPlaylist}`);
+          console.log();
+          const playlistSelected: Playlists = PlaylistCollectionOBJ.getPlaylist(selectedPlaylist);
+          if (playlistSelected.getsystemPlaylistBoolean() === false) {
+            PlaylistCollectionOBJ.getRemoveIndex(playlistSelected.getName());
+            collectionPlaylists.restart(PlaylistCollectionOBJ.getPlaylistArray());
+            console.log('<< The selected playlist was deleted >>');
+            defaultMenuReturn();
+          } else {
+            console.clear();
+            console.log('<< The selected playlist is a system playlist >>');
+            console.log('<< It cant be deleted >>');
+            defaultMenuReturn();
+          }
+        });
+  }
+  ```
 
   5. Salir del programa.
 
@@ -338,4 +985,4 @@ Para el resto de clases se sigue el mismo esquema.
 
 ## Conclusión
 
-En conclusión nos ha parecido una práctica bastante interesante, ya que nos ha permitido familiarizarnos aún más con el lenguaje de programación typescript y también nos ha permitido conocer algunas herramientas como inquirer y lowdb para el manejo de la entrada de datos por parte del usuario y de la creación de una pequeña base de datos para poder guardar la información. Otras herramientas que nos han ayudado en el desarrollo de está aplicación han sido: las github actions que nos han ayudado con la integración continua del código usando las actions de pruebas y de coveralls para asegurar que nuestro código funciona de la forma correcta y sonarcloud para asegurar la calidad de nuestro código, sonarcloud tiene en cuenta una serie de aspectos como son la fiabilidad, mantenibilidad, seguridad, cobrimiento y duplicidades en nuestro código. Sonarcloud nos muestre el numero de bugs, vulnerabilidades, líneas duplicadas, el porcentaje de cubrimiento, los *security hotspot* y los *code smells* que se encuentren en nuestro código para poder conocer las partes del código que se deben mejorar. Por último, nuestro código cumple con los principios **SOLID** de **Single Responsibility Principle** y **Open-Closed Principle**; algunos ejemplos los podemos encontrar en los directorios ```PrincipalClases```, ```Collectionables```, ```SortFunctions``` y ```LowdbFiles```.
+En conclusión nos ha parecido una práctica bastante interesante, ya que nos ha permitido familiarizarnos aún más con el lenguaje de programación typescript y también nos ha permitido conocer algunas herramientas como inquirer y lowdb para el manejo de la entrada de datos por parte del usuario y de la creación de una pequeña base de datos para poder guardar la información. Otras herramientas que nos han ayudado en el desarrollo de está aplicación han sido: las github actions que nos han ayudado con la integración continua del código usando las actions de pruebas y de coveralls para asegurar que nuestro código funciona de la forma correcta y sonarcloud para asegurar la calidad de nuestro código, sonarcloud tiene en cuenta una serie de aspectos como son la fiabilidad, mantenibilidad, seguridad, cobrimiento y duplicidades en nuestro código. Sonarcloud nos muestre el numero de bugs, vulnerabilidades, líneas duplicadas, el porcentaje de cubrimiento, los *security hotspot* y los *code smells* que se encuentren en nuestro código para poder conocer las partes del código que se deben mejorar. Por último, nuestro código cumple con los principios **SOLID** de **Single Responsibility Principle** y **Open-Closed Principle**; algunos ejemplos los podemos encontrar en los directorios [PrincipalClases](./src/DefinitiveHierarchy/PrincipalClases/), [Collectionables](./src/DefinitiveHierarchy/Collectionables/), [SortFunctions](./src/DefinitiveHierarchy/SortFunctions/) y [LowdbFiles](./src/LowdbFiles/).

@@ -11,7 +11,7 @@ const FileSync_1 = __importDefault(require("lowdb/adapters/FileSync"));
 /**
  * Playlist data base class
  */
-let content = require('../../JsonFiles/NewPlaylists.json');
+const content = require('../../JsonFiles/NewPlaylists.json');
 // const content = readFileSync('../JsonFiles/Playlist.json', 'utf-8');
 const data = content;
 // export const NewPlaylistName: JsonNewPlaylistCollection[] = [NewcollectionPlaylists];

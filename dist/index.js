@@ -163,32 +163,6 @@ const Fiestuki = new playlist_1.Playlists('Fiestuki', [BadBunny120, Yoganuni, Mo
 const Merengaso = new playlist_1.Playlists('Merengaso', [LunaLlena, Suavemente, Bailar, Princesita, TuSonrisa], 30, [Merengue], true);
 const ClassicalSongs = new playlist_1.Playlists('Classical Songs', [BeatIt, BillieJean, RockWithYou, BohemianRhapsody, IWantToBreakFree, DontStopMeNow,
     KillerQueen, AnotherOneBitestheDust], 60, [Rock, Pop, Dance], true);
-let content = require('../JsonFiles/Playlist.json');
-// const content = readFileSync('../JsonFiles/Playlist.json', 'utf-8');
-const data = content;
 exports.PlaylistCollectionOBJ = new playlistCollection_1.PlaylistCollection([Fiestuki, Merengaso, ClassicalSongs]);
-// storeData(PlaylistCollectionOBJ.getPlaylistArray(), '../JsonFIles/Playlist.json');
-// const PlaylistCollectionOBJaux = new PlaylistCollection([]);
-// if (PlaylistCollectionOBJaux.getPlaylistArray().length === 0) {
-// } else {
-//   PlaylistCollectionOBJaux.getPlaylistArray().forEach((element) => {
-//     PlaylistCollectionOBJ.addPlaylist(element);
-//   });
-// }
 exports.collectionPlaylists = new jsonPlaylistCollection_1.JsonPlaylistCollection([Fiestuki, Merengaso, ClassicalSongs]);
 exports.PlaylistName = [exports.collectionPlaylists];
-// eslint-disable-next-line guard-for-in
-for (const object in data) {
-    if (data.hasOwnProperty(object)) {
-        const element = data[object];
-        exports.PlaylistName.push(element);
-    }
-    // console.log(typeof(object));
-    // PlaylistName.push(object);
-    // PlaylistName.push(object.name);
-    // PlaylistName[object.name] = object.name;
-}
-// module.exports = {PlaylistName};
-// export const PlaylistCollectionOBJ = new PlaylistCollection(collectionPlaylists.read());
-// const GestorMenu = new Gestor();
-// GestorMenu.menu();

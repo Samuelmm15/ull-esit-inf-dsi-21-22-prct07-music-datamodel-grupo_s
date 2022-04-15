@@ -13,7 +13,7 @@ class Artist {
      * @param group Name of the artist's group
      * @param genre Music genre of the artist
      * @param album Album name of the artist
-     * @param publishedSongs Published songs name
+     * @param publishedSongs Number of published songs
      * @param monthlyListeners Monthly Listeners of the artist
      */
     constructor(name, group, genre, album, publishedSongs, monthlyListeners) {

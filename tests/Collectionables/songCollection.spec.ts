@@ -15,6 +15,7 @@ const PhantomoftheOpera = new Song('Phantom of the Opera', [SteveHarris], '7:21'
 const TwoMinutesToMidnight = new Song('2 Minutes To Midnight', [SteveHarris], '6:09', [HeavyMetal], false, 20585174);
 const DaysOfFuturePast = new Song('Days Of Future Past', [SteveHarris], '4:03', [HeavyMetal], false, 972101);
 const Senjutsu = new Song('Senjutsu', [SteveHarris], '8:20', [HeavyMetal], false, 1611164);
+const JBalvin = new Artist('J Balvin', 'J Balvin', ['Urban Latino'], ['Oasis'], 216, 55853005);
 
 const SongCollectionOBJ = new SongCollection([TheTrooper, PhantomoftheOpera, TwoMinutesToMidnight, DaysOfFuturePast, Senjutsu]);
 
@@ -22,34 +23,40 @@ describe('SongCollection', () => {
   it('should create an instance', () => {
     expect(SongCollectionOBJ).to.be.an.instanceof(SongCollection);
   });
-  it('should create an instance', () => {
+  it('SongCollectionOBJ.getSong(The Trooper) return The Trooper', () => {
     expect(SongCollectionOBJ.getSong('The Trooper')).to.be.equal(TheTrooper);
   });
-  it('should create an instance', () => {
+  it('SongCollectionOBJ.getSongAuthor(SteveHarris) return SteveHarris', () => {
     expect(SongCollectionOBJ.getSongAuthor(SteveHarris)).to.be.equal(SteveHarris);
   });
-  it('should create an instance', () => {
+  it('SongCollectionOBJ.getSongAuthor(JBalvin) return No existe el autor que intenta buscar', () => {
+    expect(SongCollectionOBJ.getSongAuthor(JBalvin)).to.be.equal(`No existe el autor que intenta buscar`);
+  });
+  it('SongCollectionOBJ.getName(The Trooper) return The Trooper', () => {
     expect(SongCollectionOBJ.getName('The Trooper')).to.be.equal('The Trooper');
   });
-  it('should create an instance', () => {
+  it('SongCollectionOBJ.getName(Bailando) return No existe la canción a buscar', () => {
     expect(SongCollectionOBJ.getName('Bailando')).to.be.equal(`No existe la canción a buscar`);
   });
-  it('The troop Repoduction Number', () => {
+  it('SongCollectionOBJ.getReproductionsNumber(58366710) return TheTrooper', () => {
     expect(SongCollectionOBJ.getReproductionsNumber(58366710)).to.be.equal(TheTrooper);
   });
-  it('should create an instance', () => {
+  it('SongCollectionOBJ.getReproductionsNumber(5836671) return No existe la canción que intenta buscar', () => {
+    expect(SongCollectionOBJ.getReproductionsNumber(5836671)).to.be.equal(`No existe la canción que intenta buscar`);
+  });
+  it('SongCollectionOBJ.getDuration(500) return Senjutsu', () => {
     expect(SongCollectionOBJ.getDuration(500)).to.be.equal(Senjutsu);
   });
-  it('should create an instance', () => {
+  it('SongCollectionOBJ.getDuration(50) return No existe la canción que intenta buscar', () => {
+    expect(SongCollectionOBJ.getDuration(50)).to.be.equal(`No existe la canción que intenta buscar`);
+  });
+  it('SongCollectionOBJ.getColectionlength() return 5', () => {
     expect(SongCollectionOBJ.getColectionlength()).to.be.equal(5);
   });
-  it('should create an instance', () => {
+  it('SongCollectionOBJ.getnObject(0) return TheTrooper', () => {
     expect(SongCollectionOBJ.getnObject(0)).to.be.equal(TheTrooper);
   });
-  // it('should create an instance', () => {
-  //   expect(SongCollectionOBJ.getSongArray()).to.be.equal([SongCollectionOBJ]);
-  // });
-  // it('should create an instance', () => {
-  //   expect(SongCollectionOBJ.getRemoveIndex('The Trooper')).to.be.equal([PhantomoftheOpera, TwoMinutesToMidnight, DaysOfFuturePast, Senjutsu]);
-  // });
+  it('SongCollectionOBJ.getSongArray() return [TheTrooper, PhantomoftheOpera, TwoMinutesToMidnight, DaysOfFuturePast, Senjutsu]', () => {
+    expect(SongCollectionOBJ.getSongArray()).to.be.eqls([TheTrooper, PhantomoftheOpera, TwoMinutesToMidnight, DaysOfFuturePast, Senjutsu]);
+  });
 });
