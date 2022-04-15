@@ -21,7 +21,7 @@ export class ReproductionNumberSort extends GeneralSort<SongCollection> {
     const ReproductionSort: number[] = [];
     let i: number = 0;
     let auxiliary: Song[] = [];
-    for (let i = 0; i < this.songs.getColectionlength(); i++) {
+    for (i = 0; i < this.songs.getColectionlength(); i++) {
       auxiliary.push(this.songs.getnObject(i));
     }
     i = 0;

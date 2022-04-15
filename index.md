@@ -6,9 +6,9 @@ En esta práctica, la primera grupal de la asignatura, se tendrá que llevar a c
 
 ## Organización de los directorios
 
-En está primera parte, se comentará todo lo relacionada con la implementación que se ha elegido para realizar la biblioteca de música que se pretende conseguir.
+En está primera parte, se comentará todo lo relacionado con la implementación que se ha elegido para realizar la biblioteca de música que se pretende conseguir.
 
-Antes de empezar podemos observar todo el contenido del directorio ```src``` donde se encuentra todo nuestro código. Podemos ver 3 directorios principales, por un lado tenemos el directorio ```DefinitiveHierarchy``` donde, se encuentran las clases base del proyecto, por otro lado el directorio ```GestorClass``` donde, se encuentra la clase gestor y por último el directorio ```LowdbFiles``` donde se encuentra todo lo relacionado con Lowdb.
+Antes de empezar, podemos observar todo el contenido del directorio ```src``` donde se encuentra todo nuestro código. Podemos ver 3 directorios principales, por un lado tenemos el directorio ```DefinitiveHierarchy``` donde, se encuentran las clases base del proyecto, por otro lado el directorio ```GestorClass``` donde, se encuentra la clase gestor y por último el directorio ```LowdbFiles``` donde se encuentra todo lo relacionado con Lowdb.
 
 ```
 📦src
@@ -22,7 +22,7 @@ Antes de empezar podemos observar todo el contenido del directorio ```src``` don
 
 ## Implementación de la colección de música 
 
-En el directorio de ```DefinitiveHierarchy``` se encuentran las clases base, donde nos encontramos con las clases principales, las colecciones y las clases que definen las distintas ordenaciones. En este directorio se encuentran todos los ficheros necesarios para implementar lo que es el la funcionalidad de la aplicación, como se dijo anteriormente en este directorio se implementan las clases que definen los diferentes tipos de objetos necesarios, las colecciones de los diferentes objetos y los sistemas de ordenación que se deben utilizar a la hora de navegar por la playlist.
+En el directorio de ```DefinitiveHierarchy``` se encuentran las clases base, donde nos encontramos con las clases principales, las colecciones y las clases que definen las distintas ordenaciones. En este directorio se encuentran todos los ficheros necesarios para implementar lo que es la funcionalidad de la aplicación, como se dijo anteriormente, en este directorio se implementan las clases que definen los diferentes tipos de objetos necesarios, las colecciones de los diferentes objetos y los sistemas de ordenación que se deben utilizar a la hora de navegar por la playlist.
 
 ### Clases Principales
 
@@ -41,7 +41,7 @@ Las clases Principales las encontramos en el directorio ```PrincipalClases``` y 
  ┗ 📂SortFunctions
 ```
 
-Las principales clases se encuentran en los ficheros ```album.ts```, ```artist.ts```, ```groups.ts```, ```musicGenre.ts```, ```playlist.ts``` y ```song.ts```. La clase base dentro de este directorio es ```Artist```, ya que todas las demás clases van a utilizar objectos de tipo ```Artist``` para algunos de sus atributos. 
+Las principales clases, se encuentran en los ficheros ```album.ts```, ```artist.ts```, ```groups.ts```, ```musicGenre.ts```, ```playlist.ts``` y ```song.ts```. La clase base dentro de este directorio es ```Artist```, ya que, todas las demás clases van a utilizar objectos de tipo ```Artist``` para algunos de sus atributos. 
 
 La jerarquía quedaría de la siguiente manera:
 

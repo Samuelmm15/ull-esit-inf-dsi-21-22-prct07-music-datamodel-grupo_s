@@ -22,7 +22,7 @@ export class SongDurationSort extends GeneralSort<SongCollection> {
     const ReproductionSort: number[] = [];
     let i: number = 0;
     let auxiliary: Song[] = [];
-    for (let i = 0; i < this.song.getColectionlength(); i++) {
+    for (i = 0; i < this.song.getColectionlength(); i++) {
       auxiliary.push(this.song.getnObject(i));
     }
     i = 0;
