@@ -5,9 +5,6 @@ exports.SongDurationSort = void 0;
 /* eslint-disable camelcase */
 const abstractSort_1 = require("./abstractSort");
 const songCollection_1 = require("../Collectionables/songCollection");
-/**
- * Class that sorts song objects by duration
- */
 class SongDurationSort extends abstractSort_1.GeneralSort {
     /**
      * Recieves a song collection

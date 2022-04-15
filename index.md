@@ -6,9 +6,9 @@ En esta práctica, la primera grupal de la asignatura, se tendrá que llevar a c
 
 ## Organización de los directorios
 
-En está primera parte, se comentará todo lo relacionada con la implementación que se ha elegido para realizar la biblioteca de música que se pretende conseguir.
+En está primera parte, se comentará todo lo relacionado con la implementación que se ha elegido para realizar la biblioteca de música que se pretende conseguir.
 
-Antes de empezar podemos observar todo el contenido del directorio ```src``` donde se encuentra todo nuestro código. Podemos ver 3 directorios principales, por un lado tenemos el directorio ```DefinitiveHierarchy``` donde, se encuentran las clases base del proyecto, por otro lado el directorio ```GestorClass``` donde, se encuentra la clase gestor y por último el directorio ```LowdbFiles``` donde se encuentra todo lo relacionado con Lowdb.
+Antes de empezar, podemos observar todo el contenido del directorio ```src``` donde se encuentra todo nuestro código. Podemos ver 3 directorios principales, por un lado tenemos el directorio ```DefinitiveHierarchy``` donde, se encuentran las clases base del proyecto, por otro lado el directorio ```GestorClass``` donde, se encuentra la clase gestor y por último el directorio ```LowdbFiles``` donde se encuentra todo lo relacionado con Lowdb.
 
 ```
 📦src
@@ -22,7 +22,11 @@ Antes de empezar podemos observar todo el contenido del directorio ```src``` don
 
 ## Implementación de la colección de música 
 
-En el directorio de ```DefinitiveHierarchy``` se encuentran las clases base, donde nos encontramos con las clases principales, las colecciones y las clases que definen las distintas ordenaciones. En este directorio se encuentran todos los ficheros necesarios para implementar lo que es el la funcionalidad de la aplicación, como se dijo anteriormente en este directorio se implementan las clases que definen los diferentes tipos de objetos necesarios, las colecciones de los diferentes objetos y los sistemas de ordenación que se deben utilizar a la hora de navegar por la playlist.
+En el directorio de ```DefinitiveHierarchy``` se encuentran las clases base, donde nos encontramos con las clases principales, las colecciones y las clases que definen las distintas ordenaciones. En este directorio se encuentran todos los ficheros necesarios para implementar lo que es la funcionalidad de la aplicación, como se dijo anteriormente, en este directorio se implementan las clases que definen los diferentes tipos de objetos necesarios, las colecciones de los diferentes objetos y los sistemas de ordenación que se deben utilizar a la hora de navegar por la playlist.
+
+## Jerarquía básica para los distintos objetos
+
+Para la implementación 
 
 ### Clases Principales
 
@@ -41,7 +45,7 @@ Las clases Principales las encontramos en el directorio ```PrincipalClases``` y 
  ┗ 📂SortFunctions
 ```
 
-Las principales clases se encuentran en los ficheros ```album.ts```, ```artist.ts```, ```groups.ts```, ```musicGenre.ts```, ```playlist.ts``` y ```song.ts```. La clase base dentro de este directorio es ```Artist```, ya que todas las demás clases van a utilizar objectos de tipo ```Artist``` para algunos de sus atributos. 
+Las principales clases, se encuentran en los ficheros ```album.ts```, ```artist.ts```, ```groups.ts```, ```musicGenre.ts```, ```playlist.ts``` y ```song.ts```. La clase base dentro de este directorio es ```Artist```, ya que, todas las demás clases van a utilizar objectos de tipo ```Artist``` para algunos de sus atributos. 
 
 La jerarquía quedaría de la siguiente manera:
 
@@ -85,18 +89,9 @@ Los atributos se van a representar usando la siguiente tabla:
 | Album      | name: string | artists: Artist     | genre: MusicGenre     | yearPublication: number | songs: ```Song[]```    | groups: Group                |
 | Playlist   | name: string | songs: ```Song[]``` | genre: MusicGenre     | duration: number        |                        |                              |
 
-Algunos atributos interesantes son ```songs: Song[]``` y ```single: boolean```. Los atributos ```songs``` son basicamente una array de objetos de tipos ```Song```, ya que en las clases ```Playlist``` y ```Album``` necesitan un conjunto de objetos de tipo ```Song```. El atríbuto ```single``` indica si una canción es un single o pertence a algún album, basicamente se va a usar un booleano que indica ```true``` si la canción es un single y ```false``` si el single pertenece a un album. 
+Algunos atributos interesantes son ```songs: Song[]``` y ```single: boolean```. Los atributos ```songs```, son basicamente una array de objetos de tipos ```Song```, ya que en las clases ```Playlist``` y ```Album``` necesitan un conjunto de objetos de tipo ```Song```. El atributo ```single``` indica si una canción es un single o pertence a algún album. De manera general, se va a usar un booleano que indica ```true``` si la canción es un single y ```false``` si el single pertenece a un album. 
 
-Estas clases reciben una serie de atríbutos, como se puede ver en la tabla, y estas clases se encargan de crear los diferentes objetos necesarios para la librería de música que se quiere crear.
-
-En cada clase se crean objetos de distintos tipos:
-
-  - La clase ```Song``` crea objetos tipo ```Song```.
-  - La clase ```Artist ``` crea objetos tipo ```Artist```.
-  - La clase ```Group ``` crea objetos tipo ```Group```.
-  - La clase ```Album``` crea objetos tipo ```Album```. 
-  - La clase ```MusicGenre``` crea objetos tipo ```MusicGenre```.
-  - La clase ```Playlist``` crea objetos tipo ```Playlist```.
+Estas clases, reciben una serie de atributos que, como se puede ver en la tabla, se encargan de crear los diferentes objetos necesarios para la librería de música que se quiere crear.
 
 ### Colecciones
 
@@ -114,9 +109,9 @@ Las colecciones las encontramos en el directorio ```Collectionables``` y son las
  ┗ 📂SortFunctions
 ```
 
-Estas clases se han creado simplemente para poder guardar un conjunto de artistas, géneros y canciones. Estas colecciones también nos ayudarán a organizar mejor la información de cada uno de los conjuntos y poder acceder a la información que queramos de cada conjunto.
+Estas clases, se han creado simplemente para poder guardar un conjunto de artistas, géneros y canciones. Estas colecciones, también nos ayudarán a organizar mejor la información de cada uno de los conjuntos y poder acceder a la información que queramos de cada conjunto.
 
-La clase base en este caso sería ```BasicStreamableCollection<T>``` y está clase extiende a la interfaz streameable que define el método ```getName()``` que debe estar en todas las colecciones. En está clase base se usa el tipo genérico ```<T>``` para poder definir el tipo que queramos para crear cualquier colección.
+La clase base en este caso es ```BasicStreamableCollection<T>``` y, extiende la interfaz streameable que define el método ```getName()``` . En esta clase base, se usa el tipo genérico ```<T>```, necesario para poder definir el tipo de objectos a coleccionar.
 
 - Interfaz stremeable
 
@@ -136,7 +131,7 @@ export abstract class BasicStreamableCollection<T> implements Streamable<T> {
 }
 ```
 
-Las clases ```ArtistsCollection```, ```GenreCollection``` y ```SongCollection```, usan los mismos atríbutos que en las clases Principales ```Artist```, ```MusicGenre``` y ```Song``` ya que las colecciones usan objetos del tipo correspondiente. En las colecciones se definen una serie de métodos para poder acceder a los atríbutos de cada objeto dentro del array del tipo objeto que sea. También se han creado métodos para poder eliminar objetos de la array del tipo que sea.
+Las clases ```ArtistsCollection```, ```GenreCollection``` y ```SongCollection```, usan los mismos atríbutos que en las clases Principales ```Artist```, ```MusicGenre``` y ```Song``` ya que, las colecciones usan objetos del tipo correspondiente. En las colecciones, se definen una serie de métodos para poder acceder a los atríbutos de cada objeto dentro del array del tipo objeto que sea. También, se han creado métodos para poder eliminar objetos de la array del tipo que sea.
 
 Un ejemplo de implementación lo tenemos en el código de la clase ```SongCollection```:
 
@@ -230,7 +225,7 @@ export class SongCollection extends BasicStreamableCollection<Song> {
 }
 ```
 
-> Los primeros métodos de esta clase representan a sus atríbutos (Las demás clase usan sus propios atríbutos), pero en este caso en la colección se guardan todos los objetos tipo ```Song``` que se hayan creado. Los siguiente métodos se encuentran disponibles en las demás clases y nos permiten eliminar elementos de cada colección, un método para recibir el tamaño de la array de canciones que contiene la colección, para recibir algun objeto del tipo ```Song``` en concreto y otro para recibir el array de canciones contenidas en la colección.
+> Los primeros métodos de esta clase representan a sus atríbutos (Las demás clase usan sus propios atríbutos), pero, en este caso en la colección se guardan todos los objetos tipo ```Song``` que se hayan creado. Los siguiente métodos, se encuentran disponibles en las demás clases y nos permiten eliminar elementos de cada colección, recibir el tamaño de la array de canciones que contiene la colección, recibir algun objeto del tipo ```Song``` en concreto y otro, para recibir el array de canciones contenidas en la colección.
 
 ### Funciones de ordenación
 
@@ -254,9 +249,9 @@ Las funciones de ordenación las encontramos en el directorio ```SortFunctions``
  ┃ ┗ 📜titleSongSort.ts
 ```
 
-En este directorio se encuentran todas las ordenaciones y filtros que se deben añadir a la funcionalidad del sistema que van a utilizar los usuarios para navegar las playlists existentes o la lista de canciones. 
+En este directorio, se encuentran todas las ordenaciones y filtros que se deben añadir a la funcionalidad del sistema que van a utilizar los usuarios para navegar las playlists existentes o las listas de canciones. 
 
-En está implementación tenemos una clase abstracta llamada ```GeneralSort``` donde se definen las funciones de ordenación ascendente y descendente que deben de tener el resto de clases derivadas. En está clase se definen dos métodos, el método ```greaterSort``` que ordena de forma ascendente y del método ```lowerSort``` que ordena de forma descendente.
+En está implementación, tenemos una clase abstracta llamada ```GeneralSort``` donde, se definen las funciones de ordenación ascendente y descendente que deben de tener el resto de clases derivadas. En está clase, se definen dos métodos, el método ```greaterSort``` que ordena de forma ascendente y del método ```lowerSort``` que ordena de forma descendente.
 
 Las ordenaciones que se deben utilizar para mostrar las diferentes listas de artistas, canciones, albums y playlists siguen los siguientes criterios:
 
@@ -337,7 +332,7 @@ export class AlbumSort extends GeneralSort<Album> {
 }
 ```
 
-> Este implementación es muy similar al de las demás ordenaciones, menos ```SingleFilter```, pero utilizando otros atríbutos.
+> Este implementación es muy similar al de las demás ordenaciones, menos ```SingleFilter```, pero, utilizando otros atributos.
 
 En la clase ```SingleFilter``` tenemos lo siguiente:
 
@@ -360,17 +355,17 @@ export class SingleFilter {
 }
 ```
 
-> En está clase se usa el método ```filter```, donde se filtran las canciones según sean un single o no.
+> En está clase, se usa el método ```filter```, donde, se filtran las canciones según sean un single o no.
 
 ### Inquirer
 
 #### ¿Qué es Inquirer?
 
-Inquirer es un paquete de NPM que proporciona de manera sencilla una forma de capturar la entrada del usuario en las aplicaciones de interfaz de línea de comandos en Node.js. Proporciona varios métodos para hacer preguntas y devolver respuestas al usuario a las que se puede acceder mediante una función ```.then``` promise.
+Inquirer es un paquete de NPM que proporciona de manera sencilla una forma de capturar la entrada del usuario en las aplicaciones de interfaz de línea de comandos en Node.js. Proporciona varios métodos para hacer preguntas y devolver respuestas al usuario a las que se puede acceder mediante una función ```.then```.
 
 #### Implementación
 
-La implementación completa del paquete inquirer se encuentra en fichero ```gestorClass```, en este fichero nos encontramos con la clase gestor y las funciones que contienen los menus del paquete inquirer. Por un lado, tenemos la clase gestor que es una clase muy simple donde se invoca a la función principal del menu; por otro lado, tenemos las funciones que contienen los menus realizados con el paquete Inquirer.
+La implementación completa del paquete inquirer se encuentra en fichero ```gestorClass```, en este fichero, nos encontramos con la clase gestor y las funciones que contienen los menús del paquete inquirer. Por un lado, tenemos la clase gestor donde, se invoca a la función principal del menu, por otro lado, tenemos las funciones que contienen los menús realizados con el paquete Inquirer.
 
 ##### Clase Gestor
 
@@ -386,15 +381,13 @@ class Gestor {
 }
 ```
 
-Como se puede ver la clase Gestor y ya se comento anteriormente es muy simple, ya que para acceder al primer menu de Inquirer se accede através del método ```menu``` y dentro de la clase se invoca a la función ```promptUser```.
-
 ##### Funciones inquirer
 
-En este apartado se va a hablar sobre las funciones que implementan los menus que usan el paquete inquirer. Primero se va a comentar sobre la función ```promptUser```, está función muestra está primera parte del menu:
+En este apartado, se va a hablar sobre las funciones que implementan los menús que usan el paquete inquirer. Primero, se va a comentar sobre la función ```promptUser```, está función, muestra está primera parte del menu:
 
 ![Captura de pantalla 2022-04-13 201431](https://user-images.githubusercontent.com/64638993/163253486-3f92a66a-d617-441d-a879-ad22c6223acb.png)
 
-En está imagen podemos ver las playlists disponibles y los géneros musicales que recoge nuestra biblioteca, y justo debajo una serie de acciones que se pueden realizar sobre las playlist y crear nuevas playlists que se puedan eliminar si el usuario lo desea.
+En está imagen podemos ver las playlists disponibles y los géneros musicales que recoge nuestra biblioteca, y justo debajo una serie de opciones que se pueden realizar sobre las playlist y crear nuevas playlists que se puedan eliminar si el usuario lo desea.
 
 Está parte del menu representa está parte del código:
 
@@ -467,7 +460,7 @@ enum OptionToAdd {
 }
 ```
 
-> En este código podemos que se invoca al método setmaxListeners, este método hace . A continuación se invoca a la función ```displayPlayList``` que muestra las playlists disponibles, el tiempo que dura cada playlist y la cantidad de géenros que contiene nuestra biblioteca. Por último, se utiliza el paquete inquirer. Primero se utiliza ```inquirer.promp``` donde se muestran unas preguntas indicando la opción ```type: list```, luego se indica la opción **name** (Nombre del comando), la opción **message** que indica el mensaje que se muestra antes de elegir cualquier opción y por último choices donde se indican las elecciones usando el enum **Commands**; tras esto se accede al ```then``` donde dependiendo de la elecciones que se haya hecho el switch accede ha dicha opción.
+> En este código, podemos ver que se invoca al método setmaxListeners, este, se encarga de establecer un máximo de oyentes o de puntos del tipo inquirer.prompt(). A continuación, se invoca la función ```displayPlayList``` que muestra las playlists disponibles, el tiempo que dura cada playlist y la cantidad de géneros que contiene nuestra biblioteca. Por último, se utiliza el paquete inquirer. Primero, se utiliza ```inquirer.promp()``` donde, se muestran unas preguntas indicando la opción ```type: list```, luego, se indica la opción **name** (Nombre del comando), la opción **message** que indica el mensaje que se muestra antes de elegir cualquier opción y por último choices, donde se indican las elecciones usando el enum **Commands**, tras esto, se accede al ```then``` donde, dependiendo de la elecciones que se haya hecho, el switch accede ha dicha opción.
 
 La elecciones que procesa el switch son las siguientes:
 
@@ -634,7 +627,7 @@ La elecciones que procesa el switch son las siguientes:
   }
   ```
 
-  > Igual que en la función ```promptUser``` se utilizan las mismas opciones de inquirer, pero las elecciones se sacan del enum **SortCommands**. En ambas funciones en cada opción del switch se crea una variable de tipo Playlist donde se recibe una playlist donde se quiera realizar la ordenación y se crea una variable de tipo ```Song[]``` donde se recogen las canciones de dicha playlist y se realiza la ordenación con la array de canciones. 
+  > Igual que en la función ```promptUser``` se utilizan las mismas opciones de inquirer, pero, las elecciones se sacan del enum **SortCommands**. En ambas funciones, en cada opción del switch se crea una variable de tipo Playlist, donde, se recibe una playlist que se quiera ordenar y, se crea una variable de tipo ```Song[]``` donde, se recogen las canciones de dicha playlist y se realiza la ordenación con el vector de canciones. 
 
   2. Crear nuevas playlists, a partir de una existente o a partir de una playlist vacía.
 
@@ -662,7 +655,7 @@ La elecciones que procesa el switch son las siguientes:
     }
     ```
 
-    > En está función se definen las dos opciones que permitan a los usuarios crear playlists usando una de las dos formas. El paquete inquirer se implementa de la misma manera que en la función ```promptUser```, pero usando el enum **OptionToAdd**.
+    > En está función, se definen las dos opciones que permitan a los usuarios crear playlists usando una de las dos formas. El paquete inquirer se implementa de la misma manera que en la función ```promptUser```, pero usando el enum **OptionToAdd**.
 
     - En el primer submenu se pregunta si se quieren agregar más canciones y se muestra un listado de las canciones existentes en la base de datos.
 
@@ -717,7 +710,7 @@ La elecciones que procesa el switch son las siguientes:
     }
     ```
 
-    > En esta función se realiza un segundo y tercer ```inquirer.prompt```, el primer ```inquirer.prompt``` es igual al de la función ```promptUser``` pero usando el nombre de cada playlist como opción donde se depenediendo de la playlist se copia el contenido de este a la nueva palylist creada para el usuario. En el segundo se recibe una entrada, es decir el nombre de la nueva playlist y en el tercer se le pregunta al usuario si quiere añadir canciones o no.
+    > En esta función, se realiza un segundo y tercer ```inquirer.prompt()```, el primer ```inquirer.prompt()``` es igual al de la función ```promptUser()``` pero, usando el nombre de cada playlist como opción donde, depenediendo de la playlist, se copia el contenido de este a la nueva palylist creada para el usuario. En el segundo, se recibe una entrada, es decir, el nombre de la nueva playlist y en el tercero se le pregunta al usuario si quiere añadir canciones o no.
 
     - En el segundo submenu se pregunta si se quieren añadir nuevas canciones a la playlist o eliminar algunas de las canciones que se copiaron de la playlist anterior.
 
@@ -754,9 +747,9 @@ La elecciones que procesa el switch son las siguientes:
     }
     ```
 
-    > En esta función se utiliza un ```ìnquirer.prompt``` pidiendo un nombre de la playlist al usuario y un segundo ```ìnquirer.prompt``` donde se le pregunta al usuario si quiere añadir canciones o no.
+    > En esta función, se utiliza un ```ìnquirer.prompt()``` pidiendo un nombre de la playlist al usuario y un segundo ```ìnquirer.prompt()``` donde, se le pregunta al usuario si quiere añadir canciones o no.
 
-    > En caso de que el usuario quiera añadir canciones se accede a la función ```addingNewSongs```, donde se añadan canciones o en otro caso se accede a la función ```deleteSongs``` en caso de que no se quieran agregar más canciones.
+    > En caso de que el usuario quiera añadir canciones, se accede a la función ```addingNewSongs()```, donde, se añadan canciones o en otro caso se accede a la función ```deleteSongs()``` en caso de que no se quieran agregar más canciones.
 
     ```typescript
     function addingNewSongs(PlaylisToOperate: Playlists): void {
@@ -828,7 +821,7 @@ La elecciones que procesa el switch son las siguientes:
 
   3. Eliminar canciones de una playlist.
 
-  - En este submenu se utilizan los métodos para eliminar canciones que se encuentra en la clase de colecciones de música.
+  - En este submenu, se utilizan los métodos para eliminar canciones que se encuentra en la clase de colecciones de música.
 
   ```typescript
   function deleteSongs(PlaylistToOperate: Playlists): void {
@@ -874,7 +867,7 @@ La elecciones que procesa el switch son las siguientes:
 
   4. Eliminar una playlist creada por el usuario.
 
-  - En este submenu se accede a un listado de las playlists existentes o creadas por el usuario para que pueda eliminar sus playlists, las playlists del sistema no se pueden borrar.
+  - En este submenu, se accede a un listado de las playlists existentes o creadas por el usuario para que pueda eliminar sus playlists, las playlists del sistema no se pueden borrar.
 
   ```typescript
   function promptDelete(): void {
@@ -908,21 +901,19 @@ La elecciones que procesa el switch son las siguientes:
 
   5. Salir del programa.
 
-  - En este apartado no fue necesario ningún submenu, ya que directamente se sale del programa usando el método **exit()**.
-
-En los otros submenus definidos, los sistemas de elección de los diferentes submenus son muy similares al que se tiene implementado en el menu ```promptUser```. Tras terminar cada submenu, se vuelve al punto de partida usando el menu ```defaultMenuReturn``` donde se le pregunta al usuario si quiere continuar con la ejecución del programa o no, en el primer caso se vuelve al menu ```promptUser``` y en el segundo caso simplemente se sale del programa usando el método **exit()**.
+En los otros submenus definidos, los sistemas de elección de los diferentes submenus son muy similares al que se tiene implementado en el menu ```promptUser()```. Tras terminar cada submenu, se vuelve al punto de partida usando el menu ```defaultMenuReturn()``` donde, se le pregunta al usuario si quiere continuar con la ejecución del programa o no, en el primer caso se vuelve al menu ```promptUser()``` y en el segundo caso simplemente se sale del programa usando el método **exit()**.
 
 ### Lowdb
 
 #### ¿Qué es Lowdb?
 
-La librería lowdb nos permite crear una pequeña base de datos local en formato JSON. Los elementos que se quieran incluir en una base de datos usando la libreria lowdb se guardan en un fichero **JSON** en el directorio que el programador decida. Esta libreria cuenta con una serie de **APIS** y **Adaptadores** que permiten a los programadores trabajar de forma sencilla a la hora de crear una pequeña base de datos. Está libreria cuenta con soporte en **TypeScript**.
+La librería lowdb, nos permite crear una pequeña base de datos local en formato JSON. Los elementos que se quieran incluir en una base de datos usando la libreria lowdb se guardan en un fichero **JSON** en el directorio que el programador decida. Esta libreria, cuenta con una serie de **APIS** y **Adaptadores** que permiten a los programadores trabajar de forma sencilla a la hora de crear una pequeña base de datos. Está libreria cuenta con soporte en **TypeScript**.
 
 #### Implementación
 
-En la implementación se ha decidido crear una serie de clases para los diferentes tipos de objetos, estas clases nos van a permitir añadir entradas a la base de datos y los ficheros relacionados se encuentran en el directorio **LowdbFiles**. Cada clase va a tener un tipo de objeto asginado para crear la base de datos de dicho objeto, en conreto los tipos de objetos que deben tener una base de datos son los siguientes: género musical, canción, grupo, artista, album y playlist.
+En la implementación, se ha decidido crear una serie de clases para los diferentes tipos de objetos, estas clases, nos van a permitir añadir entradas a la base de datos y los ficheros relacionados se encuentran en el directorio **LowdbFiles**. Cada clase, va a tener un tipo de objeto asginado para crear la base de datos de dicho objeto, en conreto los tipos de objetos que deben tener una base de datos son los siguientes: género musical, canción, grupo, artista, album y playlist.
 
-En el directorio **JsonFiles** nos encontramos con las bases de datos que se crearon gracias a las clases del directorio **LowdbFiles**. Tenemos los ficheros ```Artist.json```, ```Genre.json```, ```Group.json```, ```Song.json``` y ```Album.json```. Estas bases de datos se han creado con la ayuda de la libreria lowdb implementada en las clases en el directorio **LowdbFiles**.
+En el directorio **JsonFiles** nos encontramos con las bases de datos que se crearon gracias a las clases del directorio **LowdbFiles**. Tenemos los ficheros ```Artist.json```, ```Genre.json```, ```Group.json```, ```Song.json``` y ```Album.json```. Estas bases de datos, se han creado con la ayuda de la libreria lowdb implementada en las clases en el directorio **LowdbFiles**.
 
 ```
 📦JsonFIles
@@ -932,7 +923,7 @@ En el directorio **JsonFiles** nos encontramos con las bases de datos que se cre
  ┗ 📜Song.json
 ```
 
-En el directorio **LowdbFiles** se encuentran todas las clases relacionadas con la inserción de entradas en las bases de datos. Cada clase tiene un fichero asignado para que sea más comodo trabajar con ello y de paso utilizar el principo **SOLID Single Responsibility Principle** para que cada clase tenga una única responsibilidad.
+En el directorio **LowdbFiles** se encuentran todas las clases relacionadas con la inserción de entradas en las bases de datos. Cada clase, tiene un fichero asignado para que sea más comodo trabajar con ello y de paso utilizar el principo **SOLID Single Responsibility Principle** para que cada clase tenga una única responsibilidad.
 
 ```
 📦src
@@ -972,13 +963,13 @@ export class JsonSongCollection extends SongCollection {
 }
 ```
 
-En este caso se ha escogido la clase ```JsonSongCollection```. Está clase se va utilizar como ejemplo para explicar la implementación de las demás clases dentro del mismo directorio.
+En este caso se ha escogido la clase ```JsonSongCollection```. Está clase, se va utilizar como ejemplo para explicar la implementación de las demás clases dentro del mismo directorio.
 
-Por un lado se ha creado un tipo de datos ```schemaType``` donde se definen los principales atributos que van a contenter la base de datos de las canciones, por otro lado tenemos la propia clase ```JsonSongCollection``` que extiende a la clase ```SongCollection``` donde se crean las colecciones de canciones. 
+Por un lado se ha creado un tipo de datos ```schemaType``` donde, se definen los principales atributos que van a contenter la base de datos de las canciones, por otro lado, tenemos la propia clase ```JsonSongCollection``` que extiende a la clase ```SongCollection``` donde se crean las colecciones de canciones. 
 
 En la clase ```JsonSongCollection``` se tienen los siguientes métodos:
 
-  - El constructor crea el fichero json donde estará la base de datos ```Song.json``` y se añade cada canción a la base de datos, al constructor se le pasa como parámetro una array de canciones.
+  - El constructor, crea el fichero json donde estará la base de datos ```Song.json``` y se añade cada canción a la base de datos, al constructor se le pasa como parámetro una array de canciones.
   - El método ```restart```, permite añadir nuevos objetos tipo ```Song``` a la base de datos.
 
 Para el resto de clases se sigue el mismo esquema.

@@ -2,24 +2,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ReproductionNumberSort = void 0;
 /* eslint-disable camelcase */
-const abstractSort_1 = require("./abstractSort");
-const songCollection_1 = require("../Collectionables/songCollection");
-/**
- * Class that sorts songs objects by reproductions
- */
-class ReproductionNumberSort extends abstractSort_1.GeneralSort {
-    /**
-     * Recieves a song collection
-     */
+const abstractSort_2 = require("./abstractSort");
+const songCollection_2 = require("../Collectionables/songCollection");
+class ReproductionNumberSort extends abstractSort_2.GeneralSort {
     constructor(songs) {
         super();
         this.songs = songs;
     }
-    /**
-     * Ascendent ordenation of the songs by reproductions
-     * @returns Song collection with sorted songs by reproductions
-     */
-    greaterSort() {
+    lowerSort() {
         const ReproductionSort = [];
         let i = 0;
         let auxiliary = [];
@@ -35,16 +25,12 @@ class ReproductionNumberSort extends abstractSort_1.GeneralSort {
         i = 0;
         for (i = 0; i < this.songs.getColectionlength(); i++) {
             auxiliary.push(this.songs.getReproductionsNumber(ReproductionSort[i]));
-            console.log(`${auxiliary[i].getName()} ==> ${auxiliary[i].getReproductionsNumber()}`);
         }
-        const result = new songCollection_1.SongCollection(auxiliary);
+        console.log(ReproductionSort);
+        const result = new songCollection_2.SongCollection(auxiliary);
         return result;
     }
-    /**
-     * Descendent ordenation of the songs by reproductions
-     * @returns Song collection with sorted songs by reproductions
-     */
-    lowerSort() {
+    greaterSort() {
         const ReproductionSort = [];
         let i = 0;
         let auxiliary = [];
@@ -60,9 +46,9 @@ class ReproductionNumberSort extends abstractSort_1.GeneralSort {
         i = 0;
         for (i = 0; i < this.songs.getColectionlength(); i++) {
             auxiliary.push(this.songs.getReproductionsNumber(ReproductionSort[i]));
-            console.log(`${auxiliary[i].getName()} ==> ${auxiliary[i].getReproductionsNumber()}`);
         }
-        const result = new songCollection_1.SongCollection(auxiliary);
+        console.log(ReproductionSort);
+        const result = new songCollection_2.SongCollection(auxiliary);
         return result;
     }
 }

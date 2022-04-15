@@ -2,20 +2,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TitleSongSort = void 0;
 /* eslint-disable camelcase */
-const abstractSort_1 = require("./abstractSort");
-const songCollection_1 = require("../Collectionables/songCollection");
-/**
- * Class that sorts song objects by name
- */
-class TitleSongSort extends abstractSort_1.GeneralSort {
+const abstractSort_2 = require("./abstractSort");
+const songCollection_2 = require("../Collectionables/songCollection");
+class TitleSongSort extends abstractSort_2.GeneralSort {
     constructor(songs) {
         super();
         this.songs = songs;
     }
-    /**
-     * Ascendent ordenation of the songs by name
-     * @returns Song collection with sorted songs by name
-     */
     greaterSort() {
         const greaterTitleSort = [];
         let i = 0;
@@ -32,15 +25,11 @@ class TitleSongSort extends abstractSort_1.GeneralSort {
         i = 0;
         for (i = 0; i < this.songs.getColectionlength(); i++) {
             auxiliary.push(this.songs.getSong(greaterTitleSort[i]));
-            console.log(greaterTitleSort[i]);
         }
-        const result = new songCollection_1.SongCollection(auxiliary);
+        console.log(greaterTitleSort);
+        const result = new songCollection_2.SongCollection(auxiliary);
         return result;
     }
-    /**
-     * Descendent ordenation of the songs by name
-     * @returns Song collection with sorted songs by name
-     */
     lowerSort() {
         const lowerTitleSort = [];
         let i = 0;
@@ -57,9 +46,9 @@ class TitleSongSort extends abstractSort_1.GeneralSort {
         i = 0;
         for (i = 0; i < this.songs.getColectionlength(); i++) {
             auxiliary.push(this.songs.getSong(lowerTitleSort[i]));
-            console.log(lowerTitleSort[i]);
         }
-        const result = new songCollection_1.SongCollection(auxiliary);
+        console.log(lowerTitleSort);
+        const result = new songCollection_2.SongCollection(auxiliary);
         return result;
     }
 }

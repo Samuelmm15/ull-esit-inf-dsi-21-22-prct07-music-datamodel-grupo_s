@@ -3,11 +3,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AlbumYearSort = void 0;
 /* eslint-disable prefer-const */
 /* eslint-disable camelcase */
-const abstractSort_1 = require("./abstractSort");
+const abstractSort_2 = require("./abstractSort");
 /**
  * Class that sorts albums objects by year
  */
-class AlbumYearSort extends abstractSort_1.GeneralSort {
+class AlbumYearSort extends abstractSort_2.GeneralSort {
     /**
      * Recieves an album array
      */
