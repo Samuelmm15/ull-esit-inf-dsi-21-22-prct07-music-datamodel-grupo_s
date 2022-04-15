@@ -24,10 +24,6 @@ Antes de empezar, podemos observar todo el contenido del directorio ```src``` do
 
 En el directorio de ```DefinitiveHierarchy``` se encuentran las clases base, donde nos encontramos con las clases principales, las colecciones y las clases que definen las distintas ordenaciones. En este directorio se encuentran todos los ficheros necesarios para implementar lo que es la funcionalidad de la aplicación, como se dijo anteriormente, en este directorio se implementan las clases que definen los diferentes tipos de objetos necesarios, las colecciones de los diferentes objetos y los sistemas de ordenación que se deben utilizar a la hora de navegar por la playlist.
 
-## Jerarquía básica para los distintos objetos
-
-Para la implementación 
-
 ### Clases Principales
 
 Las clases Principales las encontramos en el directorio ```PrincipalClases``` y son las siguientes:
@@ -969,11 +965,11 @@ Por un lado se ha creado un tipo de datos ```schemaType``` donde, se definen los
 
 En la clase ```JsonSongCollection``` se tienen los siguientes métodos:
 
-  - El constructor, crea el fichero json donde estará la base de datos ```Song.json``` y se añade cada canción a la base de datos, al constructor se le pasa como parámetro una array de canciones.
+  - El constructor, crea el fichero json donde estará la base de datos ```Song.json``` y se añade cada canción a la base de datos, al constructor, se le pasa como parámetro una array de canciones.
   - El método ```restart```, permite añadir nuevos objetos tipo ```Song``` a la base de datos.
 
 Para el resto de clases se sigue el mismo esquema.
 
 ## Conclusión
 
-En conclusión nos ha parecido una práctica bastante interesante, ya que nos ha permitido familiarizarnos aún más con el lenguaje de programación typescript y también nos ha permitido conocer algunas herramientas como inquirer y lowdb para el manejo de la entrada de datos por parte del usuario y de la creación de una pequeña base de datos para poder guardar la información. Otras herramientas que nos han ayudado en el desarrollo de está aplicación han sido: las github actions que nos han ayudado con la integración continua del código usando las actions de pruebas y de coveralls para asegurar que nuestro código funciona de la forma correcta y sonarcloud para asegurar la calidad de nuestro código, sonarcloud tiene en cuenta una serie de aspectos como son la fiabilidad, mantenibilidad, seguridad, cobrimiento y duplicidades en nuestro código. Sonarcloud nos muestre el numero de bugs, vulnerabilidades, líneas duplicadas, el porcentaje de cubrimiento, los *security hotspot* y los *code smells* que se encuentren en nuestro código para poder conocer las partes del código que se deben mejorar. Por último, nuestro código cumple con los principios **SOLID** de **Single Responsibility Principle** y **Open-Closed Principle**; algunos ejemplos los podemos encontrar en los directorios [PrincipalClases](./src/DefinitiveHierarchy/PrincipalClases/), [Collectionables](./src/DefinitiveHierarchy/Collectionables/), [SortFunctions](./src/DefinitiveHierarchy/SortFunctions/) y [LowdbFiles](./src/LowdbFiles/).
+En conclusión, nos ha parecido una práctica bastante interesante, ya que nos ha permitido familiarizarnos aún más con el lenguaje de programación typescript y también nos ha permitido conocer algunas herramientas como inquirer y lowdb para el manejo de la entrada de datos por parte del usuario y de la creación de una pequeña base de datos para poder guardar la información. Otras herramientas que nos han ayudado en el desarrollo de está aplicación han sido: las github actions que nos han ayudado con la integración continua del código usando las actions de pruebas y de coveralls para asegurar que nuestro código funciona de la forma correcta y sonarcloud para asegurar la calidad de nuestro código, sonarcloud tiene en cuenta una serie de aspectos como son la fiabilidad, mantenibilidad, seguridad, cobrimiento y duplicidades en nuestro código. Sonarcloud nos muestre el numero de bugs, vulnerabilidades, líneas duplicadas, el porcentaje de cubrimiento, los *security hotspot* y los *code smells* que se encuentren en nuestro código para poder conocer las partes del código que se deben mejorar. Por último, nuestro código cumple con los principios **SOLID** de **Single Responsibility Principle** y **Open-Closed Principle**; algunos ejemplos los podemos encontrar en los directorios [PrincipalClases](./src/DefinitiveHierarchy/PrincipalClases/), [Collectionables](./src/DefinitiveHierarchy/Collectionables/), [SortFunctions](./src/DefinitiveHierarchy/SortFunctions/) y [LowdbFiles](./src/LowdbFiles/).
