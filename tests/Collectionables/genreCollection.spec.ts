@@ -16,16 +16,16 @@
 // export const GenresCollectionObj = new GenreCollection([EDM, Dance]);
 // export const ArtistsCollectionObj = new ArtistsCollection([MartinGarrix, Avicii, SteveHarris]);
 // describe('GenreCollection', () => {
-//     it('should create an instance', () => {
-//         expect(GenresCollectionObj).to.be.an.instanceof(GenreCollection);
-//     });
-//     it('should create an instance', () => {
-//         expect(GenresCollectionObj.addGenre(Classic)).to.be.equal(undefined);
-//     }
-//     );
-//     it('should create an instance', () => {
-//         expect(GenresCollectionObj.getGenre('EDM')).to.be.equal('EDM');
-//     }
-//     );
-//     it('should create an instance', () => {
-//         expect(GenreCollectionObj.getGenre('Classic')).to.be.equal('No existe el genero a buscar');
+//   it('should create an instance', () => {
+//     expect(GenresCollectionObj).to.be.an.instanceof(GenreCollection);
+//   });
+//   it('should create an instance', () => {
+//     expect(GenresCollectionObj.addGenre(Classic)).to.be.equal(undefined);
+//   });
+//   it('should create an instance', () => {
+//     expect(GenresCollectionObj.getGenre('EDM')).to.be.equal('EDM');
+//   });
+//   it('should create an instance', () => {
+//     expect(GenreCollectionObj.getGenre('Classic')).to.be.equal('No existe el genero a buscar');
+//   });
+// });

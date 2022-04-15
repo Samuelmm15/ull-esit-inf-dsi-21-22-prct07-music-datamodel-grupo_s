@@ -11,6 +11,16 @@ const FileSync_1 = __importDefault(require("lowdb/adapters/FileSync"));
 /**
  * Playlist data base class
  */
+let content = require('../../JsonFiles/NewPlaylists.json');
+// const content = readFileSync('../JsonFiles/Playlist.json', 'utf-8');
+const data = content;
+// export const NewPlaylistName: JsonNewPlaylistCollection[] = [NewcollectionPlaylists];
+const gestorClass_1 = require("../GestorClass/gestorClass");
+//  for (const object in data) {
+//    if (data.hasOwnProperty(object)) {
+//      const element = data[object];
+//      NewPlaylistName.push(element);
+//    }
 class JsonNewPlaylistCollection {
     /**
      * Creates the JSON file that contains the playlist data base
@@ -42,6 +52,12 @@ class JsonNewPlaylistCollection {
         //   this.database.set("Playlist", Playlist).write();
         // }
         // this.database.read();
+        for (const object in data) {
+            if (data.hasOwnProperty(object)) {
+                const element = data[object];
+                gestorClass_1.NewPlaylistName.push(element);
+            }
+        }
         this.database.set("Playlist", Playlist).write();
     }
     getSuperPlaylist(playlist) {

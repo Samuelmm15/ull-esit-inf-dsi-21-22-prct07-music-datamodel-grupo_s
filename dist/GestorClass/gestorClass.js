@@ -23,7 +23,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NewcollectionPlaylists = exports.NewPlaylistCollectionOBJ = void 0;
+exports.NewPlaylistName = exports.NewcollectionPlaylists = exports.NewPlaylistCollectionOBJ = void 0;
 const titleSongSort_1 = require("../DefinitiveHierarchy/SortFunctions/titleSongSort");
 const process_1 = require("process");
 const events_1 = require("events");
@@ -53,6 +53,21 @@ exports.NewcollectionPlaylists = new jsonNewPlaylistCollection_1.JsonNewPlaylist
 const auxarray = new jsonNewPlaylistCollection_1.JsonNewPlaylistCollection([]);
 auxarray.read();
 auxarray.write(exports.NewPlaylistCollectionOBJ);
+// import {readFileSync} from 'fs';
+let content = require('../../JsonFiles/NewPlaylists.json');
+// const content = readFileSync('../JsonFiles/Playlist.json', 'utf-8');
+const data = content;
+exports.NewPlaylistName = [exports.NewcollectionPlaylists];
+for (const object in data) {
+    if (data.hasOwnProperty(object)) {
+        const element = data[object];
+        exports.NewPlaylistName.push(element);
+    }
+    // console.log(typeof(object));
+    // PlaylistName.push(object);
+    // PlaylistName.push(object.name);
+    // PlaylistName[object.name] = object.name;
+}
 var Commands;
 (function (Commands) {
     Commands["Toggle"] = "Defaults Options To Sort";

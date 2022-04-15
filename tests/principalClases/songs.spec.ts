@@ -24,7 +24,7 @@
 //     expect(Songs.getSongDuration()).to.be.equal('4:58');
 //   });
 //   it('should create an instance', () => {
-//     expect(Songs.getGenre('GenreName')).to.be.equal('GenreName');
+//     expect(Songs.getGenre('GenreName')).to.be.equal(GenreName);
 //   });
 //   it('should create an instance', () => {
 //     expect(Songs.getReproductionsNumber()).to.be.equal(813716305);

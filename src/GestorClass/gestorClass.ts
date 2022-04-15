@@ -47,6 +47,24 @@ const auxarray: JsonNewPlaylistCollection = new JsonNewPlaylistCollection([]);
 auxarray.read();
 auxarray.write(NewPlaylistCollectionOBJ);
 
+// import {readFileSync} from 'fs';
+
+let content = require('../../JsonFiles/NewPlaylists.json');
+
+// const content = readFileSync('../JsonFiles/Playlist.json', 'utf-8');
+const data = content;
+export const NewPlaylistName: JsonNewPlaylistCollection[] = [NewcollectionPlaylists];
+for (const object in data) {
+  if (data.hasOwnProperty(object)) {
+    const element = data[object];
+    NewPlaylistName.push(element);
+  }
+  // console.log(typeof(object));
+  // PlaylistName.push(object);
+  // PlaylistName.push(object.name);
+  // PlaylistName[object.name] = object.name;
+}
+
 enum Commands {
   Toggle = "Defaults Options To Sort",
   Add = "Add New Playlist",

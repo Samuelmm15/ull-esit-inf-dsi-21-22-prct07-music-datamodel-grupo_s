@@ -12,6 +12,17 @@ import {schemaType} from './jsonPlaylistCollection';
 /**
  * Playlist data base class
  */
+let content = require('../../JsonFiles/NewPlaylists.json');
+
+ // const content = readFileSync('../JsonFiles/Playlist.json', 'utf-8');
+const data = content;
+// export const NewPlaylistName: JsonNewPlaylistCollection[] = [NewcollectionPlaylists];
+import {NewPlaylistName} from '../GestorClass/gestorClass';
+//  for (const object in data) {
+//    if (data.hasOwnProperty(object)) {
+//      const element = data[object];
+//      NewPlaylistName.push(element);
+//    }
 export class JsonNewPlaylistCollection {
   private database: lowdb.LowdbSync<schemaType>;
 
@@ -45,6 +56,12 @@ export class JsonNewPlaylistCollection {
     //   this.database.set("Playlist", Playlist).write();
     // }
     // this.database.read();
+    for (const object in data) {
+      if (data.hasOwnProperty(object)) {
+        const element = data[object];
+        NewPlaylistName.push(element);
+      }
+    }
     this.database.set("Playlist", Playlist).write();
   }
   getSuperPlaylist(playlist: Playlists): Playlists {
